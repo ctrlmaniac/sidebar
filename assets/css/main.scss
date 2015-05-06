@@ -3,12 +3,6 @@
 @import 'mixin/mixin';
 
 /*
-** WEB FONTS
-** 'Open Sans', 'Source Sans Pro', 'Cookie'
-*/
-@include web-fonts(("Open Sans": ("400", "500", "700")), ("Source Sans Pro": ("400", "500", "700")), "Cookie");
-
-/*
 ** MEYER CSS RESET
 */
 @import 'reset';

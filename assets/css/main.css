@@ -1,10 +1,5 @@
 @charset "UTF-8";
 /*
-** WEB FONTS
-** 'Open Sans', 'Source Sans Pro', 'Cookie'
-*/
-@import url("//fonts.googleapis.com/css?family=Open%20Sans%3A400%2C500%2C700|Source%20Sans%20Pro%3A400%2C500%2C700|Cookie&subset=latin%2Clatin-ext");
-/*
 ** MEYER CSS RESET
 */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
@@ -850,7 +845,7 @@ table {
 ** HTML
 */
 body {
-  font-family: "Source Sans Pro", consola, "Courier New", monospace;
+  font-family: sans-serif;
   font-size: 16px;
   font-weight: 300;
   line-height: 1.4;
@@ -1179,8 +1174,10 @@ section, .section {
 .sidebar {
   background-color: inherit; }
 
-[data-ssbplugin="sub-wrapper"] {
-  padding: 0em; }
+.allow-overflow {
+  position: relative;
+  height: 100%;
+  overflow: auto; }
 
 .logo-sidebar {
   height: 60px;

@@ -4,8 +4,12 @@
     background-color: inherit;
 }
 
-#{$ssb-wrapper} {
-    padding: 0em;
+
+
+.allow-overflow {
+	position: relative;
+	height: 100%;
+	overflow: auto
 }
 
 .logo-sidebar {
