@@ -2,18 +2,18 @@
 //http://www.github.com/dcdeiv/simplesidebar-v2
 // GPLv2 http://www.gnu.org/licenses/gpl-2.0-standalone.html
 (function($) {
-	$.fn.simpleSidebar = function(options) {
+	$.fn.simpleSidebarV2 = function(options) {
 		var ssbInit, ssbStyle, sbw, maskInit, maskStyle, overflowFalse, overflowTrue, $mask,
 			defaults = {
 				opener: undefined,
 				dataName: 'ssbv2',
+				top: 0,
 				animation: {
 					duration: 500,
 					easing: 'swing'
 				},
 				sidebar: {
 					width: 350,
-					top: 60,
 					gap: 64,
 					closingLinks: 'a',
 					css: {
@@ -26,7 +26,7 @@
 						opacity: 0.5,
 						filter: 'Alpha(opacity=50)'
 					}
-				},
+				}
 			},
 			cfg = $.extend(true, defaults, options),
 			data = cfg.dataName,
@@ -49,7 +49,7 @@
 
 		ssbInit = {
 			position: 'fixed',
-			top: cfg.sidebar.top,
+			top: cfg.top,
 			right: -sbw,
 			bottom: 0,
 			width: sbw
@@ -61,7 +61,7 @@
 		//Mask style
 		maskInit = {
 			position: 'fixed',
-			top: cfg.sidebar.top,
+			top: cfg.top,
 			right: 0,
 			bottom: 0,
 			left: 0,
