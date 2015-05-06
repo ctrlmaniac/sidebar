@@ -33,14 +33,12 @@
 			$sidebar = $(this),
 			$opener = $(cfg.opener),
 			$links = $(cfg.sidebar.closingLinks),
-			$mask = $('[data-' + data + '="mask"]'),
 			duration = cfg.animation.duration,
 			easing = cfg.animation.easing,
 			sbMaxW = cfg.sidebar.width,
 			gap = cfg.sidebar.gap,
 			winMaxW = sbMaxW + gap,
-			w = $(window).width(),
-			clicks = 0;
+			w = $(window).width();
 
 		//Sidebar style
 		if (w < winMaxW) {
@@ -73,8 +71,7 @@
 		maskStyle = $.extend(true, maskInit, cfg.mask.css);
 
 		$('body').append($('<div data-' + data + '="mask"/>').css(maskStyle));
-		
-		$mask = $( '[data-' + data + '="mask"]' );
+		$mask = $('[data-' + data + '="mask"]');
 
 		//complete functions
 		overflowFalse = function() {
