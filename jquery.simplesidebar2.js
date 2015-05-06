@@ -84,12 +84,12 @@
 				overflow: 'auto'
 			});
 		};
-		
+
 		$opener.click(function() {
 			var isWhat = $sidebar.attr('data-' + data);
 			var csbw = $sidebar.width();
-			
-			if( isWhat === 'disabled' ) {
+
+			if (isWhat === 'disabled') {
 				$sidebar
 					.animate({
 						right: 0
@@ -99,12 +99,12 @@
 						complete: overflowFalse
 					})
 					.attr('data-' + data, 'active');
-				
+
 				$mask.fadeIn(duration);
-			} else if ( isWhat === 'active' ) {
+			} else if (isWhat === 'active') {
 				$sidebar
 					.animate({
-						right: - csbw
+						right: -csbw
 					}, {
 						duration: duration,
 						easing: easing,
@@ -115,16 +115,16 @@
 				$mask.fadeOut(duration);
 			}
 		});
-		
-		$links.add($mask).each(function(){
-			$( this ).click(function(){
+
+		$links.add($mask).each(function() {
+			$(this).click(function() {
 				var isWhat = $sidebar.attr('data-' + data);
 				var csbw = $sidebar.width();
-			
-				if ( isWhat === 'active' ) {
+
+				if (isWhat === 'active') {
 					$sidebar
 						.animate({
-							right: - csbw
+							right: -csbw
 						}, {
 							duration: duration,
 							easing: easing,
@@ -136,7 +136,7 @@
 				}
 			});
 		});
-		
+
 
 		//Adjusting width;
 		$(window).resize(function() {
@@ -153,14 +153,14 @@
 				.attr('data-' + data, 'disabled')
 				.css({
 					width: rsbw,
-					right: - rsbw
+					right: -rsbw
 				});
 
 			$mask.fadeOut(duration);
-			
+
 			$('body, html').css({
 				overflow: 'auto'
-			});	
+			});
 		});
 
 		return this;
