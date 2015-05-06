@@ -58,7 +58,7 @@
 		};
 		ssbStyle = $.extend(true, ssbInit, cfg.sidebar.css);
 
-		$sidebar.css(ssbStyle);
+		$sidebar.css(ssbStyle).attr('data-' + data, 'disabled');
 
 		//Mask style
 		maskInit = {
@@ -81,89 +81,65 @@
 			$('body, html').css({
 				overflow: 'hidden'
 			});
-
-			clicks = 1;
 		};
 		overflowTrue = function() {
 			$('body, html').css({
 				overflow: 'auto'
 			});
-
-			clicks = 0;
 		};
-
+		
 		$opener.click(function() {
-			clicks++;
-			var nclick = function(e) {
-					return (e % 2 === 0) ? true : false;
-				},
-				nsbw = $sidebar.width();
-
-			if (false === nclick(clicks)) {
-				$sidebar.animate({
-					right: '+=' + nsbw
-				}, {
-					duration: duration,
-					easing: easing,
-					complete: overflowFalse
-				});
+			var isWhat = $sidebar.attr('data-' + data);
+			var csbw = $sidebar.width();
+			
+			if( isWhat === 'disabled' ) {
+				$sidebar
+					.animate({
+						right: 0
+					}, {
+						duration: duration,
+						easing: easing,
+						complete: overflowFalse
+					})
+					.attr('data-' + data, 'active');
 				
 				$mask.fadeIn(duration);
-
-			} else if (true === nclick(clicks)) {
-				$sidebar.animate({
-					right: '-=' + nsbw
-				}, {
-					duration: duration,
-					easing: easing,
-					complete: overflowTrue
-				});
+			} else if ( isWhat === 'active' ) {
+				$sidebar
+					.animate({
+						right: - csbw
+					}, {
+						duration: duration,
+						easing: easing,
+						complete: overflowTrue
+					})
+					.attr('data-' + data, 'disabled');
 
 				$mask.fadeOut(duration);
 			}
 		});
+		
+		$links.add($mask).each(function(){
+			$( this ).click(function(){
+				var isWhat = $sidebar.attr('data-' + data);
+				var csbw = $sidebar.width();
+			
+				if ( isWhat === 'active' ) {
+					$sidebar
+						.animate({
+							right: - csbw
+						}, {
+							duration: duration,
+							easing: easing,
+							complete: overflowTrue
+						})
+						.attr('data-' + data, 'disabled');
 
-		//closing sidebar when a link is clicked
-		$sidebar.on('click', $links, function() {
-			var asbw = $sidebar.width();
-
-			$sidebar.animate({
-				right: '-=' + asbw
-			}, {
-				duration: duration,
-				easing: easing,
-				complete: overflowTrue
+					$mask.fadeOut(duration);
+				}
 			});
-
-			$mask.fadeOut(duration);
 		});
 		
-		//closing sidebar when mask is clicked
-		$mask.one('click', function() {
-			var	asbw = $sidebar.width();
-			
-			$sidebar.animate({
-				right: '-=' + asbw
-			}, {
-				duration: duration,
-				easing: easing,
-				complete: overflowTrue
-			});
-
-			$(this).fadeOut();
-			
-			$opener.click(function() {
-				$sidebar.animate({
-					right: '+=' + asbw
-				}, {
-					duration: duration,
-					easing: easing,
-					complete: overflowFalse
-				});
-			
-				$mask.fadeIn(duration);
-			});
-		});
 
 		//Adjusting width;
 		$(window).resize(function() {
@@ -177,14 +153,17 @@
 			}
 
 			$sidebar
-				.animate({
-						right: -rsbw
-					},
-					clicks = 0)
+				.attr('data-' + data, 'disabled')
 				.css({
 					width: rsbw,
-					right: -rsbw
+					right: - rsbw
 				});
+
+			$mask.fadeOut(duration);
+			
+			$('body, html').css({
+				overflow: 'auto'
+			});	
 		});
 
 		return this;
