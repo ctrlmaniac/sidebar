@@ -54,7 +54,7 @@ And give it these css attributes:
 
 4) Incluse the plugin just after the jQuery library, use the minified version for lighten up the code:
   
-    <script src="jquery.simplesidebar.v2.min.js"></script>
+    <script src="jquery.simplesidebarv2.min.js"></script>
 
 5) See [Options](#options) for the last step.
 
