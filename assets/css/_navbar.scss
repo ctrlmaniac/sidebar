@@ -1,0 +1,64 @@
+//Navbar
+.navbar {
+    position: relative;
+    max-height: $navbarHeight;
+    height: $navbarHeight;
+    line-height: $navbarHeight;
+    background-color: darken($baseColor, 1%);
+    z-index: 1500;
+}
+
+.navbar-fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin: 0;
+}
+
+.logo {
+    font-family: $Cookie;
+    font-size: 32px;
+    color: $baseFont;
+}
+
+.logo {
+	#{$links} {
+		display: block;
+    	color: inherit;
+    	font-family: inherit;
+    	font-size: inherit;
+    }
+}
+
+.logo-navbar {
+	display: none;
+}
+
+.toggle-nav {
+  cursor: pointer;
+}
+
+.main-nav, .nav {
+    text-transform: uppercase;
+    #{$links} {
+    	display: block;
+    }
+}
+
+.main-nav {
+	li {
+	    display: inline-block;
+	    margin: 0;
+	    text-align: center;
+	}
+	#{$links} {
+		font-size: 100%;
+		min-width: 100px;
+	}
+}
+
+.toggle-nav {
+    display: none;
+    font-size: 32px;
+}

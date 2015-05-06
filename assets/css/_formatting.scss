@@ -1,0 +1,210 @@
+//FORMATTING
+body {
+	font-family: $SourceSansPro;
+	font-size: $fontSize;
+	font-weight: 300;
+	line-height: 1.4;
+	color: $baseFont;
+	background-color: $baseColor;
+}
+
+h1, h2, h3, h4, h5, h6{
+	font-family:inherit;
+	font-weight:500;
+	line-height:1.1;
+	color:inherit
+}
+
+h1, h2, h3{
+	margin-top:20px;
+	margin-bottom:10px
+}
+
+h4, h5, h6{
+	margin-top:10px;
+	margin-bottom:10px
+}
+
+h1 {
+	font-size:36px
+}
+
+h2 {
+	font-size:30px
+}
+
+h3 {
+	font-size:24px
+}
+
+h4 {
+	font-size:18px
+}
+
+h5 {
+	font-size:14px
+}
+
+h6 {
+	font-size:12px
+}
+
+p {
+	margin:0 0 10px
+}
+
+hr {
+	height:0;
+	margin: 2em 1em;
+	border-width: 1px;
+	border-style: solid;
+	-webkit-box-sizing:content-box;
+	-moz-box-sizing:content-box;
+	box-sizing:content-box
+}
+
+//abbr default
+//acronym not supported in html5
+
+#{$links} {
+	color: $baseLink;
+	text-decoration: none;
+}
+
+a:hover, a:active {
+	color: $baseLinkHover !important;
+}
+
+address {
+	margin-bottom: 1em;
+	padding-left: .5em;
+	font-size: 14px;
+}
+
+b, strong {
+	font-weight: 600;
+}
+
+//Not supported in HTML5
+big {
+	font-size: 18px;
+}
+
+blockquote {
+	margin: .5em;
+	margin-bottom: 1em !important;
+	border-left:5px solid $baseFont;
+	padding: 0 .5em;
+	font-size: 105%;
+	
+	cite {
+		&:before {
+			content: "\2014 \00a0"
+		}
+	}
+}
+
+q {
+  &:before {
+    content: "\22";
+  }
+  
+  &:after {
+    content: "\22";
+  }
+}
+
+cite, dfn, em, i, var {
+	font-style: italic;
+}
+
+code, kbd, pre, samp {
+	font-family: "courier new";
+}
+
+code {
+	padding:2px 4px;
+	color: $lighterFont;
+	font-size: 15px;
+	background-color: $lighterColor;
+	@include border-radius(2px);
+}
+
+pre {
+	display:block;
+	padding: .5em;
+	margin: .5em 0;
+	color: $lighterFont;
+	font-size:15px;
+	line-height:1.15;
+	word-break:break-all;
+	word-wrap:break-word;
+	white-space:pre-wrap;
+	background-color: $lighterColor;
+	border:1px solid $lighterFont;
+	border-radius:4px;
+	
+	code {
+		padding:0;
+		color: inherit;
+		font-size:inherit;
+		background-color: transparent !important;
+		@include border-radius(0 !important);
+		
+		code {
+			padding: 0;
+			font-weight: 600;
+			background-color: transparent !important;
+			@include border-radius(0 !important);
+		}
+	}
+}
+
+kbd {
+	padding:1px 4px;
+	color: $accentFont;
+	font-size: 15px;
+	background-color: $accentColor;
+	border-style: outset !important;
+	border-top: 1px darken($accentColor, 30);
+	border-right: 2px darken($accentColor, 30);
+	border-bottom: 2px darken($accentColor, 30);
+	border-left: 2px darken($accentColor, 30);
+	@include border-radius(3px);
+	
+	kbd {
+		padding: 0;
+		color: inherit;
+		font-weight: 600;
+		background-color: inherit;
+		border: 0;
+		@include border-radius(0 !important);
+	}
+}
+
+del, strike, s {
+	text-decoration: line-through;
+	}
+	
+small {
+	font-size: 14px;
+}
+
+sup {
+	top:-.5em
+}
+
+sub {
+	bottom:-.25em
+}
+
+mark {
+	padding: 0 .2em;
+	background-color: lighten($accentColor, 40);
+}
+
+img, figure {
+  max-width: 100%;
+  height: auto;
+  line-height: 0;
+}

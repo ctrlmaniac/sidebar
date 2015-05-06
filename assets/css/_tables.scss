@@ -1,0 +1,36 @@
+//TABLES
+
+table {
+	margin: 1em auto;
+	max-width: 100% !important;
+	font-size: 14px;
+
+	caption {
+		font-weight: 600;
+		font-size: 18px;
+	}
+
+	thead {
+		text-align: left;
+	}
+
+	th, td {
+		padding: 0 1em;
+	}
+
+	th {
+		padding-bottom: .5em;
+	}
+}
+
+.table {
+  display: table;
+}
+.table-row {
+  display: table-row;
+}
+.table-cell {
+  display: table-cell;
+  padding-right: 1em;
+  padding-bottom: 1em;
+}

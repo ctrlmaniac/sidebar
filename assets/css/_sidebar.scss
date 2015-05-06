@@ -1,0 +1,50 @@
+/*SIDEBAR*/
+
+.sidebar {
+    background-color: inherit;
+}
+
+#{$ssb-wrapper} {
+    padding: 0em;
+}
+
+.logo-sidebar {
+	height: $navbarHeight;
+	line-height: $navbarHeight;
+	padding-left: 1em;
+	background-color: darken($baseColor, 1);
+	color: lighten($baseFont, 1);
+}
+
+.nav-sidebar {
+	padding: 0 1em;
+	padding-top: 1em !important;
+	
+	ul {
+		li {
+			padding: .5em 0;
+		}
+	}
+}
+
+.footer-sidebar {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding: 1em;
+	font-size: 14px;
+	background-color: darken($baseColor, 1);
+	color: lighten($baseFont, 1);
+	
+	#{$links} {
+		display: block;
+		font-size: inherit;
+	}
+}
+
+.logo-sidebar, .footer-sidebar {
+	#{$links} {
+		color: lighten($baseLink, 1);
+	}
+}

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta content=
+	"width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"
+	name="viewport">
+
+	<title>My Brand</title>
+	
+	<meta name="theme-color" content="#171717">
+	
+	<link href="assets/css/main.min.css" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+	<div class="main container main-fixed-top">
+	
+		<header class="main-header">
+			<h1>My Brand</h1>
+			<h3>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.</h3>
+		</header>
+			
+		<div id="slider">
+			<figure>
+				<img src="assets/pic/about-slider/forthbridge.jpg">
+			</figure>
+			<figure>
+			<img src="assets/pic/about-slider/hunting-canmore-alberta-canada.jpg">
+			</figure>
+			<figure>
+			<img src="assets/pic/about-slider/sacramento-river.jpg">
+			</figure>
+			<figure>
+			<img src="assets/pic/about-slider/rfk.jpg">
+			</figure>
+		</div>
+	
+		<section>
+			<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+
+			<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+
+			<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+
+			<p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?</p>
+
+			<p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+
+			<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
+
+			<p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere</p>
+		</section>
+	</div><!--main container main-fixed-top-->
+	
+	<!--navigation bar-->
+	<nav id="main-navbar" class="navbar navbar-fixed-top">
+		<div class="container">
+			<div class="logo logo-navbar left">
+				<a href="index.html">My Brand</a>
+			</div>
+		
+			<div id="opener" class="toggle-nav right">
+				<span class="glyphicon glyphicon-menu-hamburger"></span>
+			</div>
+		
+			<div class="main-nav inline nav-toggle right">
+				<ul>
+					<li><a href="index.html">About</a></li>
+					<li><a href="products.html">Products</a></li>
+					<li><a href="contact.html">Contact</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	
+	<!--Sidebar-->
+	<div id="sidebar" class="sidebar">
+		<div class="logo logo-sidebar">
+			<a class=".close-sb" href="index.html">My Brand</a>
+		</div>
+	
+		<div class="nav nav-sidebar">
+			<nav>
+				<ul>
+					<li><a class=".close-sb" href="index.html">About</a></li>
+					<li><a class=".close-sb" href="products.html">Products</a></li>
+					<li><a class=".close-sb" href="contact.html">Contact</a></li>
+				</ul>
+			</nav>
+		</div>
+		
+		<div class="footer-sidebar">
+			<a class=".close-sb" href="#">Change language</a>
+		</div>
+	</div>
+
+	
+	<!--jQuery v1.11.2 & jQuery-UI v1.11.4-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+	<!--Plugins-->
+	<script src="assets/js/jquery.simplesidebar.min.js"></script>
+	<script src="assets/js/navbar.js"></script>
+	<script src="assets/js/showhide.js"></script>
+	<script src="assets/js/slider.js"></script>
+	
+	<!--Running all plugins-->
+	<script>
+		$( document ).ready(function(){
+			$( '.logo-navbar' ).showHide();
+		
+			$( '#sidebar' ).simpleSidebar({
+				settings: {
+					opener: '#opener',
+					wrapper: '.main',
+					ignore: '.footer-sidebar',
+					animation: {
+						easing: 'easeOutQuint'
+					}
+				},
+				sidebar: {
+					align: 'right',
+					width: 300,
+					closingLinks: '.close-sb',
+					css: {
+						zIndex: 1550
+					}
+				},
+				mask: {
+					css: {
+						backgroundColor: 'black',
+						opacity: 0.3,
+						filter: 'Alpha(opacity=30)'
+					}
+				}
+			});
+			
+			
+			$( '.main-nav' ).toggleMainNavbar({
+				button: '#opener',
+				sidebar: '#sidebar',
+				content: '.main'
+			});
+			
+			$('#slider').slider();
+		});
+	</script>
+</body>
+</html>
