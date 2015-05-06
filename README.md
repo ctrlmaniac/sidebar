@@ -3,7 +3,9 @@
 The second generation of [simple-sidebar](http://www.github.com/dcdeiv/simple-sidebar), a simple plugin for jQuery sidebars.
 
 ## Support:
-<a href="https://flattr.com/submit/auto?user_id=dcdeiv&url=https%3A%2F%2Fgithub.com%2Fdcdeiv%2Fsimplesidebar-v2" target="_blank"><img src="//button.flattr.com/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0"></a>
+<a href="https://flattr.com/submit/auto?user_id=dcdeiv&url=https%3A%2F%2Fgithub.com%2Fdcdeiv%2Fsimplesidebar-v2%2F" target="_blank"><img src="//button.flattr.com/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0"></a>
+
+## [Demo](dcdeiv.github.io/simplesidebar-v2)
 
 ### simple-sidebar vs. simplesidebar-v2
 * Stop supporting `subwrapper`;
@@ -14,10 +16,6 @@ The second generation of [simple-sidebar](http://www.github.com/dcdeiv/simple-si
 * You should know how to let the sidebar content overflow (if not check out the [set-up tips](#set-up-tips) so to shrink the code I decided to get rid of this feature;
 * Animating the entire content was often an issue, `position: fixed` and `position: absolute` elements didn't animate the way they should, so I decided to only animate the sidebar as it happens on Android;
 * Support only the **right sidebar** but it will in the future!
-
-## Demo:
-* not available yet;
-* not available yet;
 
 ## Set-Up tips:
 This version is simpler than the first one because you won't need to do much more than this:
