@@ -13,7 +13,7 @@ The second generation of [simple-sidebar](http://www.github.com/dcdeiv/simple-si
 * Support only for the right sidebar (in the future it will support the left sidebar too);
 
 #### Why this changes?
-* You should know how to let the sidebar content overflow (if not check out the [set-up tips](#set-up-tips) so to shrink the code I decided to get rid of this feature;
+* You should know how to let the sidebar content overflow (if not check out the [set-up tips](#set-up-tips)) so to shrink the code I decided to get rid of this feature;
 * Animating the entire content was often an issue, `position: fixed` and `position: absolute` elements didn't animate the way they should, so I decided to only animate the sidebar as it happens on Android;
 * Support only the **right sidebar** but it will in the future!
 
