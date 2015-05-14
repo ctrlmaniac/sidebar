@@ -55,7 +55,7 @@ And give it these css attributes:
 3) Include a button to trigger the animation. This button must be alinged to left or right according to the sidebar align (see [options](#options):
 
     <div class="navbar" id="navbar">
-      <span id="open-sidebar" class="button menu icon icon-hamburder"></span>
+      <span id="open-sidebar" class="button menu icon icon-hamburger"></span>
     </div>
 
 4) Include the plugin just after the jQuery library, use the minified version for lighten up the code:
