@@ -41,7 +41,7 @@ To let the content of your sidebar overflow (especially when you have a lot of c
 
 And give it these css attributes:
 
-    .sidebar {
+    .sidebar-wrapper {
       position: relative;
       height: 100%;
       overflow: auto
