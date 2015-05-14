@@ -3,7 +3,7 @@
 // GPLv2 http://www.gnu.org/licenses/gpl-2.0-standalone.html
 (function($) {
 	$.fn.simpleSidebarV2 = function(options) {
-		var ssbInit, ssbStyle, sbw, maskInit, maskStyle, overflowFalse, overflowTrue, $mask,
+		var ssbInit, ssbStyle, sbw, maskInit, maskStyle, overflowFalse, overflowTrue, $mask, align,
 			defaults = {
 				opener: undefined,
 				dataName: 'ssbv2',
@@ -39,7 +39,18 @@
 			sbMaxW = cfg.sidebar.width,
 			gap = cfg.sidebar.gap,
 			winMaxW = sbMaxW + gap,
+			defAlign = cfg.sidebar.align,
 			w = $(window).width();
+		
+		//Checking if the Sidebar is aligned to right or to left
+		if ( defAlign === 'undefined' || defAlign === 'right' ) {
+		    align = 'right';
+		
+		else if ( defAlign === 'left' ) {
+		    align = 'left'
+		}
+		
+		console.log( align );
 
 		//Sidebar style
 		if (w < winMaxW) {
