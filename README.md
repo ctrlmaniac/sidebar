@@ -5,9 +5,12 @@ The second generation of [simple-sidebar](http://www.github.com/dcdeiv/simple-si
 ## Support:
 <a href="https://flattr.com/submit/auto?user_id=dcdeiv&url=https%3A%2F%2Fgithub.com%2Fdcdeiv%2Fsimplesidebar-v2%2F" target="_blank"><img src="https://button.flattr.com/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0"></a>
 
-## [HomePage](http://dcdeiv.github.io/simpler-sidebar)
-## [Demo Right](http://dcdeiv.github.io/simpler-sidebar/right)
-## [Demo Left](http://dcdeiv.github.io/simpler-sidebar/left)
+## Demo:
+* [HomePage](http://dcdeiv.github.io/simpler-sidebar);
+* [Demo Right](http://dcdeiv.github.io/simpler-sidebar/right);
+* [Demo Right-Top](http://dcdeiv.github.io/simpler-sidebar/right-top);
+* [Demo Left](http://dcdeiv.github.io/simpler-sidebar/left);
+* [Demo Left-Top](http://dcdeiv.github.io/simpler-sidebar/left-top);
 
 ### Update:
 * Added support for left.
@@ -64,30 +67,30 @@ And give it these css attributes:
 ## OPTIONS
 Here is an example of usage with all the available options. Pay attention, these options are similar but not the same as [simple-sidebar](http://www.github.com/dcdeiv/simple-sidebar)'s options:
 
-    $( '#sidebar' ).simpleSidebarV2({
-      opener: undefined,
-      dataName: 'ssbv2',
-    	top: 0,
-    	animation: {
-    		duration: 500,
-    		easing: 'swing'
-    	},
-    	sidebar: {
-    	    align: undefined,
-    		width: 350,
-    		gap: 64,
-    		closingLinks: 'a',
-    		css: {
-    			zIndex: 3000
-    		}
-    	},
-    	mask: {
-    		css: {
-    			backgroundColor: 'black',
-    			opacity: 0.5,
-    			filter: 'Alpha(opacity=50)'
-    		}
-    	}
+    $( '#sidebar' ).simplerSidebar({
+        opener: undefined,
+        dataName: 'ssbv2',
+        top: 0,
+        animation: {
+            duration: 500,
+            easing: 'swing'
+        },
+        sidebar: {
+            align: undefined,
+            width: 350,
+            gap: 64,
+            closingLinks: 'a',
+            css: {
+                zIndex: 3000
+            }
+        },
+        mask: {
+            css: {
+                backgroundColor: 'black',
+                opacity: 0.5,
+                filter: 'Alpha(opacity=50)'
+            }
+        }
     });
 
 * **opener**: is the selector for the button/icon that will trigger the animation, see [Set-Up tips #3](#set-up-tips);
