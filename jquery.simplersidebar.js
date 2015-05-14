@@ -59,7 +59,7 @@
 		};
 		
 		//Checking if the Sidebar is aligned to right or to left
-		if ( defAlign === 'undefined' || defAlign === 'right' ) {
+		if ( defAlign === undefined || defAlign === 'right' ) {
 		    align = 'right';
 		} else if ( defAlign === 'left' ) {
 		    align = 'left';
