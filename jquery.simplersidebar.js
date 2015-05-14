@@ -2,7 +2,7 @@
 //https://github.com/dcdeiv/simpler-sidebar
 // GPLv2 http://www.gnu.org/licenses/gpl-2.0-standalone.html
 (function($) {
-	$.fn.simpleSidebarV2 = function(options) {
+	$.fn.simplerSidebar = function(options) {
 		var ssbInit, ssbStyle, sbw, maskInit, maskStyle, overflowFalse, overflowTrue, $mask, align,
 			defaults = {
 				opener: undefined,
