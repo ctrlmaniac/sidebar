@@ -1,9 +1,9 @@
-//Simple-Sidebar v.2.0.0
+//Simple-Sidebar v.2.1.0
 //http://www.github.com/dcdeiv/simplesidebar-v2
 // GPLv2 http://www.gnu.org/licenses/gpl-2.0-standalone.html
 (function($) {
 	$.fn.simpleSidebarV2 = function(options) {
-		var ssbInit, ssbStyle, sbw, maskInit, maskStyle, overflowFalse, overflowTrue, $mask,
+		var ssbInit, ssbStyle, sbw, maskInit, maskStyle, overflowFalse, overflowTrue, $mask, align,
 			defaults = {
 				opener: undefined,
 				dataName: 'ssbv2',
@@ -13,6 +13,7 @@
 					easing: 'swing'
 				},
 				sidebar: {
+				    align: undefined,
 					width: 350,
 					gap: 64,
 					closingLinks: 'a',
@@ -38,7 +39,10 @@
 			sbMaxW = cfg.sidebar.width,
 			gap = cfg.sidebar.gap,
 			winMaxW = sbMaxW + gap,
-			w = $(window).width();
+			defAlign = cfg.sidebar.align,
+			w = $(window).width(),
+			animationStart = {},
+			animationReset = {};
 
 		//Sidebar style
 		if (w < winMaxW) {
@@ -46,14 +50,24 @@
 		} else {
 			sbw = sbMaxW;
 		}
-
+		
 		ssbInit = {
-			position: 'fixed',
-			top: cfg.top,
-			right: -sbw,
-			bottom: 0,
-			width: sbw
+		    position: 'fixed',
+		    top: cfg.top,
+		    bottom: 0,
+		    width: sbw
 		};
+		
+		//Checking if the Sidebar is aligned to right or to left
+		if ( defAlign === 'undefined' || defAlign === 'right' ) {
+		    align = 'right';
+		} else if ( defAlign === 'left' ) {
+		    align = 'left';
+		}
+		
+		ssbInit[align] = -sbw;
+		animationStart[align] = 0;
+		
 		ssbStyle = $.extend(true, ssbInit, cfg.sidebar.css);
 
 		$sidebar.css(ssbStyle).attr('data-' + data, 'disabled');
@@ -86,14 +100,14 @@
 		};
 
 		$opener.click(function() {
-			var isWhat = $sidebar.attr('data-' + data);
-			var csbw = $sidebar.width();
+			var isWhat = $sidebar.attr('data-' + data),
+			    csbw = $sidebar.width();
+			
+			animationReset[align] = - csbw;
 
 			if (isWhat === 'disabled') {
 				$sidebar
-					.animate({
-						right: 0
-					}, {
+					.animate( animationStart, {
 						duration: duration,
 						easing: easing,
 						complete: overflowFalse
@@ -103,9 +117,7 @@
 				$mask.fadeIn(duration);
 			} else if (isWhat === 'active') {
 				$sidebar
-					.animate({
-						right: -csbw
-					}, {
+					.animate( animationReset, {
 						duration: duration,
 						easing: easing,
 						complete: overflowTrue
@@ -118,14 +130,14 @@
 
 		$links.add($mask).each(function() {
 			$(this).click(function() {
-				var isWhat = $sidebar.attr('data-' + data);
-				var csbw = $sidebar.width();
+				var isWhat = $sidebar.attr('data-' + data),
+				    csbw = $sidebar.width();
+				
+				animationReset[align] = - csbw;
 
 				if (isWhat === 'active') {
 					$sidebar
-						.animate({
-							right: -csbw
-						}, {
+						.animate( animationReset, {
 							duration: duration,
 							easing: easing,
 							complete: overflowTrue
@@ -140,7 +152,7 @@
 
 		//Adjusting width;
 		$(window).resize(function() {
-			var rsbw,
+			var rsbw, reset,
 				nw = $(window).width();
 
 			if (nw < winMaxW) {
@@ -148,13 +160,13 @@
 			} else {
 				rsbw = sbMaxW;
 			}
+			
+			reset = { width: rsbw };
+			reset[align] = -rsbw;
 
 			$sidebar
 				.attr('data-' + data, 'disabled')
-				.css({
-					width: rsbw,
-					right: -rsbw
-				});
+				.css( reset );
 
 			$mask.fadeOut(duration);
 
