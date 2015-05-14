@@ -13,6 +13,7 @@
 					easing: 'swing'
 				},
 				sidebar: {
+				    align: undefined,
 					width: 350,
 					gap: 64,
 					closingLinks: 'a',
