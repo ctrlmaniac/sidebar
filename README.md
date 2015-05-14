@@ -102,7 +102,7 @@ Here is an example of usage with all the available options. Pay attention, these
 * **sidebar**
  * **align**: default is `undefined` which means that is aligned to the *right*, if you want to align it to the left, wright `left`;
  * **width**: the max width of the sidebar, this option is default to 350, please change it as you please;
- * **gap**: the gap is the space between the left margin of the sidebar and the left side of the window. It is useful if you position the plugin `top: 0`, so that the user can click that space to close the sidebar;
+ * **gap**: the gap is the space between the left margin of the sidebar and the left side of the window. It is useful when you position the plugin `top: 0`, so that the user can click that space to close the sidebar;
  * **closingLinks**: are all links or elements that close the sidebar. I suggest to choose a class and give it to all links and other elements such as icons, banner, images, etc, that are links. By default it is `a` so every link in the sidebar will close the sidebar;
  * **css** here you can store all css, anyway I suggest not to add more css attributes to the one below;
   * **zIndex*: by default is is 3000 but you have to change it to the higher z-index number in your css plus 1;
