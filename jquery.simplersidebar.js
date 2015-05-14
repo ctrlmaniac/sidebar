@@ -1,5 +1,5 @@
-//Simple-Sidebar v.2.1.0
-//http://www.github.com/dcdeiv/simplesidebar-v2
+//Simpler-Sidebar v.1.1.0
+//https://github.com/dcdeiv/simpler-sidebar
 // GPLv2 http://www.gnu.org/licenses/gpl-2.0-standalone.html
 (function($) {
 	$.fn.simpleSidebarV2 = function(options) {
