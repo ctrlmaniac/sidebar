@@ -1,0 +1,34 @@
+{
+  "name": "simpler-sidebar",
+  "version": "1.1.0",
+  "description": "A simple jQuery plugin that animates a left or a right sidebar",
+  "main": "jquery.simplersidebar.min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dcdeiv/simpler-sidebar.git"
+  },
+  "keywords": [
+    "jquery",
+    "simpler",
+    "sidebar",
+    "sidebar",
+    "simple",
+    "sidebar",
+    "simple",
+    "javascript",
+    "right",
+    "left",
+    "right",
+    "sidebar",
+    "left",
+    "sidebar"
+  ],
+  "author": "Davide Di Criscito",
+  "license": "GPLv2",
+  "bugs": {
+    "url": "https://github.com/dcdeiv/simpler-sidebar/issues"
+  }
+}
