@@ -6,6 +6,7 @@ The second generation of [simple-sidebar](http://www.github.com/dcdeiv/simple-si
 
 ## Download:
 * Bower: `bower install simpler-sidebar`;
+* npm: `npm install simpler-sidebar`;
 
 ## Demo:
 * [HomePage](http://dcdeiv.github.io/simpler-sidebar);
