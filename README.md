@@ -2,8 +2,10 @@
 
 The second generation of [simple-sidebar](http://www.github.com/dcdeiv/simple-sidebar), a simple plugin for jQuery sidebars.
 
-## Support:
 <a href="https://flattr.com/submit/auto?user_id=dcdeiv&url=https%3A%2F%2Fgithub.com%2Fdcdeiv%2Fsimplesidebar-v2%2F" target="_blank"><img src="https://button.flattr.com/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0"></a>
+
+## Download:
+* Bower: `bower install simpler-sidebar`;
 
 ## Demo:
 * [HomePage](http://dcdeiv.github.io/simpler-sidebar);
@@ -69,7 +71,7 @@ Here is an example of usage with all the available options. Pay attention, these
 
     $( '#sidebar' ).simplerSidebar({
         opener: undefined,
-        dataName: 'ssbv2',
+        dataName: 'simplersidebar',
         top: 0,
         animation: {
             duration: 500,
