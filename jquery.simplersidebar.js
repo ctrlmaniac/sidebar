@@ -1,4 +1,4 @@
-//Simpler-Sidebar v.1.1.0
+//Simpler-Sidebar v.1.1.1
 //https://github.com/dcdeiv/simpler-sidebar
 // GPLv2 http://www.gnu.org/licenses/gpl-2.0-standalone.html
 (function($) {
@@ -6,7 +6,7 @@
 		var ssbInit, ssbStyle, sbw, maskInit, maskStyle, overflowFalse, overflowTrue, $mask, align,
 			defaults = {
 				opener: undefined,
-				dataName: 'ssbv2',
+				dataName: 'simplersidebar',
 				top: 0,
 				animation: {
 					duration: 500,
