@@ -101,7 +101,7 @@ Here is an example of usage with all the available options. Pay attention, these
 * **top**: is the `position-top` of the entire plugin. You can choose whatever number you want (better if you choose it according to the navbar's height) or let it to be 0;
 * **animation**
  * **duration**: the duration of the animation in milliseconds;
- * **easing**: the type of animation. For more animations include the `jQuery-UI` library and check out [this page](https://jqueryui.com/easing/). I strongly suggest not to play with easing because they haven't been tested all yet. I suggest to use simple easing like `easeOutQuit`;
+ * **easing**: the type of animation. For more animations include the `jQuery-UI` library and check out [this page](https://jqueryui.com/easing/). I strongly suggest not to play with easing because they haven't been tested all yet. I suggest to use simple easing like `easeOutQuint`;
 * **sidebar**
  * **align**: default is `undefined` which means that is aligned to the *right*, if you want to align it to the left, wright `left`;
  * **width**: the max width of the sidebar, this option is default to 350, please change it as you please;
@@ -110,7 +110,7 @@ Here is an example of usage with all the available options. Pay attention, these
  * **css** here you can store all css, anyway I suggest not to add more css attributes to the one below;
   * **zIndex*: by default is is 3000 but you have to change it to the higher z-index number in your css plus 1;
 * **mask**
- * **css** here you can store all css attributes to give the mask div. However I suggest to do it in your css file except for these below. You can call this div by its data attribute ex: `[data-ssbv2="mask"]`;
+ * **css** here you can store all css attributes to give the mask div. However I suggest to do it in your css file except for these below. You can call this div by its data attribute ex: `[data-simplersidebar="mask"]`;
   * **backgroundColor** the color of the mask. By default is `'black'`;
   * **opacity* by default is 0.5;
   * **filter** IE opacity 0.5 = 50 and so on: `'Alpha(opacity=50)'`.
