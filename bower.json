@@ -5,23 +5,17 @@
   "authors": [
     "dcdeiv <davide.dicriscito@gmail.com>"
   ],
-  "description": "A simple jQuery plugin that animates a left or a right sidebar",
+  "description": "A simple jQuery sidebar",
   "main": "jquery.simplersidebar.min.js",
   "keywords": [
     "jQuery",
     "Simpler",
     "Sidebar",
-    "Simple",
-    "Sidebar",
-    "Simple",
-    "Sidebar",
     "javascript",
+    "js",
     "left",
     "right",
-    "right",
-    "sidebar",
-    "left",
-    "sidebar"
+    "plugin"
   ],
   "license": "GPLv2",
   "ignore": [
