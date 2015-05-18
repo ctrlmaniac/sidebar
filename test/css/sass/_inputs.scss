@@ -1,0 +1,62 @@
+// FORM BUTTON INPUT and TEXTAREA
+button, input, select {
+  font-weight: 400 !important;
+  @include fontSize((($textSize * .85) !important));
+}
+
+button, input[type=button], input[type=submit], input[type=reset], select {
+  border: $btnBorderSize !important;
+  margin-top: 24px !important;
+  margin: 16px;
+  height: 36px;
+  text-transform: uppercase;
+  padding: 0 1em;
+  @include borderRadius(2px);
+}
+
+input[type=text], input[type=email], input[type=date], input[type=datetime], input[type=datetime-local], input[type=month], input[type=number], input[type=password], input[type=search], input[type=tel], input[type=time], input[type=url], input[type=week], textarea {
+  font-weight: 300;
+  margin: 8px 0 16px 0;
+  padding: 4px 2px;
+  border: $inpBorderSize;
+  border-style: $inpBorderStyle;
+  text-decoration: none !important;
+}
+
+input[type=date] {
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        display: none;
+    }
+    
+    &::-webkit-calendar-picker-indicator {
+        -webkit-appearance: none;
+        display: none;
+    }
+}
+
+input::-webkit-outer-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=color] {
+  padding: 0;
+  border: 1px;
+  width: 200px;
+}
+
+textarea {
+    box-sizing:border-box;
+    width: 100%;
+    resize: vertical;
+    height: 250px;
+    border: 1px solid;
+    @include borderRadius(2px);
+}

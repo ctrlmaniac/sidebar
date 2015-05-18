@@ -24,6 +24,8 @@
     "bower_components",
     "bower",
     "test",
-    "tests"
+    "tests",
+    "src",
+    "Gruntfile.js"
   ]
 }

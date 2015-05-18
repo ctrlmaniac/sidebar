@@ -1,0 +1,55 @@
+// FORMAT VARIABLES
+
+$Roboto: "Roboto", helvetica, arial, sans-serif;
+$Cookie: "Cookie", cursive;
+
+$primaryFont: $Roboto;
+$textWeight: 300;
+$textSize: 14pt;
+
+$textBold : $textWeight + 300;
+
+//
+// - Link
+$linkSize: inherit;
+$linkWeight: $textWeight + 100;
+
+//
+// ** INPUTS **
+//
+// - Button - Input[type=button,submit,reset] - Select
+$btnBorderSize: 0;
+
+//
+// - Other Inputs and Textarea
+$inpBorderSize: 0 0 1px 0;
+$inpBorderStyle: solid;
+
+//
+// ** TEMPLATE **
+//
+//- Navbar
+$navbarHeight: 61px;
+$nbTextSize: 11pt;
+$nbTextWeight: 400;
+$nbLogoTextSize: 18pt;
+$nbLogoTextFont: $Cookie;
+$nbLogoHeight: 32px;
+$menuBtn: 18pt;
+
+//UI
+$iconSize: 32px;
+
+//
+//- Sidebar
+$sidebarWidth: 300px;
+$ssb-dataName: 'simplersidebar';
+$ssb-wrapper: '[data-' + $ssb-dataName + '="sub-wrapper"]';
+
+//
+//- Mixins
+$links: 'a, a:link, a:visited, a:hover, a:active';
+
+//
+//- Media Queries
+$mobileQuery: 640px;
