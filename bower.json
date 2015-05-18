@@ -1,6 +1,6 @@
 {
   "name": "simpler-sidebar",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "homepage": "https://github.com/dcdeiv/simpler-sidebar",
   "authors": [
     "dcdeiv <davide.dicriscito@gmail.com>"
@@ -24,6 +24,8 @@
     "bower_components",
     "bower",
     "test",
-    "tests"
+    "tests",
+    "src",
+    "Gruntfile.js"
   ]
 }
