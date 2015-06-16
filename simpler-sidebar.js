@@ -1,4 +1,4 @@
-/* simpler-sidebar v1.2.0 (http://dcdeiv.github.io/simpler-sidebar)
+/* simpler-sidebar v1.2.2 (http://dcdeiv.github.io/simpler-sidebar)
  * Copyright 2015-2015 and licensed under GPLv2 (https://github.com/dcdeiv/simpler-sidebar/blob/master/LICENSE)
  */
 (function($) {
