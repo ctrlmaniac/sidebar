@@ -1,6 +1,6 @@
 {
   "name": "simpler-sidebar",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "A simple jQuery sidebar",
   "main": "simpler-sidebar.js",
   "scripts": {
