@@ -27,5 +27,8 @@
     "tests",
     "src",
     "Gruntfile.js"
-  ]
+  ],
+  "dependencies": {
+    "jquery": ">= 1.11.2"
+  }
 }
