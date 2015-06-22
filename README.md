@@ -1,8 +1,10 @@
-# simpler-sidebar [![Flattr Button](https://button.flattr.com/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=dcdeiv&url=https%3A%2F%2Fgithub.com%2Fdcdeiv%2Fsimpler-sidebar)
+# simpler-sidebar 
+
+[![Flattr Button](https://button.flattr.com/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=dcdeiv&url=https%3A%2F%2Fgithub.com%2Fdcdeiv%2Fsimpler-sidebar)
 
 The second generation of [simple-sidebar](http://www.github.com/dcdeiv/simple-sidebar), A simple jQuery sidebar.
 
-[![NPM](https://nodei.co/npm/simpler-sidebar.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/simpler-sidebar/)
+[![NPM](https://nodei.co/npm/simpler-sidebar.png)](https://nodei.co/npm/simpler-sidebar/)
 
 **Bower**: `bower install simpler-sidebar`.
 
@@ -13,11 +15,11 @@ The second generation of [simple-sidebar](http://www.github.com/dcdeiv/simple-si
 * [Demo Left](http://dcdeiv.github.io/simpler-sidebar/left);
 * [Demo Left-Top](http://dcdeiv.github.io/simpler-sidebar/left-top);
 
-### Update:
+### Changes since [v1.2.0](https://github.com/dcdeiv/simpler-sidebar/releases/tag/v1.2.0):
 * Added support to AJAX;
 * New options:
- * **dataNate** changed to **attr**;
- * **mask.display**.
+  * **dataNate** changed to **attr**;
+  * **mask.display**.
 
 ### simple-sidebar vs. simpler-sidebar
 * Stop supporting `subwrapper`;

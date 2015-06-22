@@ -1,4 +1,4 @@
-/* simpler-sidebar v1.2.2 (http://dcdeiv.github.io/simpler-sidebar)
+/* simpler-sidebar v1.2.3 (http://dcdeiv.github.io/simpler-sidebar)
  * Copyright 2015-2015 and licensed under GPLv2 (https://github.com/dcdeiv/simpler-sidebar/blob/master/LICENSE)
  */
 (function($) {
@@ -6,8 +6,7 @@
         var cfg = $.extend(true, $.fn.simplerSidebar.settings, options);
 
         return this.each(function() {
-            var align, sbw, ssbInit, ssbStyle, maskInit,
-                maskStyle,
+            var align, sbw, ssbInit, ssbStyle, maskInit, maskStyle,
                 attr = cfg.attr,
                 $sidebar = $(this),
                 $opener = $(cfg.opener),
@@ -37,6 +36,31 @@
                     duration: duration,
                     easing: cfg.animation.easing,
                     complete: autoFlow
+                },
+
+                animateOpen = function() {
+                    $sidebar
+                        .animate(animationStart, activate)
+                        .attr('data-' + attr, 'active');
+
+                    $mask.fadeIn(duration);
+                },
+                animateClose = function() {
+                    $sidebar
+                        .animate(animationReset, deactivate)
+                        .attr('data-' + attr, 'disabled');
+
+                    $mask.fadeOut(duration);
+                },
+                closeSidebar = function() {
+                    var isWhat = $sidebar.attr('data-' + attr),
+                        csbw = $sidebar.width();
+
+                    animationReset[align] = -csbw;
+
+                    if (isWhat === 'active') {
+                        animateClose();
+                    }
                 },
 
                 $mask = $('<div>').attr('data-' + attr, 'mask');
@@ -88,67 +112,26 @@
                 $mask.appendTo('body').css(maskStyle);
             }
 
+            //Opening and closing the Sidebar when $opener is clicked
             $opener.click(function() {
-                var isWhat = $sidebar.attr('data-' +
-                        attr),
+                var isWhat = $sidebar.attr('data-' + attr),
                     csbw = $sidebar.width();
 
                 animationReset[align] = -csbw;
 
                 if (isWhat === 'disabled') {
-                    $sidebar
-                        .animate(animationStart,
-                            activate)
-                        .attr('data-' + attr, 'active');
-
-                    $mask.fadeIn(duration);
+                    animateOpen();
                 } else if (isWhat === 'active') {
-                    $sidebar
-                        .animate(animationReset,
-                            deactivate)
-                        .attr('data-' + attr,
-                            'disabled');
-
-                    $mask.fadeOut(duration);
+                    animateClose();
                 }
             });
 
-            //Closing Sidebar
-            $mask.click(function() {
-                var isWhat = $sidebar.attr('data-' +
-                        attr),
-                    csbw = $sidebar.width();
+            //Closing Sidebar when the mask is clicked
+            $mask.click(closeSidebar);
 
-                //Redefining animationReset
-                animationReset[align] = -csbw;
+            //Closing Sidebar when a link inside of it is clicked
+            $sidebar.on('click', $links, closeSidebar);
 
-                if (isWhat === 'active') {
-
-                    $sidebar.animate(animationReset,
-                            deactivate)
-                        .attr('data-' + attr,
-                            'disabled');
-
-                    $mask.fadeOut(duration);
-                }
-            });
-
-            $sidebar.on('click', $links, function() {
-                var isWhat = $sidebar.attr('data-' +
-                        attr),
-                    csbw = $sidebar.width();
-
-                animationReset[align] = -csbw;
-
-                if (isWhat === 'active') {
-                    $sidebar.animate(animationReset,
-                            deactivate)
-                        .attr('data-' + attr,
-                            'disabled');
-
-                    $mask.fadeOut(duration);
-                }
-            });
             //Adjusting width;
             $(window).resize(function() {
                 var rsbw, reset,
