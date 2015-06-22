@@ -15,11 +15,11 @@ The second generation of [simple-sidebar](http://www.github.com/dcdeiv/simple-si
 * [Demo Left](http://dcdeiv.github.io/simpler-sidebar/left);
 * [Demo Left-Top](http://dcdeiv.github.io/simpler-sidebar/left-top);
 
-### Update:
+### Changes since [v1.2.0](https://github.com/dcdeiv/simpler-sidebar/releases/tag/v1.2.0):
 * Added support to AJAX;
 * New options:
- * **dataNate** changed to **attr**;
- * **mask.display**.
+  * **dataNate** changed to **attr**;
+  * **mask.display**.
 
 ### simple-sidebar vs. simpler-sidebar
 * Stop supporting `subwrapper`;
