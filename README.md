@@ -4,7 +4,7 @@
 
 The second generation of [simple-sidebar](http://www.github.com/dcdeiv/simple-sidebar), A simple jQuery sidebar.
 
-[![NPM](https://nodei.co/npm/simpler-sidebar.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/simpler-sidebar/)
+[![NPM](https://nodei.co/npm/simpler-sidebar.png)](https://nodei.co/npm/simpler-sidebar/)
 
 **Bower**: `bower install simpler-sidebar`.
 
