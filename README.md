@@ -1,4 +1,6 @@
-# simpler-sidebar [![Flattr Button](https://button.flattr.com/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=dcdeiv&url=https%3A%2F%2Fgithub.com%2Fdcdeiv%2Fsimpler-sidebar)
+# simpler-sidebar 
+
+[![Flattr Button](https://button.flattr.com/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=dcdeiv&url=https%3A%2F%2Fgithub.com%2Fdcdeiv%2Fsimpler-sidebar)
 
 The second generation of [simple-sidebar](http://www.github.com/dcdeiv/simple-sidebar), A simple jQuery sidebar.
 
