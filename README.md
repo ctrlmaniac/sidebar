@@ -13,7 +13,7 @@ A simple jQuery sidebar.
 * Animating only the sidebar and not the entire page.
 
 #### Why this changes?
-* You should know how to let the sidebar content overflow (if not check out [Getting Started](#Getting-Started)). To shrink the code, I decided to get rid of this feature.
+* You should know how to let the sidebar content overflow (if not check out [Getting Started](#getting-started)). To shrink the code, I decided to get rid of this feature.
 * Animating the entire page was often an issue, `position: fixed` and `position: absolute` elements didn't animate the way they should, so I decided to only animate the sidebar.
 
 ## Getting Started
@@ -97,7 +97,7 @@ This is a full list of options.
 You can override the single option by using the plug-in API or directly in the function.
 
 ### How to use the public access to plug-in options:
-The base API is `$.fn.simplerSidebar.settings`. Check [Options List](#Options-List) out to see the full list of APIs available.
+The base API is `$.fn.simplerSidebar.settings`. Check [Options List](#options-list) out to see the full list of APIs available.
 
 ```javascript
 $.fn.simplerSidebar.opener = '#toggle-sidebar';
