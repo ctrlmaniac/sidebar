@@ -32,7 +32,7 @@ module.exports = function(grunt) {
                 stripBanners: true
             },
             dist: {
-                src: ['src/simple-sidebar.js'],
+                src: ['src/simpler-sidebar.js'],
                 dest: 'dist/jquery.<%= pkg.name %>.js'
             }
         },
@@ -48,7 +48,7 @@ module.exports = function(grunt) {
         },
 
         watch: {
-            files: ['src/simple-sidebar.js'],
+            files: ['src/simpler-sidebar.js'],
             tasks: ['jshint', 'concat', 'uglify']
         }
     });
