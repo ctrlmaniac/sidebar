@@ -1,144 +1,162 @@
-# simpler-sidebar 
-
+# Simpler-Sidebar
 [![Flattr Button](https://button.flattr.com/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=dcdeiv&url=https%3A%2F%2Fgithub.com%2Fdcdeiv%2Fsimpler-sidebar)
 
-The second generation of [simple-sidebar](http://www.github.com/dcdeiv/simple-sidebar), A simple jQuery sidebar.
+A simple jQuery sidebar.
+
+* [Simpler-Sidebar Home Page](http://dcdeiv.github.io/simpler-sidebar)
+* Simpler-Sidebar is forked from [Simple-Sidebar](http://www.github.com/dcdeiv/simple-sidebar).
 
 [![NPM](https://nodei.co/npm/simpler-sidebar.png)](https://nodei.co/npm/simpler-sidebar/)
 
-**Bower**: `bower install simpler-sidebar`.
-
-## Demo:
-* [HomePage](http://dcdeiv.github.io/simpler-sidebar);
-* [Demo Right](http://dcdeiv.github.io/simpler-sidebar/right);
-* [Demo Right-Top](http://dcdeiv.github.io/simpler-sidebar/right-top);
-* [Demo Left](http://dcdeiv.github.io/simpler-sidebar/left);
-* [Demo Left-Top](http://dcdeiv.github.io/simpler-sidebar/left-top);
-
-### Changes since [v1.2.0](https://github.com/dcdeiv/simpler-sidebar/releases/tag/v1.2.0):
-* Added support to AJAX;
-* New options:
-  * **dataNate** changed to **attr**;
-  * **mask.display**.
-
-### simple-sidebar vs. simpler-sidebar
-* Stop supporting `subwrapper`;
-* Animating only the sidebar and not the entire page;
+### Simpler-Sidebar vs. Simple-Sidebar
+* Stop supporting `subwrapper`.
+* Animating only the sidebar and not the entire page.
 
 #### Why this changes?
-* You should know how to let the sidebar content overflow (if not check out the [set-up tips](#set-up-tips)) so to shrink the code I decided to get rid of this feature;
-* Animating the entire content was often an issue, `position: fixed` and `position: absolute` elements didn't animate the way they should, so I decided to only animate the sidebar;
+* You should know how to let the sidebar content overflow (if not check out [Getting Started](#Getting-Started)). To shrink the code, I decided to get rid of this feature.
+* Animating the entire page was often an issue, `position: fixed` and `position: absolute` elements didn't animate the way they should, so I decided to only animate the sidebar.
 
-## Set-Up tips:
-This version is simpler than the first one because you won't need to do much more than this:
+## Getting Started
+Download the [production version][min] of the [development version][max].
 
-1) Create your sidebar:
+[min]: https://raw.github.com/dcdeiv/simpler-sidebar/master/dist/simpler-sidebar.min.js
+[max]: https://raw.github.com/dcdeiv/simpler-sidebar/master/dist/simpler-sidebar.js
 
-    <div class="sidebar" id="sidebar">
+Simpler-Sidebar is also available via **NPM** and **Bower**:
+
+* `bower install simpler-sidebar`.
+* `npm install simpler-sidebar`.
+
+This fork is simpler than Simple-Sidebar because you won't need to do much more than this:
+
+```html
+<div id="navbar">
+	<!--
+	#navbar is positioned fixed.
+
+	It does not matter what element #toggle-sidebar is, give it a selector (in this example #toggle-sidebar).
+	-->
+	<span id="toggle-sidebar" class="button icon"></span>
+</div>
+
+<div id="sidebar">
+    <!--
+    Simpler-Sidebar will handle #sidebar's position.
+
+    To let the content of your sidebar overflow, especially when you have a lot of content in it, you have to add a "wrapper" that wraps all content.
+    -->
+    <div id="sidebar-wrapper" class="sidebar-wrapper">
+        <!--
+        Links below are just an example. Give each clickable element, for example links, a class to trigger the closing animation.
+        -->
+        <a class="close-sidebar" href="#">Link</a>
+        <a class="close-sidebar" href="#">Link</a>
+        <a class="close-sidebar" href="#">Link</a>
+        <a class="close-sidebar" href="#">Link</a>
     </div>
-  
-2) TIP:
-To let the content of your sidebar overflow (especially when you have a lot of content in it), you have to add a `wrapper` that wraps all content.
+</div>
+```
 
-    <div class="sidebar" id="sidebar">
-      <div class="sidebar-wrapper" id="sidebar-wrapper">
-      </div>
-    </div>
+If you add the sidebar-wrapper (and you should), remember to give it this style attributes:
 
-And give it these css attributes:
+```css
+.sidebar-wrapper {
+    position: relative;
+    height: 100%;
+    overflow: auto;
+}
+```
 
-    .sidebar-wrapper {
-      position: relative;
-      height: 100%;
-      overflow: auto
-     }
+At the bottom of the web page, just before the `</body>` tag, include the **jQuery** library. If you are interested in better *easing*, include the **jQuery-UI** library too. Eventually include Simpler-Sidebar.
 
-3) Create your navigation bar. I suggest to position this navbar fixed to the top of the page so that it can be alway reachable.
+```html
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script src="simpler-sidebar/dist/jquery.simpler-sidebar.min.js"></script>
+```
 
-    <div class="navbar" id="navbar">
-    </div>
-    
-4) Include a button to trigger the animation. This button must be alinged to left or right according to the sidebar align (see [options](#options):
+Call the Simpler-Sidebar plug-in function and fill it with the options you need. Here is an example of some required options.
 
-    <div class="navbar" id="navbar">
-      <span id="open-sidebar" class="button menu icon icon-hamburger"></span>
-    </div>
-
-5) Include the plugin just after the jQuery library, use the minified version for lighten up the code:
-  
-    <script src="simpler-sidebar/simpler-sidebar.min.js"></script>
-
-6) See [Options](#options) for the last step.
+```html
+<script>
+    $(document).ready(function() {
+        $('#sidebar').simplerSidebar({
+            opener: '#toggle-sidebar',
+            sidebar: {
+                align: 'left', //or 'right' - This option can be ignored, the sidebar will automatically align to right.
+                width: 300, //You can ignore this option, the sidebar will automatically size itself to 300px.
+                closingLinks: '.close-sidebar' // If you ignore this option, the plug-in will look for all links and this can be buggy. Choose a class for every object inside the sidebar that once clicked will close the sidebar.
+            }
+        });
+    });
+</script>
+```
 
 ## OPTIONS
-Here is an example of usage with all the available options. Pay attention, these options are similar but not the same as [simple-sidebar](http://www.github.com/dcdeiv/simple-sidebar)'s options:
+This is a full list of options.
+You can override the single option by using the plug-in API or directly in the function.
 
-    $( '#sidebar' ).simplerSidebar({
-        opener: undefined,
-        attr: 'simplersidebar',
-        top: 0,
-        animation: {
-            duration: 500,
-            easing: 'swing'
-        },
-        sidebar: {
-            align: undefined,
-            width: 350,
-            gap: 64,
-            closingLinks: 'a',
-            css: {
-                zIndex: 3000
-            }
-        },
-        mask: {
-            display: true,
-            css: {
-                backgroundColor: 'black',
-                opacity: 0.5,
-                filter: 'Alpha(opacity=50)'
-            }
-        }
-    });
+### How to use the public access to plug-in options:
+The base API is `$.fn.simplerSidebar.settings`. Check [Options List](#Options-List) out to see the full list of APIs available.
 
-### How to use the public access to plugin options:
-The base api is `$.fn.simplerSidebar.settings` see [option list](#option-list) to the full list of apis available.
-	
-	    $.fn.simplerSidebar.settings.top = 60,
-		$.fn.simplerSidebar.settings.opener = '#the-button-selector';
-		$.fn.simplerSidebar.settings.sidebar.align = 'right';
-		$.fn.simplerSidebar.settings.sidebar.width = '300';
-		$.fn.simplerSidebar.settings.sidebar.closingLinks = '.clode-sidebar';
-		$.fn.simplerSidebar.settings.sidebar.css.zIndex = '3000';
-		$.fn.simplerSidebar.settings.mask.display = 'false'
-		
-		$( '#sidebar' ).simpleSidebar();
+```javascript
+$.fn.simplerSidebar.opener = '#toggle-sidebar';
+$.fn.simplerSidebar.attr = 'simplersidebar';
+$.fn.simplerSidebar.top = 42;
+$.fn.simplerSidebar.animation.duration = 500;
+$.fn.simplerSidebar.animation.duration = 'easeOutQuint';
+$.fn.simplerSidebar.sidebar.align = 'left';
+$.fn.simplerSidebar.sidebar.width = 300;
+$.fn.simplerSidebar.sidebar.gap = 64;
+$.fn.simplerSidebar.sidebar.closingLinks = '.close-sidebar';
+$.fn.simplerSidebar.sidebar.css.zIndex = 3000;
+$.fn.simplerSidebar.mask.display = true;
+$.fn.simplerSidebar.mask.css.backgroundColor = 'black';
+$.fn.simplerSidebar.mask.css.opacity = 0.5;
+$.fn.simplerSidebar.mask.css.filter = 'Alpha(opacity=50)';
 
-If you want to override multiple options:
-This way can be buggy, especially when you try to override `sidebar`, the plugin will crash.
+$( '#sidebar' ).simplerSidebar();
+```
+Overriding multiple options can be buggy, especially when you try to override `sidebar`, the plug-in will crash.
 
-		$.fn.simplerSidebar.settings.mask.css = {
-			//your style
-		};
+```javascript
+$.fn.simplerSidebar.settings.mask.css = {
+	//your style
+};
+```
 
-### Option List
-* **opener**: is the selector for the button/icon that will trigger the animation, see [Set-Up tips #3](#set-up-tips);
-* **attr**: is the `data-*` attribute to make the plugin works. If `ssbv2` is somehow causing you issues, you can change it;
-* **top**: is the `position-top` of the entire plugin. You can choose whatever number you want (better if you choose it according to the navbar's height) or let it to be 0;
-* **animation**
-  * **duration**: the duration of the animation in milliseconds;
-  * **easing**: the type of animation. For more animations include the `jQuery-UI` library and check out [this page](https://jqueryui.com/easing/). I strongly suggest not to play with easing because they haven't been tested all yet. I suggest to use simple easing like `easeOutQuint`;
-* **sidebar**
-  * **align**: default is `undefined` which means that is aligned to the *right*, if you want to align it to the left, wright `left`;
-  * **width**: the max width of the sidebar, this option is default to 350, please change it as you please;
-  * **gap**: the gap is the space between the left margin of the sidebar and the left side of the window. It is useful when you position the plugin `top: 0`, so that the user can click that space to close the sidebar;
-  * **closingLinks**: are all links or elements that close the sidebar. I suggest to choose a class and give it to all links and other elements such as icons, banner, images, etc, that are links. By default it is `a` so every link in the sidebar will close the sidebar;
-  * **css** here you can store all css, anyway I suggest not to add more css attributes to the one below;
-    * **zIndex**: by default is is 3000 but you have to change it to the higher z-index number in your css plus 1;
-* **mask**
-  * **display**: `true` or `false` when false will remove this option;
-  * **css** here you can store all css attributes to give the mask div. However I suggest to do it in your css file except for these below. You can call this div by its data attribute ex: `[data-simplersidebar="mask"]`;
-    * **backgroundColor** the color of the mask. By default is `'black'`;
-    * **opacity** by default is 0.5;
-    * **filter** IE opacity 0.5 = 50 and so on: `'Alpha(opacity=50)'`.
+### Options List
+* **opener**: selector for the button/icon that will trigger the animation.
+* **attr**: is the `data-*` attribute that makes the plug-in works. If `simplersidebar` is somehow causing you issues, you can change it.
+* **top**: is the `position-top` of the entire plug-in. You can choose whatever number you want (better if you choose it according to the navbar's height) or let it be 0 by ignoring it.
+* **animation**:
+  * **duration**: the duration of the animation in milliseconds.
+  * **easing**: the type of animation. For more animations include the *jQuery-UI* library and check out [this page](https://jqueryui.com/easing/). I strongly suggest not to play with easing because they haven't been tested all yet. I suggest to use simple easing like `easeOutQuint`.
+* **sidebar**:
+  * **align**: default is `undefined` which means that is aligned to *right*. If you want to align it to left, write `left`.
+  * **width**: the max width of the sidebar, this option is default to 300, please change it as you please.
+  * **gap**: the gap is the space between the left margin of the sidebar and the left side of the window (and viceversa). It is useful so that the user can click that space to close the sidebar.
+  * **closingLinks**: links or elements that close the sidebar. I suggest to choose a class and give it to all links and other elements such as icons, banner, images, etc, that are links or that are supposed to be clicked. By default it is `a` so every link in the sidebar will close the sidebar. It can be more then one.
+  * **css**: here you can store all css, anyway I suggest not to add more css attributes to the one below.
+    * **zIndex**: by default is is 3000 but you have to change it to the higher z-index number in your css plus 1.
+* **mask**:
+  * **display**: `true` or `false`. `false` will remove this option.
+  * **css**: here you can store all css attributes to give the mask div. However I suggest to do it in your css file except for these below. You can call this div by its data attribute for example: `[data-simplersidebar="mask"]`.
+    * **backgroundColor**: the color of the mask. By default is `'black'`.
+    * **opacity**: by default is 0.5.
+    * **filter**: IE opacity 0.5 = 50 and so on: `'Alpha(opacity=50)'`.
 
-## Enjoy!
+## Release History
+* **v1.3.3** (2015-07-02) -
+  * Add Grunt. Simpler-Sidebar files are moved to `dist/` and renamed to *jquery.simpler-sidebar.js* and *jquery.simpler-sidebar.min.js*.
+  * Fix *sidebar.closingLinks* and *sidebar.align*.
+* **v1.2.3** (2015-06-23) - Fix animations functions.
+* **v1.2.2** (2015-06-16) - Add jQuery as dependency of NPM and Bower (#3)
+* **v1.2.0** (2015-05-18) -
+  * Add support to AJAX and *mask.display*.
+  * Change *dataName* to *attr*;
+* **v1.1.1** (2015-05-15) - Add support to *left sidebar*.
+* **v1.0.0** (2015-05-14) -
+  * Stop supporting *subwrapper*.
+  * Animate only the sidebar and not the entire page.
+  * Support only for the right sidebar.
