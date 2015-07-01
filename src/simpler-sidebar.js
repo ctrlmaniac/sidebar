@@ -1,6 +1,3 @@
-/* simpler-sidebar v1.2.3 (http://dcdeiv.github.io/simpler-sidebar)
- * Copyright 2015-2015 and licensed under GPLv2 (https://github.com/dcdeiv/simpler-sidebar/blob/master/LICENSE)
- */
 (function($) {
     $.fn.simplerSidebar = function(options) {
         var cfg = $.extend(true, $.fn.simplerSidebar.settings, options);
@@ -10,7 +7,7 @@
                 attr = cfg.attr,
                 $sidebar = $(this),
                 $opener = $(cfg.opener),
-                $links = $(cfg.sidebar.closingLinks),
+                $links = cfg.sidebar.closingLinks,
                 duration = cfg.animation.duration,
                 sbMaxW = cfg.sidebar.width,
                 gap = cfg.sidebar.gap,
@@ -66,7 +63,7 @@
                 $mask = $('<div>').attr('data-' + attr, 'mask');
 
             //Checking sidebar align
-            if (cfg.sidebar.align === (undefined || 'right')) {
+            if (cfg.sidebar.align === undefined || cfg.sidebar.align === 'right') {
                 align = 'right';
             } else if (cfg.sidebar.align === 'left') {
                 align = 'left';
@@ -172,7 +169,7 @@
             easing: 'swing'
         },
         sidebar: {
-            width: 350,
+            width: 300,
             gap: 64,
             closingLinks: 'a',
             css: {

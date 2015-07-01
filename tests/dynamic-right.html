@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" name="viewport">
+
+        <title>Simple-Sidebar dynamic-left - top: 42</title>
+
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <![endif]-->
+
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+        <link rel="stylesheet" type="text/css" href="assets/style.css">
+    </head>
+
+    <body>
+        <div id="main" class="main-content">
+            <div class="section">
+                <header>
+                    <h1>Simple-Sidebar</h1>
+                    <h3>demo test of a dynamic page.</h3>
+                    <h3>sidebar aligned to right - top: 42px.</h3>
+                </header>
+            </div>
+
+            <div id="lorem-ipsum" class="section">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ut massa nec nisl commodo fermentum in nec mauris. Morbi ornare bibendum urna quis consequat. Ut tristique porta tempor. Suspendisse posuere purus consectetur, placerat nisi vitae, posuere leo. Suspendisse faucibus lacus et sollicitudin lobortis. Donec vel augue sodales, cursus justo ut, eleifend nisi. Cras elementum diam sagittis urna blandit vehicula. Sed porta purus nec lectus iaculis sodales. Mauris arcu nulla, tincidunt sit amet felis in, congue semper mauris. Nunc ac risus ac ex dictum bibendum non at enim. Aenean dui ligula, imperdiet quis quam a, mattis efficitur justo. Etiam et vulputate lacus. Aenean at vehicula dui, in efficitur urna. Fusce viverra, lorem a finibus ultrices, tellus nulla cursus felis, sit amet tristique augue est ac ligula. Duis dapibus est purus, semper dignissim lorem volutpat sit amet. Donec id vulputate nibh.</p>
+                <p>Pellentesque suscipit sapien et gravida egestas. Donec at molestie enim. Aenean ac ultrices elit, vitae semper arcu. Vivamus at mattis turpis. Donec ac metus et nunc dapibus cursus non quis felis. Aenean non tellus sem. In hac habitasse platea dictumst. Morbi eget laoreet arcu, id gravida justo. Ut ut augue posuere, viverra quam vel, molestie mauris.</p>
+                <p>In commodo eu elit ut pulvinar. Quisque luctus turpis malesuada urna euismod malesuada. Praesent et quam eu risus malesuada molestie. Suspendisse mattis laoreet velit a congue. Morbi elit risus, auctor a dolor at, molestie ornare eros. Duis laoreet consectetur mauris eget convallis. Praesent gravida dolor augue, tincidunt venenatis sapien iaculis a. Nunc sed rutrum nisl. Suspendisse tristique felis a laoreet tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus porta elit id magna varius pretium. Sed cursus lorem eu velit maximus, ut lobortis mauris pharetra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
+                <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus viverra ullamcorper diam. Donec ullamcorper tellus in malesuada posuere. Morbi venenatis vitae massa faucibus hendrerit. Donec eget dolor non leo ultricies tincidunt. Suspendisse efficitur magna odio, eget commodo sapien consequat in. Mauris suscipit lacus felis, quis posuere dolor condimentum quis. Nullam porta sollicitudin porttitor.</p>
+                <p>Suspendisse sagittis venenatis dolor, tempus elementum felis lobortis nec. Donec sit amet egestas urna. Fusce eget urna porta, placerat magna non, vulputate leo. Suspendisse condimentum elit sit amet nisl ultricies fermentum. Morbi in est sem. Aliquam orci eros, mollis ut enim a, imperdiet pulvinar lorem. Nam ut turpis elementum, sollicitudin nisl a, dignissim nisl. Donec tristique ut urna et molestie. Integer quis vestibulum augue, at tempus metus. Aenean ac orci metus. Donec et blandit nulla. Praesent sed convallis magna, sed porta turpis. Donec neque nisl, pellentesque sit amet nunc eu, vehicula rutrum urna. Sed cursus ullamcorper orci, nec vestibulum dolor pulvinar quis. Praesent elit ligula, luctus vitae finibus eget, ultricies id nisi. Proin ut pulvinar metus.</p>
+            </div>
+        </div>
+        <!-- div #main .main-content -->
+
+        <div id="main-navbar" class="main-navbar main-navbar-fixed-top dynamic-right"></div>
+        <!-- div #main-navbar .main-navbar .main-navbar-fixed-top -->
+
+        <div id="main-sidebar" class="main-sidebar main-sidebar-right">
+            <div id="main-sidebar-wrapper" class="main-sidebar-wrapper"></div>
+        </div>
+        <!-- #main-sidebar .main-sidebar .main-sidebar-left -->
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+        <script src="../dist/jquery.simpler-sidebar.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $.ajaxSetup({
+            		cache: false
+            	});
+
+                $('#main-navbar').load('ajax/navbar.html', function() {
+                    $('#main-sidebar-wrapper').load('ajax/sidebar.html');
+
+                    $('#main-sidebar').simplerSidebar({
+                        opener: '#toggle-sidebar',
+                        top: 42,
+                        animation: {
+                            easing: "easeOutQuint"
+                        },
+                        sidebar: {
+                            align: 'right',
+                            closingLinks: '.close-sb'
+                        }
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>
