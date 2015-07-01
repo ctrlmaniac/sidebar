@@ -63,7 +63,7 @@
                 $mask = $('<div>').attr('data-' + attr, 'mask');
 
             //Checking sidebar align
-            if (cfg.sidebar.align === (undefined || 'right')) {
+            if (cfg.sidebar.align === undefined || cfg.sidebar.align === 'right') {
                 align = 'right';
             } else if (cfg.sidebar.align === 'left') {
                 align = 'left';
