@@ -11,7 +11,7 @@
                 attr = cfg.attr,
                 $sidebar = $(this),
                 $opener = $(cfg.opener),
-                $links = $(cfg.sidebar.closingLinks),
+                $links = cfg.sidebar.closingLinks,
                 duration = cfg.animation.duration,
                 sbMaxW = cfg.sidebar.width,
                 gap = cfg.sidebar.gap,
