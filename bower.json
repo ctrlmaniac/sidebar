@@ -6,29 +6,28 @@
     "dcdeiv <davide.dicriscito@gmail.com>"
   ],
   "description": "A simple jQuery sidebar",
-  "main": "jquery.simplersidebar.min.js",
+  "main": "dist/jquery.simplersidebar.min.js",
   "keywords": [
-    "jQuery",
-    "Simpler",
-    "Sidebar",
+    "simpler",
+    "sidebar",
+    "simpler-sidebar",
+    "jquery",
+    "plugin",
+    "plug-in",
     "javascript",
-    "js",
-    "left",
-    "right",
-    "plugin"
+    "js"
   ],
   "license": "GPLv2",
   "ignore": [
     "**/.*",
-    "node_modules",
     "bower_components",
-    "bower",
-    "test",
-    "tests",
-    "src",
-    "Gruntfile.js"
+    "node_modules",
+    "CONTRIBUITING.md",
+    "Gruntfile.js",
+    "package.json",
+    "src"
   ],
   "dependencies": {
-    "jquery": ">= 1.11.2"
+    "jquery": "1"
   }
 }
