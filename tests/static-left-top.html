@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" name="viewport">
 
-        <title>Simpler-Sidebar static-right - top: 42</title>
+        <title>Simpler-Sidebar static-left - top: 0</title>
 
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -20,7 +20,7 @@
                 <header>
                     <h1>Simpler-Sidebar</h1>
                     <h3>demo test of a static page.</h3>
-                    <h3>sidebar aligned to right - top 42px.</h3>
+                    <h3>sidebar aligned to left - top 42px.</h3>
                 </header>
             </div>
 
@@ -36,14 +36,14 @@
 
         <div id="main-navbar" class="main-navbar main-navbar-fixed-top">
             <div class="main-navbar-content">
-                <div id="toggle-sidebar" class="icon right">
+                <div id="toggle-sidebar" class="icon left">
                     <img alt="menu" src="assets/menu32@64.png" width=24px height="24px">
                 </div>
             </div>
         </div>
         <!-- div #main-navbar .main-navbar .main-navbar-fixed-top -->
 
-        <div id="main-sidebar" class="main-sidebar main-sidebar-right">
+        <div id="main-sidebar" class="main-sidebar main-sidebar-left">
             <div id="main-sidebar-wrapper" class="main-sidebar-wrapper">
                 <div class="section">
                     <p>wo = without .close-sb class</p>
@@ -75,7 +75,7 @@
                 </nav>
             </div>
         </div>
-        <!-- #main-sidebar .main-sidebar .main-sidebar-right -->
+        <!-- #main-sidebar .main-sidebar .main-sidebar-left -->
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
@@ -84,12 +84,11 @@
             $(document).ready(function() {
                 $('#main-sidebar').simplerSidebar({
                     opener: '#toggle-sidebar',
-                    top: 42,
                     animation: {
                         easing: "easeOutQuint"
                     },
                     sidebar: {
-                        align: 'right',
+                        align: 'left',
                         closingLinks: '.close-sb'
                     }
                 });
