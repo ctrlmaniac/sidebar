@@ -136,7 +136,7 @@ $.fn.simplerSidebar.settings.mask.css = {
   * **align**: default is `undefined` which means that is aligned to *right*. If you want to align it to left, write `left`.
   * **width**: the max width of the sidebar, this option is default to 300, please change it as you please.
   * **gap**: the gap is the space between the left margin of the sidebar and the left side of the window (and viceversa). It is useful so that the user can click that space to close the sidebar.
-  * **closingLinks**: links or elements that close the sidebar. I suggest to choose a class and give it to all links and other elements such as icons, banner, images, etc, that are links or that are supposed to be clicked. By default it is `a` so every link in the sidebar will close the sidebar. It can be more then one.
+  * **closingLinks**: links or elements that close the sidebar. I suggest to choose a class and give it to all links and other elements such as icons, banner, images, etc, that are links or that are supposed to be clicked. By default it is `a` so every link in the sidebar will close the sidebar. You can use multiple selectors too but, avoid using nested selector otherwise the function will be triggered twice. For example you can select `'a, .close-sidebar'` but if an element is `<a class=".close-sidebar">` the animation will be triggered twice.
   * **css**: here you can store all css, anyway I suggest not to add more css attributes to the one below.
     * **zIndex**: by default is is 3000 but you have to change it to the higher z-index number in your css plus 1.
 * **mask**:
