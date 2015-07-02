@@ -97,7 +97,7 @@ This is a full list of options.
 You can override the single option by using the plug-in API or directly in the function.
 
 ### How to use the public access to plug-in options:
-The base API is `$.fn.simplerSidebar.settings`. Check [Options List](#options-list) out to see the full list of APIs available.
+The base API is `$.fn.simplerSidebar.settings`. Check [Options List](#options-list) out to see the full list of available APIs.
 
 ```javascript
 $.fn.simplerSidebar.opener = '#toggle-sidebar';
