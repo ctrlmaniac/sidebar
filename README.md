@@ -75,7 +75,7 @@ At the bottom of the web page, just before the `</body>` tag, include the **jQue
 <script src="simpler-sidebar/dist/jquery.simpler-sidebar.min.js"></script>
 ```
 
-Call the Simpler-Sidebar plug-in function and fill it with the options you need. Here is an example of some required options.
+Call the Simpler-Sidebar plugin function and fill it with the options you need. Here is an example of some required options.
 
 ```html
 <script>
@@ -85,7 +85,7 @@ Call the Simpler-Sidebar plug-in function and fill it with the options you need.
             sidebar: {
                 align: 'left', //or 'right' - This option can be ignored, the sidebar will automatically align to right.
                 width: 300, //You can ignore this option, the sidebar will automatically size itself to 300px.
-                closingLinks: '.close-sidebar' // If you ignore this option, the plug-in will look for all links and this can be buggy. Choose a class for every object inside the sidebar that once clicked will close the sidebar.
+                closingLinks: '.close-sidebar' // If you ignore this option, the plugin will look for all links and this can be buggy. Choose a class for every object inside the sidebar that once clicked will close the sidebar.
             }
         });
     });
@@ -94,9 +94,9 @@ Call the Simpler-Sidebar plug-in function and fill it with the options you need.
 
 ## OPTIONS
 This is a full list of options.
-You can override the single option by using the plug-in API or directly in the function.
+You can override the single option by using the plugin API or directly in the function.
 
-### How to use the public access to plug-in options:
+### How to use the public access to plugin options:
 The base API is `$.fn.simplerSidebar.settings`. Check [Options List](#options-list) out to see the full list of available APIs.
 
 ```javascript
@@ -117,7 +117,7 @@ $.fn.simplerSidebar.mask.css.filter = 'Alpha(opacity=50)';
 
 $( '#sidebar' ).simplerSidebar();
 ```
-Overriding multiple options can be buggy, especially when you try to override `sidebar`, the plug-in will crash.
+Overriding multiple options can be buggy, especially when you try to override `sidebar`, the plugin will crash.
 
 ```javascript
 $.fn.simplerSidebar.settings.mask.css = {
@@ -127,8 +127,8 @@ $.fn.simplerSidebar.settings.mask.css = {
 
 ### Options List
 * **opener**: selector for the button/icon that will trigger the animation.
-* **attr**: is the `data-*` attribute that makes the plug-in works. If `simplersidebar` is somehow causing you issues, you can change it.
-* **top**: is the `position-top` of the entire plug-in. You can choose whatever number you want (better if you choose it according to the navbar's height) or let it be 0 by ignoring it.
+* **attr**: is the `data-*` attribute that makes the plugin works. If `simplersidebar` is somehow causing you issues, you can change it.
+* **top**: is the `position-top` of the entire plugin. You can choose whatever number you want (better if you choose it according to the navbar's height) or let it be 0 by ignoring it.
 * **animation**:
   * **duration**: the duration of the animation in milliseconds.
   * **easing**: the type of animation. For more animations include the *jQuery-UI* library and check out [this page](https://jqueryui.com/easing/). I strongly suggest not to play with easing because they haven't been tested all yet. I suggest to use simple easing like `easeOutQuint`.
