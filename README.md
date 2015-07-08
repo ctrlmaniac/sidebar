@@ -151,10 +151,8 @@ $.fn.simplerSidebar.settings.mask.css = {
   * Add Grunt. Simpler-Sidebar files are moved to `dist/` and renamed to *jquery.simpler-sidebar.js* and *jquery.simpler-sidebar.min.js*.
   * Fix *sidebar.closingLinks* and *sidebar.align*.
 * **v1.2.3** (2015-06-23) - Fix animations functions.
-* **v1.2.2** (2015-06-16) - Add jQuery as dependency of NPM and Bower (#3)
-* **v1.2.0** (2015-05-18) -
-  * Add support to AJAX and *mask.display*.
-  * Change *dataName* to *attr*;
+* **v1.2.2** (2015-06-16) - Add jQuery as dependency of NPM and Bower ([#3](https://github.com/dcdeiv/simpler-sidebar/pull/3))
+* **v1.2.0** (2015-05-18) - Add support to AJAX and *mask.display*, change *dataName* to *attr*;
 * **v1.1.1** (2015-05-15) - Add support to *left sidebar*.
 * **v1.0.0** (2015-05-14) -
   * Stop supporting *subwrapper*.
