@@ -1,6 +1,6 @@
 {
   "name": "simpler-sidebar",
-  "version": "1.3.4",
+  "version": "1.4.0",
   "description": "A simple jQuery sidebar",
   "main": "dist/simpler-sidebar.js",
   "homepage": "https://dcdeiv.github.io/simpler-sidebar",
