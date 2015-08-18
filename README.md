@@ -147,6 +147,7 @@ $.fn.simplerSidebar.settings.mask.css = {
     * **filter**: IE opacity 0.5 = 50 and so on: `'Alpha(opacity=50)'`.
 
 ## Release History
+* **v1.4.0** (2015-08-25) - Resize issue fix [#7](https://github.com/dcdeiv/simpler-sidebar/issues/7).
 * **v1.3.4** (2015-07-08) - Enhancement in the README.md, package.json, and bower.json files.
 * **v1.3.3** (2015-07-02) -
   * Add Grunt. Simpler-Sidebar files are moved to `dist/` and renamed to *jquery.simpler-sidebar.js* and *jquery.simpler-sidebar.min.js*.
