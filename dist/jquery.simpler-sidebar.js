@@ -1,6 +1,6 @@
 /*! simpler-sidebar v1.3.4 (https://dcdeiv.github.io/simpler-sidebar)
 ** Davide Di Criscito <davide.dicriscito@gmail.com> (http://github.com/dcdeiv)
-** (c) 2015-2015 Licensed under GPLv2
+** (c) 2015-2015 Licensed under GPL-2.0
 */
 (function($) {
     $.fn.simplerSidebar = function(options) {
@@ -135,9 +135,9 @@
 
             //Adjusting width;
             $(window).resize(function() {
-                var rsbw, reset,
-                    nw = $(window)
-                    .width();
+                var rsbw, update,
+                    isWhat = $sidebar.attr('data-' + attr),
+                    nw = $(window).width();
 
                 if (nw < winMaxW) {
                     rsbw = nw - gap;
@@ -145,21 +145,16 @@
                     rsbw = sbMaxW;
                 }
 
-                reset = {
+                update = {
                     width: rsbw
                 };
-                reset[align] = -rsbw;
 
-                $sidebar
-                    .attr('data-' + attr, 'disabled')
-                    .css(reset);
-
-                $mask.fadeOut(duration);
-
-                $('body, html')
-                    .css({
-                        overflow: 'auto'
-                    });
+                if (isWhat === 'disabled') {
+                    update[align] = -rsbw;
+                    $sidebar.css(update);
+                } else if (isWhat === 'active') {
+                    $sidebar.css(update);
+                }
             });
 
         });
