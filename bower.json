@@ -6,7 +6,7 @@
     "dcdeiv <davide.dicriscito@gmail.com>"
   ],
   "description": "A simple jQuery sidebar",
-  "main": "dist/jquery.simplersidebar.min.js",
+  "main": "dist/jquery.simplersidebar.js",
   "keywords": [
     "simpler",
     "sidebar",
