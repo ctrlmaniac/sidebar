@@ -3,7 +3,8 @@
         var cfg = $.extend(true, $.fn.simplerSidebar.settings, options);
 
         return this.each(function() {
-            var align, sbw, ssbInit, ssbStyle, maskInit, maskStyle,
+            var align, sbw, ssbInit, ssbStyle, maskInit, maskStyle, maskActive,
+                maskInactive,
                 attr = cfg.attr,
                 $sidebar = $(this),
                 $opener = $(cfg.opener),
@@ -15,7 +16,7 @@
                 w = $(window).width(),
 
                 animationStart = {},
-                animationReset = {},
+                animationEnd = {},
 
                 hiddenFlow = function() {
                     $('body, html').css('overflow', 'hidden');
@@ -37,23 +38,20 @@
 
                 animateOpen = function() {
                     $sidebar
-                        .animate(animationStart, activate)
-                        .attr('data-' + attr, 'active');
+                      .css(animationEnd)
+                      .attr('data-' + attr, 'active');
 
-                    $mask.fadeIn(duration);
+                    $mask.css(maskActive);
                 },
                 animateClose = function() {
                     $sidebar
-                        .animate(animationReset, deactivate)
-                        .attr('data-' + attr, 'disabled');
+                      .css(animationStart)
+                      .attr('data-' + attr, 'disabled');
 
-                    $mask.fadeOut(duration);
+                    $mask.css(maskInactive);
                 },
                 closeSidebar = function() {
-                    var isWhat = $sidebar.attr('data-' + attr),
-                        csbw = $sidebar.width();
-
-                    animationReset[align] = -csbw;
+                    var isWhat = $sidebar.attr('data-' + attr);
 
                     if (isWhat === 'active') {
                         animateClose();
@@ -84,12 +82,17 @@
             };
 
             ssbInit[align] = -sbw;
-            animationStart[align] = 0;
+            animationStart['transform'] = 'translateX(0)';
+            var translateValue = align === 'left' ? sbw : -sbw;
+            animationEnd['transform'] = 'translateX(' + translateValue + 'px)';
 
+            cfg.sidebar.css.transition = 'transform ' + cfg.animation.duration +
+              ' ' + cfg.animation.easing;
             ssbStyle = $.extend(true, ssbInit, cfg.sidebar.css);
 
             $sidebar.css(ssbStyle)
                 .attr('data-' + attr, 'disabled');
+            $sidebar.css(animationStart);
 
             //Mask style
             maskInit = {
@@ -99,10 +102,19 @@
                 bottom: 0,
                 left: 0,
                 zIndex: cfg.sidebar.css.zIndex - 1,
-                display: 'none'
+                display: 'none',
+                opacity: 0,
+                transition: 'opacity ' + cfg.animation.duration + ' ' +
+                    cfg.animation.easing
             };
 
             maskStyle = $.extend(true, maskInit, cfg.mask.css);
+            maskActive = {
+                opacity: cfg.mask.opacity
+            };
+            maskInactive = {
+                opacity: 0
+            };
 
             //Appending Mask if mask.display is true
             if (true === cfg.mask.display) {
@@ -111,10 +123,7 @@
 
             //Opening and closing the Sidebar when $opener is clicked
             $opener.click(function() {
-                var isWhat = $sidebar.attr('data-' + attr),
-                    csbw = $sidebar.width();
-
-                animationReset[align] = -csbw;
+                var isWhat = $sidebar.attr('data-' + attr);
 
                 if (isWhat === 'disabled') {
                     animateOpen();
@@ -128,6 +137,13 @@
 
             //Closing Sidebar when a link inside of it is clicked
             $sidebar.on('click', $links, closeSidebar);
+
+            // Fully hide mask when transition ends
+            $mask.on('transitionend', function() {
+                if ($mask.css('opacity') === 0) {
+                    $mask.css('display', 'none');
+                }
+            });
 
             //Adjusting width;
             $(window).resize(function() {
@@ -160,8 +176,8 @@
         attr: 'simplersidebar',
         top: 0,
         animation: {
-            duration: 500,
-            easing: 'swing'
+            duration: '0.3s',
+            easing: 'ease-in-out'
         },
         sidebar: {
             width: 300,

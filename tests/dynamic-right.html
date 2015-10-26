@@ -44,7 +44,7 @@
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-        <script src="../dist/jquery.simpler-sidebar.min.js"></script>
+        <script src="../src/simpler-sidebar.js"></script>
         <script>
             $(document).ready(function() {
                 $.ajaxSetup({
@@ -57,9 +57,6 @@
                     $('#main-sidebar').simplerSidebar({
                         opener: '#toggle-sidebar',
                         top: 42,
-                        animation: {
-                            easing: "easeOutQuint"
-                        },
                         sidebar: {
                             align: 'right',
                             closingLinks: '.close-sb'
