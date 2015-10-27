@@ -1,15 +1,14 @@
 {
-  "name": "simpler-sidebar",
-  "version": "1.4.0",
-  "description": "A simple jQuery sidebar",
-  "main": "dist/jquery.simpler-sidebar.js",
-  "homepage": "https://dcdeiv.github.io/simpler-sidebar",
+  "name": "simpler-sidebar-evergreen",
+  "version": "1.5.1",
+  "description": "A simple jQuery sidebar, with CSS3 transitions",
+  "main": "dist/jquery.simpler-sidebar-evergreen.js",
   "scripts": {
     "test": "grunt"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/dcdeiv/simpler-sidebar.git"
+    "url": "https://github.com/HowlingEverett/simpler-sidebar-evergreen.git"
   },
   "keywords": [
     "simpler",
@@ -22,10 +21,10 @@
     "javascript",
     "js"
   ],
-  "author": "Davide Di Criscito <davide.dicriscito@gmail.com> (http://github.com/dcdeiv)",
+  "author": "Justin Marrington (@howlingeverett)",
   "license": "GPL-2.0",
   "bugs": {
-    "url": "https://github.com/dcdeiv/simpler-sidebar/issues"
+    "url": "https://github.com/HowlingEverett/simpler-sidebar-evergreen/issues"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
@@ -36,6 +35,6 @@
     "grunt-contrib-watch": "^0.6.1"
   },
   "dependencies": {
-    "jquery": "^1.11.3"
+    "jquery": "^2.1.4"
   }
 }

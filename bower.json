@@ -1,11 +1,12 @@
 {
   "name": "simpler-sidebar",
   "version": "1.5.1",
-  "homepage": "https://github.com/dcdeiv/simpler-sidebar",
+  "homepage": "https://github.com/HowlingEverett/simpler-sidebar-evergreen.git",
   "authors": [
-    "dcdeiv <davide.dicriscito@gmail.com>"
+    "dcdeiv <davide.dicriscito@gmail.com>",
+    "howlingeverett <@howlingeverett>"
   ],
-  "description": "A simple jQuery sidebar",
+  "description": "A simple jQuery sidebar, with CSS3 transitions",
   "main": "dist/jquery.simplersidebar.js",
   "keywords": [
     "simpler",
@@ -29,6 +30,6 @@
     "src"
   ],
   "dependencies": {
-    "jquery": "1"
+    "jquery": "2"
   }
 }

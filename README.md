@@ -1,20 +1,22 @@
-# Simpler-Sidebar
+# Simpler-Sidebar-Evergreen
 [![Flattr Button](https://button.flattr.com/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=dcdeiv&url=https%3A%2F%2Fgithub.com%2Fdcdeiv%2Fsimpler-sidebar)
 
-A simple jQuery sidebar.
+A version of dcdeiv's Simpler Sidebar that uses CSS3 transitions rather than
+jQuery animations.
 
-* [Simpler-Sidebar Home Page](http://dcdeiv.github.io/simpler-sidebar)
-* Simpler-Sidebar is forked from [Simple-Sidebar](http://www.github.com/dcdeiv/simple-sidebar).
+* Simpler-Sidebar-Evergreen is forked from [Simpler-Sidebar](http://dcdeiv.github.io/simpler-sidebar).
 
-[![NPM](https://nodei.co/npm/simpler-sidebar.png)](https://nodei.co/npm/simpler-sidebar/)
+[![NPM](https://nodei.co/npm/simpler-sidebar-evergreen.png)](https://nodei.co/npm/simpler-sidebar-evergreen/)
 
-### Simpler-Sidebar vs. Simple-Sidebar
-* Stop supporting `subwrapper`.
-* Animating only the sidebar and not the entire page.
 
-#### Why this changes?
-* You should know how to let the sidebar content overflow (if not check out [Getting Started](#getting-started)). To shrink the code, I decided to get rid of this feature.
-* Animating the entire page was often an issue, `position: fixed` and `position: absolute` elements didn't animate the way they should, so I decided to only animate the sidebar.
+#### Why this fork??
+* Simpler sidebar works well, and has a nice simple API, but jQuery animations
+are slow and painful.
+* CSS3 transitions (especially opacity and transform transitions) are smooth on
+all devices.
+* Note that a dependency on the 'transitionend' event means this version of
+simpler-sidebar requires IE10+ and Safari 6.0+(all other browsers are
+evergreen). You can probably support earlier with a transitionend polyfill.
 
 ## Getting Started
 Download the [production version][min] of the [development version][max].
@@ -24,8 +26,8 @@ Download the [production version][min] of the [development version][max].
 
 Simpler-Sidebar is also available via **NPM** and **Bower**:
 
-* `bower install simpler-sidebar`.
-* `npm install simpler-sidebar`.
+* `bower install simpler-sidebar-evergreen`.
+* `npm install simpler-sidebar-evergreen`.
 
 This fork is simpler than Simple-Sidebar because you won't need to do much more than this:
 
@@ -67,11 +69,10 @@ If you add the sidebar-wrapper (and you should), remember to give it this style 
 }
 ```
 
-At the bottom of the web page, just before the `</body>` tag, include the **jQuery** library. If you are interested in better *easing*, include the **jQuery-UI** library too. Eventually include Simpler-Sidebar.
+At the bottom of the web page, just before the `</body>` tag, include the **jQuery** library.
 
 ```html
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="simpler-sidebar/dist/jquery.simpler-sidebar.min.js"></script>
 ```
 
@@ -147,6 +148,8 @@ $.fn.simplerSidebar.settings.mask.css = {
     * **filter**: IE opacity 0.5 = 50 and so on: `'Alpha(opacity=50)'`.
 
 ## Release History
+* **v1.5.1** (2015-10-21) - Fork to simpler-sidebar-evergreen, use CSS3
+transitions for the sidebar and mask elements.
 * **v1.4.0** (2015-08-19) - Fix resize issue [#7](https://github.com/dcdeiv/simpler-sidebar/issues/7).
 * **v1.3.4** (2015-07-08) - Enhancement in the README.md, package.json, and bower.json files.
 * **v1.3.3** (2015-07-02) -

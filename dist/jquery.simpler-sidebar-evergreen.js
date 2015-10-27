@@ -1,5 +1,5 @@
-/*! simpler-sidebar v1.4.0 (https://dcdeiv.github.io/simpler-sidebar)
-** Davide Di Criscito <davide.dicriscito@gmail.com> (http://github.com/dcdeiv)
+/*! simpler-sidebar-evergreen v1.5.1 ()
+** Justin Marrington (@howlingeverett)
 ** (c) 2015-2015 Licensed under GPL-2.0
 */
 (function($) {
