@@ -9,7 +9,6 @@
                 $sidebar = $(this),
                 $opener = $(cfg.opener),
                 $links = cfg.sidebar.closingLinks,
-                duration = cfg.animation.duration,
                 sbMaxW = cfg.sidebar.width,
                 gap = cfg.sidebar.gap,
                 winMaxW = sbMaxW + gap,
@@ -17,24 +16,6 @@
 
                 animationStart = {},
                 animationEnd = {},
-
-                hiddenFlow = function() {
-                    $('body, html').css('overflow', 'hidden');
-                },
-                autoFlow = function() {
-                    $('body, html').css('overflow', 'auto');
-                },
-
-                activate = {
-                    duration: duration,
-                    easing: cfg.animation.easing,
-                    complete: hiddenFlow
-                },
-                deactivate = {
-                    duration: duration,
-                    easing: cfg.animation.easing,
-                    complete: autoFlow
-                },
 
                 animateOpen = function() {
                     $sidebar
