@@ -41,7 +41,10 @@
                       .css(animationEnd)
                       .attr('data-' + attr, 'active');
 
-                    $mask.css(maskActive);
+                    $mask.css('display', 'block');
+                    setTimeout(function() {
+                        $mask.css(maskActive);
+                    }, 0);
                 },
                 animateClose = function() {
                     $sidebar
@@ -110,6 +113,7 @@
 
             maskStyle = $.extend(true, maskInit, cfg.mask.css);
             maskActive = {
+                display: 'block',
                 opacity: cfg.mask.opacity
             };
             maskInactive = {
@@ -140,7 +144,7 @@
 
             // Fully hide mask when transition ends
             $mask.on('transitionend', function() {
-                if ($mask.css('opacity') === 0) {
+                if ($mask.css('opacity') === "0") {
                     $mask.css('display', 'none');
                 }
             });
@@ -189,9 +193,9 @@
         },
         mask: {
             display: true,
+            opacity: 0.5,
             css: {
                 backgroundColor: 'black',
-                opacity: 0.5,
                 filter: 'Alpha(opacity=50)'
             }
         }
