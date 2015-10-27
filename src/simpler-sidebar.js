@@ -66,9 +66,9 @@
             };
 
             ssbInit[align] = -sbw;
-            animationStart['transform'] = 'translateX(0)';
+            animationStart.transform = 'translateX(0)';
             var translateValue = align === 'left' ? sbw : -sbw;
-            animationEnd['transform'] = 'translateX(' + translateValue + 'px)';
+            animationEnd.transform = 'translateX(' + translateValue + 'px)';
 
             cfg.sidebar.css.transition = 'transform ' + cfg.animation.duration +
               ' ' + cfg.animation.easing;
