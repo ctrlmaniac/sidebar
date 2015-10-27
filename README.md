@@ -103,8 +103,8 @@ The base API is `$.fn.simplerSidebar.settings`. Check [Options List](#options-li
 $.fn.simplerSidebar.opener = '#toggle-sidebar';
 $.fn.simplerSidebar.attr = 'simplersidebar';
 $.fn.simplerSidebar.top = 42;
-$.fn.simplerSidebar.animation.duration = 500;
-$.fn.simplerSidebar.animation.duration = 'easeOutQuint';
+$.fn.simplerSidebar.animation.duration = '0.5s;
+$.fn.simplerSidebar.animation.duration = 'ease-in-out';
 $.fn.simplerSidebar.sidebar.align = 'left';
 $.fn.simplerSidebar.sidebar.width = 300;
 $.fn.simplerSidebar.sidebar.gap = 64;
@@ -112,7 +112,7 @@ $.fn.simplerSidebar.sidebar.closingLinks = '.close-sidebar';
 $.fn.simplerSidebar.sidebar.css.zIndex = 3000;
 $.fn.simplerSidebar.mask.display = true;
 $.fn.simplerSidebar.mask.css.backgroundColor = 'black';
-$.fn.simplerSidebar.mask.css.opacity = 0.5;
+$.fn.simplerSidebar.mask.opacity = 0.5;
 $.fn.simplerSidebar.mask.css.filter = 'Alpha(opacity=50)';
 
 $( '#sidebar' ).simplerSidebar();
@@ -130,8 +130,8 @@ $.fn.simplerSidebar.settings.mask.css = {
 * **attr**: is the `data-*` attribute that makes the plugin works. If `simplersidebar` is somehow causing you issues, you can change it.
 * **top**: is the `position-top` of the entire plugin. You can choose whatever number you want (better if you choose it according to the navbar's height) or let it be 0 by ignoring it.
 * **animation**:
-  * **duration**: the duration of the animation in milliseconds.
-  * **easing**: the type of animation. For more animations include the *jQuery-UI* library and check out [this page](https://jqueryui.com/easing/). I strongly suggest not to play with easing because they haven't been tested all yet. I suggest to use simple easing like `easeOutQuint`.
+  * **duration**: a duration string for the animation, in seconds, as per CSS3 spec (e.g. '0.3s').
+  * **easing**: A CSS3 easing function or shorthand property string. E.g. 'ease-in-out' or 'cubic-bezier(0,0,1,1)'
 * **sidebar**:
   * **align**: default is `undefined` which means that is aligned to *right*. If you want to align it to left, write `left`.
   * **width**: the max width of the sidebar, this option is default to 300, please change it as you please.
@@ -141,9 +141,9 @@ $.fn.simplerSidebar.settings.mask.css = {
     * **zIndex**: by default is is 3000 but you have to change it to the higher z-index number in your css plus 1.
 * **mask**:
   * **display**: `true` or `false`. `false` will remove this option.
+  * **opacity**: by default is 0.5.
   * **css**: here you can store all css attributes to give the mask div. However I suggest to do it in your css file except for these below. You can call this div by its data attribute for example: `[data-simplersidebar="mask"]`.
     * **backgroundColor**: the color of the mask. By default is `'black'`.
-    * **opacity**: by default is 0.5.
     * **filter**: IE opacity 0.5 = 50 and so on: `'Alpha(opacity=50)'`.
 
 ## Release History
