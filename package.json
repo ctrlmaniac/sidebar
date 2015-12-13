@@ -1,16 +1,14 @@
 {
   "name": "simpler-sidebar",
   "version": "1.4.1",
-  "description": "A simple jQuery sidebar",
-  "main": "dist/jquery.simpler-sidebar.js",
-  "homepage": "https://dcdeiv.github.io/simpler-sidebar",
-  "scripts": {
-    "test": "grunt"
+  "description": "A simple side nav in jQuery.",
+  "homepage": "https://github.com/dcdeiv/simpler-sidebar",
+  "author": {
+    "name": "Davide Di Criscito",
+    "email": "davide.dicriscito@gmail.com",
+    "url": "https://github.com/dcdeiv"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/dcdeiv/simpler-sidebar.git"
-  },
+  "license": "(MIT and GPL-2.0)",
   "keywords": [
     "simpler",
     "sidebar",
@@ -22,8 +20,14 @@
     "javascript",
     "js"
   ],
-  "author": "Davide Di Criscito <davide.dicriscito@gmail.com> (http://github.com/dcdeiv)",
-  "license": "(MIT and GPL-2.0)",
+  "scripts": {
+    "test": "grunt"
+  },
+  "main": "dist/jquery.simplersidebar.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dcdeiv/simpler-sidebar.git"
+  },
   "bugs": {
     "url": "https://github.com/dcdeiv/simpler-sidebar/issues"
   },

@@ -1,12 +1,12 @@
 {
   "name": "simpler-sidebar",
   "version": "1.4.1",
+  "description": "A simple side nav in jQuery.",
   "homepage": "https://github.com/dcdeiv/simpler-sidebar",
   "authors": [
-    "dcdeiv <davide.dicriscito@gmail.com>"
+    "Davide Di Criscito (https://github.com/dcdeiv)"
   ],
-  "description": "A simple jQuery sidebar",
-  "main": "dist/jquery.simplersidebar.js",
+  "license": ["MIT", "GPL-2.0"],
   "keywords": [
     "simpler",
     "sidebar",
@@ -18,7 +18,7 @@
     "javascript",
     "js"
   ],
-  "license": ["MIT", "GPL-2.0"],
+  "main": "dist/jquery.simplersidebar.js",
   "ignore": [
     "**/.*",
     "bower_components",
