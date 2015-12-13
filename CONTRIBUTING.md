@@ -22,6 +22,6 @@ Assuming that you don't see any red, you're ready to go. Just be sure to run `gr
 
 1. Create a new branch. You should not work in your `master` branch directly.
 1. Fix stuff.
-1. Test changes in actual browser using all the pages in the `tests` folder.
+1. Test changes in actual browser using all the pages in the `demo` folder.
 1. Update the documentation to reflect any changes.
 1. Push to your fork and submit a pull request.
