@@ -180,7 +180,7 @@ $.fn.simplerSidebar.settings.mask.css = {
 Help me improve simpler-sidebar and make it as perfect as possible, but first read the [contribution guidelines](CONTRIBUTING.md).
 
 ## Release History
-* **v1.4.2** (2015-12-13) -
+* **v1.4.3** (2015-12-13) -
   * Add support to jQuery v1.11.3.
   * Rename `tests` folder to `demo`.
   * Rename demo pages.
