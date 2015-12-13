@@ -4,6 +4,8 @@ simpler-sidebar
 
 A jQuery plugin that allows to *create a side nav* as in modern mobile apps. It aims to *simplicity* so that *everybody can use it* no matter if expert programmers or not.
 
+*simpler-sidebar* is a fork of [*simple-sidebar*](https://github.com/dcdeiv/simple-sidebar).
+
 - [Download](#download)
 - [Getting Started](#getting-started)
 - [Options](#options)
