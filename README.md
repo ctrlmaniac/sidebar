@@ -174,7 +174,7 @@ $.fn.simplerSidebar.settings.mask.css = {
     * **filter**: IE opacity 0.5 = 50 and so on: `'Alpha(opacity=50)'`.
 
 ## Contributing
-Help me improve simpler-sidebar and make it as perfect as possible, but first read the [contribution guidelines](CONTRIBUITING.md).
+Help me improve simpler-sidebar and make it as perfect as possible, but first read the [contribution guidelines](CONTRIBUTING.md).
 
 ## Release History
 * **v1.4.1** (due-to-release) -
