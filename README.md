@@ -8,6 +8,7 @@ A jQuery plugin that allows to *create a side nav* as in modern mobile apps. It 
 - [Getting Started](#getting-started)
 - [Options](#options)
 - [Contributing](#contributing)
+- [Release History](#release-history)
 - [License](#license)
 
 ***
@@ -93,5 +94,23 @@ Call the simpler-sidebar plugin function and fill it with the options you need. 
 ## Contributing
 Help me improve simpler-sidebar and make it as perfect as possible, but first read the [contribution guidelines](CONTRIBUITING.md).
 
+## Release History
+* **v1.4.1** (due-to-release) -
+  * Add support to jQuery v1.11.3.
+  * Changes names to test pages and fix titles.
+  * Fix README ([#4](https://github.com/dcdeiv/simpler-sidebar/issues/14)).
+* **v1.4.0** (2015-08-19) - Fix resize issue [#7](https://github.com/dcdeiv/simpler-sidebar/issues/7).
+* **v1.3.4** (2015-07-08) - Enhancement in the README.md, package.json, and bower.json files.
+* **v1.3.3** (2015-07-02) -
+  * Add Grunt. Simpler-Sidebar files are moved to `dist/` and renamed to *jquery.simpler-sidebar.js* and *jquery.simpler-sidebar.min.js*.
+  * Fix *sidebar.closingLinks* and *sidebar.align*.
+* **v1.2.3** (2015-06-23) - Fix animations functions.
+* **v1.2.2** (2015-06-16) - Add jQuery as dependency of NPM and Bower ([#3](https://github.com/dcdeiv/simpler-sidebar/pull/3))
+* **v1.2.0** (2015-05-18) - Add support to AJAX and *mask.display*, change *dataName* to *attr*;
+* **v1.1.1** (2015-05-15) - Add support to *left sidebar*.
+* **v1.0.0** (2015-05-14) - Initial release.
+
 ## License
-Dual licensed under the [MIT](LICENSE-MIT) and [GPLv2](LICENSE-GPL) licenses.
+Copyright (c) 2015 Davide Di Criscito, dcdeiv.
+
+Dual licensed under the [MIT](LICENSE-MIT) and [GPL-2.0](LICENSE-GPL) licenses.
