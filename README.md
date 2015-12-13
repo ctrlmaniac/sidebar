@@ -19,8 +19,8 @@ A simple jQuery sidebar.
 ## Getting Started
 Download the [production version][min] of the [development version][max].
 
-[min]: https://raw.github.com/dcdeiv/simpler-sidebar/master/dist/simpler-sidebar.min.js
-[max]: https://raw.github.com/dcdeiv/simpler-sidebar/master/dist/simpler-sidebar.js
+[min]: https://raw.githubusercontent.com/dcdeiv/simpler-sidebar/master/dist/jquery.simpler-sidebar.min.js
+[max]: https://raw.githubusercontent.com/dcdeiv/simpler-sidebar/master/dist/jquery.simpler-sidebar.js
 
 Simpler-Sidebar is also available via **NPM** and **Bower**:
 
