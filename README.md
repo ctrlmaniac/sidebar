@@ -177,7 +177,7 @@ $.fn.simplerSidebar.settings.mask.css = {
 Help me improve simpler-sidebar and make it as perfect as possible, but first read the [contribution guidelines](CONTRIBUTING.md).
 
 ## Release History
-* **v1.4.1** (due-to-release) -
+* **v1.4.1** (2015-12-13) -
   * Add support to jQuery v1.11.3.
   * Changes names to test pages and fix titles.
   * Fix README ([#4](https://github.com/dcdeiv/simpler-sidebar/issues/14)).
