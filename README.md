@@ -195,6 +195,6 @@ Help me improve simpler-sidebar and make it as perfect as possible, but first re
 * **v1.0.0** (2015-05-14) - Initial release.
 
 ## License
-Copyright (c) 2015 Davide Di Criscito, dcdeiv.
+Copyright (c) 2015 Davide Di Criscito
 
 Dual licensed under the [MIT](LICENSE-MIT) and [GPL-2.0](LICENSE-GPL) licenses.
