@@ -1,6 +1,6 @@
 simpler-sidebar
 ===
-[![GitHub version](https://badge.fury.io/gh/dcdeiv%2Fsimpler-sidebar.svg)](https://badge.fury.io/gh/dcdeiv%2Fsimpler-sidebar) [![Bower version](https://badge.fury.io/bo/simpler-sidebar.svg)](https://badge.fury.io/bo/simpler-sidebar) [![npm version](https://badge.fury.io/js/simpler-sidebar.svg)](https://badge.fury.io/js/simpler-sidebar) [![MIT adnd GPL-2 license](https://img.shields.io/badge/license-MIT%20and%20GPL--2.0-blue.svg)](#license)
+[![GitHub version](https://img.shields.io/badge/version-1.4.1-brightgreen.svg) [![Bower version](https://img.shields.io/badge/bower-1.4.1-brightgreen.svg) [![npm version](https://img.shields.io/badge/npm-1.4.1-brightgreen.svg) [![MIT adnd GPL-2 license](https://img.shields.io/badge/license-MIT%20and%20GPL--2.0-blue.svg)](#license)
 
 A jQuery plugin that allows to *create a side nav* as in modern mobile apps. It aims to *simplicity* so that *everybody can use it* no matter if expert programmers or not.
 
