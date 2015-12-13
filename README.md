@@ -1,7 +1,7 @@
 simpler-sidebar
 ===
 [![GitHub version](https://img.shields.io/badge/version-1.4.2-brightgreen.svg)](https://github.com/dcdeiv/simpler-sidebar/releases/latest)
-![Bower version](https://img.shields.io/badge/bower-1.4.2-brightgreen.svg)
+[![Bower version](https://img.shields.io/badge/bower-1.4.2-brightgreen.svg)](https://github.com/dcdeiv/simpler-sidebar)
 [![npm version](https://img.shields.io/badge/npm-1.4.2-brightgreen.svg)](https://www.npmjs.com/package/simpler-sidebar)
 [![MIT adnd GPL-2 license](https://img.shields.io/badge/license-MIT%20and%20GPL--2.0-blue.svg)](#license)
 
