@@ -1,8 +1,8 @@
 simpler-sidebar
 ===
-[![GitHub version](https://img.shields.io/badge/version-1.4.1-brightgreen.svg)](https://github.com/dcdeiv/simpler-sidebar/releases/latest)
-![Bower version](https://img.shields.io/badge/bower-1.4.1-brightgreen.svg)
-[![npm version](https://img.shields.io/badge/npm-1.4.1-brightgreen.svg)](https://www.npmjs.com/package/simpler-sidebar)
+[![GitHub version](https://img.shields.io/badge/version-1.4.2-brightgreen.svg)](https://github.com/dcdeiv/simpler-sidebar/releases/latest)
+[![Bower version](https://img.shields.io/badge/bower-1.4.2-brightgreen.svg)](https://github.com/dcdeiv/simpler-sidebar)
+[![npm version](https://img.shields.io/badge/npm-1.4.2-brightgreen.svg)](https://www.npmjs.com/package/simpler-sidebar)
 [![MIT adnd GPL-2 license](https://img.shields.io/badge/license-MIT%20and%20GPL--2.0-blue.svg)](#license)
 
 A jQuery plugin that allows to *create a side nav* as in modern mobile apps. It aims to *simplicity* so that *everybody can use it* no matter if expert programmers or not.
@@ -45,20 +45,20 @@ You will need to prepare a specified HTML template in order to make it work prop
 </div>
 
 <div id="sidebar">
-    <!--
-    simpler-sidebar will handle #sidebar's position.
+	<!--
+	simpler-sidebar will handle #sidebar's position.
 
-    To let the content of your sidebar overflow, especially when you have a lot of content in it, you have to add a "wrapper" that wraps all content.
-    -->
-    <div id="sidebar-wrapper" class="sidebar-wrapper">
-        <!--
-        Links below are just an example. Give each clickable element, for example links, a class to trigger the closing animation.
-        -->
-        <a class="close-sidebar" href="#">Link</a>
-        <a class="close-sidebar" href="#">Link</a>
-        <a class="close-sidebar" href="#">Link</a>
-        <a class="close-sidebar" href="#">Link</a>
-    </div>
+	To let the content of your sidebar overflow, especially when you have a lot of content in it, you have to add a "wrapper" that wraps all content.
+	-->
+	<div id="sidebar-wrapper" class="sidebar-wrapper">
+		<!--
+		Links below are just an example. Give each clickable element, for example links, a class to trigger the closing animation.
+		-->
+		<a class="close-sidebar" href="#">Link</a>
+		<a class="close-sidebar" href="#">Link</a>
+		<a class="close-sidebar" href="#">Link</a>
+		<a class="close-sidebar" href="#">Link</a>
+	</div>
 </div>
 ```
 
@@ -66,9 +66,9 @@ If you add the sidebar-wrapper (and you should), remember to give it this style 
 
 ```css
 .sidebar-wrapper {
-    position: relative;
-    height: 100%;
-    overflow: auto;
+	position: relative;
+	height: 100%;
+	overflow: auto;
 }
 ```
 
@@ -84,16 +84,16 @@ Call the simpler-sidebar plugin function and fill it with the options you need. 
 
 ```html
 <script>
-    $(document).ready(function() {
-        $('#sidebar').simplerSidebar({
-            opener: '#toggle-sidebar',
-            sidebar: {
-                align: 'left', //or 'right' - This option can be ignored, the sidebar will automatically align to right.
-                width: 300, //You can ignore this option, the sidebar will automatically size itself to 300px.
-                closingLinks: '.close-sidebar' // If you ignore this option, the plugin will look for all links and this can be buggy. Choose a class for every object inside the sidebar that once clicked will close the sidebar.
-            }
-        });
-    });
+	$(document).ready(function() {
+		$('#sidebar').simplerSidebar({
+			opener: '#toggle-sidebar',
+			sidebar: {
+				align: 'left', //or 'right' - This option can be ignored, the sidebar will automatically align to right.
+				width: 300, //You can ignore this option, the sidebar will automatically size itself to 300px.
+				closingLinks: '.close-sidebar' // If you ignore this option, the plugin will look for all links and this can be buggy. Choose a class for every object inside the sidebar that once clicked will close the sidebar.
+			}
+		});
+	});
 </script>
 ```
 
@@ -104,19 +104,19 @@ The first way is to add an option in the plugin itself. For example:
 
 ```javascript
 $('#sidebar').simplerSidebar({
-    opener: '#toggle-sidebar',
-    animation: {
-        duration: 1000,
-        easing: 'easeInOutBounce'
-    },
-    sidebar: {
-        align: 'right',
-        width: 500,
-        closingLinks: '.close'
-    },
-    mask: {
-        display: false
-    }
+	opener: '#toggle-sidebar',
+	animation: {
+		duration: 1000,
+		easing: 'easeInOutBounce'
+	},
+	sidebar: {
+		align: 'right',
+		width: 500,
+		closingLinks: '.close'
+	},
+	mask: {
+		display: false
+	}
 });
 ```
 
@@ -141,7 +141,7 @@ $.fn.simplerSidebar.settings.sidebar.closingLinks = '.close';
 $.fn.simplerSidebar.settings.mask.display = false;
 
 $('#sidebar').simplerSidebar({
-    opener: '#toggle-sidebar',
+	opener: '#toggle-sidebar',
 });
 ```
 
