@@ -179,10 +179,10 @@ Help me improve simpler-sidebar and make it as perfect as possible, but first re
 ## Release History
 * **v1.4.1** (2015-12-13) -
   * Add support to jQuery v1.11.3.
-  * Changes names to test pages and fix titles.
+  * Rename `tests` folder to `demo`.
+  * Rename demo pages.
   * Fix README ([#4](https://github.com/dcdeiv/simpler-sidebar/issues/14)).
   * Release under MIT and GPL-2.0 licenses.
-  * Rename `tests` folder to `demo`.
 * **v1.4.0** (2015-08-19) - Fix resize issue [#7](https://github.com/dcdeiv/simpler-sidebar/issues/7).
 * **v1.3.4** (2015-07-08) - Enhancement in the README.md, package.json, and bower.json files.
 * **v1.3.3** (2015-07-02) -
