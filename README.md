@@ -4,7 +4,7 @@ simpler-sidebar
 
 A jQuery plugin that allows to *create a side nav* as in modern mobile apps. It aims to *simplicity* so that *everybody can use it* no matter if expert programmers or not.
 
-*simpler-sidebar* is a fork of [*simple-sidebar*](https://github.com/dcdeiv/simple-sidebar).
+**simpler-sidebar** is a fork of [*simple-sidebar*](https://github.com/dcdeiv/simple-sidebar).
 
 - [Download](#download)
 - [Getting Started](#getting-started)
@@ -24,9 +24,9 @@ Run one of these commands in your bash according to your needs.
 
 `npm install simpler-sidebar`
 
-Or download the latest version from the [releases](https://github.com/dcdeiv/simpler-sidebar/releases) pages.
+Or download the latest version from the [releases](https://github.com/dcdeiv/simpler-sidebar/releases) page.
 
-If you are updating, remember to read the [Release History](#release-history) and check for uncompatibility issues.
+If you are updating, remember to read the [Release History](#release-history) and to check for incompatibility issues.
 
 ## Getting Started
 You will need to prepare a specified HTML template in order to make it work properly. The code below is just an example from which you can and have to draw inspiration. Along with this plugin you are provided with some demo pages in the [demo](/demo) directory.
