@@ -100,20 +100,20 @@ You can override the single option by using the plugin API or directly in the fu
 The base API is `$.fn.simplerSidebar.settings`. Check [Options List](#options-list) out to see the full list of available APIs.
 
 ```javascript
-$.fn.simplerSidebar.opener = '#toggle-sidebar';
-$.fn.simplerSidebar.attr = 'simplersidebar';
-$.fn.simplerSidebar.top = 42;
-$.fn.simplerSidebar.animation.duration = 500;
-$.fn.simplerSidebar.animation.duration = 'easeOutQuint';
-$.fn.simplerSidebar.sidebar.align = 'left';
-$.fn.simplerSidebar.sidebar.width = 300;
-$.fn.simplerSidebar.sidebar.gap = 64;
-$.fn.simplerSidebar.sidebar.closingLinks = '.close-sidebar';
-$.fn.simplerSidebar.sidebar.css.zIndex = 3000;
-$.fn.simplerSidebar.mask.display = true;
-$.fn.simplerSidebar.mask.css.backgroundColor = 'black';
-$.fn.simplerSidebar.mask.css.opacity = 0.5;
-$.fn.simplerSidebar.mask.css.filter = 'Alpha(opacity=50)';
+$.fn.simplerSidebar.settings.opener = '#toggle-sidebar';
+$.fn.simplerSidebar.settings.attr = 'simplersidebar';
+$.fn.simplerSidebar.settings.top = 42;
+$.fn.simplerSidebar.settings.animation.duration = 500;
+$.fn.simplerSidebar.settings.animation.duration = 'easeOutQuint';
+$.fn.simplerSidebar.settings.sidebar.align = 'left';
+$.fn.simplerSidebar.settings.sidebar.width = 300;
+$.fn.simplerSidebar.settings.sidebar.gap = 64;
+$.fn.simplerSidebar.settings.sidebar.closingLinks = '.close-sidebar';
+$.fn.simplerSidebar.settings.sidebar.css.zIndex = 3000;
+$.fn.simplerSidebar.settings.mask.display = true;
+$.fn.simplerSidebar.settings.mask.css.backgroundColor = 'black';
+$.fn.simplerSidebar.settings.mask.css.opacity = 0.5;
+$.fn.simplerSidebar.settings.mask.css.filter = 'Alpha(opacity=50)';
 
 $( '#sidebar' ).simplerSidebar();
 ```
