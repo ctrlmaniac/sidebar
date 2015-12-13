@@ -5,7 +5,7 @@ A jQuery plugin that allows to *create a side nav* as in modern mobile apps. It 
 
 Please read the [contribution guidelines](CONTRIBUITING.md) if you want to contribute.
 
-#Download
+##Download
 Run one of these commands in your bash according to your needs.
 `npm install simpler-sidebar`
 `bower install simpler-sidebar`
