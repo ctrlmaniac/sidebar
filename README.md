@@ -7,6 +7,7 @@ A jQuery plugin that allows to *create a side nav* as in modern mobile apps. It 
 - [Download](#download)
 - [Getting Started](#getting-started)
 - [Options](#options)
+  - [Options List](#options-list)
 - [Contributing](#contributing)
 - [Release History](#release-history)
 - [License](#license)
@@ -90,6 +91,85 @@ Call the simpler-sidebar plugin function and fill it with the options you need. 
     });
 </script>
 ```
+
+## Options
+You can access options in two ways.
+
+The first way is to add an option in the plugin itself. For example:
+
+```javascript
+$('#sidebar').simplerSidebar({
+    opener: '#toggle-sidebar',
+    animation: {
+        duration: 1000,
+        easing: 'easeInOutBounce'
+    },
+    sidebar: {
+        align: 'right',
+        width: 500,
+        closingLinks: '.close'
+    },
+    mask: {
+        display: false
+    }
+});
+```
+
+The second way to access options is by using the following key:
+
+`$.fn.simplerSidebar.settings`
+
+After this key, you have to add the proper option, for example:
+
+`$.fn.simplerSidebar.settings.animation.duration = 1000`
+
+All keys must be put above the main plugin function and there should not be duplicates between them since keys override the options in the plugin function. Read the [Options List](#options-list) for further informations about all available options.
+
+According to the example above, here is the other way to tweak options by using the key:
+
+```javascript
+$.fn.simplerSidebar.settings.animation.duration = 1000;
+$.fn.simplerSidebar.settings.animation.easing = 'easeInOutBounce';
+$.fn.simplerSidebar.settings.sidebar.align = 'right';
+$.fn.simplerSidebar.settings.sidebar.width = 500;
+$.fn.simplerSidebar.settings.sidebar.closingLinks = '.close';
+$.fn.simplerSidebar.settings.mask.display = false;
+
+$('#sidebar').simplerSidebar({
+    opener: '#toggle-sidebar',
+});
+```
+
+You can also override multiple options by using the key but it is not safe and it could be buggy, especially when you try to override `sidebar`. However you can safely override `css` such as `$.fn.simplerSidebar.settings.mask.css`, for example:
+
+```javascript
+$.fn.simplerSidebar.settings.mask.css = {
+	backgroundColor: 'black',
+	opacity: 0.5,
+	filter: 'Alpha(opacity=50)'
+};
+```
+
+### Options List
+* **opener**: selector for the button/icon that will trigger the animation.
+* **attr**: is the `data-*` attribute that makes the plugin works. If `simplersidebar` is somehow causing you issues, you can change it.
+* **top**: is the `position-top` of the entire plugin. You can choose whatever number you want (better if you choose it according to the navbar's height) or let it be 0 by ignoring it.
+* **animation**:
+  * **duration**: the duration of the animation in milliseconds.
+  * **easing**: the type of animation. For more animations include the *jQuery-UI* library and check out [this page](https://jqueryui.com/easing/). I strongly suggest not to play with easing because they haven't been tested all yet. I suggest to use simple easing like `easeOutQuint`.
+* **sidebar**:
+  * **align**: default is `undefined` which means that is aligned to *right*. If you want to align it to left, write `left`.
+  * **width**: the max width of the sidebar, this option is default to 300, please change it as you please.
+  * **gap**: the gap is the space between the left margin of the sidebar and the left side of the window (and viceversa). It is useful so that the user can click that space to close the sidebar.
+  * **closingLinks**: links or elements that close the sidebar. I suggest to choose a class and give it to all links and other elements such as icons, banner, images, etc, that are links or that are supposed to be clicked. By default it is `a` so every link in the sidebar will close the sidebar. You can use multiple selectors too but, avoid using nested selector otherwise the function will be triggered twice. For example you can select `'a, .close-sidebar'` but if an element is `<a class=".close-sidebar">` the animation will be triggered twice.
+  * **css**: here you can store all css, anyway I suggest not to add more css attributes to the one below.
+    * **zIndex**: by default is is 3000 but you have to change it to the higher z-index number in your css plus 1.
+* **mask**:
+  * **display**: `true` or `false`. `false` will remove this option.
+  * **css**: here you can store all css attributes to give the mask div. However I suggest to do it in your css file except for these below. You can call this div by its data attribute for example: `[data-simplersidebar="mask"]`.
+    * **backgroundColor**: the color of the mask. By default is `'black'`.
+    * **opacity**: by default is 0.5.
+    * **filter**: IE opacity 0.5 = 50 and so on: `'Alpha(opacity=50)'`.
 
 ## Contributing
 Help me improve simpler-sidebar and make it as perfect as possible, but first read the [contribution guidelines](CONTRIBUITING.md).
