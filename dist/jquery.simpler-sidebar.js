@@ -1,6 +1,6 @@
 /*! simpler-sidebar v1.4.1 (https://github.com/dcdeiv/simpler-sidebar)
 ** Copyright (c) 2015 Davide Di Criscito
-** Licensed under MIT and GPL-2.0
+** Dual licensed under MIT and GPL-2.0
 */
 (function($) {
     $.fn.simplerSidebar = function(options) {

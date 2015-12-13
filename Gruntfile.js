@@ -5,7 +5,7 @@ module.exports = function(grunt) {
 
     banner: '/*! <%= pkg.name %> v<%= pkg.version %> (<%= pkg.homepage %>)\n' +
       '** Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>\n' +
-      '** Licensed under MIT and GPL-2.0\n' +
+      '** Dual licensed under MIT and GPL-2.0\n' +
       '*/',
 
     jshint: {
