@@ -1,6 +1,6 @@
-/*! simpler-sidebar v1.4.1 (https://dcdeiv.github.io/simpler-sidebar)
-** Davide Di Criscito <davide.dicriscito@gmail.com> (http://github.com/dcdeiv)
-** (c) 2015-2015 Licensed under GPL-2.0
+/*! simpler-sidebar v1.4.1 (https://github.com/dcdeiv/simpler-sidebar)
+** Copyright (c) 2015 Davide Di Criscito
+** Licensed under MIT and GPL-2.0
 */
 (function($) {
     $.fn.simplerSidebar = function(options) {
