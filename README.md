@@ -184,7 +184,7 @@ Help me improve simpler-sidebar and make it as perfect as possible, but first re
   * Add support to jQuery v1.11.3.
   * Rename `tests` folder to `demo`.
   * Rename demo pages.
-  * Fix README ([#4](https://github.com/dcdeiv/simpler-sidebar/issues/14)).
+  * Fix README ([#14](https://github.com/dcdeiv/simpler-sidebar/issues/14)).
   * Release under MIT and GPL-2.0 licenses.
 * **v1.4.0** (2015-08-19) - Fix resize issue [#7](https://github.com/dcdeiv/simpler-sidebar/issues/7).
 * **v1.3.4** (2015-07-08) - Enhancement in the README.md, package.json, and bower.json files.
