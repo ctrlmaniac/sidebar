@@ -27,7 +27,7 @@ Or download the latest version from the [releases](https://github.com/dcdeiv/sim
 If you are updating, remember to read the [Release History](#release-history) and check for uncompatibility issues.
 
 ## Getting Started
-You will need to prepare a specified HTML template in order to make it work properly. The code below is just an example from which you can and have to draw inspiration.
+You will need to prepare a specified HTML template in order to make it work properly. The code below is just an example from which you can and have to draw inspiration. Along with this plugin you are provided with some demo pages in the [demo](/demo) directory.
 
 ```html
 <div id="navbar">
