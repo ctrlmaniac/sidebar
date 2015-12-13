@@ -149,8 +149,8 @@ $.fn.simplerSidebar.settings.mask.css = {
 ## Release History
 * **v1.4.1** (due-to-release) -
   * Add support to jQuery v1.11.3.
-	* Changes names to test pages and fix titles.
-	* Fix README.
+  * Changes names to test pages and fix titles.
+  * Fix README.
 * **v1.4.0** (2015-08-19) - Fix resize issue [#7](https://github.com/dcdeiv/simpler-sidebar/issues/7).
 * **v1.3.4** (2015-07-08) - Enhancement in the README.md, package.json, and bower.json files.
 * **v1.3.3** (2015-07-02) -
