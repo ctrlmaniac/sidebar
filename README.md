@@ -1,8 +1,8 @@
 simpler-sidebar
 ===
-[![GitHub version](https://img.shields.io/badge/version-1.4.3-brightgreen.svg)](https://github.com/dcdeiv/simpler-sidebar/releases/latest)
-[![Bower version](https://img.shields.io/badge/bower-1.4.3-brightgreen.svg)](https://github.com/dcdeiv/simpler-sidebar)
-[![npm version](https://img.shields.io/badge/npm-1.4.3-brightgreen.svg)](https://www.npmjs.com/package/simpler-sidebar)
+[![GitHub version](https://img.shields.io/badge/version-1.4.4-brightgreen.svg)](https://github.com/dcdeiv/simpler-sidebar/releases/latest)
+[![Bower version](https://img.shields.io/badge/bower-1.4.4-brightgreen.svg)](https://github.com/dcdeiv/simpler-sidebar)
+[![npm version](https://img.shields.io/badge/npm-1.4.4-brightgreen.svg)](https://www.npmjs.com/package/simpler-sidebar)
 [![MIT adnd GPL-2 license](https://img.shields.io/badge/license-MIT%20and%20GPL--2.0-blue.svg)](#license)
 
 A jQuery plugin that allows to *create a side nav* as in modern mobile apps. It aims to *simplicity* so that *everybody can use it* no matter if expert programmers or not.
