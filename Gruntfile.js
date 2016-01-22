@@ -4,7 +4,7 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
 
     banner: '/*! <%= pkg.name %> v<%= pkg.version %> (<%= pkg.homepage %>)\n' +
-      '** Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>\n' +
+      '** Copyright (c) 2015 - <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>\n' +
       '** Dual licensed under MIT and GPL-2.0\n' +
       '*/',
 

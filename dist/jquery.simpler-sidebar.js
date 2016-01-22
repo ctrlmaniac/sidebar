@@ -1,5 +1,5 @@
-/*! simpler-sidebar v1.4.3 (https://github.com/dcdeiv/simpler-sidebar)
-** Copyright (c) 2015 Davide Di Criscito
+/*! simpler-sidebar v1.4.4 (https://github.com/dcdeiv/simpler-sidebar)
+** Copyright (c) 2015 - 2016 Davide Di Criscito
 ** Dual licensed under MIT and GPL-2.0
 */
 (function($) {
