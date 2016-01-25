@@ -1,6 +1,6 @@
 {
-	"name": "simple-sidebar",
-	"version": "2.5.0",
+	"name": "simpler-sidebar",
+	"version": "1.4.6",
 	"description": "A simple side nav in jQuery",
 	"homepage": "https://github.com/dcdeiv/simpler-sidebar",
 	"authors": [
@@ -11,14 +11,14 @@
 		"simple",
 		"sidebar",
 		"sidenav",
-		"simple-sidebar",
+		"simpler-sidebar",
 		"jquery",
 		"plugin",
 		"plug-in",
 		"javascript",
 		"js"
 	],
-	"main": "dist/jquery.simplesidebar.js",
+	"main": "dist/jquery.simplersidebar.js",
 	"ignore": [
 		"**./*",
 		"bower_components",
