@@ -3,7 +3,7 @@ simpler-sidebar
 [![GitHub version](https://img.shields.io/badge/version-1.4.5-brightgreen.svg)](https://github.com/dcdeiv/simpler-sidebar/releases/latest)
 [![Bower version](https://img.shields.io/badge/bower-1.4.5-brightgreen.svg)](https://github.com/dcdeiv/simpler-sidebar)
 [![npm version](https://img.shields.io/badge/npm-1.4.5-brightgreen.svg)](https://www.npmjs.com/package/simpler-sidebar)
-[![MIT adnd GPL-2 license](https://img.shields.io/badge/license-MIT%20and%20GPL--2.0-blue.svg)](#license)
+[![MIT and GPL-2 license](https://img.shields.io/badge/license-MIT%20and%20GPL--2.0-blue.svg)](#license)
 
 A jQuery plugin that allows to *create a side nav* as in modern mobile apps. It aims to *simplicity* so that *everybody can use it* no matter if expert programmers or not.
 
@@ -32,7 +32,7 @@ Or download the latest version from the [releases](https://github.com/dcdeiv/sim
 If you are updating, remember to read the [Release History](#release-history) and to check for incompatibility issues.
 
 ## Getting Started
-You will need to prepare a specified HTML template in order to make it work properly. The code below is just an example from which you can and have to draw inspiration. Along with this plugin you are provided with some demo pages in the [demo](/demo) directory.
+You will need to prepare a specific HTML template in order to make it work properly. The code below is just an example from which you can and have to draw inspiration. Along with this plugin you are provided with some demo pages in the [demo](/demo) directory.
 
 ```html
 <div id="navbar">
@@ -107,12 +107,12 @@ $('#sidebar').simplerSidebar({
 	opener: '#toggle-sidebar',
 	animation: {
 		duration: 1000,
-		easing: 'easeInOutBounce'
+		easing: 'easeOutQuint'
 	},
 	sidebar: {
 		align: 'right',
-		width: 500,
-		closingLinks: '.close'
+		width: 300,
+		closingLinks: '.close-sidebar'
 	},
 	mask: {
 		display: false
@@ -134,10 +134,10 @@ According to the example above, here is the other way to tweak options by using 
 
 ```javascript
 $.fn.simplerSidebar.settings.animation.duration = 1000;
-$.fn.simplerSidebar.settings.animation.easing = 'easeInOutBounce';
+$.fn.simplerSidebar.settings.animation.easing = 'easeOutQuint';
 $.fn.simplerSidebar.settings.sidebar.align = 'right';
-$.fn.simplerSidebar.settings.sidebar.width = 500;
-$.fn.simplerSidebar.settings.sidebar.closingLinks = '.close';
+$.fn.simplerSidebar.settings.sidebar.width = 300;
+$.fn.simplerSidebar.settings.sidebar.closingLinks = '.close-sidebar';
 $.fn.simplerSidebar.settings.mask.display = false;
 
 $('#sidebar').simplerSidebar({
