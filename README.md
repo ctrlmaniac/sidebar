@@ -200,7 +200,7 @@ Help me improve simpler-sidebar and make it as perfect as possible, but first re
 * **v1.1.1** (2015-05-15) - Add support to *left sidebar*.
 * **v1.0.0** (2015-05-14) - Initial release.
 
-## Licensed
+## License
 Copyright (c) 2015 - 2016 Davide Di Criscito
 
 Dual licensed under the [MIT](LICENSE-MIT) and [GPL-2.0](LICENSE-GPL) licenses.
