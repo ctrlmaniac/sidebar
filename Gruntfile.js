@@ -15,7 +15,7 @@ module.exports = function(grunt) {
 				eqnull: true,
 				browser: true,
 				globals: {
-					jQuery: try
+					jQuery: true
 				}
 			},
 			gruntfile: {
