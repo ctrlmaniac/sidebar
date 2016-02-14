@@ -21,8 +21,8 @@ grunt.initConfig( {
 
 	concat: {
 		options: {
-			banners: "<%= banner %>\n",
-			stripBanners: true
+			stripBanners: true,
+			banner: "<%= banner %>\n"
 		},
 		dist: {
 			src: [ "src/simpler-sidebar.js" ],
