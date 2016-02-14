@@ -11,7 +11,7 @@
 	"trailing": true,
 	"undef": true,
 	"unused": true,
-	"predef": [ "module" ],
+	"predef": [ "module", "console" ],
 	"browser": true,
 	"globals": {
 		"jQuery": false
