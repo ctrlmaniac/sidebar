@@ -180,10 +180,11 @@ $.fn.simplerSidebar.settings.mask.css = {
 Help me improve simpler-sidebar and make it as perfect as possible, but first read the [contribution guidelines](CONTRIBUTING.md).
 
 ## Release History
-* **v1.4.6** (2016-02-16) -
+* **v1.4.8** (2016-02-16) -
   * Add `.editorconfig` to maintain consistency the coding style.
     * Please, download the [editorconfig plugin](http://editorconfig.org/#download) for your favourite editor if you want to contribute.
   * Fix coding style according to the jQuery coding style guidelines.
+  * Add console errors for `sidebar.align` and `mask.display`.
 * **v1.4.5** (2016-01-22) -
   * Update copyright.
   * Add support to jQuery v1.12.0.

@@ -64,11 +64,12 @@ $.fn.simplerSidebar = function( options ) {
 			$mask = $( "<div>" ).attr( "data-" + attr, "mask" );
 
 		//Checking sidebar align
-		if ( cfg.sidebar.align === undefined ||
-				cfg.sidebar.align === "right" ) {
+		if ( [ undefined, "right" ].indexOf( cfg.sidebar.align ) !== -1 ) {
 			align = "right";
 		} else if ( cfg.sidebar.align === "left" ) {
 			align = "left";
+		} else {
+			console.log( "ERR sidebar.align: you typed \"" + cfg.sidebar.align + "\". You should choose between \"right\" or \"left\"." );
 		}
 
 		//Sidebar style
@@ -107,10 +108,12 @@ $.fn.simplerSidebar = function( options ) {
 		maskStyle = $.extend( true, maskInit, cfg.mask.css );
 
 		//Appending Mask if mask.display is true
-		if ( true === cfg.mask.display ) {
-			$mask
-				.appendTo( "body" )
-				.css( maskStyle );
+		if ( [ true, "true", false, "false" ].indexOf( cfg.mask.display) !== -1 ) {
+			if ( [ true, "true" ].indexOf( cfg.mask.display ) !== -1 ) {
+				$mask.appendTo( "body" ).css( maskStyle );
+			}
+		} else {
+			console.log( "ERR mask.display: you typed \"" + cfg.mask.display + "\". You should choose between true or false." );
 		}
 
 		//Opening and closing the Sidebar when $opener is clicked
