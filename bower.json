@@ -6,7 +6,7 @@
   "authors": [
     "Davide Di Criscito (https://github.com/dcdeiv)"
   ],
-  "license": ["MIT", "GPL-2.0"],
+  "license": "(MIT AND GPL-2.0)",
   "keywords": [
     "simpler",
     "sidebar",

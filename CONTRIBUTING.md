@@ -4,7 +4,7 @@
 Please don't edit files in the `dist` subdirectory as they are generated via Grunt. You'll find source code in the `src` subdirectory!
 
 ### Code style
-Regarding code style like indentation and whitespace, **follow the conventions you see used in the source already.**
+Regarding code style like indentation and whitespace, **follow the conventions you see used in the source already** or reade the **.editorconfig** file. Regarding the *.editorconfig* file you should install in your favourite editor the **editorconfig** plugin.
 
 ## Modifying the code
 First, ensure that you have the latest [Node.js](http://nodejs.org/) and [npm](http://npmjs.org/) installed.
