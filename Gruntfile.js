@@ -1,9 +1,9 @@
-module.exports = function(grunt) {
+module.exports = function( grunt ) {
 	grunt.initConfig( {
 		pkg: grunt.file.readJSON( "package.json" ),
 
 		banner: "/*! <%= pkg.name %> v<%= pkg.version %> (<%= pkg.homepage %>)\n" +
-				"** Copyright (c) 2015 - <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>\n" +
+				"** Copyright (c) 2015 - <%= grunt.template.today( 'yyyy' ) %> <%= pkg.author.name %>\n" +
 				"** Dual licensed under MIT and GPL-2.0\n*/",
 
 		jshint: {
@@ -23,8 +23,10 @@ module.exports = function(grunt) {
 				banners: "<%= banner %>\n",
 				stripBanners: true
 			},
-			dist: [ "src/simpler-sidebar.js" ],
-			dest: "dist/jquery.<%= pkg.name %>.js"
+			dist: {
+				src: [ "src/simpler-sidebar.js" ],
+				dest: "dist/jquery.<%= pkg.name %>.js"
+			}
 		},
 
 		uglify: {
