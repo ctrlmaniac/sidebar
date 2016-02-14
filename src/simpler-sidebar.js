@@ -179,7 +179,7 @@
 			css: {
 				backgroundColor: "black",
 				opacity: 0.5,
-				filter: "Alpha( opacity=50 )"
+				filter: "Alpha(opacity=50)"
 			}
 		}
 	};
