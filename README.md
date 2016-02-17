@@ -1,5 +1,7 @@
 simpler-sidebar
 ===
+
+[![Join the chat at https://gitter.im/dcdeiv/simpler-sidebar](https://badges.gitter.im/dcdeiv/simpler-sidebar.svg)](https://gitter.im/dcdeiv/simpler-sidebar?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![GitHub version](https://img.shields.io/badge/version-1.4.5-brightgreen.svg)](https://github.com/dcdeiv/simpler-sidebar/releases/latest)
 [![Bower version](https://img.shields.io/badge/bower-1.4.5-brightgreen.svg)](https://github.com/dcdeiv/simpler-sidebar)
 [![npm version](https://img.shields.io/badge/npm-1.4.5-brightgreen.svg)](https://www.npmjs.com/package/simpler-sidebar)
