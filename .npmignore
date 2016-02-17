@@ -1,4 +1,6 @@
+.editorconfig
 .gitignore
+.jshintrc
 bower_components/
 bower.json
 node_modules/
