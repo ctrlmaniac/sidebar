@@ -1,5 +1,7 @@
 simpler-sidebar
 ===
+
+[![Join the chat at https://gitter.im/dcdeiv/simpler-sidebar](https://badges.gitter.im/dcdeiv/simpler-sidebar.svg)](https://gitter.im/dcdeiv/simpler-sidebar?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![GitHub version](https://img.shields.io/badge/version-1.4.8-brightgreen.svg)](https://github.com/dcdeiv/simpler-sidebar/releases/latest)
 [![Bower version](https://img.shields.io/badge/bower-1.4.8-brightgreen.svg)](https://github.com/dcdeiv/simpler-sidebar)
 [![npm version](https://img.shields.io/badge/npm-1.4.8-brightgreen.svg)](https://www.npmjs.com/package/simpler-sidebar)
@@ -180,8 +182,9 @@ $.fn.simplerSidebar.settings.mask.css = {
 Help me improve simpler-sidebar and make it as perfect as possible, but first read the [contribution guidelines](CONTRIBUTING.md).
 
 ## Release History
-* **v1.4.8** (2016-02-16) -
-  * Add `.editorconfig` to maintain consistency the coding style.
+* **v1.4.9** (2016-02-17) -
+  * Add Gitter chat badge. Join the chat [here](https://gitter.im/dcdeiv/simpler-sidebar).
+  * Add `.editorconfig` to maintain consistency in the coding style.
     * Please, download the [editorconfig plugin](http://editorconfig.org/#download) for your favourite editor if you want to contribute.
   * Fix coding style according to the jQuery coding style guidelines.
   * Add console errors for `sidebar.align` and `mask.display`.
