@@ -1,121 +1,74 @@
-<<<<<<< HEAD
-module.exports = function(grunt) {
+module.exports = function( grunt ) {
 
-	grunt.initConfig({
-		pkg: grunt.file.readJSON('package.json'),
+	grunt.initConfig( {
 
-		banner: '/*! <%= pkg.name %> v<%= pkg.version %> (<%= pkg.homepage %>)\n' +
-				'** Copyright (c) 2015 - <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>\n' +
-				'** Dual licensed under MIT and GPL-2.0\n' +
-				'*/',
+		pkg: grunt.file.readJSON( "package.json" ),
 
-		jshint: {
-			options: {
-				curly: true,
-				eqeqeq: true,
-				eqnull: true,
-				browser: true,
-				globals: {
-					jQuery: true
-				}
-			},
-			gruntfile: {
-				src: 'Gruntfile.js'
-			},
-			src: {
-				src: ['src/**/*,js']
-			}
+		meta: {
+			banner: "/*! <%= pkg.name %> v<%= pkg.version %>" +
+				" (<%= pkg.homepage %>)\n" +
+				"** Copyright (c) 2015 - <%= grunt.template.today( 'yyyy' ) %> " +
+				"<%= pkg.author.name %>\n" +
+				"** Dual licensed under MIT and GPL-2.0\n*/"
 		},
 
+		// Concat definitions
 		concat: {
 			options: {
-				banner: '<%= banner %>\n',
-				stripBanners: true
+				stripBanners: true,
+				banner: "<%= meta.banner %>"
 			},
 			dist: {
-				src: ['src/simpler-sidebar.js'],
-				dest: 'dist/jquery.<%= pkg.name %>.js'
+				src: [ "src/simpler-sidebar.js" ],
+				dest: "dist/jquery.simpler-sidebar.js"
 			}
 		},
 
-		uglify: {
+		// Link definitions
+		jshint: {
+			files: [
+				"src/simpler-sidebar.js",
+				"test/**/*"
+			]
 			options: {
-				banner: '<%= banner %>\n'
-			},
+				jshintrc: ".jshintrc"
+			}
+		},
+
+		jscs: {
+			src: "src/**/*.js",
+			options: {
+				config: ".jscsrc"
+			}
+		},
+
+		// Minify definitions
+		uglify: {
 			dist: {
-				src: '<%= concat.dist.dest %>',
-				dest: 'dist/jquery.<%= pkg.name %>.min.js'
+				src: [
+					"<%= concat.dist.dest %>"
+				],
+				dest: "dist/jquery.<%= pkg.name %>.min.js"
+			},
+			options: {
+				banner: "<%= meta.banner %>\n"
 			}
 		},
 
 		watch: {
-			files: ['src/simpler-sidebar.js'],
-			tasks: ['jshint', 'concat', 'uglify']
+			file: [ "src/simpler-sidebar.js" ],
+			tasks: [ "lint", "build" ]
 		}
-	});
+	} );
 
-	grunt.loadNpmTasks('grunt-contrib-concat');
-	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-contrib-jshint');
-	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks( "grunt-contrib-concat" );
+	grunt.loadNpmTasks( "grunt-contrib-jshint" );
+	grunt.loadNpmTasks( "grunt-jscs" );
+	grunt.loadNpmTasks( "grunt-contrib-uglify" );
+	grunt.loadNpmTasks( "grunt-contrib-watch" );
 
-	// Default task.
-	grunt.registerTask('default', ['jshint', 'concat', 'uglify']);
-=======
-module.exports = function( grunt ) {
+	grunt.registerTask( "lint", [ "jshint", "jscs" ] );
+	grunt.registerTask( "build", [ "lint", "concat", "uglify" ] );
+	grunt.registerTask( "default", [ "lint", "build" ] );
 
-grunt.initConfig( {
-	pkg: grunt.file.readJSON( "package.json" ),
-
-	banner: "/*! <%= pkg.name %> v<%= pkg.version %> (<%= pkg.homepage %>)\n" +
-			"** Copyright (c) 2015 - <%= grunt.template.today( 'yyyy' ) %> <%= pkg.author.name %>\n" +
-			"** Dual licensed under MIT and GPL-2.0\n*/",
-
-	jshint: {
-		options: {
-			jshintrc: true
-		},
-		gruntfile: {
-			src: "Gruntfile.js"
-		},
-		src: {
-			src: [ "src/**/*.js" ]
-		}
-	},
-
-	concat: {
-		options: {
-			stripBanners: true,
-			banner: "<%= banner %>\n"
-		},
-		dist: {
-			src: [ "src/simpler-sidebar.js" ],
-			dest: "dist/jquery.<%= pkg.name %>.js"
-		}
-	},
-
-	uglify: {
-		options: {
-			banner: "<%= banner %>\n"
-		},
-		dist: {
-			src: "<%= concat.dist.dest %>",
-			dest: "dist/jquery.<%= pkg.name %>.min.js"
-		}
-	},
-
-	watch: {
-		file: [ "src/simpler-sidebar.js" ],
-		tasks: [ "jshint", "concat", "uglify" ]
-	}
-} );
-
-grunt.loadNpmTasks( "grunt-contrib-concat" );
-grunt.loadNpmTasks( "grunt-contrib-uglify" );
-grunt.loadNpmTasks( "grunt-contrib-jshint" );
-grunt.loadNpmTasks( "grunt-contrib-watch" );
-
-grunt.registerTask( "default", [ "jshint", "concat", "uglify" ] );
-
->>>>>>> travis
 };
