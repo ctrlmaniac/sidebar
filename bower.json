@@ -1,38 +1,4 @@
 {
-<<<<<<< HEAD
-	"name": "simpler-sidebar",
-	"version": "1.4.6",
-	"description": "A simple side nav in jQuery",
-	"homepage": "https://github.com/dcdeiv/simpler-sidebar",
-	"authors": [
-		"Davide Di Criscito (https://github.com/dcdeiv)"
-	],
-	"license": ["MIT", "GPL-2.0"],
-	"keywords": [
-		"simple",
-		"sidebar",
-		"sidenav",
-		"simpler-sidebar",
-		"jquery",
-		"plugin",
-		"plug-in",
-		"javascript",
-		"js"
-	],
-	"main": "dist/jquery.simplersidebar.js",
-	"ignore": [
-		"**./*",
-		"bower_components",
-		"node_modules",
-		"npm-debug.log",
-		"Gruntfile.js",
-		"package.json",
-		"src"
-	],
-	"dependencies": {
-		"jquery": "1"
-	}
-=======
   "name": "simpler-sidebar",
   "version": "1.4.9",
   "description": "A simple side nav in jQuery.",
@@ -40,14 +6,17 @@
   "authors": [
     "Davide Di Criscito (https://github.com/dcdeiv)"
   ],
-  "license": "(MIT AND GPL-2.0)",
+  "license": "MIT AND GPL-2.0",
   "keywords": [
-    "simpler",
+		"simpler",
     "sidebar",
     "sidenav",
+    "side",
+    "nav",
     "simpler-sidebar",
     "jquery",
     "plugin",
+    "jquery-plugin",
     "plug-in",
     "javascript",
     "js"
@@ -65,5 +34,4 @@
   "dependencies": {
     "jquery": "1"
   }
->>>>>>> travis
 }
