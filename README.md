@@ -1,9 +1,9 @@
 simpler-sidebar
 ===
 [![Join the chat at https://gitter.im/dcdeiv/simpler-sidebar](https://badges.gitter.im/dcdeiv/simpler-sidebar.svg)](https://gitter.im/dcdeiv/simpler-sidebar?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![GitHub version](https://img.shields.io/badge/version-1.4.9-brightgreen.svg)](https://github.com/dcdeiv/simpler-sidebar/releases/latest)
-[![Bower version](https://img.shields.io/badge/bower-1.4.9-brightgreen.svg)](https://github.com/dcdeiv/simpler-sidebar)
-[![npm version](https://img.shields.io/badge/npm-1.4.9-brightgreen.svg)](https://www.npmjs.com/package/simpler-sidebar)
+[![GitHub version](https://badge.fury.io/gh/dcdeiv%2Fsimpler-sidebar.svg)](https://badge.fury.io/gh/dcdeiv%2Fsimpler-sidebar)
+[![Bower version](https://badge.fury.io/bo/simpler-sidebar.svg)](https://badge.fury.io/bo/simpler-sidebar)
+[![npm version](https://badge.fury.io/js/simpler-sidebar.svg)](https://badge.fury.io/js/simpler-sidebar)
 [![MIT and GPL-2 license](https://img.shields.io/badge/license-MIT%20and%20GPL--2.0-blue.svg)](#license)
 [![Build Status](https://travis-ci.org/dcdeiv/simpler-sidebar.svg?branch=master)](https://travis-ci.org/dcdeiv/simpler-sidebar)
 
