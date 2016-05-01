@@ -20,7 +20,7 @@ module.exports = function( grunt ) {
 			},
 			dist: {
 				src: [ "src/simpler-sidebar.js" ],
-				dest: "dist/jquery.simpler-sidebar.js"
+				dest: "dist/jquery.<%= pkg.name %>.js"
 			}
 		},
 
@@ -29,7 +29,7 @@ module.exports = function( grunt ) {
 			files: [
 				"src/simpler-sidebar.js",
 				"test/**/*"
-			]
+			],
 			options: {
 				jshintrc: ".jshintrc"
 			}
@@ -53,11 +53,6 @@ module.exports = function( grunt ) {
 			options: {
 				banner: "<%= meta.banner %>\n"
 			}
-		},
-
-		watch: {
-			file: [ "src/simpler-sidebar.js" ],
-			tasks: [ "lint", "build" ]
 		}
 	} );
 
@@ -70,5 +65,4 @@ module.exports = function( grunt ) {
 	grunt.registerTask( "lint", [ "jshint", "jscs" ] );
 	grunt.registerTask( "build", [ "lint", "concat", "uglify" ] );
 	grunt.registerTask( "default", [ "lint", "build" ] );
-
 };
