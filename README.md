@@ -1,16 +1,9 @@
 simpler-sidebar
 ===
-<<<<<<< HEAD
-[![GitHub version](https://img.shields.io/badge/version-1.4.5-brightgreen.svg)](https://github.com/dcdeiv/simpler-sidebar/releases/latest)
-[![Bower version](https://img.shields.io/badge/bower-1.4.5-brightgreen.svg)](https://github.com/dcdeiv/simpler-sidebar)
-[![npm version](https://img.shields.io/badge/npm-1.4.5-brightgreen.svg)](https://www.npmjs.com/package/simpler-sidebar)
-=======
-
 [![Join the chat at https://gitter.im/dcdeiv/simpler-sidebar](https://badges.gitter.im/dcdeiv/simpler-sidebar.svg)](https://gitter.im/dcdeiv/simpler-sidebar?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![GitHub version](https://img.shields.io/badge/version-1.4.9-brightgreen.svg)](https://github.com/dcdeiv/simpler-sidebar/releases/latest)
 [![Bower version](https://img.shields.io/badge/bower-1.4.9-brightgreen.svg)](https://github.com/dcdeiv/simpler-sidebar)
 [![npm version](https://img.shields.io/badge/npm-1.4.9-brightgreen.svg)](https://www.npmjs.com/package/simpler-sidebar)
->>>>>>> travis
 [![MIT and GPL-2 license](https://img.shields.io/badge/license-MIT%20and%20GPL--2.0-blue.svg)](#license)
 
 A jQuery plugin that allows to *create a side nav* as in modern mobile apps. It aims to *simplicity* so that *everybody can use it* no matter if expert programmers or not.
@@ -111,23 +104,6 @@ You can access options in two ways.
 The first way is to add an option in the plugin itself. For example:
 
 ```javascript
-<<<<<<< HEAD
-$('#sidebar').simplerSidebar({
-	opener: '#toggle-sidebar',
-	animation: {
-		duration: 1000,
-		easing: 'easeOutQuint'
-	},
-	sidebar: {
-		align: 'right',
-		width: 300,
-		closingLinks: '.close-sidebar'
-	},
-	mask: {
-		display: false
-	}
-});
-=======
 $( "#sidebar" ).simplerSidebar( {
     opener: "#toggle-sidebar",
     animation: {
@@ -143,7 +119,6 @@ $( "#sidebar" ).simplerSidebar( {
         display: false
     }
 } );
->>>>>>> travis
 ```
 
 The second way to access options is by using the following key:
@@ -160,17 +135,11 @@ According to the example above, here is the other way to tweak options by using 
 
 ```javascript
 $.fn.simplerSidebar.settings.animation.duration = 1000;
-<<<<<<< HEAD
-$.fn.simplerSidebar.settings.animation.easing = 'easeOutQuint';
-$.fn.simplerSidebar.settings.sidebar.align = 'right';
-$.fn.simplerSidebar.settings.sidebar.width = 300;
-$.fn.simplerSidebar.settings.sidebar.closingLinks = '.close-sidebar';
-=======
+
 $.fn.simplerSidebar.settings.animation.easing = "easeOutQuint";
 $.fn.simplerSidebar.settings.sidebar.align = "right";
 $.fn.simplerSidebar.settings.sidebar.width = 500;
 $.fn.simplerSidebar.settings.sidebar.closingLinks = ".close";
->>>>>>> travis
 $.fn.simplerSidebar.settings.mask.display = false;
 
 $( "#sidebar" ).simplerSidebar( {
