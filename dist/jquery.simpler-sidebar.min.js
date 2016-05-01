@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+/*! simpler-sidebar v1.4.6 (https://github.com/dcdeiv/simpler-sidebar)
+=======
 /*! simpler-sidebar v1.4.9 (https://github.com/dcdeiv/simpler-sidebar)
+>>>>>>> travis
 ** Copyright (c) 2015 - 2016 Davide Di Criscito
 ** Dual licensed under MIT and GPL-2.0
 */
