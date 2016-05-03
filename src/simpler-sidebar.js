@@ -140,7 +140,7 @@
 			$mask.click( closeSidebar );
 
 			//Closing Sidebar when a link inside of it is clicked
-			$sidebar.on( "click", $links, closeSidebar );
+			$sidebar.find( $links ).click( closeSidebar );
 
 			//Adjusting width;
 			$( window ).resize( function() {
