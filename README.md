@@ -183,6 +183,9 @@ $.fn.simplerSidebar.settings.mask.css = {
 Help me improve simpler-sidebar and make it as perfect as possible, but first read the [contribution guidelines](CONTRIBUTING.md).
 
 ## Release History
+* **v1.4.11** (2016-05-02) -
+  * Add support to Travis-ci.
+  * Add support to jQuery v1.12.2.
 * **v1.4.9** (2016-02-17) -
   * Add Gitter chat badge. Join the chat [here](https://gitter.im/dcdeiv/simpler-sidebar).
   * Add `.editorconfig` to maintain consistency in the coding style.
