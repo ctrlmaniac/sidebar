@@ -4,7 +4,9 @@
 */( function( $ ) {
 
 	$.fn.simplerSidebar = function( options ) {
-		var cfg = $.extend( true, $.fn.simplerSidebar.settings, options );
+		var cfg = $.extend( true, $.fn.simplerSidebar.settings, options ),
+			openPanel = $.Event( "open.panel", true, true ),
+			closePanel = $.Event( "close.panel", true, true );
 
 		return this.each( function() {
 			var align, sbw, ssbInit, ssbStyle, maskInit, maskStyle,
@@ -44,6 +46,7 @@
 						.animate( animationStart, activate )
 						.attr( "data-" + attr, "active" );
 
+					$( "body" ).trigger( openPanel );
 					$mask.fadeIn( duration );
 				},
 				animateClose = function() {
@@ -51,6 +54,7 @@
 						.animate( animationReset, deactivate )
 						.attr( "data-" + attr, "disabled" );
 
+					$( "body" ).trigger( closePanel );
 					$mask.fadeOut( duration );
 				},
 				closeSidebar = function() {
