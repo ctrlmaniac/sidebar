@@ -11,7 +11,7 @@
 			// Default settings
 			// Options are fully commented in the options.yaml file
 			var cfg = $.extend( true, {
-				attr: "sidebarbones",
+				attr: "simplersidebar",
 				top: 0,
 				gap: 64,
 				zIndex: 3000,
