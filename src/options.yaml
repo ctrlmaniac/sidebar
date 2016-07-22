@@ -1,0 +1,51 @@
+# ALL AVAILABLE OPTIONS
+
+#
+attr: "sidebarbones" # The html attr that is added to specific elements in order to make them selecteble and tweakable. Assign different values to attr if you run multiple instances
+init: "closed" # or "opened" if you want the sidebar to be opened when the page is loaded the first time
+top: 0 # Add the amount of px used by the top navbar if you want the navbar to be always displayed
+align: "right" # or left if you want to change the sidebar position
+gap: 64 # The gap in px between the window and the sidebar left side (or right according to the chosen align, ie: right-aligned side left, left-aligned right side)
+
+# Animation options
+animation:
+  duration: 500 # ms
+  easing: "swing" # Include jquery-ui for better easing. Best easing is "easeOutQuint"
+
+# General selectors
+selectors:
+  trigger: "" # This select the html item that will trigger the animation
+  quitter: "a"
+
+# All events must be functions
+events:
+  # Events triggered along the animation when a selector is clicked
+  on:
+    animation:
+      open: ""
+      close: ""
+      both: ""
+
+  # Events triggered after the animation when the a selector is clicked
+  callbacks:
+    animation:
+      open: ""
+      close: ""
+      both: ""
+      freezePage: true # Freeze the page while the sidebar is opened in order to disallow scrolling
+
+# Sidebar options
+sidebar:
+  # The width is put outside the sidebar css options because it musn't be overridden by anything
+  width: 300 # px
+
+# Mask options
+# The MASK is a div that will add an overlay to the content beneath the sidebar while the sidebar is opened
+mask:
+  display: true # or false if you don't want to use this feature
+
+  # Style that mustn't be changed with common stylesheets
+  css:
+    backgroundColor: "black"
+    opacity: 0.5
+    filter: "Alpha(opacity=50)" # IE opacity fix
