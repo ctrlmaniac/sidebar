@@ -1,9 +1,9 @@
 {
   "name": "simpler-sidebar",
-  "version": "1.4.11",
+  "version": "2.0.0",
   "description": "A simple side nav in jQuery.",
-  "main": "./dist/jquery.simplersidebar.js",
-  "homepage": "https://github.com/dcdeiv/simpler-sidebar#readme",
+  "main": "./dist/jquery.simpler-sidebar.js",
+  "homepage": "https://github.com/simple-sidebar/simpler-sidebar#readme",
   "author": {
     "name": "Davide Di Criscito",
     "email": "davide.dicriscito@gmail.com",
@@ -26,17 +26,21 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/dcdeiv/simpler-sidebar.git"
+    "url": "https://github.com/simple-sidebar/simpler-sidebar.git"
   },
   "files": [
     "demo",
     "dist"
   ],
   "directories": {
-    "example": "./demo"
+    "example": "./demo",
+    "doc": "./doc"
   },
   "bugs": {
-    "url": "https://github.com/dcdeiv/simpler-sidebar/issues"
+    "url": "https://github.com/simple-sidebar/simpler-sidebar/issues"
+  },
+  "dependencies": {
+    "jquery": "^1.12.4"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
@@ -45,9 +49,6 @@
     "grunt-contrib-uglify": "^0.11.1",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-jscs": "^2.7.0"
-  },
-  "dependencies": {
-    "jquery": "^1.11.3"
   },
   "scripts": {
     "build": "grunt build",
