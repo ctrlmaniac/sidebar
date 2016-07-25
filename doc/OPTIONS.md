@@ -47,7 +47,7 @@ var options = {
   }
 };
 ```
-You can store your options in a variable and pass it to the plugin or write them directly in in.
+You can store your options in a variable and pass it to the plugin or write them directly in it. See [demos](https://github.com/simple-sidebar/simpler-sidebar).
 
 ## attr
 Type: `String`
