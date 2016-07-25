@@ -132,20 +132,20 @@
       </div>
     </div>
     <!-- div#main-sidebar -->
-    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>
     <script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js'></script>
     <script src='../dist/jquery.simpler-sidebar.min.js'></script>
     <script>
       $( document ).ready( function() {
       	$( "#main-sidebar" ).simplerSidebar( {
       		top: 42,
-      		opener: "#toggle-sidebar",
+          align: "right",
+          selectors: {
+            trigger: "#toggle-sidebar",
+            quitter: ".close-sb"
+          },
       		animation: {
       			easing: "easeOutQuint"
-      		},
-      		sidebar: {
-      			align: "right",
-      			closingLinks: ".close-sb"
       		}
       	} );
       } );
