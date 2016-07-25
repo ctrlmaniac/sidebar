@@ -13,7 +13,7 @@ A jQuery plugin that allows to *create a side nav* as in modern mobile apps. It 
 ## Latest Release
 * **v2.0.0** (2016-07-21):
   * Improved options list.
-  * Fix multiple instances bug.
+  * Fix the multiple instances bug.
   * Add the ability to set custom functions to run when/after all the animations are triggered. [#21](https://github.com/simple-sidebar/simpler-sidebar/issues/21).
   * Add the ability to scroll the page when the sidebar is opened. [#16](https://github.com/simple-sidebar/simpler-sidebar/issues/16).
   * Add more detailed docs stored in the [doc](https://github.com/simple-sidebar/simpler-sidebar/doc) folder.
@@ -137,14 +137,6 @@ Help me improve simplerSidebar and make it as perfect as possible, but first rea
 
 ## Release History
 Check out all releases in the [Release History documentation](https://github.com/simple-sidebar/simpler-sidebar/doc/RELEASES.md) page.
-
-### Latest Release
-* **v2.0.0** (2016-07-21):
-  * Improved options list.
-  * Fix multiple instances bug.
-  * Add the ability to set custom functions to run when/after all the animations are triggered. [#21](https://github.com/simple-sidebar/simpler-sidebar/issues/21).
-  * Add the ability to scroll the page when the sidebar is opened. [#16](https://github.com/simple-sidebar/simpler-sidebar/issues/16).
-  * Add more detailed docs stored in the [doc](https://github.com/simple-sidebar/simpler-sidebar/doc) folder.
 
 ## License
 Copyright (c) 2015 - 2016 simple-sidebar, Davide Di Criscito.
