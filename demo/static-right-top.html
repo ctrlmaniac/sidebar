@@ -45,7 +45,7 @@
         </div>
         <div class='section'>
           <h4>
-            <a href='http://dcdeiv.github.io/simpler-sidebar'>> Go Back to the Main Website <</a>
+            <a href='http://simple-sidebar.github.io/simpler-sidebar'>> Go Back to the Main Website <</a>
           </h4>
         </div>
         <div class='section'>
@@ -77,6 +77,15 @@
               </li>
               <li class='close-sb'>
                 <a href='dynamic-left-top.html'>Dynamic Left-Top</a>
+              </li>
+              <li class="close-sb">
+                <a href="custom-functions.html">Custom Functions</a>
+              </li>
+              <li class="close-sb">
+                <a href="right-left.html">Multiple Instances: Right and Left</a>
+              </li>
+              <li class="close-sb">
+                <a href="right-left-custom-functions.html">Multiple Instances: right and Left + custom functions</a>
               </li>
             </ul>
           </nav>
@@ -132,20 +141,19 @@
       </div>
     </div>
     <!-- div#main-sidebar -->
-    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>
     <script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js'></script>
     <script src='../dist/jquery.simpler-sidebar.min.js'></script>
     <script>
       $( document ).ready( function() {
       	$( "#main-sidebar" ).simplerSidebar( {
       		top: 42,
-      		opener: "#toggle-sidebar",
+          selectors: {
+            trigger: "#toggle-sidebar",
+            quitter: ".close-sb"
+          },
       		animation: {
       			easing: "easeOutQuint"
-      		},
-      		sidebar: {
-      			align: "right",
-      			closingLinks: ".close-sb"
       		}
       	} );
       } );

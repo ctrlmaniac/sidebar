@@ -1,200 +1,264 @@
-/*! simpler-sidebar v1.4.11 (https://github.com/dcdeiv/simpler-sidebar#readme)
+/*! simpler-sidebar v2.0.0 (https://github.com/simple-sidebar/simpler-sidebar#readme)
 ** Copyright (c) 2015 - 2016 Davide Di Criscito
 ** Dual licensed under MIT and GPL-2.0
-*/( function( $ ) {
+*/;( function( $, window, document, undefined ) {
 
-	$.fn.simplerSidebar = function( options ) {
-		var cfg = $.extend( true, $.fn.simplerSidebar.settings, options );
+  "use strict";
 
-		return this.each( function() {
-			var align, sbw, ssbInit, ssbStyle, maskInit, maskStyle,
-				attr = cfg.attr,
-				$sidebar = $( this ),
-				$opener = $( cfg.opener ),
-				$links = cfg.sidebar.closingLinks,
-				duration = cfg.animation.duration,
-				sbMaxW = cfg.sidebar.width,
-				gap = cfg.sidebar.gap,
-				winMaxW = sbMaxW + gap,
-				w = $( window ).width(),
+		// Set the plugin name
+		// Change this name according to the package you want to build
+		var pluginName = "simplerSidebar";
 
-				animationStart = {},
-				animationReset = {},
+		$.fn[ pluginName ] = function( options ) {
 
-				hiddenFlow = function() {
-					$( "body, html" ).css( "overflow", "hidden" );
-				},
-				autoFlow = function() {
-					$( "body, html" ).css( "overflow", "auto" );
+			// Default settings
+			// Options are fully commented in the options.yaml file
+			var cfg = $.extend( true, {
+				attr: "simplersidebar",
+				top: 0,
+				gap: 64,
+				zIndex: 3000,
+
+				sidebar: {
+					width: 300
 				},
 
-				activate = {
-					duration: duration,
-					easing: cfg.animation.easing,
-					complete: hiddenFlow
-				},
-				deactivate = {
-					duration: duration,
-					easing: cfg.animation.easing,
-					complete: autoFlow
+				animation: {
+					duration: 500,
+					easing: "swing"
 				},
 
-				animateOpen = function() {
-					$sidebar
-						.animate( animationStart, activate )
-						.attr( "data-" + attr, "active" );
-
-					$mask.fadeIn( duration );
-				},
-				animateClose = function() {
-					$sidebar
-						.animate( animationReset, deactivate )
-						.attr( "data-" + attr, "disabled" );
-
-					$mask.fadeOut( duration );
-				},
-				closeSidebar = function() {
-					var isWhat = $sidebar.attr( "data-" + attr ),
-						csbw = $sidebar.width();
-
-					animationReset[ align ] = -csbw;
-
-					if ( isWhat === "active" ) {
-						animateClose();
+				// Changing these options will break the plugin
+				events: {
+					on: {
+						animation: {
+							open: function() {},
+							close: function() {},
+							both: function() {}
+						}
+					},
+					callbacks: {
+						animation: {
+							open: function() {},
+							close: function() {},
+							both: function() {},
+							freezePage: true
+						}
 					}
 				},
 
-				$mask = $( "<div>" ).attr( "data-" + attr, "mask" );
-
-			//Checking sidebar align
-			if ( [ undefined, "right" ].indexOf( cfg.sidebar.align ) !== -1 ) {
-				align = "right";
-			} else if ( cfg.sidebar.align === "left" ) {
-				align = "left";
-			} else {
-				console.log( "ERR sidebar.align: you typed \"" +
-					cfg.sidebar.align + "\". You should choose between" +
-					"\"right\" or \"left\"." );
-			}
-
-			//Sidebar style
-			if ( w < winMaxW ) {
-				sbw = w - gap;
-			} else {
-				sbw = sbMaxW;
-			}
-
-			ssbInit = {
-				position: "fixed",
-				top: cfg.top,
-				bottom: 0,
-				width: sbw
-			};
-
-			ssbInit[ align ] = -sbw;
-			animationStart[ align ] = 0;
-
-			ssbStyle = $.extend( true, ssbInit, cfg.sidebar.css );
-
-			$sidebar.css( ssbStyle )
-				.attr( "data-" + attr, "disabled" );
-
-			//Mask style
-			maskInit = {
-				position: "fixed",
-				top: cfg.top,
-				right: 0,
-				bottom: 0,
-				left: 0,
-				zIndex: cfg.sidebar.css.zIndex - 1,
-				display: "none"
-			};
-
-			maskStyle = $.extend( true, maskInit, cfg.mask.css );
-
-			//Appending Mask if mask.display is true
-			if ( [ true, "true", false, "false" ].indexOf( cfg.mask.display ) !== -1 ) {
-				if ( [ true, "true" ].indexOf( cfg.mask.display ) !== -1 ) {
-					$mask.appendTo( "body" ).css( maskStyle );
+				mask: {
+					display: true,
+					css: {
+						backgroundColor: "black",
+						opacity: 0.5,
+						filter: "Alpha(opacity=50)"
+					}
 				}
-			} else {
-				console.log(
-					"ERR mask.display: you typed \"" +
-					cfg.mask.display + "\". You should choose between" +
-					" true or false."
-				);
-			}
+			}, options );
 
-			//Opening and closing the Sidebar when $opener is clicked
-			$opener.click( function() {
-				var isWhat = $sidebar.attr( "data-" + attr ),
-					csbw = $sidebar.width();
+			// Keep chainability
+			return this.each( function() {
+				var sbStyle, pvtMaskStyle, maskStyle,
+					attr = "data-" + cfg.attr,
 
-				animationReset[ align ] = -csbw;
+					// Set anything else than "opened" to "closed"
+					init = ( "opened" === cfg.init ) ? "opened" : "closed",
 
-				if ( isWhat === "disabled" ) {
-					animateOpen();
-				} else if ( isWhat === "active" ) {
-					animateClose();
-				}
-			} );
+					// Set anything else than "left" to "right"
+					align = ( "left" === cfg.align ) ? "left" : "right",
 
-			//Closing Sidebar when the mask is clicked
-			$mask.click( closeSidebar );
+					duration = cfg.animation.duration,
+					easing = cfg.animation.easing,
+					animation = {},
 
-			//Closing Sidebar when a link inside of it is clicked
-			$sidebar.on( "click", $links, closeSidebar );
+					// Set anything else then true to false
+					freezePage = ( true === cfg.events.callbacks.animation.freezePage ) ? true : false,
 
-			//Adjusting width;
-			$( window ).resize( function() {
-				var rsbw, update,
-					isWhat = $sidebar.attr( "data-" + attr ),
-					nw = $( window ).width();
+					// Selectors
+					$sidebar = $( this ),
+					$trigger = $( cfg.selectors.trigger ),
+					$quitter = ( !cfg.selectors.quitter ) ? "a" : $( cfg.selectors.quitter ),
+					$mask = $( "<div>" ).attr( attr, "mask" ),
 
-				if ( nw < winMaxW ) {
-					rsbw = nw - gap;
-				} else {
-					rsbw = sbMaxW;
-				}
+					w = $( window ).width(),
 
-				update = {
-					width: rsbw
+					// Calculate sidebar width
+					setSidebarWidth = function( w ) {
+							if ( w < ( cfg.sidebar.width + cfg.gap ) ) {
+								return w - cfg.gap;
+							} else {
+								return cfg.sidebar.width;
+							}
+					},
+
+					// Check if the sidebar attribute is set to "opened" or "closed"
+					sidebarStatus = function() {
+						return $sidebar.attr( attr );
+					},
+
+					// Change sidebar sidebarStatus
+					changeSidebarStatus = function( status ) {
+						$sidebar.attr( attr, status );
+					},
+
+					// Create mask
+					createMask = function() {
+						$mask
+							.appendTo( "body" )
+							.css( maskStyle );
+					},
+
+					// $mask animations
+					// animations are put into functions in order the make them easily tweakable
+					showMask = function() {
+						$mask.fadeIn( duration );
+					},
+					hideMask = function() {
+						$mask.fadeOut( duration );
+					},
+
+					// Other functions that must be run along the animation
+					events = {
+
+						// Events triggered with the animations
+						on: {
+							animation: {
+								open: function() {
+									showMask();
+									changeSidebarStatus( "opened" );
+
+									cfg.events.on.animation.open();
+								},
+								close: function() {
+									hideMask();
+									changeSidebarStatus( "closed" );
+
+									cfg.events.on.animation.close();
+								},
+								both: function() {
+									cfg.events.on.animation.both();
+								}
+							}
+						},
+
+						// Events triggered after the animations
+						callbacks: {
+							animation: {
+								open: function() {
+									if ( true === freezePage ) {
+										$( "body, html" ).css( "overflow", "hidden" );
+									}
+
+									cfg.events.callbacks.animation.open();
+								},
+								close: function() {
+									if ( true === freezePage ) {
+										$( "body, html" ).css( "overflow", "auto" );
+									}
+
+									cfg.events.callbacks.animation.close();
+								},
+								both: function() {
+									cfg.events.callbacks.animation.both();
+								}
+							}
+						}
+					},
+
+					// Create animations
+					animateOpen = function() {
+						var callbacks = function() {
+							events.callbacks.animation.open();
+							events.callbacks.animation.both();
+						};
+
+						// Define the animation
+						animation[ align ] = 0;
+
+						// Apply the animation, the options and the callbacks
+						$sidebar.animate( animation, duration, easing, callbacks );
+
+						events.on.animation.open();
+						events.on.animation.both();
+					},
+					animateClose = function() {
+						var callbacks = function() {
+							events.callbacks.animation.close();
+							events.callbacks.animation.both();
+						};
+
+						// Define the animation
+						animation[ align ] = -$sidebar.width();
+
+						// Apply the animation, the options and the callbacks
+						$sidebar.animate( animation, duration, easing, callbacks );
+
+						events.on.animation.close();
+						events.on.animation.both();
+					};
+
+				// Create the sidebar style
+				sbStyle = {
+					position: "fixed",
+					top: parseInt( cfg.top ),
+					bottom: 0,
+					width: setSidebarWidth( w ),
+					zIndex: cfg.zIndex
 				};
 
-				if ( isWhat === "disabled" ) {
-					update[ align ] = -rsbw;
-					$sidebar.css( update );
-				} else if ( isWhat === "active" ) {
-					$sidebar.css( update );
+				// Set initial position
+				sbStyle[ align ] = ( "closed" === init ) ? -setSidebarWidth( w ) : 0;
+
+				// Apply style to the sidebar
+				$sidebar
+					.css( sbStyle )
+					.attr( attr, init ); // apply init
+
+				// Create the private mask style
+				pvtMaskStyle = {
+					position: "fixed",
+					top: parseInt( cfg.top ),
+					right: 0,
+					bottom: 0,
+					left: 0,
+					zIndex: cfg.zIndex - 1,
+					display: "none"
+				};
+
+				// Merge the Mask private and custom style but keep private style unchangeable
+				maskStyle = $.extend( true, pvtMaskStyle, cfg.mask.css );
+
+				// Create Mask if required
+				// Mask is appended to body
+				if ( true === cfg.mask.display ) {
+					createMask();
 				}
+
+				// Apply animations
+				$trigger.click( function() {
+					if ( "opened" === sidebarStatus() ) {
+						animateClose();
+					} else if ( "closed" === sidebarStatus() ) {
+						animateOpen();
+					}
+				} );
+
+				$mask.click( animateClose );
+				$sidebar.on( "click", $quitter, animateClose );
+
+				// Make the sidebar responsive
+				$( window ).resize( function() {
+					var w = $( window ).width();
+
+					// Fix width on resize
+					$sidebar.css( "width", setSidebarWidth( w ) );
+
+					if ( "closed" === sidebarStatus() ) {
+						$sidebar.css( align, -$sidebar.width() );
+					}
+				} );
 			} );
+		};
 
-		} );
-	};
-
-	$.fn.simplerSidebar.settings = {
-		attr: "simplersidebar",
-		top: 0,
-		animation: {
-			duration: 500,
-			easing: "swing"
-		},
-		sidebar: {
-			width: 300,
-			gap: 64,
-			closingLinks: "a",
-			css: {
-				zIndex: 3000
-			}
-		},
-		mask: {
-			display: true,
-			css: {
-				backgroundColor: "black",
-				opacity: 0.5,
-				filter: "Alpha(opacity=50)"
-			}
-		}
-	};
-
-} )( jQuery );
+} )( jQuery, window, document );

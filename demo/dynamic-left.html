@@ -34,7 +34,7 @@
       <div class="main-sidebar-wrapper" id="main-sidebar-wrapper"></div>
     </div>
     <!-- div#main-sidebar -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
     <script src="../dist/jquery.simpler-sidebar.min.js"></script>
     <script>
@@ -47,14 +47,13 @@
       		$( "#main-sidebar-wrapper" ).load( "ajax/sidebar.html" );
 
       		$( "#main-sidebar" ).simplerSidebar( {
-      			top: 0,
-      			opener: "#toggle-sidebar",
+            align: "left",
+            selectors: {
+              trigger: "#toggle-sidebar",
+              quitter: ".close-sb"
+            },
       			animation: {
       				easing: "easeOutQuint"
-      			},
-      			sidebar: {
-      				align: "left",
-      				closingLinks: ".close-sb"
       			}
       		} );
       	} );
