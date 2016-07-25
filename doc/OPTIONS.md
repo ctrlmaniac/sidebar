@@ -1,14 +1,53 @@
 # OPTIONS
 
-The options are stored in a javascript object this means that `val1.val2.val3 = "string"` must be written:
+The options are stored in a javascript object.
 
 ```javascript
-val2: {
-    val2: {
-        val3: "string"
+var options = {
+  attr: "simplersidebar",
+  init: "closed",
+  top: 0,
+  align: "right",
+  gap: 64,
+  animation: {
+    duration: 500,
+    easing: "swing"
+  },
+  selectors: {
+    trigger: "",
+    quitter: "a"
+  },
+  sidebar: {
+    width: 300
+  },
+  mask: {
+    display: true,
+    css: {
+      backgroundColor: "black",
+      opacity: 0.5,
+      filter: "Alpha(opacity=50)"
     }
-}
+  },
+  events: {
+    on: {
+      animation: {
+        open: "",
+        close: "",
+        both: ""
+      }
+    },
+    callbacks: {
+      animation: {
+        open: "",
+        close: "",
+        both: "",
+        freezePage: true
+      }
+    }
+  }
+};
 ```
+You can store your options in a variable and pass it to the plugin or write them directly in in.
 
 ## attr
 Type: `String`
