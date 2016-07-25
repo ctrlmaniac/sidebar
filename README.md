@@ -11,7 +11,7 @@ simpler-sidebar
 A jQuery plugin that allows to *create a side nav* as in modern mobile apps. It aims to *simplicity* so that *everybody can use it* no matter if expert programmers or not.
 
 ## Latest Release
-* **v2.0.0** (2016-07-21):
+* **v2.0.0** (2016-07-26):
   * Improved options list.
   * Fix the multiple instances bug.
   * Add the ability to set custom functions to run when/after all the animations are triggered. [#21](https://github.com/simple-sidebar/simpler-sidebar/issues/21).
