@@ -1,7 +1,6 @@
 # Release History
 
 ## Latest Release
-
 * **v2.0.0** (2016-07-21):
   * Improved options list.
   * Fix the multiple instances bug.
