@@ -136,7 +136,9 @@ Check out all available options in the [options list documentation](https://gith
 Help me improve simplerSidebar and make it as perfect as possible, but first read the [contribution guidelines](https://github.com/simple-sidebar/simpler-sidebar/blob/master/doc/CONTRIBUTING.md).
 
 ## Release History
-Check out all releases in the [Release History documentation](https://github.com/simple-sidebar/simpler-sidebar/blob/master/doc/RELEASES.md) page.
+Check out all releases in the [Release History](https://github.com/simple-sidebar/simpler-sidebar/blob/master/doc/RELEASES.md) documentation page.
+
+Before updating your local simpler-sidebar package, be sure to read the [changelog](https://github.com/simple-sidebar/simpler-sidebar/blob/master/doc/changelogs) too. **Upgrading without migrating will broke your scripts**.
 
 ## License
 Copyright (c) 2015 - 2016 simple-sidebar, Davide Di Criscito.
