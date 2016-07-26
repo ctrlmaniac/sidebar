@@ -47,7 +47,7 @@ var options = {
   }
 };
 ```
-You can store your options in a variable and pass it to the plugin or write them directly in it. See [demos](https://github.com/simple-sidebar/simpler-sidebar).
+You can store your options in a variable and pass it to the plugin or write them directly in it. See [demos](https://github.com/simple-sidebar/simpler-sidebar/tree/master/demo).
 
 ## attr
 Type: `String`
@@ -130,14 +130,14 @@ Type: `String`
 Default: `""`
 **required**
 
-This select the html item that will trigger the animation. The item can be a menu icon for example. See the [demo](/.demo) page for a proper example.
+This select the html item that will trigger the animation. The item can be a menu icon for example. See the [demo](https://github.com/simple-sidebar/simpler-sidebar/tree/master/demo) page for a proper example.
 
 ### selectors.quitter
 Type: `String`
 Default: `a`
 **recommended**
 
-By default it will select all `a` elements in the sidebar. However you should choose assign a class to all elements in the sidebar that will trigger the closing animation, even links, in order to avoid using the `a` selector. See the [demo](/.demo) page for a proper example.
+By default it will select all `a` elements in the sidebar. However you should choose assign a class to all elements in the sidebar that will trigger the closing animation, even links, in order to avoid using the `a` selector. See the [demo](https://github.com/simple-sidebar/simpler-sidebar/tree/master/demo) page for a proper example.
 
 ## sidebar
 Type: `Object`
@@ -160,7 +160,6 @@ The width musn't be overridden by common stylesheets on inline css. If you want 
 Type: `Object`
 Default:
 ```javascript
-
 mask: {
     display: true,
     css: {

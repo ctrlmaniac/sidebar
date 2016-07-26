@@ -1,12 +1,12 @@
 # Release History
 
 ## Latest Release
-* **v2.0.0** (2016-07-26):
+* **v2.0.1** (2016-07-26):
   * Improved options list.
   * Fix the multiple instances bug.
-  * Add the ability to set custom functions to run when/after all the animations are triggered. [#21](https://github.com/simple-sidebar/simpler-sidebar/issues/21).
-  * Add the ability to scroll the page when the sidebar is opened. [#16](https://github.com/simple-sidebar/simpler-sidebar/issues/16).
-  * Add more detailed docs stored in the [doc](https://github.com/simple-sidebar/simpler-sidebar/doc) folder.
+  * Add the ability to set custom functions to run when/after all the animations are triggered. [#21](https://github.com/simple-sidebar/simpler-sidebar/issues/21)-[#22](https://github.com/simple-sidebar/simpler-sidebar/pull/22);
+  * Add the ability to scroll the page when the sidebar is opened. [#16](https://github.com/simple-sidebar/simpler-sidebar/issues/16);
+  * Add more detailed and improved docs stored in the [doc](https://github.com/simple-sidebar/simpler-sidebar/tree/master/doc) folder.
 
 ## Older Releases
 * **v1.4.11** (2016-05-02) -

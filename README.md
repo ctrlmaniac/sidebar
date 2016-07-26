@@ -11,14 +11,14 @@ simpler-sidebar
 A jQuery plugin that allows to *create a side nav* as in modern mobile apps. It aims to *simplicity* so that *everybody can use it* no matter if expert programmers or not.
 
 ## Latest Release
-* **v2.0.0** (2016-07-26):
+* **v2.0.1** (2016-07-26):
   * Improved options list.
   * Fix the multiple instances bug.
-  * Add the ability to set custom functions to run when/after all the animations are triggered. [#21](https://github.com/simple-sidebar/simpler-sidebar/issues/21).
+  * Add the ability to set custom functions to run when/after all the animations are triggered. [#21](https://github.com/simple-sidebar/simpler-sidebar/issues/21)-[#22](https://github.com/simple-sidebar/simpler-sidebar/pull/22).
   * Add the ability to scroll the page when the sidebar is opened. [#16](https://github.com/simple-sidebar/simpler-sidebar/issues/16).
-  * Add more detailed docs stored in the [doc](https://github.com/simple-sidebar/simpler-sidebar/doc) folder.
+  * Add more detailed and improved docs stored in the [doc](https://github.com/simple-sidebar/simpler-sidebar/tree/master/doc) folder.
 
-Before updating your local simpler-sidebar package, be sure to read the [changelog](https://github.com/simple-sidebar/simpler-sidebar/doc/changelogs/v2.0.0.md). **Upgrading without migrating will broke your scripts**.
+Before updating your local simpler-sidebar package, be sure to read the [changelog](https://github.com/simple-sidebar/simpler-sidebar/blob/master/doc/changelogs). **Upgrading without migrating will broke your scripts**.
 
 ## Navigate
 - [Download](#download)
@@ -43,7 +43,7 @@ Or download the latest version from the [releases](https://github.com/simple-sid
 If you are updating, remember to read the [Release History](#release-history) and to check for incompatibility issues.
 
 ## Getting Started
-You will need to prepare a specific HTML template in order to make it work properly. The code below is just an example from which you can and have to draw inspiration. Along with this plugin you are provided with some demo pages in the [demo](https://github.com/simple-sidebar/simpler-sidebar/demo) directory.
+You will need to prepare a specific HTML template in order to make it work properly. The code below is just an example from which you can and have to draw inspiration. Along with this plugin you are provided with some demo pages in the [demo](https://github.com/simple-sidebar/simpler-sidebar/tree/master/demo) directory.
 
 ```html
 <div id="navbar">
@@ -130,13 +130,13 @@ $( "#sidebar" ).simplerSidebar( {
 ```
 
 ### Options List
-Check out all available options in the [options list documentation](https://github.com/simple-sidebar/simpler-sidebar/doc/OPTIONS.md) page too and use the example above as reference.
+Check out all available options in the [options list documentation](https://github.com/simple-sidebar/simpler-sidebar/blob/master/doc/OPTIONS.md) page too and use the example above as reference.
 
 ## Contributing
-Help me improve simplerSidebar and make it as perfect as possible, but first read the [contribution guidelines](https://github.com/simple-sidebar/simpler-sidebar/doc/CONTRIBUTING.md).
+Help me improve simplerSidebar and make it as perfect as possible, but first read the [contribution guidelines](https://github.com/simple-sidebar/simpler-sidebar/blob/master/doc/CONTRIBUTING.md).
 
 ## Release History
-Check out all releases in the [Release History documentation](https://github.com/simple-sidebar/simpler-sidebar/doc/RELEASES.md) page.
+Check out all releases in the [Release History documentation](https://github.com/simple-sidebar/simpler-sidebar/blob/master/doc/RELEASES.md) page.
 
 ## License
 Copyright (c) 2015 - 2016 simple-sidebar, Davide Di Criscito.
