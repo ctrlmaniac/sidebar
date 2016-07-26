@@ -31,6 +31,7 @@
   "files": [
     "demo",
     "dist"
+    "doc"
   ],
   "directories": {
     "example": "./demo",
