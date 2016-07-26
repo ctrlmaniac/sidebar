@@ -97,10 +97,10 @@ Call the simpler-sidebar plugin function and fill it with the options you need. 
 <script>
     $( document ).ready( function() {
         $( "#sidebar" ).simplerSidebar( {
-          selectors: {
-            trigger: ".toggle-sidebar",
-            quitter: "close-sidebar"
-          }
+            selectors: {
+                trigger: ".toggle-sidebar",
+                quitter: "close-sidebar"
+            }
         } );
     } );
 </script>
@@ -118,13 +118,13 @@ $( "#sidebar" ).simplerSidebar( {
         quitter: "close-sidebar"
     },
     animation: {
-      easing: "easeOutQuint"
+        easing: "easeOutQuint"
     },
     sidebar: {
-      width: 500
+        width: 500
     },
     mask: {
-      display: false
+        display: false
     }
 } );
 ```
