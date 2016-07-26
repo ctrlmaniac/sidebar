@@ -22,7 +22,7 @@
     "javascript",
     "js"
   ],
-  "main": "dist/jquery.simplersidebar.min.js",
+  "main": "dist/jquery.simplersidebar.js",
   "ignore": [
     "**/.*",
     "bower_components",
