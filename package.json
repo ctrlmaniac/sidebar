@@ -1,6 +1,6 @@
 {
   "name": "simpler-sidebar",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "A simple side nav in jQuery.",
   "main": "./dist/jquery.simpler-sidebar.min.js",
   "homepage": "https://github.com/simple-sidebar/simpler-sidebar#readme",
