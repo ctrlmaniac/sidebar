@@ -1,5 +1,7 @@
 # Release History
 
+Before updating your local simpler-sidebar package, be sure to read the [changelog](https://github.com/simple-sidebar/simpler-sidebar/blob/master/doc/changelogs) too. **Upgrading without migrating will broke your scripts**.
+
 ## Latest Release
 * **v2.0.1** (2016-07-26):
   * Improved options list.
