@@ -39,25 +39,25 @@
     <script src="../dist/jquery.simpler-sidebar.min.js"></script>
     <script>
       $( document ).ready( function() {
-      	$.ajaxSetup( {
-      		cache: false
-      	} );
+          $.ajaxSetup( {
+              cache: false
+          } );
 
-      	$( "#main-navbar" ).load( "ajax/navbar.html", function() {
-      		$( "#main-sidebar-wrapper" ).load( "ajax/sidebar.html" );
+          $( "#main-navbar" ).load( "ajax/navbar.html", function() {
+              $( "#main-sidebar-wrapper" ).load( "ajax/sidebar.html" );
 
-      		$( "#main-sidebar" ).simplerSidebar( {
-      			top: 42,
-            align: "left",
-            selectors: {
-              trigger: "#toggle-sidebar",
-              quitter: ".close-sb"
-            },
-      			animation: {
-      				easing: "easeOutQuint"
-      			}
-      		} );
-      	} );
+              $( "#main-sidebar" ).simplerSidebar( {
+                  top: 42,
+                  align: "left",
+                  selectors: {
+                      trigger: "#toggle-sidebar",
+                      quitter: ".close-sb"
+                  },
+                  animation: {
+                      easing: "easeOutQuint"
+                  }
+              } );
+          } );
       } );
     </script>
   </body>
