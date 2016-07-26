@@ -30,12 +30,12 @@
   },
   "files": [
     "demo",
-    "dist"
+    "dist",
     "doc"
   ],
   "directories": {
-    "example": "./demo",
-    "doc": "./doc"
+    "example": "demo",
+    "doc": "doc"
   },
   "bugs": {
     "url": "https://github.com/simple-sidebar/simpler-sidebar/issues"
