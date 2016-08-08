@@ -7,19 +7,19 @@ simpler-sidebar
 [![npm version](https://badge.fury.io/js/simpler-sidebar.svg)](https://badge.fury.io/js/simpler-sidebar)
 [![MIT and GPL-2.0 license](https://img.shields.io/badge/license-MIT%20and%20GPL--2.0-blue.svg)](#license)
 
-
 A jQuery plugin that allows to *create a side nav* as in modern mobile apps. It aims to *simplicity* so that *everybody can use it* no matter if expert programmers or not.
 
 ## Latest Release
-* **v2.0.2** (2016-07-26):
-  * Improved options list.
-  * Fix the multiple instances bug.
-  * Add the ability to set custom functions to run when/after all the animations are triggered. [#21](https://github.com/simple-sidebar/simpler-sidebar/issues/21)-[#22](https://github.com/simple-sidebar/simpler-sidebar/pull/22).
-  * Add the ability to scroll the page when the sidebar is opened. [#16](https://github.com/simple-sidebar/simpler-sidebar/issues/16).
-  * Add more detailed and improved docs stored in the [doc](https://github.com/simple-sidebar/simpler-sidebar/tree/master/doc) folder.
-  * Fix npm package, doc folder is now shipped.
+* **v2.0.4** (2016-08-08):
+  * Fixed `quitter` selector.
+  * Add `grunt watch` task.
+  * Add the issue template for github.
+  * Move `CONTRIBUTING.md` to the root directory.
 
-Before updating your local simpler-sidebar package, be sure to read the [changelog](https://github.com/simple-sidebar/simpler-sidebar/blob/master/doc/changelogs). **Upgrading without migrating will broke your scripts**.
+### Important notes about the latest release
+If you are still using the **v1.x.x**, please, consider to update the plugin to the latest **v2.x.x**.
+
+Before updating your local simpler-sidebar package, be sure to read the [changelog](https://github.com/simple-sidebar/simpler-sidebar/blob/master/doc/changelogs) too, especially the [latest major update changelog](https://github.com/simple-sidebar/simpler-sidebar/blob/master/doc/changelogs/v2.0.2.md). **Upgrading without migrating will broke your scripts**.
 
 ## Navigate
 - [Download](#download)
@@ -134,12 +134,14 @@ $( "#sidebar" ).simplerSidebar( {
 Check out all available options in the [options list documentation](https://github.com/simple-sidebar/simpler-sidebar/blob/master/doc/OPTIONS.md) page too and use the example above as reference.
 
 ## Contributing
-Help me improve simplerSidebar and make it as perfect as possible, but first read the [contribution guidelines](https://github.com/simple-sidebar/simpler-sidebar/blob/master/doc/CONTRIBUTING.md).
+Help me improve simplerSidebar and make it as perfect as possible, but first read the [contribution guidelines](https://github.com/simple-sidebar/simpler-sidebar/blob/master/CONTRIBUTING.md).
 
 ## Release History
 Check out all releases in the [Release History](https://github.com/simple-sidebar/simpler-sidebar/blob/master/doc/RELEASES.md) documentation page.
 
-Before updating your local simpler-sidebar package, be sure to read the [changelog](https://github.com/simple-sidebar/simpler-sidebar/blob/master/doc/changelogs) too. **Upgrading without migrating will broke your scripts**.
+If you are still using the **v1.x.x**, please, consider to update the plugin to the latest **v2.x.x**.
+
+Before updating your local simpler-sidebar package, be sure to read the [changelog](https://github.com/simple-sidebar/simpler-sidebar/blob/master/doc/changelogs) too, especially the [latest major update changelog](https://github.com/simple-sidebar/simpler-sidebar/blob/master/doc/changelogs/v2.0.2.md). **Upgrading without migrating will broke your scripts**.
 
 ## License
 Copyright (c) 2015 - 2016 simple-sidebar, Davide Di Criscito.

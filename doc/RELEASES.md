@@ -1,8 +1,15 @@
 # Release History
 
-Before updating your local simpler-sidebar package, be sure to read the [changelog](https://github.com/simple-sidebar/simpler-sidebar/blob/master/doc/changelogs) too. **Upgrading without migrating will broke your scripts**.
+Before updating your local simpler-sidebar package, be sure to read the [changelog](https://github.com/simple-sidebar/simpler-sidebar/blob/master/doc/changelogs) too, especially the [latest major update changelog](https://github.com/simple-sidebar/simpler-sidebar/blob/master/doc/changelogs/v2.0.2.md). **Upgrading without migrating will broke your scripts**.
 
 ## Latest Release
+* **v2.0.4** (2016-08-08):
+  * Fixed `quitter` selector.
+  * Add `grunt watch` task.
+  * Add the issue template for github.
+  * Move `CONTRIBUTING.md` to the root directory.
+
+## Older Releases
 * **v2.0.2** (2016-07-26):
   * Improved options list.
   * Fix the multiple instances bug.
@@ -10,8 +17,6 @@ Before updating your local simpler-sidebar package, be sure to read the [changel
   * Add the ability to scroll the page when the sidebar is opened. [#16](https://github.com/simple-sidebar/simpler-sidebar/issues/16);
   * Add more detailed and improved docs stored in the [doc](https://github.com/simple-sidebar/simpler-sidebar/tree/master/doc) folder.
   * Fix npm package which ignored the doc folder.
-
-## Older Releases
 * **v1.4.11** (2016-05-02) -
   * Add support to Travis-ci.
   * Add support to jQuery v1.12.2.
