@@ -29,7 +29,7 @@
     - [ ] I have used the `jshint` plugin in my editor
   - [ ] I have run `grunt lint` to test if I made some mistakes
   - [ ] I have run `grunt build` to apply changes
-  - [ ] I have tested the plugin in using the `demo` folder on my computer
+  - [ ] I have tested the plugin by using the `demo` folder on my computer
 
 ## Actual behavior
 
