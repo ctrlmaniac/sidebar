@@ -3,6 +3,8 @@
 ## Important notes
 The options below are available from **v2.x.x**. If you still have the simpler-sidebar **v1.x.x** consider to update to the latest version.
 
+Read the changelog from the [latest major update](https://github.com/simple-sidebar/simpler-sidebar/blob/master/doc/changelogs/v2.0.2.md). In that file you will find out how to [migrate](https://github.com/simple-sidebar/simpler-sidebar/blob/master/doc/changelogs/v2.0.2.md#migrate-plugin-options)
+
 The options are stored in a javascript object.
 
 ```javascript
