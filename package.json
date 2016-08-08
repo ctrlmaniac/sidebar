@@ -1,6 +1,6 @@
 {
   "name": "simpler-sidebar",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "A simple side nav in jQuery.",
   "main": "./dist/jquery.simpler-sidebar.min.js",
   "homepage": "https://github.com/simple-sidebar/simpler-sidebar#readme",
@@ -44,12 +44,11 @@
     "jquery": "^1.12.4"
   },
   "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-contrib-concat": "^1.0.0",
+    "grunt": "^1.0.1",
     "grunt-contrib-jshint": "^1.0.0",
-    "grunt-contrib-uglify": "^0.11.1",
-    "grunt-contrib-watch": "^0.6.1",
-    "grunt-jscs": "^2.7.0"
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-jscs": "^3.0.1"
   },
   "scripts": {
     "build": "grunt build",
