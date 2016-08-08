@@ -1,5 +1,8 @@
 # OPTIONS
 
+## Important notes
+The options below are available from **v2.x.x**. If you still have the simpler-sidebar **v1.x.x** consider to update to the latest version.
+
 The options are stored in a javascript object.
 
 ```javascript
