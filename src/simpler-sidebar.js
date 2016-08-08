@@ -75,8 +75,8 @@
 					// Selectors
 					$sidebar = $( this ),
 					$trigger = $( cfg.selectors.trigger ),
-					$quitter = ( !cfg.selectors.quitter ) ? "a" : $( cfg.selectors.quitter ),
 					$mask = $( "<div>" ).attr( attr, "mask" ),
+					quitter = ( !cfg.selectors.quitter ) ? "a" : cfg.selectors.quitter,
 
 					w = $( window ).width(),
 
@@ -242,7 +242,8 @@
 				} );
 
 				$mask.click( animateClose );
-				$sidebar.on( "click", $quitter, animateClose );
+
+				$sidebar.on( "click", quitter, animateClose );
 
 				// Make the sidebar responsive
 				$( window ).resize( function() {
