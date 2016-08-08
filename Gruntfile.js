@@ -53,6 +53,11 @@ module.exports = function( grunt ) {
 			options: {
 				banner: "<%= meta.banner %>\n"
 			}
+		},
+
+		watch: {
+			files: [ "src/simpler-sidebar.js" ],
+			tasks: [ "jshint", "jscs", "concat", "uglify" ]
 		}
 	} );
 
