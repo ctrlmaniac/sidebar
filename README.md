@@ -146,4 +146,4 @@ Before updating your local simpler-sidebar package, be sure to read the [changel
 ## License
 Copyright (c) 2015 - 2016 simple-sidebar, Davide Di Criscito.
 
-Dual licensed under the [MIT](LICENSE-MIT) and [GPL-2.0](LICENSE-GPL) licenses.
+Dual licensed under the [MIT](https://github.com/simple-sidebar/simpler-sidebar/blob/master/LICENSE-MIT) and [GPL-2.0](https://github.com/simple-sidebar/simpler-sidebar/blob/master/LICENSE-GPL) licenses.
