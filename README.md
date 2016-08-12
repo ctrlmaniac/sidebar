@@ -9,6 +9,11 @@ simpler-sidebar
 
 A jQuery plugin that allows to *create a side nav* as in modern mobile apps. It aims to *simplicity* so that *everybody can use it* no matter if expert programmers or not.
 
+## :muscle: works with
+- [x] jQuery v1.12.4
+- [x] jQuery v2.2.4
+- [x] jQuery v3.1.0
+
 ## Latest Release
 * **v2.0.4** (2016-08-08):
   * Fixed `quitter` selector.
