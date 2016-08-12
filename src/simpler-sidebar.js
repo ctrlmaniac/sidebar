@@ -223,6 +223,8 @@
 					display: "none"
 				};
 
+				pvtMaskStyle.display = ( "opened" === init ) ? "block" : "none";
+
 				// Merge the Mask private and custom style but keep private style unchangeable
 				maskStyle = $.extend( true, pvtMaskStyle, cfg.mask.css );
 

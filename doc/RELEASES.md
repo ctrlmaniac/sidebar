@@ -3,13 +3,18 @@
 Before updating your local simpler-sidebar package, be sure to read the [changelog](https://github.com/simple-sidebar/simpler-sidebar/blob/master/doc/changelogs) too, especially the [latest major update changelog](https://github.com/simple-sidebar/simpler-sidebar/blob/master/doc/changelogs/v2.0.2.md). **Upgrading without migrating will broke your scripts**.
 
 ## Latest Release
+* **v2.1.3** (2016-08-13):
+  * [#27](https://github.com/simple-sidebar/simpler-sidebar/issues/27) Fix "init: opened" issue
+  * Tested with **jQuery v3.1.0**
+  * Tested with **jQuery v2.2.4**
+  * Update demo directory
+
+## Older Releases
 * **v2.0.4** (2016-08-08):
   * Fixed `quitter` selector.
   * Add `grunt watch` task.
   * Add the issue template for github.
   * Move `CONTRIBUTING.md` to the root directory.
-
-## Older Releases
 * **v2.0.2** (2016-07-26):
   * Improved options list.
   * Fix the multiple instances bug.
