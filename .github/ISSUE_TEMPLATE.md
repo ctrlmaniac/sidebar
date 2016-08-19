@@ -13,9 +13,9 @@
   - [ ] I have downloaded the plugin with `npm` - `npm install simpler-sidebar`
   - [ ] I have downloaded the plugin with `bower` - `bower install simpler-sidebar`
 - [ ] I have migrated from **v1.x.x** to **v2.x.x**
-  - [ ] I have carefully read the [RELEASES.ms](https://github.com/simple-sidebar/simpler-sidebar/blob/master/doc/RELEASES.md) file in the `doc` folder
+  - [ ] I have carefully read the [RELEASES.md](https://github.com/simple-sidebar/simpler-sidebar/blob/master/doc/RELEASES.md) file in the `doc` folder
   - [ ] I have carefully read the *latest changelog* file in the [doc/changelog](https://github.com/simple-sidebar/simpler-sidebar/tree/master/doc/changelogs) folder
-  - [ ] I have carefully read the [OPTIONS.ms](https://github.com/simple-sidebar/simpler-sidebar/blob/master/doc/OPTIONS.md) file in the `doc` folder
+  - [ ] I have carefully read the [OPTIONS.md](https://github.com/simple-sidebar/simpler-sidebar/blob/master/doc/OPTIONS.md) file in the `doc` folder
   - [ ] I don't understand how to migrate
 - [ ] I have found a bug
   - [ ] I am using jQuery v1.x.x
