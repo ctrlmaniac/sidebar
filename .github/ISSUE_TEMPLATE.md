@@ -8,7 +8,7 @@
 -->
 
 - [ ] I have carefully read the [README.md](https://github.com/simple-sidebar/simpler-sidebar/blob/master/README.md) file
-- [ ] I have installed the [latest](https://github.com/simple-sidebar/simpler-sidebar/releases/tag/v2.0.2) version
+- [ ] I have installed the [latest](https://github.com/simple-sidebar/simpler-sidebar/releases/latest) version
   - [ ] I have downloaded the plugin with `github`
   - [ ] I have downloaded the plugin with `npm` - `npm install simpler-sidebar`
   - [ ] I have downloaded the plugin with `bower` - `bower install simpler-sidebar`
