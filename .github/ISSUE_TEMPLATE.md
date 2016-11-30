@@ -14,6 +14,7 @@
   - [ ] I have downloaded the plugin with `bower` - `bower install simpler-sidebar`
     - [ ] I have checked if the version mentioned in the copyright header of the `dist/jquery.simpler-sidebar.js` file is the same as the [latest](https://github.com/simple-sidebar/simpler-sidebar/releases/latest) version
       - [ ] The plugin won't update
+        - [ ] I have run `bower install simpler-sidebar -F` to force latest version on conflict
         - [ ] I have tried to uninstall the package, cleared the cache, and reinstalled it but the version mentioned in the copyright header is the same as the [latest](https://github.com/simple-sidebar/simpler-sidebar/releases/latest) version
 - [ ] I have migrated from **v1.x.x** to **v2.x.x**
   - [ ] I have carefully read the [RELEASES.md](https://github.com/simple-sidebar/simpler-sidebar/blob/master/doc/RELEASES.md) file in the `doc` folder

@@ -9,7 +9,7 @@
 		$.fn[ pluginName ] = function( options ) {
 
 			// Default settings
-			// Options are fully commented in the options.yaml file
+			// Options are fully commented in the doc directory
 			var cfg = $.extend( true, {
 				attr: "simplersidebar",
 				top: 0,
