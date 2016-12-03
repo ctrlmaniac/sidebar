@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="HandheldFriendly" content="True">
 
-    <title>Simpler-Sidebar: Right and Left</title>
+    <title>Simpler-Sidebar: Left Top</title>
     <meta name="description" content="A simple side nav in jQuery.">
 
     <link rel="stylesheet" href="./assets/css/normalize.css" />
@@ -23,7 +23,7 @@
         <div class="container">
           <h1>Simpler Sidebar</h1>
           <p>A simple side nav in jQuery</p>
-          <h4>two instances of the plugin</h4>
+          <h4>sidebar aligned to the left, top set to 56px</h4>
         </div><!--container-->
       </div><!--title-->
       <div class="tip">
@@ -52,20 +52,9 @@
       <div id="sidebar-main-trigger" class="icon float-left">
         <img src="./assets/imgs/icon-menu-24px-x2.png" width="24px" alt="Menu Icon" />
       </div>
-      <div id="sidebar-secondary-trigger" class="icon float-right">
-        <img src="./assets/imgs/icon-more-vert-24px-x2.png" width="24px" alt="Menu Icon" />
-      </div>
     </div><!--.navbar.main-->
 
-    <div class="sidebar main left" id="sidebar-main" style="left:-500px"></div><!--#sidebar-main-->
-
-    <div class="sidebar secondary right" id="sidebar-secondary">
-      <div class="wrapper">
-        <p>Just another sidebar for local navigation maybe!</p>
-      </div>
-    </div>
-
-    </div>
+    <div class="sidebar main left" id="sidebar-main"></div><!--#sidebar-main-->
 
     <script
       src="https://code.jquery.com/jquery-1.12.4.min.js"
@@ -84,8 +73,7 @@
 
       $( "#footer-main" ).load( "./index.html #footer-main .container" );
       $( "#sidebar-main" ).load( "./index.html #sidebar-main .wrapper" );
-      $( "#sidebar-secondary .wrapper" ).load( "./index.html #debug" );
     </script>
-    <script src="./assets/js/sidebar/right-left.js"></script>
+    <script src="./assets/js/sidebar/main-sidebar-left-top.js"></script>
   </body>
 </html>
