@@ -2,24 +2,26 @@ root = true
 
 [*]
 charset = utf-8
-indent_style = space
-indent_size = 2
 end_of_line = lf
 insert_final_newline = true
 trim_trailing_whitespace = true
 
-[{*.js,.jshintrc,Gruntfile.js}]
+# Javascripts
+[*.js]
 indent_style = tab
 tab_width = 4
 
-[*.{sass,scss,css,html,xml}]
+# Stylesheets
+[*.{sass,scss,css}]
 indent_style = space
 indent_size = 2
 
-[Makefile]
-indent_style = tab
-tab_width = 2
+# Pages
+[*.{html,xml,md}]
+indent_style = space
+indent_size = 2
 
-[{.bowerrc,bower.json,package.json}]
+# Json, YAML and Configuration files
+[.*rc,*.{json,yml}]
 indent_style = space
 indent_size = 2
