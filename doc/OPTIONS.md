@@ -191,9 +191,10 @@ Default:
 ```javascript
 mask: {
     css: {
-    backgroundColor: "black"
-    opacity: 0.5
-    filter: "Alpha(opacity=50)" // IE opacity fix
+        backgroundColor: "black",
+        opacity: 0.5,
+        filter: "Alpha(opacity=50)" // IE opacity fix
+    }
 }
 ```
 
