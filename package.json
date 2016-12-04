@@ -41,7 +41,9 @@
     "url": "https://github.com/simple-sidebar/simpler-sidebar/issues"
   },
   "dependencies": {
-    "jquery": "^1.12.4"
+    "jquery": "^1.12.4",
+    "jquery-ui": "^1.12.1",
+    "jquery-ui-browserify": "^1.11.0-pre-seelio"
   },
   "devDependencies": {
     "babel-eslint": "^7.1.1",
@@ -57,8 +59,30 @@
     "gulp-rename": "^1.2.2",
     "gulp-uglify": "^2.0.0"
   },
+  "browser": {
+    "jquery": "./demo/assets/js/jquery-1.12.4.js",
+    "jquery-ui-browserify": "./demo/assets/js/jquery-ui.js",
+    "simpler-sidebar": "./dist/jquery.simpler-sidebar.js"
+  },
+  "browserify-shim": {
+    "jquery": "window.$",
+    "three": "global:THREE",
+    "jquery-ui-browserify": {
+      "depends": ["jquery:window.$"],
+      "exports": "window.$.ui"
+    },
+    "simpler-sidebar": {
+      "depends": ["jquery:window.$"],
+      "exports": "window.$.simplerSidebar"
+    }
+  },
+  "browserify": {
+    "transform": [ "browserify-shim" ]
+  },
   "scripts": {
     "build": "gulp build",
-    "test": "gulp lint"
+    "test": "gulp lint",
+    "watch": "gulp watch",
+    "bundle": "browserify -d demo/assets/js/bundle.js > demo/assets/js/bundled.js"
   }
 }
