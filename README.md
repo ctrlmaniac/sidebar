@@ -29,6 +29,7 @@ Before updating your local simpler-sidebar package, be sure to read the [changel
 ## Navigate
 - [Download](#download)
 - [Getting Started](#getting-started)
+  - [Browserify](#browserify)
 - [Options](#options)
   - [Options List](#options-list)
 - [Contributing](#contributing)
@@ -111,6 +112,67 @@ Call the simpler-sidebar plugin function and fill it with the options you need. 
     } );
 </script>
 ```
+
+### Browserify
+
+If you wish to use the simpler-sidebar package with browserify you should do few things to make it work. Firstly you need to install `browserify`, `browserify-shim` and the `simpler-sidebar` packages.
+
+In your `package.json` file you should add the `browserify-shim` options in this way:
+
+```json
+{
+  "browser": {
+    "jquery": "./path/to/jquery/jquery.js",
+    "jquery-ui-browserify": "./path/to/jquery-ui/jquery-ui.js",
+    "simpler-sidebar": "./path/to/simpler-sidebar/dist/jquery.simpler-sidebar.js"
+  },
+  "browserify-shim": {
+    "jquery": "window.$",
+    "three": "global:THREE",
+    "jquery-ui-browserify": {
+      "depends": ["jquery:window.$"],
+      "exports": "window.$.ui"
+    },
+    "simpler-sidebar": {
+      "depends": ["jquery:window.$"],
+      "exports": "window.$.simplerSidebar"
+    }
+  },
+  "browserify": {
+    "transform": [ "browserify-shim" ]
+  }
+}
+```
+
+In the raw file to bundle you should put this code:
+
+```javascript
+// Jquery
+window.$ = window.jQuery = require( "jquery" );
+
+// Jquery-ui is currently unavailable with browserify
+// You must use this module instead
+window.$.ui = require( "jquery-ui-browserify" );
+
+// Importing sidebarbones
+window.$.sidebarBones = require( "simpler-sidebar" );
+
+// custom options
+$( "document" ).ready( function() {
+	$( "#sidebar" ).simplerSidebar( {
+		attr: "sidebar-main",
+		selectors: {
+			trigger: "#sidebar-main-trigger",
+			quitter: ".quitter"
+		},
+		animation: {
+			easing: "easeOutQuint"
+		}
+	} );
+} );
+```
+
+Then in the shell run this command `browserify -d raw-file.js > bundled.js`
 
 ## Options
 To customize the plugin, add the desired option in the plugin itself.
