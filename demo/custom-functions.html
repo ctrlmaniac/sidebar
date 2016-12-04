@@ -61,31 +61,24 @@
 
     <div class="sidebar secondary right" id="sidebar-secondary">
       <div class="wrapper">
-        <p>Just another sidebar for local navigation maybe!</p>
+        <nav id="debug">
+          <ul>
+            <li class="title">Debug These</li>
+            <li><a>No href</a></li>
+            <li><a class="quitter" href="#">A link with the quitter class</a></li>
+            <li><a href="#" target="_blank">A link without the quitter class</a></li>
+            <li><span class="quitter">A span element with the quitter class</span></li>
+            <li><span>A span element without the quitter class</span></li>
+          </ul>
+        </nav>
       </div>
     </div>
 
     </div>
 
-    <script
-      src="https://code.jquery.com/jquery-1.12.4.min.js"
-      integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
-      crossorigin="anonymous"></script>
-    <script
-      src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
-      integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
-      crossorigin="anonymous"></script>
+    <script src="./assets/js/jquery-1.12.4"></script>
+    <script src="./assets/js/jquery-ui.js"></script>
     <script src="../dist/jquery.simpler-sidebar.min.js"></script>
-    <script type="text/javascript">
-      /* eslint indent: ["error", 4] */
-      $.ajaxSetup( {
-          cache: false
-      } );
-
-      $( "#footer-main" ).load( "./index.html #footer-main .container" );
-      $( "#sidebar-main" ).load( "./index.html #sidebar-main .wrapper" );
-      $( "#sidebar-secondary .wrapper" ).load( "./index.html #debug" );
-    </script>
     <script src="./assets/js/sidebar/custom-functions.js"></script>
   </body>
 </html>

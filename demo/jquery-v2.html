@@ -46,7 +46,16 @@
       </div><!--container-->
     </main>
 
-    <div class="footer main" id="footer-main"></div><!--.footer.main-->
+    <div class="footer main" id="footer-main">
+      <div class="container">
+        <p>Thanks to:</p>
+        <ul>
+          <li><a href="https://material.io/icons/" target="_blank">Google Material Design Icons</a> for the "menu icon" and the "more icon".</li>
+          <li><a href="http://nicolasgallagher.com/" target="_blank">Nicolas Gallagher</a> and <a href="http://music.thewikies.com/jonneal/" target="_blank">Jonathan Neal</a> for <a href="https://necolas.github.io/normalize.css/" target="_blank">Normalize.css</a>.</li>
+          <li><a href="https://github.com/aFarkas" target="_blank">aFarkas</a> for <a href="https://github.com/aFarkas/html5shiv" target="_blank">html5shiv</a></li>
+        </ul>
+      </div>
+    </div><!--.footer.main-->
 
     <div class="navbar main" id="navbar-main">
       <div id="sidebar-main-trigger" class="icon float-right">
@@ -54,26 +63,42 @@
       </div>
     </div><!--.navbar.main-->
 
-    <div class="sidebar main right" id="sidebar-main"></div><!--#sidebar-main-->
+    <div class="sidebar main right" id="sidebar-main">
+      <div class="wrapper">
+        <nav>
+          <ul>
+            <li class="title">Playground</li>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./right.html">Right</a></li>
+            <li><a href="./right-top.html">Right Top</a></li>
+            <li><a href="./left.html">Left</a></li>
+            <li><a href="./left-top.html">Left Top</a></li>
+            <li><a href="./jquery-v2.html">jQuery v2</a></li>
+            <li><a href="./jquery-v3.html">jQuery v3</a></li>
+            <li><a href="./right-left.html">Right and Left</a></li>
+            <li><a href="./init-opened.html">Init Opened</a></li>
+            <li><a href="./no-mask.html">No Mask</a></li>
+            <li><a href="./allow-scrolling.html">Allow Scrolling</a></li>
+            <li><a href="./custom-functions.html">Custom Functions</a></li>
+          </ul>
+        </nav>
 
-    <script
-        src="https://code.jquery.com/jquery-2.2.4.min.js"
-        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-        crossorigin="anonymous"></script>
-    <script
-      src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
-      integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
-      crossorigin="anonymous"></script>
+        <nav id="debug">
+          <ul>
+            <li class="title">Debug These</li>
+            <li><a>No href</a></li>
+            <li><a class="quitter" href="#">A link with the quitter class</a></li>
+            <li><a href="#" target="_blank">A link without the quitter class</a></li>
+            <li><span class="quitter">A span element with the quitter class</span></li>
+            <li><span>A span element without the quitter class</span></li>
+          </ul>
+        </nav>
+      </div>
+    </div><!--#sidebar-main-->
+
+    <script src="./assets/js/jquery-2.2.4"></script>
+    <script src="./assets/js/jquery-ui.js"></script>
     <script src="../dist/jquery.simpler-sidebar.min.js"></script>
-    <script type="text/javascript">
-      /* eslint indent: ["error", 4] */
-      $.ajaxSetup( {
-          cache: false
-      } );
-
-      $( "#footer-main" ).load( "./index.html #footer-main .container" );
-      $( "#sidebar-main" ).load( "./index.html #sidebar-main .wrapper" );
-    </script>
     <script src="./assets/js/sidebar/main-sidebar-right.js"></script>
   </body>
 </html>
