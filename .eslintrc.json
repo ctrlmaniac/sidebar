@@ -23,13 +23,14 @@
     "no-eq-null": "error",
     "wrap-iife": "error",
     "no-caller": "error",
-    "quotes": ["error", "double"],
-    "no-mixed-spaces-and-tabs": ["error", "smart-tabs"],
-    "indent": ["error", "tab"],
+    "quotes": [ "error", "double" ],
+    "no-mixed-spaces-and-tabs": [ "error", "smart-tabs" ],
+    "indent": [ "error", "tab", { "outerIIFEBody": 1 } ],
     "no-trailing-spaces": "error",
     "no-undef": "error",
     "no-unused-vars": ["error", { "args": "none" }],
-    "semi": ["error", "always"],
-    "no-console": 1
+    "semi": [ "error", "always" ],
+    "no-console": 1,
+    "wrap-iife": [ "error", "any" ]
   }
 }
