@@ -23,10 +23,9 @@
 		// Browser globals
 		factory( jQuery );
 	}
-} )( function( $ ) {
+}( function( $ ) {
 
 	// Set the plugin name
-	// Change this name according to the package you want to build
 	var pluginName = "simplerSidebar";
 
 	$.fn[ pluginName ] = function( options ) {
@@ -91,51 +90,45 @@
 				easing = cfg.animation.easing,
 				animation = {},
 
-				// Store a too long option
+				// Set anything else then true to false
 				scrollCfg = ( true === cfg.events.callbacks.animation.freezePage ) ?
-											true : false,
+										true :
+										false,
 				freezePage = function() {
-					return $( "body, html" ).css( "overflow", "hidden" );
+					$( "body, html" ).css( "overflow", "hidden" );
 				},
 				unfreezePage = function() {
-					return $( "body, html" ).css( "overflow", "auto" );
+					$( "body, html" ).css( "overflow", "auto" );
 				},
 
-				// Selectors
+				// Sidebar helpers
 				$sidebar = $( this ),
-				$trigger = $( cfg.selectors.trigger ),
-				$mask = $( "<div>" ).attr( attr, "mask" ),
-				quitter = ( !cfg.selectors.quitter ) ? "a" : cfg.selectors.quitter,
-
-				w = $( window ).width(),
-
-				// Calculate sidebar width
 				setSidebarWidth = function( w ) {
+
+					// Calculate sidebar width
 					if ( w < ( cfg.sidebar.width + cfg.gap ) ) {
 						return w - cfg.gap;
 					} else {
 						return cfg.sidebar.width;
 					}
 				},
-
-				// Check if the sidebar attribute is set to "opened" or "closed"
 				sidebarStatus = function() {
+
+					// Check if the sidebar attribute is set to "opened" or "closed"
 					return $sidebar.attr( attr );
 				},
-
-				// Change sidebar sidebarStatus
 				changeSidebarStatus = function( status ) {
 					$sidebar.attr( attr, status );
 				},
 
-				// Create mask
+				// Mask helpers
+				$mask = $( "<div>" ).attr( attr, "mask" ),
 				createMask = function() {
-					$mask.appendTo( "body" )
-						.css( maskStyle );
-				},
 
-				// $mask animations
-				// animations are put into functions in order the make them easily tweakable
+					// Create mask
+					$mask.appendTo( "body" )
+				.css( maskStyle );
+				},
 				showMask = function() {
 					$mask.fadeIn( duration );
 				},
@@ -143,10 +136,15 @@
 					$mask.fadeOut( duration );
 				},
 
+				$trigger = $( cfg.selectors.trigger ),
+				quitter = !cfg.selectors.quitter ? "a" : cfg.selectors.quitter,
+
+				w = $( window ).width(),
+
 				// Other functions that must be run along the animation
 				events = {
 
-					// Events triggered with the animations
+				// Events triggered with the animations
 					on: {
 						animation: {
 							open: function() {
@@ -235,15 +233,14 @@
 			// Set initial position
 			sbStyle[ align ] = ( "closed" === init ) ? -setSidebarWidth( w ) : 0;
 
-			// freezePage if sidebar is opened
-			if ( scrollCfg && $( this ).attr( attr, "opened" ) ) {
-				console.log( $( this ).attr( attr ) );
+			// freeze page if sidebar is opened
+			if ( scrollCfg && "opened" === init ) {
 				freezePage();
 			}
 
 			// Apply style to the sidebar
 			$sidebar.css( sbStyle )
-					.attr( attr, init ); // apply init
+			.attr( attr, init ); // apply init
 
 			// Create the private mask style
 			pvtMaskStyle = {
@@ -258,7 +255,9 @@
 
 			// Hide or show the mask
 			// according to the chosen init option
-			pvtMaskStyle.display = ( "opened" === init ) ? "block" : "none";
+			pvtMaskStyle.display = ( "opened" === init ) ?
+				"block" :
+				"none";
 
 			// Merge the Mask private and custom style but keep private style unchangeable
 			maskStyle = $.extend( true, pvtMaskStyle, cfg.mask.css );
@@ -297,4 +296,4 @@
 			} );
 		} );
 	};
-} );
+} ) );
