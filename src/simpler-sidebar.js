@@ -91,8 +91,15 @@
 				easing = cfg.animation.easing,
 				animation = {},
 
-				// Set anything else then true to false
-				freezePage = ( true === cfg.events.callbacks.animation.freezePage ) ? true : false,
+				// Store a too long option
+				scrollCfg = ( true === cfg.events.callbacks.animation.freezePage ) ?
+											true : false,
+				freezePage = function() {
+					return $( "body, html" ).css( "overflow", "hidden" );
+				},
+				unfreezePage = function() {
+					return $( "body, html" ).css( "overflow", "auto" );
+				},
 
 				// Selectors
 				$sidebar = $( this ),
@@ -164,15 +171,15 @@
 					callbacks: {
 						animation: {
 							open: function() {
-								if ( true === freezePage ) {
-									$( "body, html" ).css( "overflow", "hidden" );
+								if ( scrollCfg ) {
+									freezePage();
 								}
 
 								cfg.events.callbacks.animation.open();
 							},
 							close: function() {
-								if ( true === freezePage ) {
-									$( "body, html" ).css( "overflow", "auto" );
+								if ( scrollCfg ) {
+									unfreezePage();
 								}
 
 								cfg.events.callbacks.animation.close();
@@ -228,6 +235,12 @@
 			// Set initial position
 			sbStyle[ align ] = ( "closed" === init ) ? -setSidebarWidth( w ) : 0;
 
+			// freezePage if sidebar is opened
+			if ( scrollCfg && $( this ).attr( attr, "opened" ) ) {
+				console.log( $( this ).attr( attr ) );
+				freezePage();
+			}
+
 			// Apply style to the sidebar
 			$sidebar.css( sbStyle )
 					.attr( attr, init ); // apply init
@@ -252,7 +265,7 @@
 
 			// Create Mask if required
 			// Mask is appended to body
-			if ( true === cfg.mask.display ) {
+			if ( cfg.mask.display ) {
 				createMask();
 			}
 
