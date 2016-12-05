@@ -15,11 +15,10 @@ A jQuery plugin that allows to *create a side nav* as in modern mobile apps. It 
 - [x] jQuery v3.1.0
 
 ## Latest Release
-* **v2.1.4** (2016-08-13):
-  * [#27](https://github.com/simple-sidebar/simpler-sidebar/issues/27) Fix "init: opened" issue
-  * Tested with **jQuery v3.1.0**
-  * Tested with **jQuery v2.2.4**
-  * Update demo directory
+* **v2.0.0** (2016-12-05):
+  * Add support for UMD/AMD.
+  * Fix scroll disabled when init is set to opened.
+  * Improve demos.
 
 ### Important notes about the latest release
 If you are still using the **v1.x.x**, please, consider to update the plugin to the latest **v2.x.x**.
