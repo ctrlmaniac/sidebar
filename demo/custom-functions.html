@@ -37,11 +37,83 @@
       <div class="container">
         <section>
           <header>
-            <h2>Welcome!</h2>
+            <h2>Notice</h2>
           </header>
-          <p>This playground is delivered with the <a href="https://github.com/simple-sidebar/simpler-sidebar/releases">simpler-sidebar plugin</a>, you can find it in the <a href="https://github.com/simple-sidebar/simpler-sidebar/tree/master/demo">demo</a> directory. It also relies on the jquery library via CDNs. Turn on internet to make it work.</p>
+          <p>By pressing <img src="./assets/imgs/icon-more-vert-24px-x2.png" width="24px" alt="More Icon" /> (the more icon) you will trigger the secondary sidebar (on the right) to which are tied all custom functions. In this demo, all custom functions are javascript alerts!</p>
+        </section>
 
-          <p><strong>If you need a guide to install the plugin, you are in the wrong place. Check the Getting Started guide in the <a href="http://simple-sidebar.github.io/simpler-sidebar">main website</a> or directly on the simpler-sidebar github page <a href="https://github.com/simple-sidebar/simpler-sidebar">at this link</a>.</strong></p>
+        <section>
+          <header>
+            <h2>Options</h2>
+          </header>
+
+<pre class="code">
+$( "document" ).ready( function() {
+	var $mainSidebar = $( "#sidebar-main" ),
+		$secSidebar = $( "#sidebar-secondary" ),
+		callopen = function() {
+			alert( "callback called after the sidebar's been opened" );
+		},
+		callclose = function() {
+			alert( "callback called after the sidebar's been closed" );
+		},
+		callboth = function() {
+			alert( "callback called after both animations" );
+		},
+		onopen = function() {
+			alert( "function called while the sidebar is opening" );
+		},
+		onclose = function() {
+			alert( "function called while the sidebar is closing" );
+		},
+		onboth = function() {
+			alert( "function called while both animations are triggered" );
+		};
+
+	$mainSidebar.simplerSidebar( {
+		attr: "sidebar-main",
+		align: "left",
+		selectors: {
+			trigger: "#sidebar-main-trigger",
+			quitter: ".quitter"
+		},
+		sidebar: {
+			width: 500
+		},
+		animation: {
+			easing: "easeOutQuint"
+		}
+	} );
+
+	$secSidebar.simplerSidebar( {
+		attr: "sidebar-secondary",
+		top: 56,
+		selectors: {
+			trigger: "#sidebar-secondary-trigger",
+			quitter: ".quitter"
+		},
+		animation: {
+			easing: "easeOutQuint"
+		},
+		events: {
+			on: {
+				animation: {
+					open: onopen,
+					close: onclose,
+					both: onboth
+				}
+			},
+			callbacks: {
+				animation: {
+					open: callopen,
+					close: callclose,
+					both: callboth
+				}
+			}
+		}
+	} );
+} );
+</pre>
         </section>
       </div><!--container-->
     </main>

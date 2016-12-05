@@ -24,6 +24,13 @@ header.main .tip {
   padding: 16px 0
 }
 
+pre.code {
+  background-color: #212121;
+  color: #fafafa;
+  padding: 8px;
+  overflow-x: auto;
+}
+
 .container {
   position: relative;
   width: 100%;
@@ -47,6 +54,10 @@ main {
   -webkit-box-sizig: border-box
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+}
+
+section {
+  margin-bottom: 50px;
 }
 
 .footer.main {

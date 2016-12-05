@@ -37,11 +37,36 @@
       <div class="container">
         <section>
           <header>
-            <h2>Welcome!</h2>
+            <h2>Options</h2>
           </header>
-          <p>This playground is delivered with the <a href="https://github.com/simple-sidebar/simpler-sidebar/releases">simpler-sidebar plugin</a>, you can find it in the <a href="https://github.com/simple-sidebar/simpler-sidebar/tree/master/demo">demo</a> directory. It also relies on the jquery library via CDNs. Turn on internet to make it work.</p>
 
-          <p><strong>If you need a guide to install the plugin, you are in the wrong place. Check the Getting Started guide in the <a href="http://simple-sidebar.github.io/simpler-sidebar">main website</a> or directly on the simpler-sidebar github page <a href="https://github.com/simple-sidebar/simpler-sidebar">at this link</a>.</strong></p>
+<pre class="code">
+$( "document" ).ready( function() {
+	var $mainSidebar = $( "#sidebar-main" );
+
+	$mainSidebar.simplerSidebar( {
+		attr: "sidebar-main",
+		top: 56,
+		mask: {
+			display: false
+		},
+		selectors: {
+			trigger: "#sidebar-main-trigger",
+			quitter: ".quitter"
+		},
+		animation: {
+			easing: "easeOutQuint"
+		},
+		events: {
+			callbacks: {
+				animation: {
+					freezePage: false
+				}
+			}
+		}
+	} );
+} );
+</pre>
         </section>
       </div><!--container-->
     </main>

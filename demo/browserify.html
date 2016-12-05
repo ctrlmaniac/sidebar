@@ -37,11 +37,86 @@
       <div class="container">
         <section>
           <header>
-            <h2>Welcome!</h2>
+            <h2>Node Dependencies</h2>
           </header>
-          <p>This playground is delivered with the <a href="https://github.com/simple-sidebar/simpler-sidebar/releases">simpler-sidebar plugin</a>, you can find it in the <a href="https://github.com/simple-sidebar/simpler-sidebar/tree/master/demo">demo</a> directory. It also relies on the jquery library via CDNs. Turn on internet to make it work.</p>
 
-          <p><strong>If you need a guide to install the plugin, you are in the wrong place. Check the Getting Started guide in the <a href="http://simple-sidebar.github.io/simpler-sidebar">main website</a> or directly on the simpler-sidebar github page <a href="https://github.com/simple-sidebar/simpler-sidebar">at this link</a>.</strong></p>
+<pre class="code">
+$ npm i -D browserify browserify-shim
+</pre>
+
+          <p>Install simpler-sidebar, jquery and jquery-ui-browserify.</p>
+
+<pre class="code">
+$ npm i --save simpler-sidebar jquery jquery-ui-browserify
+</pre>
+
+          <p>You can install or download all dependencies with the tool you like.</p>
+        </section>
+
+        <section>
+          <header>
+            <h2>package.json</h2>
+          </header>
+
+          <p>Load the packages you installed before. Here an example using npm.</p>
+
+<pre class="code">
+{
+  "browser": {
+    "jquery": "./node_modules/jquery/jquery.js",
+    "jquery-ui-browserify": "./node_modules/jquery-ui-browserify/dist/jquery-ui.js",
+    "simpler-sidebar": "./node_modules/simpler-sidebar/dist/jquery.simpler-sidebar.js"
+  },
+  "browserify-shim": {
+    "jquery": "window.$",
+    "three": "global:THREE",
+    "jquery-ui-browserify": {
+      "depends": ["jquery:window.$"],
+      "exports": "window.$.ui"
+    },
+    "simpler-sidebar": {
+      "depends": ["jquery:window.$"],
+      "exports": "window.$.simplerSidebar"
+    }
+  },
+  "browserify": {
+    "transform": [ "browserify-shim" ]
+  }
+}
+</pre>
+        </section>
+
+        <section>
+          <header>
+            <h2>input.js</h2>
+          </header>
+
+<pre class="code">
+// Jquery
+window.$ = window.jQuery = require( "jquery" );
+
+// Jquery-ui is currently unavailable with browserify
+// You must use this module instead
+window.$.ui = require( "jquery-ui-browserify" );
+
+// Importing sidebarbones
+window.$.sidebarBones = require( "simpler-sidebar" );
+
+// Importing custom options
+require( "./sidebar/main-sidebar-right.js" );
+</pre>
+        </section>
+
+        <section>
+          <header>
+            <h2>Browserify</h2>
+          </header>
+
+<pre class="code">
+$ browserify -d input.js > output.js
+</pre>
+
+<p>Include the bundled "output.js" file in your html file and you are ready to go</p>
         </section>
       </div><!--container-->
     </main>
