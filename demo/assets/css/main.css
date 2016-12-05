@@ -138,6 +138,7 @@ section {
 
 .sidebar a {
   text-decoration: none;
+  display: block;
 }
 
 .sidebar .wrapper {
