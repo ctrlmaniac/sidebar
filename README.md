@@ -15,6 +15,9 @@ A jQuery plugin that allows to *create a side nav* as in modern mobile apps. It 
 - [x] jQuery v3.1.0
 
 ## Latest Release
+* **v2.2.1** (2017-06-20):
+  * Fix example and add a vital tip.
+
 * **v2.0.0** (2016-12-05):
   * Add support for UMD/AMD.
   * Fix scroll disabled when init is set to opened.
