@@ -58,7 +58,7 @@ You will need to prepare a specific HTML template in order to make it work prope
 
   It does not matter what kind of element #toggle-sidebar is.
   -->
-  <span id="toggle-sidebar" class="button icon"></span>
+  <span id="toggle-sidebar" class="button icon">ITEM</span>
 </div>
 
 <div id="sidebar">
@@ -66,6 +66,8 @@ You will need to prepare a specific HTML template in order to make it work prope
   simpler-sidebar will handle #sidebar's position.
 
   To let the content of your sidebar overflow, especially when you have a lot of content in it, you have to add a "wrapper" that wraps all content.
+
+  TIP: provide a background color.
   -->
   <div id="sidebar-wrapper" class="sidebar-wrapper">
     <!--
@@ -104,8 +106,8 @@ Call the simpler-sidebar plugin function and fill it with the options you need. 
     $( document ).ready( function() {
         $( "#sidebar" ).simplerSidebar( {
             selectors: {
-                trigger: ".toggle-sidebar",
-                quitter: "close-sidebar"
+                trigger: "#toggle-sidebar",
+                quitter: ".close-sidebar"
             }
         } );
     } );
@@ -160,10 +162,10 @@ window.$.sidebarBones = require( "simpler-sidebar" );
 $( "document" ).ready( function() {
 	$( "#sidebar" ).simplerSidebar( {
 		attr: "sidebar-main",
-		selectors: {
-			trigger: "#sidebar-main-trigger",
-			quitter: ".quitter"
-		},
+    selectors: {
+        trigger: "#toggle-sidebar",
+        quitter: ".close-sidebar"
+    },
 		animation: {
 			easing: "easeOutQuint"
 		}
@@ -181,8 +183,8 @@ The options are stored in a javascript object, so you have to take care of javas
 ```javascript
 $( "#sidebar" ).simplerSidebar( {
     selectors: {
-        trigger: ".toggle-sidebar",
-        quitter: "close-sidebar"
+        trigger: "#toggle-sidebar",
+        quitter: ".close-sidebar"
     },
     animation: {
         easing: "easeOutQuint"
