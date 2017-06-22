@@ -2,13 +2,9 @@
   "name": "simpler-sidebar",
   "version": "2.2.1",
   "description": "A simple side nav in jQuery.",
-  "main": "./dist/jquery.simpler-sidebar.min.js",
+  "main": "./dist/jquery.simpler-sidebar.js",
   "homepage": "https://github.com/simple-sidebar/simpler-sidebar#readme",
-  "author": {
-    "name": "Davide Di Criscito",
-    "email": "davide.dicriscito@gmail.com",
-    "url": "https://github.com/dcdeiv"
-  },
+  "author": "Davide Di Criscito <davide.dicriscito@gmail.com> (https://github.com/dcdeiv)",
   "license": "MIT AND GPL-2.0",
   "keywords": [
     "simpler",
@@ -24,10 +20,7 @@
     "javascript",
     "js"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/simple-sidebar/simpler-sidebar.git"
-  },
+  "repository": "https://github.com/simple-sidebar/simpler-sidebar.git",
   "files": [
     "demo",
     "dist",
@@ -68,16 +61,22 @@
     "jquery": "window.$",
     "three": "global:THREE",
     "jquery-ui-browserify": {
-      "depends": ["jquery:window.$"],
+      "depends": [
+        "jquery:window.$"
+      ],
       "exports": "window.$.ui"
     },
     "simpler-sidebar": {
-      "depends": ["jquery:window.$"],
+      "depends": [
+        "jquery:window.$"
+      ],
       "exports": "window.$.simplerSidebar"
     }
   },
   "browserify": {
-    "transform": [ "browserify-shim" ]
+    "transform": [
+      "browserify-shim"
+    ]
   },
   "scripts": {
     "build": "gulp build",
