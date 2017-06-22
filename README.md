@@ -15,8 +15,8 @@ A jQuery plugin that allows to *create a side nav* as in modern mobile apps. It 
 - [x] jQuery v3.1.0
 
 ## Latest Release
-* **v2.2.1** (2017-06-20):
-  * Fix example and add a vital tip.
+* **v2.2.2** (2017-06-22):
+  * Add support to yarn.
 
 * **v2.0.0** (2016-12-05):
   * Add support for UMD/AMD.
@@ -215,6 +215,6 @@ If you are still using the **v1.x.x**, please, consider to update the plugin to 
 Before updating your local simpler-sidebar package, be sure to read the [changelog](https://github.com/simple-sidebar/simpler-sidebar/blob/master/doc/changelogs) too, especially the [latest major update changelog](https://github.com/simple-sidebar/simpler-sidebar/blob/master/doc/changelogs/v2.0.2.md). **Upgrading without migrating will broke your scripts**.
 
 ## License
-Copyright (c) 2015 - 2016 simple-sidebar, Davide Di Criscito.
+Copyright (c) 2015 - 2017 simple-sidebar, Davide Di Criscito.
 
 Dual licensed under the [MIT](https://github.com/simple-sidebar/simpler-sidebar/blob/master/LICENSE-MIT) and [GPL-2.0](https://github.com/simple-sidebar/simpler-sidebar/blob/master/LICENSE-GPL) licenses.
