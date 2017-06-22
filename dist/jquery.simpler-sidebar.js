@@ -1,8 +1,8 @@
 /*!
- * simpler-sidebar - A simple side nav in jQuery.
- * @version v2.2.1
+ * simpler-sidebar - A simple side nav in jQuery
+ * @version v2.2.2
  * @link https://github.com/simple-sidebar/simpler-sidebar#readme
- * @copyright (c) 2015 - 2017 Davide Di Criscito
+ * @copyright (c) 2015 - 2017 Davide Di Criscito <davide.dicriscito@gmail.com> (https://github.com/dcdeiv)
  * @license MIT AND GPL-2.0
  */
 // Uses CommonJS, AMD or browser globals to create a jQuery plugin.
