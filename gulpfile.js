@@ -12,7 +12,7 @@ var pkg = require( "./package.json" ),
 		" * <%= pkg.name %> - <%= pkg.description %>",
 		" * @version v<%= pkg.version %>",
 		" * @link <%= pkg.homepage %>",
-		" * @copyright (c) 2015 - <%= new Date().getFullYear() %> <%= pkg.author.name %>",
+		" * @copyright (c) 2015 - <%= new Date().getFullYear() %> <%= pkg.author %>",
 		" * @license <%= pkg.license %>",
 		" */",
 		"" ].join( "\n" );

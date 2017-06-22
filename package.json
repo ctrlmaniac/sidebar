@@ -1,7 +1,7 @@
 {
   "name": "simpler-sidebar",
-  "version": "2.2.1",
-  "description": "A simple side nav in jQuery.",
+  "version": "2.2.2",
+  "description": "A simple side nav in jQuery",
   "main": "./dist/jquery.simpler-sidebar.js",
   "homepage": "https://github.com/simple-sidebar/simpler-sidebar#readme",
   "author": "Davide Di Criscito <davide.dicriscito@gmail.com> (https://github.com/dcdeiv)",
