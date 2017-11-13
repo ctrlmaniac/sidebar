@@ -83,6 +83,9 @@
 				// Set anything else than "opened" to "closed"
 				init = ( "opened" === cfg.init ) ? "opened" : "closed",
 
+				// Set the overflow setting to initial
+				overflow = cfg.overflow ? cfg.overflow : "initial",
+
 				// Set anything else than "left" to "right"
 				align = ( "left" === cfg.align ) ? "left" : "right",
 
@@ -98,7 +101,7 @@
 					$( "body, html" ).css( "overflow", "hidden" );
 				},
 				unfreezePage = function() {
-					$( "body, html" ).css( "overflow", "auto" );
+					$( "body, html" ).css( "overflow", overflow );
 				},
 
 				// Sidebar helpers

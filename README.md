@@ -15,13 +15,11 @@ A jQuery plugin that allows to *create a side nav* as in modern mobile apps. It 
 - [x] jQuery v3.1.0
 
 ## Latest Release
+* **v2.2.3** (2017-11-13):
+  * Change the 'unfreezePage' value of 'overflow' to 'initial'.
+
 * **v2.2.2** (2017-06-22):
   * Add support to yarn.
-
-* **v2.0.0** (2016-12-05):
-  * Add support for UMD/AMD.
-  * Fix scroll disabled when init is set to opened.
-  * Improve demos.
 
 ### Important notes about the latest release
 If you are still using the **v1.x.x**, please, consider to update the plugin to the latest **v2.x.x**.
