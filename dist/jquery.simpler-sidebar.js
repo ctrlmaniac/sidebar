@@ -1,8 +1,8 @@
 /*!
  * simpler-sidebar - A simple side nav in jQuery
- * @version v2.2.3
+ * @version v2.2.4
  * @link https://github.com/simple-sidebar/simpler-sidebar#readme
- * @copyright (c) 2015 - 2017 Davide Di Criscito <davide.dicriscito@gmail.com> (https://github.com/dcdeiv)
+ * @copyright (c) 2015 - 2018 Davide Di Criscito <davide.dicriscito@gmail.com> (https://github.com/dcdeiv)
  * @license MIT AND GPL-2.0
  */
 // Uses CommonJS, AMD or browser globals to create a jQuery plugin.
@@ -91,7 +91,8 @@
 				init = ( "opened" === cfg.init ) ? "opened" : "closed",
 
 				// Set the overflow setting to initial
-				overflow = cfg.overflow ? cfg.overflow : "initial",
+				htmlOverflow = cfg.overflow ? cfg.overflow : $( "html" ).css( "overflow" ),
+				bodyOverflow = cfg.overflow ? cfg.overflow : $( "body" ).css( "overflow" ),
 
 				// Set anything else than "left" to "right"
 				align = ( "left" === cfg.align ) ? "left" : "right",
@@ -108,7 +109,8 @@
 					$( "body, html" ).css( "overflow", "hidden" );
 				},
 				unfreezePage = function() {
-					$( "body, html" ).css( "overflow", overflow );
+					$( "html" ).css( "overflow", htmlOverflow );
+					$( "body" ).css( "overflow", bodyOverflow );
 				},
 
 				// Sidebar helpers

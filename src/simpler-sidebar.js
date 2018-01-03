@@ -84,7 +84,8 @@
 				init = ( "opened" === cfg.init ) ? "opened" : "closed",
 
 				// Set the overflow setting to initial
-				overflow = cfg.overflow ? cfg.overflow : "initial",
+				htmlOverflow = cfg.overflow ? cfg.overflow : $( "html" ).css( "overflow" ),
+				bodyOverflow = cfg.overflow ? cfg.overflow : $( "body" ).css( "overflow" ),
 
 				// Set anything else than "left" to "right"
 				align = ( "left" === cfg.align ) ? "left" : "right",
@@ -101,7 +102,8 @@
 					$( "body, html" ).css( "overflow", "hidden" );
 				},
 				unfreezePage = function() {
-					$( "body, html" ).css( "overflow", overflow );
+					$( "html" ).css( "overflow", htmlOverflow );
+					$( "body" ).css( "overflow", bodyOverflow );
 				},
 
 				// Sidebar helpers

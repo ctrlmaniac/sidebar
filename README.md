@@ -15,11 +15,11 @@ A jQuery plugin that allows to *create a side nav* as in modern mobile apps. It 
 - [x] jQuery v3.1.0
 
 ## Latest Release
+* **v2.2.4** (2018-01-03):
+  * Change the 'unfreezePage' value of 'overflow' to support IE [#33](https://github.com/simple-sidebar/simpler-sidebar/issues/33).
+
 * **v2.2.3** (2017-11-13):
   * Change the 'unfreezePage' value of 'overflow' to 'initial'.
-
-* **v2.2.2** (2017-06-22):
-  * Add support to yarn.
 
 ### Important notes about the latest release
 If you are still using the **v1.x.x**, please, consider to update the plugin to the latest **v2.x.x**.
