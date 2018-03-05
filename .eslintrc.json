@@ -1,6 +1,5 @@
 {
   "extends": "eslint-config-jquery",
-  "parser": "babel-eslint",
   "ecmaFeatures": {
     "modules": true
   },
@@ -14,9 +13,6 @@
     "jquery": true,
     "es6": true
   },
-  "plugins": [
-    "eslint-plugin-html"
-  ],
   "rules": {
     "curly": "error",
     "eqeqeq": [ "error", "always" ],
