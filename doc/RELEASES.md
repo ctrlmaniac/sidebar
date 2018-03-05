@@ -3,10 +3,12 @@
 Before updating your local simpler-sidebar package, be sure to read the [changelog](https://github.com/simple-sidebar/simpler-sidebar/blob/master/doc/changelogs) too, especially the [latest major update changelog](https://github.com/simple-sidebar/simpler-sidebar/blob/master/doc/changelogs/v2.0.2.md). **Upgrading without migrating will broke your scripts**.
 
 ## Latest Release
-* **v2.2.4** (2018-01-03):
-  * Change the 'unfreezePage' value of 'overflow' to support IE [#33](https://github.com/simple-sidebar/simpler-sidebar/issues/33).
+* **v2.2.5** (2018-03-05):
+  * update dependencies
 
 ## Older Releases
+* **v2.2.4** (2018-01-03):
+  * Change the 'unfreezePage' value of 'overflow' to support IE [#33](https://github.com/simple-sidebar/simpler-sidebar/issues/33).
 * **v2.2.3** (2017-11-13):
   * Change the 'unfreezePage' value of 'overflow' to 'initial'.
 * **v2.2.2** (2017-06-22):

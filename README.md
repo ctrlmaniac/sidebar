@@ -15,11 +15,8 @@ A jQuery plugin that allows to *create a side nav* as in modern mobile apps. It 
 - [x] jQuery v3.1.0
 
 ## Latest Release
-* **v2.2.4** (2018-01-03):
-  * Change the 'unfreezePage' value of 'overflow' to support IE [#33](https://github.com/simple-sidebar/simpler-sidebar/issues/33).
-
-* **v2.2.3** (2017-11-13):
-  * Change the 'unfreezePage' value of 'overflow' to 'initial'.
+* **v2.2.5** (2018-03-05):
+  * update dependencies
 
 ### Important notes about the latest release
 If you are still using the **v1.x.x**, please, consider to update the plugin to the latest **v2.x.x**.
@@ -40,8 +37,6 @@ Before updating your local simpler-sidebar package, be sure to read the [changel
 Run one of these commands in your bash according to your needs.
 
 `git clone https://github.com/simple-sidebar/simpler-sidebar.git`
-
-`bower install simpler-sidebar`
 
 `npm install simpler-sidebar`
 
@@ -114,67 +109,6 @@ Call the simpler-sidebar plugin function and fill it with the options you need. 
     } );
 </script>
 ```
-
-### Browserify
-
-If you wish to use the simpler-sidebar package with browserify you should do few things to make it work. Firstly you need to install `browserify`, `browserify-shim` and the `simpler-sidebar` packages.
-
-In your `package.json` file you should add the `browserify-shim` options in this way:
-
-```json
-{
-  "browser": {
-    "jquery": "./path/to/jquery/jquery.js",
-    "jquery-ui-browserify": "./path/to/jquery-ui/jquery-ui.js",
-    "simpler-sidebar": "./path/to/simpler-sidebar/dist/jquery.simpler-sidebar.js"
-  },
-  "browserify-shim": {
-    "jquery": "window.$",
-    "three": "global:THREE",
-    "jquery-ui-browserify": {
-      "depends": ["jquery:window.$"],
-      "exports": "window.$.ui"
-    },
-    "simpler-sidebar": {
-      "depends": ["jquery:window.$"],
-      "exports": "window.$.simplerSidebar"
-    }
-  },
-  "browserify": {
-    "transform": [ "browserify-shim" ]
-  }
-}
-```
-
-In the raw file to bundle you should put this code:
-
-```javascript
-// Jquery
-window.$ = window.jQuery = require( "jquery" );
-
-// Jquery-ui is currently unavailable with browserify
-// You must use this module instead
-window.$.ui = require( "jquery-ui-browserify" );
-
-// Importing sidebarbones
-window.$.sidebarBones = require( "simpler-sidebar" );
-
-// custom options
-$( "document" ).ready( function() {
-	$( "#sidebar" ).simplerSidebar( {
-		attr: "sidebar-main",
-    selectors: {
-        trigger: "#toggle-sidebar",
-        quitter: ".close-sidebar"
-    },
-		animation: {
-			easing: "easeOutQuint"
-		}
-	} );
-} );
-```
-
-Then in the shell run this command `browserify -d raw-file.js > bundled.js`
 
 ## Options
 To customize the plugin, add the desired option in the plugin itself.
