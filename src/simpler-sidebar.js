@@ -96,8 +96,7 @@
 
 				// Set anything else then true to false
 				scrollCfg = ( true === cfg.events.callbacks.animation.freezePage ) ?
-										true :
-										false,
+					true : false,
 				freezePage = function() {
 					$( "body, html" ).css( "overflow", "hidden" );
 				},
@@ -132,7 +131,7 @@
 
 					// Create mask
 					$mask.appendTo( "body" )
-				.css( maskStyle );
+						.css( maskStyle );
 				},
 				showMask = function() {
 					$mask.fadeIn( duration );
@@ -245,7 +244,7 @@
 
 			// Apply style to the sidebar
 			$sidebar.css( sbStyle )
-			.attr( attr, init ); // apply init
+				.attr( attr, init ); // apply init
 
 			// Create the private mask style
 			pvtMaskStyle = {
