@@ -1,15 +1,18 @@
 # Contributing
 
 ## Important notes
-Please don't edit files in the `dist` subdirectory as they are generated via Gukp. You'll find source code in the `src` subdirectory!
+
+Please don't edit files in the `dist` subdirectory as they are generated via Gulp. You'll find source code in the `src` subdirectory!
 
 ### Code style
-Regarding code style like indentation and whitespace, **follow the conventions you see used in the source already** or read the **.editorconfig** file. Regarding the *.editorconfig* file you should install in your favourite editor the **editorconfig** plugin. With this plugin it is also shipped a `eslint` configuration file. You should install a plugin for your editor, but this is not required since it will be installed as a dev-dependency and run with gulp.
+
+Regarding code style like indentation and whitespace, **follow the conventions you see used in the source already** or read the **.editorconfig** file. Regarding the _.editorconfig_ file you should install in your favourite editor the **editorconfig** plugin. With this plugin it is also shipped a `eslint` configuration file. You should install a plugin for your editor, but this is not required since it will be installed as a dev-dependency and run with gulp.
 
 ## Modifying the code
+
 First, ensure that you have the latest [Node.js](http://nodejs.org/) and [npm](http://npmjs.org/) installed.
 
-Test that Gulp's CLI is installed by running `gulp --version`.  If the command isn't found, run `npm install -g gulp-cli`. For more information about installing Gulp, see the [getting started guide](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md).
+Test that Gulp's CLI is installed by running `gulp --version`. If the command isn't found, run `npm install -g gulp-cli`. For more information about installing Gulp, see the [getting started guide](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md).
 
 1. Fork and clone the repo.
 2. Run `npm install` to install all dependencies (including Gulp).

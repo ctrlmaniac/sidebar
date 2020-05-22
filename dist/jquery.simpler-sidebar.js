@@ -1,309 +1,301 @@
 /*! simpler-sidebar - A simple side nav in jQuery
  * @version 2.2.5
  * @link https://github.com/simple-sidebar/simpler-sidebar
- * @copyright 2015 - 2018 Davide Di Criscito (https://github.com/dcdeiv)
+ * @copyright 2015 - 2020 Davide Di Criscito (https://github.com/dcdeiv)
  * @license MIT AND GPL-2.0
  */
 // Uses CommonJS, AMD or browser globals to create a jQuery plugin.
-( function( factory ) {
-	if ( typeof define === "function" && define.amd ) {
+(function (factory) {
+  if (typeof define === "function" && define.amd) {
+    // AMD. Register as an anonymous module.
+    define(["jquery"], factory);
+  } else if (typeof module === "object" && module.exports) {
+    // Node/CommonJS
+    module.exports = function (root, jQuery) {
+      if (jQuery === undefined) {
+        if (typeof window !== "undefined") {
+          jQuery = require("jquery");
+        } else {
+          jQuery = require("jquery")(root);
+        }
+      }
+      factory(jQuery);
+      return jQuery;
+    };
+  } else {
+    // Browser globals
+    factory(jQuery);
+  }
+})(function ($) {
+  // Set the plugin name
+  var pluginName = "simplerSidebar";
 
-		// AMD. Register as an anonymous module.
-		define( [ "jquery" ], factory );
-	} else if ( typeof module === "object" && module.exports ) {
+  $.fn[pluginName] = function (options) {
+    // Default settings
+    var cfg = $.extend(
+      true,
+      {
+        attr: "simplersidebar",
+        top: 0,
+        gap: 64,
+        zIndex: 3000,
+        sidebar: {
+          width: 300,
+        },
+        animation: {
+          duration: 500,
+          easing: "swing",
+        },
+        events: {
+          // Changing these options will break the plugin
+          on: {
+            animation: {
+              open: function () {},
+              close: function () {},
+              both: function () {},
+            },
+          },
+          callbacks: {
+            animation: {
+              open: function () {},
+              close: function () {},
+              both: function () {},
+              freezePage: true,
+            },
+          },
+        },
+        mask: {
+          display: true,
+          css: {
+            backgroundColor: "black",
+            opacity: 0.5,
+            filter: "Alpha(opacity=50)",
+          },
+        },
+      },
+      options
+    );
 
-		// Node/CommonJS
-		module.exports = function( root, jQuery ) {
-			if ( jQuery === undefined ) {
-				if ( typeof window !== "undefined" ) {
-					jQuery = require( "jquery" );
-				}			else {
-					jQuery = require( "jquery" )( root );
-				}
-			}
-			factory( jQuery );
-			return jQuery;
-		};
-	} else {
+    // Keep chainability
+    return this.each(function () {
+      var sbStyle;
+      var pvtMaskStyle;
+      var maskStyle;
+      var attr = "data-" + cfg.attr;
 
-		// Browser globals
-		factory( jQuery );
-	}
-}( function( $ ) {
+      // Set anything else than "opened" to "closed"
+      var init = "opened" === cfg.init ? "opened" : "closed";
 
-	// Set the plugin name
-	var pluginName = "simplerSidebar";
+      // Set the overflow setting to initial
+      var htmlOverflow = cfg.overflow
+        ? cfg.overflow
+        : $("html").css("overflow");
+      var bodyOverflow = cfg.overflow
+        ? cfg.overflow
+        : $("body").css("overflow");
 
-	$.fn[ pluginName ] = function( options ) {
+      // Set anything else than "left" to "right"
+      var align = "left" === cfg.align ? "left" : "right";
+      var duration = cfg.animation.duration;
+      var easing = cfg.animation.easing;
+      var animation = {};
 
-		// Default settings
-		var cfg = $.extend( true, {
-			attr: "simplersidebar",
-			top: 0,
-			gap: 64,
-			zIndex: 3000,
+      // Set anything else then true to false
+      var scrollCfg =
+        true === cfg.events.callbacks.animation.freezePage ? true : false;
+      var freezePage = function () {
+        $("body, html").css("overflow", "hidden");
+      };
+      var unfreezePage = function () {
+        $("html").css("overflow", htmlOverflow);
+        $("body").css("overflow", bodyOverflow);
+      };
 
-			sidebar: {
-				width: 300
-			},
+      // Sidebar helpers
+      var $sidebar = $(this);
+      var setSidebarWidth = function (w) {
+        // Calculate sidebar width
+        if (w < cfg.sidebar.width + cfg.gap) {
+          return w - cfg.gap;
+        } else {
+          return cfg.sidebar.width;
+        }
+      };
+      var sidebarStatus = function () {
+        // Check if the sidebar attribute is set to "opened" or "closed"
+        return $sidebar.attr(attr);
+      };
+      var changeSidebarStatus = function (status) {
+        $sidebar.attr(attr, status);
+      };
 
-			animation: {
-				duration: 500,
-				easing: "swing"
-			},
+      // Mask helpers
+      var $mask = $("<div>").attr(attr, "mask");
+      var createMask = function () {
+        // Create mask
+        $mask.appendTo("body").css(maskStyle);
+      };
+      var showMask = function () {
+        $mask.fadeIn(duration);
+      };
+      var hideMask = function () {
+        $mask.fadeOut(duration);
+      };
 
-			// Changing these options will break the plugin
-			events: {
-				on: {
-					animation: {
-						open: function() {},
-						close: function() {},
-						both: function() {}
-					}
-				},
-				callbacks: {
-					animation: {
-						open: function() {},
-						close: function() {},
-						both: function() {},
-						freezePage: true
-					}
-				}
-			},
+      // Other DOM elements
+      var $trigger = $(cfg.selectors.trigger);
+      var quitter = !cfg.selectors.quitter ? "a" : cfg.selectors.quitter;
+      var w = $(window).width();
 
-			mask: {
-				display: true,
-				css: {
-					backgroundColor: "black",
-					opacity: 0.5,
-					filter: "Alpha(opacity=50)"
-				}
-			}
-		}, options );
+      // Other functions that must be run along the animation
+      var events = {
+        // Events triggered with the animations
+        on: {
+          animation: {
+            open: function () {
+              showMask();
+              changeSidebarStatus("opened");
 
-		// Keep chainability
-		return this.each( function() {
-			var sbStyle, pvtMaskStyle, maskStyle,
-				attr = "data-" + cfg.attr,
+              cfg.events.on.animation.open();
+            },
+            close: function () {
+              hideMask();
+              changeSidebarStatus("closed");
 
-				// Set anything else than "opened" to "closed"
-				init = ( "opened" === cfg.init ) ? "opened" : "closed",
+              cfg.events.on.animation.close();
+            },
+            both: function () {
+              cfg.events.on.animation.both();
+            },
+          },
+        },
 
-				// Set the overflow setting to initial
-				htmlOverflow = cfg.overflow ? cfg.overflow : $( "html" ).css( "overflow" ),
-				bodyOverflow = cfg.overflow ? cfg.overflow : $( "body" ).css( "overflow" ),
+        // Events triggered after the animations
+        callbacks: {
+          animation: {
+            open: function () {
+              if (scrollCfg) {
+                freezePage();
+              }
 
-				// Set anything else than "left" to "right"
-				align = ( "left" === cfg.align ) ? "left" : "right",
+              cfg.events.callbacks.animation.open();
+            },
+            close: function () {
+              if (scrollCfg) {
+                unfreezePage();
+              }
 
-				duration = cfg.animation.duration,
-				easing = cfg.animation.easing,
-				animation = {},
+              cfg.events.callbacks.animation.close();
+            },
+            both: function () {
+              cfg.events.callbacks.animation.both();
+            },
+          },
+        },
+      };
 
-				// Set anything else then true to false
-				scrollCfg = ( true === cfg.events.callbacks.animation.freezePage ) ?
-					true : false,
-				freezePage = function() {
-					$( "body, html" ).css( "overflow", "hidden" );
-				},
-				unfreezePage = function() {
-					$( "html" ).css( "overflow", htmlOverflow );
-					$( "body" ).css( "overflow", bodyOverflow );
-				},
+      // Create animations
+      var animateOpen = function () {
+        var callbacks = function () {
+          events.callbacks.animation.open();
+          events.callbacks.animation.both();
+        };
 
-				// Sidebar helpers
-				$sidebar = $( this ),
-				setSidebarWidth = function( w ) {
+        // Define the animation
+        animation[align] = 0;
 
-					// Calculate sidebar width
-					if ( w < ( cfg.sidebar.width + cfg.gap ) ) {
-						return w - cfg.gap;
-					} else {
-						return cfg.sidebar.width;
-					}
-				},
-				sidebarStatus = function() {
+        // Apply the animation, the options and the callbacks
+        $sidebar.animate(animation, duration, easing, callbacks);
 
-					// Check if the sidebar attribute is set to "opened" or "closed"
-					return $sidebar.attr( attr );
-				},
-				changeSidebarStatus = function( status ) {
-					$sidebar.attr( attr, status );
-				},
+        events.on.animation.open();
+        events.on.animation.both();
+      };
+      var animateClose = function () {
+        var callbacks = function () {
+          events.callbacks.animation.close();
+          events.callbacks.animation.both();
+        };
 
-				// Mask helpers
-				$mask = $( "<div>" ).attr( attr, "mask" ),
-				createMask = function() {
+        // Define the animation
+        animation[align] = -$sidebar.width();
 
-					// Create mask
-					$mask.appendTo( "body" )
-						.css( maskStyle );
-				},
-				showMask = function() {
-					$mask.fadeIn( duration );
-				},
-				hideMask = function() {
-					$mask.fadeOut( duration );
-				},
+        // Apply the animation, the options and the callbacks
+        $sidebar.animate(animation, duration, easing, callbacks);
 
-				$trigger = $( cfg.selectors.trigger ),
-				quitter = !cfg.selectors.quitter ? "a" : cfg.selectors.quitter,
+        events.on.animation.close();
+        events.on.animation.both();
+      };
 
-				w = $( window ).width(),
+      // Create the sidebar style
+      sbStyle = {
+        position: "fixed",
+        top: parseInt(cfg.top),
+        bottom: 0,
+        width: setSidebarWidth(w),
+        zIndex: cfg.zIndex,
+      };
 
-				// Other functions that must be run along the animation
-				events = {
+      // Set initial position
+      sbStyle[align] = "closed" === init ? -setSidebarWidth(w) : 0;
 
-				// Events triggered with the animations
-					on: {
-						animation: {
-							open: function() {
-								showMask();
-								changeSidebarStatus( "opened" );
+      // freeze page if sidebar is opened
+      if (scrollCfg && "opened" === init) {
+        freezePage();
+      }
 
-								cfg.events.on.animation.open();
-							},
-							close: function() {
-								hideMask();
-								changeSidebarStatus( "closed" );
+      // Apply style to the sidebar
+      $sidebar.css(sbStyle).attr(attr, init); // apply init
 
-								cfg.events.on.animation.close();
-							},
-							both: function() {
-								cfg.events.on.animation.both();
-							}
-						}
-					},
+      // Create the private mask style
+      pvtMaskStyle = {
+        position: "fixed",
+        top: parseInt(cfg.top),
+        right: 0,
+        bottom: 0,
+        left: 0,
+        zIndex: cfg.zIndex - 1,
+        display: "none",
+      };
 
-					// Events triggered after the animations
-					callbacks: {
-						animation: {
-							open: function() {
-								if ( scrollCfg ) {
-									freezePage();
-								}
+      // Hide or show the mask
+      // according to the chosen init option
+      pvtMaskStyle.display = "opened" === init ? "block" : "none";
 
-								cfg.events.callbacks.animation.open();
-							},
-							close: function() {
-								if ( scrollCfg ) {
-									unfreezePage();
-								}
+      // Merge the Mask private and custom style but keep private style unchangeable
+      maskStyle = $.extend(true, pvtMaskStyle, cfg.mask.css);
 
-								cfg.events.callbacks.animation.close();
-							},
-							both: function() {
-								cfg.events.callbacks.animation.both();
-							}
-						}
-					}
-				},
+      // Create Mask if required
+      // Mask is appended to body
+      if (cfg.mask.display) {
+        createMask();
+      }
 
-				// Create animations
-				animateOpen = function() {
-					var callbacks = function() {
-						events.callbacks.animation.open();
-						events.callbacks.animation.both();
-					};
+      // Apply animations
+      $trigger.click(function () {
+        switch (sidebarStatus()) {
+          case "opened":
+            animateClose();
+            break;
+          case "closed":
+            animateOpen();
+            break;
+        }
+      });
 
-					// Define the animation
-					animation[ align ] = 0;
+      $mask.click(animateClose);
+      $sidebar.on("click", quitter, animateClose);
 
-					// Apply the animation, the options and the callbacks
-					$sidebar.animate( animation, duration, easing, callbacks );
+      // Make the sidebar responsive
+      $(window).resize(function () {
+        var w = $(window).width();
 
-					events.on.animation.open();
-					events.on.animation.both();
-				},
-				animateClose = function() {
-					var callbacks = function() {
-						events.callbacks.animation.close();
-						events.callbacks.animation.both();
-					};
+        // Fix width on resize
+        $sidebar.css("width", setSidebarWidth(w));
 
-					// Define the animation
-					animation[ align ] = -$sidebar.width();
-
-					// Apply the animation, the options and the callbacks
-					$sidebar.animate( animation, duration, easing, callbacks );
-
-					events.on.animation.close();
-					events.on.animation.both();
-				};
-
-			// Create the sidebar style
-			sbStyle = {
-				position: "fixed",
-				top: parseInt( cfg.top ),
-				bottom: 0,
-				width: setSidebarWidth( w ),
-				zIndex: cfg.zIndex
-			};
-
-			// Set initial position
-			sbStyle[ align ] = ( "closed" === init ) ? -setSidebarWidth( w ) : 0;
-
-			// freeze page if sidebar is opened
-			if ( scrollCfg && "opened" === init ) {
-				freezePage();
-			}
-
-			// Apply style to the sidebar
-			$sidebar.css( sbStyle )
-				.attr( attr, init ); // apply init
-
-			// Create the private mask style
-			pvtMaskStyle = {
-				position: "fixed",
-				top: parseInt( cfg.top ),
-				right: 0,
-				bottom: 0,
-				left: 0,
-				zIndex: cfg.zIndex - 1,
-				display: "none"
-			};
-
-			// Hide or show the mask
-			// according to the chosen init option
-			pvtMaskStyle.display = ( "opened" === init ) ?
-				"block" :
-				"none";
-
-			// Merge the Mask private and custom style but keep private style unchangeable
-			maskStyle = $.extend( true, pvtMaskStyle, cfg.mask.css );
-
-			// Create Mask if required
-			// Mask is appended to body
-			if ( cfg.mask.display ) {
-				createMask();
-			}
-
-			// Apply animations
-			$trigger.click( function() {
-				switch ( sidebarStatus() ) {
-				case "opened":
-					animateClose();
-					break;
-				case "closed":
-					animateOpen();
-					break;
-				}
-			} );
-
-			$mask.click( animateClose );
-			$sidebar.on( "click", quitter, animateClose );
-
-			// Make the sidebar responsive
-			$( window ).resize( function() {
-				var w = $( window ).width();
-
-				// Fix width on resize
-				$sidebar.css( "width", setSidebarWidth( w ) );
-
-				if ( "closed" === sidebarStatus() ) {
-					$sidebar.css( align, -$sidebar.width() );
-				}
-			} );
-		} );
-	};
-} ) );
+        if ("closed" === sidebarStatus()) {
+          $sidebar.css(align, -$sidebar.width());
+        }
+      });
+    });
+  };
+});
