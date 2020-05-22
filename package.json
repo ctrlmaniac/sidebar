@@ -38,11 +38,24 @@
     "test": "grunt lint",
     "watch": "grunt watch"
   },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
   "dependencies": {
     "jquery": "^3.5.1",
     "jquery-ui": "^1.12.1"
   },
   "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
     "eslint-config-jquery": "^1.0.1",
     "grunt": "^1.1.0",
     "grunt-contrib-concat": "^1.0.1",
@@ -51,7 +64,9 @@
     "grunt-contrib-watch": "^1.1.0",
     "grunt-eslint": "^20.2.0",
     "husky": "^4.2.5",
-    "load-grunt-tasks": "^3.5.2"
+    "load-grunt-tasks": "^3.5.2",
+    "prettier": "2.0.5",
+    "pretty-quick": "^2.0.1"
   },
   "optionalDependencies": {
     "jquery-ui-dist": "^1.12.1"
