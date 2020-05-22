@@ -1,27 +1,22 @@
 root = true
 
 [*]
-charset = utf-8
-end_of_line = lf
+indent_style = space
+indent_size = 2
 insert_final_newline = true
 trim_trailing_whitespace = true
+end_of_line = lf
+charset = utf-8
 
-# Javascripts
-[*.js]
-indent_style = tab
-tab_width = 4
-
-# Stylesheets
-[*.{sass,scss,css}]
-indent_style = space
+# The JSON files contain newlines inconsistently
+[*.json]
 indent_size = 2
+insert_final_newline = ignore
 
-# Pages
-[*.{html,xml,md}]
-indent_style = space
-indent_size = 2
+# Minified JavaScript files shouldn't be changed
+[**.min.js]
+indent_style = ignore
+insert_final_newline = ignore
 
-# Json, YAML and Configuration files
-[.*rc,*.{json,yml}]
-indent_style = space
-indent_size = 2
+[COMMIT_EDITMSG]
+max_line_length = 0
