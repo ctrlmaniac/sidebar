@@ -1,9 +1,9 @@
 {
-  "name": "simpler-sidebar",
+  "name": "@dcdeiv/simpler-sidebar",
   "version": "2.2.5",
   "description": "A simple side nav in jQuery",
   "main": "./dist/jquery.simpler-sidebar.js",
-  "homepage": "https://github.com/simple-sidebar/simpler-sidebar",
+  "homepage": "https://github.com/dcdeiv/simpler-sidebar",
   "author": "Davide Di Criscito (https://github.com/dcdeiv)",
   "license": "MIT AND GPL-2.0",
   "keywords": [
@@ -20,7 +20,7 @@
     "javascript",
     "js"
   ],
-  "repository": "https://github.com/simple-sidebar/simpler-sidebar.git",
+  "repository": "https://github.com/dcdeiv/simpler-sidebar.git",
   "files": [
     "demo",
     "dist",
@@ -31,7 +31,7 @@
     "doc": "doc"
   },
   "bugs": {
-    "url": "https://github.com/simple-sidebar/simpler-sidebar/issues"
+    "url": "https://github.com/dcdeiv/simpler-sidebar/issues"
   },
   "scripts": {
     "build": "grunt build",
