@@ -4,6 +4,8 @@
 
 A jQuery plugin that allows to _create a side nav_ as in modern mobile apps. It aims to _simplicity_ so that _everybody can use it_ no matter if expert programmers or not.
 
+**THIS PACKAGE IS NO LONGER MANTAINED**
+
 ## :muscle: works with
 
 - [x] jQuery v1.12.4
