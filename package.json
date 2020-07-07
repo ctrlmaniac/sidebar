@@ -9,9 +9,22 @@
       "path": "cz-conventional-changelog"
     }
   },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
   "devDependencies": {
+    "@commitlint/cli": "^9.0.1",
+    "@commitlint/config-conventional": "^9.0.1",
     "commitizen": "^4.1.2",
     "cz-conventional-changelog": "3.2.0",
+    "husky": "^4.2.5",
     "lerna": "^3.22.1"
   }
 }
