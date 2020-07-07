@@ -20,7 +20,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ctrlmaniac/sidebar.git",
-    "directory": "packages/simpler-sidebar"
+    "directory": "packages/simpler"
   },
   "bugs": {
     "url": "https://github.com/ctrlmaniac/sidebar/issues"
