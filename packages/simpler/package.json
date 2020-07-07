@@ -25,13 +25,23 @@
   "bugs": {
     "url": "https://github.com/ctrlmaniac/sidebar/issues"
   },
-  "publishConfig": {
-    "access": "public"
+  "directories": {
+    "example": "demo"
   },
   "scripts": {
     "commit": "git-cz"
   },
   "devDependencies": {
+    "commitizen": "^4.1.2",
+    "cz-conventional-changelog": "^3.2.0",
     "prettier": "^2.0.5"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   }
 }
