@@ -8,6 +8,18 @@ This repo is actually a **monorepo**!
 
 Looking for a specific package? Check the [packages](./packages) folder!
 
-## Packages
+---
 
-- [simpler-sidebar](./packages/simpler-sidebar/README.md)
+## `simpler-sidebar`
+
+simpler-sidebar is available as a npm package!
+
+```shell
+// with npm
+npm install simple-sidebar
+
+// with yarn
+yarn add simple-sidebar
+```
+
+Read the documentation [here](./packages/simpler/README.md)
