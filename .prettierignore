@@ -1,2 +1,4 @@
 build
 coverage
+.yarn
+.pnp.js
