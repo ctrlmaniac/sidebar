@@ -1,6 +1,7 @@
 {
   "name": "root",
   "private": true,
+  "license": "MIT",
   "workspaces": [
     "packages/*"
   ],
@@ -10,6 +11,7 @@
   "devDependencies": {
     "@commitlint/cli": "^9.0.1",
     "@commitlint/config-conventional": "^9.0.1",
+    "@yarnpkg/pnpify": "^2.0.0-rc.25",
     "commitizen": "^4.1.2",
     "cz-conventional-changelog": "3.2.0",
     "eslint": "^7.4.0",
