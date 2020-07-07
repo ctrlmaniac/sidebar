@@ -16,7 +16,8 @@
   },
   "husky": {
     "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "pretty-quick --staged"
     }
   },
   "devDependencies": {
@@ -26,6 +27,7 @@
     "cz-conventional-changelog": "3.2.0",
     "husky": "^4.2.5",
     "lerna": "^3.22.1",
-    "prettier": "2.0.5"
+    "prettier": "2.0.5",
+    "pretty-quick": "^2.0.1"
   }
 }
