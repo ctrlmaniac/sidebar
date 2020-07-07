@@ -25,11 +25,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           name: "root",
           reference: "workspace:.",
         },
+        {
+          name: "@ctrlmaniac/simpler-sidebar",
+          reference: "workspace:packages/simpler-sidebar",
+        },
       ],
       enableTopLevelFallback: true,
       ignorePatternData:
         "(^(?:\\.yarn\\/sdks(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)|$))$)",
-      fallbackExclusionList: [["root", ["workspace:."]]],
+      fallbackExclusionList: [
+        ["@ctrlmaniac/simpler-sidebar", ["workspace:packages/simpler-sidebar"]],
+        ["root", ["workspace:."]],
+      ],
       fallbackPool: [
         ["@commitlint/cli", "npm:9.1.1"],
         ["@commitlint/config-conventional", "npm:9.1.1"],
@@ -439,6 +446,24 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   "./.yarn/cache/@commitlint-types-npm-9.1.1-87647c71f2-367e08ab81.zip/node_modules/@commitlint/types/",
                 packageDependencies: [["@commitlint/types", "npm:9.1.1"]],
                 linkType: "HARD",
+              },
+            ],
+          ],
+        ],
+        [
+          "@ctrlmaniac/simpler-sidebar",
+          [
+            [
+              "workspace:packages/simpler-sidebar",
+              {
+                packageLocation: "./packages/simpler-sidebar/",
+                packageDependencies: [
+                  [
+                    "@ctrlmaniac/simpler-sidebar",
+                    "workspace:packages/simpler-sidebar",
+                  ],
+                ],
+                linkType: "SOFT",
               },
             ],
           ],

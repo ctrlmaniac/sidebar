@@ -211,6 +211,12 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@ctrlmaniac/simpler-sidebar@workspace:packages/simpler-sidebar":
+  version: 0.0.0-use.local
+  resolution: "@ctrlmaniac/simpler-sidebar@workspace:packages/simpler-sidebar"
+  languageName: unknown
+  linkType: soft
+
 "@evocateur/libnpmaccess@npm:^3.1.2":
   version: 3.1.2
   resolution: "@evocateur/libnpmaccess@npm:3.1.2"
