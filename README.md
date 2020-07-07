@@ -4,17 +4,23 @@
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
-This repo is actually a **monorepo**!
+**Sidebar** is a collection of javascript packages distributed via the npm registry. It aims to simplicity and to provide a range of tool that allow users to implement sidebar (or side navs) in their web apps!
 
-Looking for a specific package? Check the [packages](./packages) folder!
+---
+
+### Packages
+
+- [**simpler-sidebar**](./packages/simpler/README.md)
 
 ---
 
 ## `simpler-sidebar`
 
-simpler-sidebar is available as a npm package!
+**simpler-sidebar** is the most downloaded package. It's a **jQuery plugin** that allows to create a **side nav** as in modern mobile apps. It aims to simplicity so that everybody can use it no matter if expert programmers or not. It is written entirely in javascript so that you won't need to include any css file! Just plug it and use it!
 
 ```shell
+// Install
+
 // with npm
 npm install simple-sidebar
 
@@ -22,4 +28,4 @@ npm install simple-sidebar
 yarn add simple-sidebar
 ```
 
-Read the documentation [here](./packages/simpler/README.md)
+The full documentation is available [here](./packages/simpler/README.md).
