@@ -35,6 +35,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ["@commitlint/config-conventional", "npm:9.1.1"],
         ["commitizen", "npm:4.1.2"],
         ["cz-conventional-changelog", "npm:3.2.0"],
+        ["eslint", "npm:7.4.0"],
+        [
+          "eslint-config-prettier",
+          "virtual:36a01d8083315b8a6e8362097258ea8bc0f9dfb672cb210742e054760850c673a1038f542a6b7156397b5275ace8ee0482231cac5e8898044fa1a1c29f78ee5b#npm:6.11.0",
+        ],
         ["husky", "npm:4.2.5"],
         ["lerna", "npm:3.22.1"],
         ["prettier", "npm:2.0.5"],
@@ -57,6 +62,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["@commitlint/config-conventional", "npm:9.1.1"],
                   ["commitizen", "npm:4.1.2"],
                   ["cz-conventional-changelog", "npm:3.2.0"],
+                  ["eslint", "npm:7.4.0"],
+                  [
+                    "eslint-config-prettier",
+                    "virtual:36a01d8083315b8a6e8362097258ea8bc0f9dfb672cb210742e054760850c673a1038f542a6b7156397b5275ace8ee0482231cac5e8898044fa1a1c29f78ee5b#npm:6.11.0",
+                  ],
                   ["husky", "npm:4.2.5"],
                   ["lerna", "npm:3.22.1"],
                   ["prettier", "npm:2.0.5"],
@@ -2229,6 +2239,41 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
         ],
         [
+          "acorn",
+          [
+            [
+              "npm:7.3.1",
+              {
+                packageLocation:
+                  "./.yarn/cache/acorn-npm-7.3.1-422605b2d6-3fa7039384.zip/node_modules/acorn/",
+                packageDependencies: [["acorn", "npm:7.3.1"]],
+                linkType: "HARD",
+              },
+            ],
+          ],
+        ],
+        [
+          "acorn-jsx",
+          [
+            [
+              "virtual:9cd639b860ae122a225215d03b827ba0d40005f874588ef1e40aae9dde6e95699582307b33bbb4d817a0197d6ab69e59e55068be87a4872130ccfb182eeb975f#npm:5.2.0",
+              {
+                packageLocation:
+                  "./.yarn/$$virtual/acorn-jsx-virtual-8143c0d55e/0/cache/acorn-jsx-npm-5.2.0-4c0af33483-1247cc4b32.zip/node_modules/acorn-jsx/",
+                packageDependencies: [
+                  [
+                    "acorn-jsx",
+                    "virtual:9cd639b860ae122a225215d03b827ba0d40005f874588ef1e40aae9dde6e95699582307b33bbb4d817a0197d6ab69e59e55068be87a4872130ccfb182eeb975f#npm:5.2.0",
+                  ],
+                  ["acorn", "npm:7.3.1"],
+                ],
+                packagePeers: ["acorn"],
+                linkType: "HARD",
+              },
+            ],
+          ],
+        ],
+        [
           "agent-base",
           [
             [
@@ -2295,6 +2340,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
         ],
         [
+          "ansi-colors",
+          [
+            [
+              "npm:4.1.1",
+              {
+                packageLocation:
+                  "./.yarn/cache/ansi-colors-npm-4.1.1-97ad42f223-50d8dfbce2.zip/node_modules/ansi-colors/",
+                packageDependencies: [["ansi-colors", "npm:4.1.1"]],
+                linkType: "HARD",
+              },
+            ],
+          ],
+        ],
+        [
           "ansi-escapes",
           [
             [
@@ -2335,6 +2394,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packageLocation:
                   "./.yarn/cache/ansi-regex-npm-4.1.0-4a7d8413fe-53b6fe447c.zip/node_modules/ansi-regex/",
                 packageDependencies: [["ansi-regex", "npm:4.1.0"]],
+                linkType: "HARD",
+              },
+            ],
+            [
+              "npm:5.0.0",
+              {
+                packageLocation:
+                  "./.yarn/cache/ansi-regex-npm-5.0.0-9c076068d9-cbd9b5c9db.zip/node_modules/ansi-regex/",
+                packageDependencies: [["ansi-regex", "npm:5.0.0"]],
                 linkType: "HARD",
               },
             ],
@@ -2666,6 +2734,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packageLocation:
                   "./.yarn/cache/assign-symbols-npm-1.0.0-fd803ccdf1-893e9389a5.zip/node_modules/assign-symbols/",
                 packageDependencies: [["assign-symbols", "npm:1.0.0"]],
+                linkType: "HARD",
+              },
+            ],
+          ],
+        ],
+        [
+          "astral-regex",
+          [
+            [
+              "npm:1.0.0",
+              {
+                packageLocation:
+                  "./.yarn/cache/astral-regex-npm-1.0.0-2df7c41332-08e37f5996.zip/node_modules/astral-regex/",
+                packageDependencies: [["astral-regex", "npm:1.0.0"]],
                 linkType: "HARD",
               },
             ],
@@ -4101,6 +4183,23 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
               },
             ],
             [
+              "virtual:3e08abf7a80ab8115702b425e8d15cf07d103726f0c85dc8cbd13eec0b6548fb7666cdd7be49d5ebeb036638e33f3bf6878a2a146572285d25ba16e970467159#npm:4.2.0",
+              {
+                packageLocation:
+                  "./.yarn/$$virtual/debug-virtual-abf7422582/0/cache/debug-npm-4.2.0-9392baba7e-dcfb8ede26.zip/node_modules/debug/",
+                packageDependencies: [
+                  [
+                    "debug",
+                    "virtual:3e08abf7a80ab8115702b425e8d15cf07d103726f0c85dc8cbd13eec0b6548fb7666cdd7be49d5ebeb036638e33f3bf6878a2a146572285d25ba16e970467159#npm:4.2.0",
+                  ],
+                  ["ms", "npm:2.1.2"],
+                  ["supports-color", null],
+                ],
+                packagePeers: ["supports-color"],
+                linkType: "HARD",
+              },
+            ],
+            [
               "virtual:6618ab6046111bda0b9a733e34fec5329265b155b4408a2345f36333ccbe1a86dfc9efc447e5134e4156dde98ed737f5efbe42b5378f22c09197bf46e2cdab17#npm:3.1.0",
               {
                 packageLocation:
@@ -4205,6 +4304,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packageLocation:
                   "./.yarn/cache/dedent-npm-0.7.0-2dbb45a4c5-05c18541a4.zip/node_modules/dedent/",
                 packageDependencies: [["dedent", "npm:0.7.0"]],
+                linkType: "HARD",
+              },
+            ],
+          ],
+        ],
+        [
+          "deep-is",
+          [
+            [
+              "npm:0.1.3",
+              {
+                packageLocation:
+                  "./.yarn/cache/deep-is-npm-0.1.3-0941784645-3de58f86af.zip/node_modules/deep-is/",
+                packageDependencies: [["deep-is", "npm:0.1.3"]],
                 linkType: "HARD",
               },
             ],
@@ -4401,6 +4514,23 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
         ],
         [
+          "doctrine",
+          [
+            [
+              "npm:3.0.0",
+              {
+                packageLocation:
+                  "./.yarn/cache/doctrine-npm-3.0.0-c6f1615f04-2eae469bd2.zip/node_modules/doctrine/",
+                packageDependencies: [
+                  ["doctrine", "npm:3.0.0"],
+                  ["esutils", "npm:2.0.3"],
+                ],
+                linkType: "HARD",
+              },
+            ],
+          ],
+        ],
+        [
           "dot-prop",
           [
             [
@@ -4535,6 +4665,23 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packageDependencies: [
                   ["end-of-stream", "npm:1.4.4"],
                   ["once", "npm:1.4.0"],
+                ],
+                linkType: "HARD",
+              },
+            ],
+          ],
+        ],
+        [
+          "enquirer",
+          [
+            [
+              "npm:2.3.6",
+              {
+                packageLocation:
+                  "./.yarn/cache/enquirer-npm-2.3.6-7899175762-e249bb97bf.zip/node_modules/enquirer/",
+                packageDependencies: [
+                  ["enquirer", "npm:2.3.6"],
+                  ["ansi-colors", "npm:4.1.1"],
                 ],
                 linkType: "HARD",
               },
@@ -4692,6 +4839,154 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
         ],
         [
+          "eslint",
+          [
+            [
+              "npm:7.4.0",
+              {
+                packageLocation:
+                  "./.yarn/cache/eslint-npm-7.4.0-3e08abf7a8-ef144e684c.zip/node_modules/eslint/",
+                packageDependencies: [
+                  ["eslint", "npm:7.4.0"],
+                  ["@babel/code-frame", "npm:7.10.4"],
+                  ["ajv", "npm:6.12.3"],
+                  ["chalk", "npm:4.1.0"],
+                  ["cross-spawn", "npm:7.0.3"],
+                  [
+                    "debug",
+                    "virtual:3e08abf7a80ab8115702b425e8d15cf07d103726f0c85dc8cbd13eec0b6548fb7666cdd7be49d5ebeb036638e33f3bf6878a2a146572285d25ba16e970467159#npm:4.2.0",
+                  ],
+                  ["doctrine", "npm:3.0.0"],
+                  ["enquirer", "npm:2.3.6"],
+                  ["eslint-scope", "npm:5.1.0"],
+                  ["eslint-utils", "npm:2.1.0"],
+                  ["eslint-visitor-keys", "npm:1.3.0"],
+                  ["espree", "npm:7.1.0"],
+                  ["esquery", "npm:1.3.1"],
+                  ["esutils", "npm:2.0.3"],
+                  ["file-entry-cache", "npm:5.0.1"],
+                  ["functional-red-black-tree", "npm:1.0.1"],
+                  ["glob-parent", "npm:5.1.1"],
+                  ["globals", "npm:12.4.0"],
+                  ["ignore", "npm:4.0.6"],
+                  ["import-fresh", "npm:3.2.1"],
+                  ["imurmurhash", "npm:0.1.4"],
+                  ["is-glob", "npm:4.0.1"],
+                  ["js-yaml", "npm:3.14.0"],
+                  ["json-stable-stringify-without-jsonify", "npm:1.0.1"],
+                  ["levn", "npm:0.4.1"],
+                  ["lodash", "npm:4.17.15"],
+                  ["minimatch", "npm:3.0.4"],
+                  ["natural-compare", "npm:1.4.0"],
+                  ["optionator", "npm:0.9.1"],
+                  ["progress", "npm:2.0.3"],
+                  ["regexpp", "npm:3.1.0"],
+                  ["semver", "npm:7.3.2"],
+                  ["strip-ansi", "npm:6.0.0"],
+                  ["strip-json-comments", "npm:3.1.0"],
+                  ["table", "npm:5.4.6"],
+                  ["text-table", "npm:0.2.0"],
+                  ["v8-compile-cache", "npm:2.1.1"],
+                ],
+                linkType: "HARD",
+              },
+            ],
+          ],
+        ],
+        [
+          "eslint-config-prettier",
+          [
+            [
+              "virtual:36a01d8083315b8a6e8362097258ea8bc0f9dfb672cb210742e054760850c673a1038f542a6b7156397b5275ace8ee0482231cac5e8898044fa1a1c29f78ee5b#npm:6.11.0",
+              {
+                packageLocation:
+                  "./.yarn/$$virtual/eslint-config-prettier-virtual-24dad06efa/0/cache/eslint-config-prettier-npm-6.11.0-cf0b83022d-59efd906c7.zip/node_modules/eslint-config-prettier/",
+                packageDependencies: [
+                  [
+                    "eslint-config-prettier",
+                    "virtual:36a01d8083315b8a6e8362097258ea8bc0f9dfb672cb210742e054760850c673a1038f542a6b7156397b5275ace8ee0482231cac5e8898044fa1a1c29f78ee5b#npm:6.11.0",
+                  ],
+                  ["eslint", "npm:7.4.0"],
+                  ["get-stdin", "npm:6.0.0"],
+                ],
+                packagePeers: ["eslint"],
+                linkType: "HARD",
+              },
+            ],
+          ],
+        ],
+        [
+          "eslint-scope",
+          [
+            [
+              "npm:5.1.0",
+              {
+                packageLocation:
+                  "./.yarn/cache/eslint-scope-npm-5.1.0-2f7f4b93bb-4a0e97979a.zip/node_modules/eslint-scope/",
+                packageDependencies: [
+                  ["eslint-scope", "npm:5.1.0"],
+                  ["esrecurse", "npm:4.2.1"],
+                  ["estraverse", "npm:4.3.0"],
+                ],
+                linkType: "HARD",
+              },
+            ],
+          ],
+        ],
+        [
+          "eslint-utils",
+          [
+            [
+              "npm:2.1.0",
+              {
+                packageLocation:
+                  "./.yarn/cache/eslint-utils-npm-2.1.0-a3a7ebf4fa-a43892372a.zip/node_modules/eslint-utils/",
+                packageDependencies: [
+                  ["eslint-utils", "npm:2.1.0"],
+                  ["eslint-visitor-keys", "npm:1.3.0"],
+                ],
+                linkType: "HARD",
+              },
+            ],
+          ],
+        ],
+        [
+          "eslint-visitor-keys",
+          [
+            [
+              "npm:1.3.0",
+              {
+                packageLocation:
+                  "./.yarn/cache/eslint-visitor-keys-npm-1.3.0-c07780a0fb-58ab7a0107.zip/node_modules/eslint-visitor-keys/",
+                packageDependencies: [["eslint-visitor-keys", "npm:1.3.0"]],
+                linkType: "HARD",
+              },
+            ],
+          ],
+        ],
+        [
+          "espree",
+          [
+            [
+              "npm:7.1.0",
+              {
+                packageLocation:
+                  "./.yarn/cache/espree-npm-7.1.0-9cd639b860-447e2663f8.zip/node_modules/espree/",
+                packageDependencies: [
+                  ["espree", "npm:7.1.0"],
+                  ["acorn", "npm:7.3.1"],
+                  [
+                    "acorn-jsx",
+                    "virtual:9cd639b860ae122a225215d03b827ba0d40005f874588ef1e40aae9dde6e95699582307b33bbb4d817a0197d6ab69e59e55068be87a4872130ccfb182eeb975f#npm:5.2.0",
+                  ],
+                  ["eslint-visitor-keys", "npm:1.3.0"],
+                ],
+                linkType: "HARD",
+              },
+            ],
+          ],
+        ],
+        [
           "esprima",
           [
             [
@@ -4700,6 +4995,77 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packageLocation:
                   "./.yarn/cache/esprima-npm-4.0.1-1084e98778-5df45a3d9c.zip/node_modules/esprima/",
                 packageDependencies: [["esprima", "npm:4.0.1"]],
+                linkType: "HARD",
+              },
+            ],
+          ],
+        ],
+        [
+          "esquery",
+          [
+            [
+              "npm:1.3.1",
+              {
+                packageLocation:
+                  "./.yarn/cache/esquery-npm-1.3.1-2ba3c93f30-0aac7572bc.zip/node_modules/esquery/",
+                packageDependencies: [
+                  ["esquery", "npm:1.3.1"],
+                  ["estraverse", "npm:5.1.0"],
+                ],
+                linkType: "HARD",
+              },
+            ],
+          ],
+        ],
+        [
+          "esrecurse",
+          [
+            [
+              "npm:4.2.1",
+              {
+                packageLocation:
+                  "./.yarn/cache/esrecurse-npm-4.2.1-9ebee4c3b1-9acfa28772.zip/node_modules/esrecurse/",
+                packageDependencies: [
+                  ["esrecurse", "npm:4.2.1"],
+                  ["estraverse", "npm:4.3.0"],
+                ],
+                linkType: "HARD",
+              },
+            ],
+          ],
+        ],
+        [
+          "estraverse",
+          [
+            [
+              "npm:4.3.0",
+              {
+                packageLocation:
+                  "./.yarn/cache/estraverse-npm-4.3.0-920a32f3c6-1e4c627da9.zip/node_modules/estraverse/",
+                packageDependencies: [["estraverse", "npm:4.3.0"]],
+                linkType: "HARD",
+              },
+            ],
+            [
+              "npm:5.1.0",
+              {
+                packageLocation:
+                  "./.yarn/cache/estraverse-npm-5.1.0-ab0ea20456-1b8a47cf7c.zip/node_modules/estraverse/",
+                packageDependencies: [["estraverse", "npm:5.1.0"]],
+                linkType: "HARD",
+              },
+            ],
+          ],
+        ],
+        [
+          "esutils",
+          [
+            [
+              "npm:2.0.3",
+              {
+                packageLocation:
+                  "./.yarn/cache/esutils-npm-2.0.3-f865beafd5-590b045331.zip/node_modules/esutils/",
+                packageDependencies: [["esutils", "npm:2.0.3"]],
                 linkType: "HARD",
               },
             ],
@@ -4959,6 +5325,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
         ],
         [
+          "fast-levenshtein",
+          [
+            [
+              "npm:2.0.6",
+              {
+                packageLocation:
+                  "./.yarn/cache/fast-levenshtein-npm-2.0.6-fcd74b8df5-a2d03af308.zip/node_modules/fast-levenshtein/",
+                packageDependencies: [["fast-levenshtein", "npm:2.0.6"]],
+                linkType: "HARD",
+              },
+            ],
+          ],
+        ],
+        [
           "figgy-pudding",
           [
             [
@@ -4983,6 +5363,23 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packageDependencies: [
                   ["figures", "npm:2.0.0"],
                   ["escape-string-regexp", "npm:1.0.5"],
+                ],
+                linkType: "HARD",
+              },
+            ],
+          ],
+        ],
+        [
+          "file-entry-cache",
+          [
+            [
+              "npm:5.0.1",
+              {
+                packageLocation:
+                  "./.yarn/cache/file-entry-cache-npm-5.0.1-7212af17f3-7140588bec.zip/node_modules/file-entry-cache/",
+                packageDependencies: [
+                  ["file-entry-cache", "npm:5.0.1"],
+                  ["flat-cache", "npm:2.0.1"],
                 ],
                 linkType: "HARD",
               },
@@ -5128,6 +5525,39 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["micromatch", "npm:3.1.10"],
                   ["resolve-dir", "npm:1.0.1"],
                 ],
+                linkType: "HARD",
+              },
+            ],
+          ],
+        ],
+        [
+          "flat-cache",
+          [
+            [
+              "npm:2.0.1",
+              {
+                packageLocation:
+                  "./.yarn/cache/flat-cache-npm-2.0.1-abf037b0b9-a36ba40755.zip/node_modules/flat-cache/",
+                packageDependencies: [
+                  ["flat-cache", "npm:2.0.1"],
+                  ["flatted", "npm:2.0.2"],
+                  ["rimraf", "npm:2.6.3"],
+                  ["write", "npm:1.0.3"],
+                ],
+                linkType: "HARD",
+              },
+            ],
+          ],
+        ],
+        [
+          "flatted",
+          [
+            [
+              "npm:2.0.2",
+              {
+                packageLocation:
+                  "./.yarn/cache/flatted-npm-2.0.2-ccb06e14ff-a3e5fb71ad.zip/node_modules/flatted/",
+                packageDependencies: [["flatted", "npm:2.0.2"]],
                 linkType: "HARD",
               },
             ],
@@ -5318,6 +5748,22 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
         ],
         [
+          "functional-red-black-tree",
+          [
+            [
+              "npm:1.0.1",
+              {
+                packageLocation:
+                  "./.yarn/cache/functional-red-black-tree-npm-1.0.1-ccfe924dcd-477ecaf62d.zip/node_modules/functional-red-black-tree/",
+                packageDependencies: [
+                  ["functional-red-black-tree", "npm:1.0.1"],
+                ],
+                linkType: "HARD",
+              },
+            ],
+          ],
+        ],
+        [
           "gauge",
           [
             [
@@ -5413,6 +5859,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packageLocation:
                   "./.yarn/cache/get-stdin-npm-4.0.1-10c6ac0b43-ba122b0569.zip/node_modules/get-stdin/",
                 packageDependencies: [["get-stdin", "npm:4.0.1"]],
+                linkType: "HARD",
+              },
+            ],
+            [
+              "npm:6.0.0",
+              {
+                packageLocation:
+                  "./.yarn/cache/get-stdin-npm-6.0.0-22ebabe125-b51d664838.zip/node_modules/get-stdin/",
+                packageDependencies: [["get-stdin", "npm:6.0.0"]],
                 linkType: "HARD",
               },
             ],
@@ -5746,6 +6201,23 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["ini", "npm:1.3.5"],
                   ["is-windows", "npm:1.0.2"],
                   ["which", "npm:1.3.1"],
+                ],
+                linkType: "HARD",
+              },
+            ],
+          ],
+        ],
+        [
+          "globals",
+          [
+            [
+              "npm:12.4.0",
+              {
+                packageLocation:
+                  "./.yarn/cache/globals-npm-12.4.0-02b5a6ba9c-0b9764bdea.zip/node_modules/globals/",
+                packageDependencies: [
+                  ["globals", "npm:12.4.0"],
+                  ["type-fest", "npm:0.8.1"],
                 ],
                 linkType: "HARD",
               },
@@ -7113,6 +7585,22 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
         ],
         [
+          "json-stable-stringify-without-jsonify",
+          [
+            [
+              "npm:1.0.1",
+              {
+                packageLocation:
+                  "./.yarn/cache/json-stable-stringify-without-jsonify-npm-1.0.1-b65772b28b-a01b6c6541.zip/node_modules/json-stable-stringify-without-jsonify/",
+                packageDependencies: [
+                  ["json-stable-stringify-without-jsonify", "npm:1.0.1"],
+                ],
+                linkType: "HARD",
+              },
+            ],
+          ],
+        ],
+        [
           "json-stringify-safe",
           [
             [
@@ -7252,6 +7740,24 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["@lerna/version", "npm:3.22.1"],
                   ["import-local", "npm:2.0.0"],
                   ["npmlog", "npm:4.1.2"],
+                ],
+                linkType: "HARD",
+              },
+            ],
+          ],
+        ],
+        [
+          "levn",
+          [
+            [
+              "npm:0.4.1",
+              {
+                packageLocation:
+                  "./.yarn/cache/levn-npm-0.4.1-d183b2d7bb-2f6ddfb0b9.zip/node_modules/levn/",
+                packageDependencies: [
+                  ["levn", "npm:0.4.1"],
+                  ["prelude-ls", "npm:1.2.1"],
+                  ["type-check", "npm:0.4.0"],
                 ],
                 linkType: "HARD",
               },
@@ -8295,6 +8801,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
         ],
         [
+          "natural-compare",
+          [
+            [
+              "npm:1.4.0",
+              {
+                packageLocation:
+                  "./.yarn/cache/natural-compare-npm-1.4.0-97b75b362d-2daf93d9bb.zip/node_modules/natural-compare/",
+                packageDependencies: [["natural-compare", "npm:1.4.0"]],
+                linkType: "HARD",
+              },
+            ],
+          ],
+        ],
+        [
           "neo-async",
           [
             [
@@ -8834,6 +9354,28 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   "./.yarn/cache/opencollective-postinstall-npm-2.0.3-954643c36b-d75b06b80e.zip/node_modules/opencollective-postinstall/",
                 packageDependencies: [
                   ["opencollective-postinstall", "npm:2.0.3"],
+                ],
+                linkType: "HARD",
+              },
+            ],
+          ],
+        ],
+        [
+          "optionator",
+          [
+            [
+              "npm:0.9.1",
+              {
+                packageLocation:
+                  "./.yarn/cache/optionator-npm-0.9.1-577e397aae-bdf5683f98.zip/node_modules/optionator/",
+                packageDependencies: [
+                  ["optionator", "npm:0.9.1"],
+                  ["deep-is", "npm:0.1.3"],
+                  ["fast-levenshtein", "npm:2.0.6"],
+                  ["levn", "npm:0.4.1"],
+                  ["prelude-ls", "npm:1.2.1"],
+                  ["type-check", "npm:0.4.0"],
+                  ["word-wrap", "npm:1.2.3"],
                 ],
                 linkType: "HARD",
               },
@@ -9552,6 +10094,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
         ],
         [
+          "prelude-ls",
+          [
+            [
+              "npm:1.2.1",
+              {
+                packageLocation:
+                  "./.yarn/cache/prelude-ls-npm-1.2.1-3e4d272a55-bc1649f521.zip/node_modules/prelude-ls/",
+                packageDependencies: [["prelude-ls", "npm:1.2.1"]],
+                linkType: "HARD",
+              },
+            ],
+          ],
+        ],
+        [
           "prettier",
           [
             [
@@ -9601,6 +10157,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packageLocation:
                   "./.yarn/cache/process-nextick-args-npm-2.0.1-b8d7971609-ddeb0f07d0.zip/node_modules/process-nextick-args/",
                 packageDependencies: [["process-nextick-args", "npm:2.0.1"]],
+                linkType: "HARD",
+              },
+            ],
+          ],
+        ],
+        [
+          "progress",
+          [
+            [
+              "npm:2.0.3",
+              {
+                packageLocation:
+                  "./.yarn/cache/progress-npm-2.0.3-d1f87e2ac6-c46ef5a1de.zip/node_modules/progress/",
+                packageDependencies: [["progress", "npm:2.0.3"]],
                 linkType: "HARD",
               },
             ],
@@ -10130,6 +10700,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
         ],
         [
+          "regexpp",
+          [
+            [
+              "npm:3.1.0",
+              {
+                packageLocation:
+                  "./.yarn/cache/regexpp-npm-3.1.0-94a1868d49-69d0ce6b44.zip/node_modules/regexpp/",
+                packageDependencies: [["regexpp", "npm:3.1.0"]],
+                linkType: "HARD",
+              },
+            ],
+          ],
+        ],
+        [
           "repeat-element",
           [
             [
@@ -10406,6 +10990,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "rimraf",
           [
             [
+              "npm:2.6.3",
+              {
+                packageLocation:
+                  "./.yarn/cache/rimraf-npm-2.6.3-f34c6c72ec-c9ce1854f1.zip/node_modules/rimraf/",
+                packageDependencies: [
+                  ["rimraf", "npm:2.6.3"],
+                  ["glob", "npm:7.1.6"],
+                ],
+                linkType: "HARD",
+              },
+            ],
+            [
               "npm:2.7.1",
               {
                 packageLocation:
@@ -10432,6 +11028,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["@commitlint/config-conventional", "npm:9.1.1"],
                   ["commitizen", "npm:4.1.2"],
                   ["cz-conventional-changelog", "npm:3.2.0"],
+                  ["eslint", "npm:7.4.0"],
+                  [
+                    "eslint-config-prettier",
+                    "virtual:36a01d8083315b8a6e8362097258ea8bc0f9dfb672cb210742e054760850c673a1038f542a6b7156397b5275ace8ee0482231cac5e8898044fa1a1c29f78ee5b#npm:6.11.0",
+                  ],
                   ["husky", "npm:4.2.5"],
                   ["lerna", "npm:3.22.1"],
                   ["prettier", "npm:2.0.5"],
@@ -10742,6 +11343,25 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packageLocation:
                   "./.yarn/cache/slash-npm-3.0.0-b87de2279a-fc3e8597d8.zip/node_modules/slash/",
                 packageDependencies: [["slash", "npm:3.0.0"]],
+                linkType: "HARD",
+              },
+            ],
+          ],
+        ],
+        [
+          "slice-ansi",
+          [
+            [
+              "npm:2.1.0",
+              {
+                packageLocation:
+                  "./.yarn/cache/slice-ansi-npm-2.1.0-02505ccc06-7578393cac.zip/node_modules/slice-ansi/",
+                packageDependencies: [
+                  ["slice-ansi", "npm:2.1.0"],
+                  ["ansi-styles", "npm:3.2.1"],
+                  ["astral-regex", "npm:1.0.0"],
+                  ["is-fullwidth-code-point", "npm:2.0.0"],
+                ],
                 linkType: "HARD",
               },
             ],
@@ -11308,6 +11928,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 linkType: "HARD",
               },
             ],
+            [
+              "npm:6.0.0",
+              {
+                packageLocation:
+                  "./.yarn/cache/strip-ansi-npm-6.0.0-904613e9eb-10568c91ca.zip/node_modules/strip-ansi/",
+                packageDependencies: [
+                  ["strip-ansi", "npm:6.0.0"],
+                  ["ansi-regex", "npm:5.0.0"],
+                ],
+                linkType: "HARD",
+              },
+            ],
           ],
         ],
         [
@@ -11423,6 +12055,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 linkType: "HARD",
               },
             ],
+            [
+              "npm:3.1.0",
+              {
+                packageLocation:
+                  "./.yarn/cache/strip-json-comments-npm-3.1.0-fbc5f88936-5c272f2c03.zip/node_modules/strip-json-comments/",
+                packageDependencies: [["strip-json-comments", "npm:3.1.0"]],
+                linkType: "HARD",
+              },
+            ],
           ],
         ],
         [
@@ -11467,6 +12108,26 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packageDependencies: [
                   ["supports-color", "npm:7.1.0"],
                   ["has-flag", "npm:4.0.0"],
+                ],
+                linkType: "HARD",
+              },
+            ],
+          ],
+        ],
+        [
+          "table",
+          [
+            [
+              "npm:5.4.6",
+              {
+                packageLocation:
+                  "./.yarn/cache/table-npm-5.4.6-190b118384-38877a196c.zip/node_modules/table/",
+                packageDependencies: [
+                  ["table", "npm:5.4.6"],
+                  ["ajv", "npm:6.12.3"],
+                  ["lodash", "npm:4.17.15"],
+                  ["slice-ansi", "npm:2.1.0"],
+                  ["string-width", "npm:3.1.0"],
                 ],
                 linkType: "HARD",
               },
@@ -11541,6 +12202,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packageLocation:
                   "./.yarn/cache/text-extensions-npm-1.9.0-87655d768f-fecf1f4962.zip/node_modules/text-extensions/",
                 packageDependencies: [["text-extensions", "npm:1.9.0"]],
+                linkType: "HARD",
+              },
+            ],
+          ],
+        ],
+        [
+          "text-table",
+          [
+            [
+              "npm:0.2.0",
+              {
+                packageLocation:
+                  "./.yarn/cache/text-table-npm-0.2.0-d92a778b59-373904ce70.zip/node_modules/text-table/",
+                packageDependencies: [["text-table", "npm:0.2.0"]],
                 linkType: "HARD",
               },
             ],
@@ -11818,6 +12493,23 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packageLocation:
                   "./.yarn/cache/tweetnacl-npm-0.14.5-a3f766c0d1-e1c9d52e2e.zip/node_modules/tweetnacl/",
                 packageDependencies: [["tweetnacl", "npm:0.14.5"]],
+                linkType: "HARD",
+              },
+            ],
+          ],
+        ],
+        [
+          "type-check",
+          [
+            [
+              "npm:0.4.0",
+              {
+                packageLocation:
+                  "./.yarn/cache/type-check-npm-0.4.0-60565800ce-6c2e1ce339.zip/node_modules/type-check/",
+                packageDependencies: [
+                  ["type-check", "npm:0.4.0"],
+                  ["prelude-ls", "npm:1.2.1"],
+                ],
                 linkType: "HARD",
               },
             ],
@@ -12140,6 +12832,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
         ],
         [
+          "v8-compile-cache",
+          [
+            [
+              "npm:2.1.1",
+              {
+                packageLocation:
+                  "./.yarn/cache/v8-compile-cache-npm-2.1.1-efff1ef0a4-1290922fe1.zip/node_modules/v8-compile-cache/",
+                packageDependencies: [["v8-compile-cache", "npm:2.1.1"]],
+                linkType: "HARD",
+              },
+            ],
+          ],
+        ],
+        [
           "validate-npm-package-license",
           [
             [
@@ -12390,6 +13096,23 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packageLocation:
                   "./.yarn/cache/wrappy-npm-1.0.2-916de4d4b3-519fcda0fc.zip/node_modules/wrappy/",
                 packageDependencies: [["wrappy", "npm:1.0.2"]],
+                linkType: "HARD",
+              },
+            ],
+          ],
+        ],
+        [
+          "write",
+          [
+            [
+              "npm:1.0.3",
+              {
+                packageLocation:
+                  "./.yarn/cache/write-npm-1.0.3-1bac756049-e8f8fddefe.zip/node_modules/write/",
+                packageDependencies: [
+                  ["write", "npm:1.0.3"],
+                  ["mkdirp", "npm:0.5.5"],
+                ],
                 linkType: "HARD",
               },
             ],

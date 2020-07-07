@@ -1,0 +1,7 @@
+{
+  "extends": ["prettier"],
+  "env": {
+    "browser": true,
+    "jquery": true
+  }
+}
