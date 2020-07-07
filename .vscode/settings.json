@@ -1,7 +1,10 @@
 {
-    "editor.renderWhitespace": "boundary",
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    }
+  "editor.formatOnSave": true,
+  "editor.renderWhitespace": "boundary",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "eslint.nodePath": ".yarn/sdks",
+  "prettier.prettierPath": ".yarn/sdks/prettier/index.js"
 }
