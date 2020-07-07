@@ -5500,6 +5500,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"prettier@npm:2.0.5":
+  version: 2.0.5
+  resolution: "prettier@npm:2.0.5"
+  bin:
+    prettier: bin-prettier.js
+  checksum: d249d89361870a29b20e8b268cb09e908490b8c9e21f70393d12a213701f29ba7e95b7f9ce0ad63929c16ce475176742481911737ae3da4a498873e4a3b90990
+  languageName: node
+  linkType: hard
+
 "process-nextick-args@npm:~2.0.0":
   version: 2.0.1
   resolution: "process-nextick-args@npm:2.0.1"
@@ -6008,6 +6017,7 @@ resolve@^1.10.0:
     cz-conventional-changelog: 3.2.0
     husky: ^4.2.5
     lerna: ^3.22.1
+    prettier: 2.0.5
   languageName: unknown
   linkType: soft
 

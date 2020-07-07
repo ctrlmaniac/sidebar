@@ -52,6 +52,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       [
         "lerna",
         "npm:3.22.1"
+      ],
+      [
+        "prettier",
+        "npm:2.0.5"
       ]
     ],
     "locationBlacklistData": [
@@ -66,7 +70,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["commitizen", "npm:4.1.2"],
             ["cz-conventional-changelog", "npm:3.2.0"],
             ["husky", "npm:4.2.5"],
-            ["lerna", "npm:3.22.1"]
+            ["lerna", "npm:3.22.1"],
+            ["prettier", "npm:2.0.5"]
           ],
           "linkType": "SOFT",
         }]
@@ -6141,6 +6146,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["prettier", [
+        ["npm:2.0.5", {
+          "packageLocation": "./.yarn/cache/prettier-npm-2.0.5-f0ee4e15ce-d249d89361.zip/node_modules/prettier/",
+          "packageDependencies": [
+            ["prettier", "npm:2.0.5"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["process-nextick-args", [
         ["npm:2.0.1", {
           "packageLocation": "./.yarn/cache/process-nextick-args-npm-2.0.1-b8d7971609-ddeb0f07d0.zip/node_modules/process-nextick-args/",
@@ -6686,7 +6700,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["commitizen", "npm:4.1.2"],
             ["cz-conventional-changelog", "npm:3.2.0"],
             ["husky", "npm:4.2.5"],
-            ["lerna", "npm:3.22.1"]
+            ["lerna", "npm:3.22.1"],
+            ["prettier", "npm:2.0.5"]
           ],
           "linkType": "SOFT",
         }]
