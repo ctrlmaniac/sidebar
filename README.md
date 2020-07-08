@@ -16,16 +16,16 @@
 
 ## `simpler-sidebar`
 
-**simpler-sidebar** is the most downloaded package. It's a **jQuery plugin** that allows to create a **side nav** as in modern mobile apps. It aims to simplicity so that everybody can use it no matter if expert programmers or not. It is written entirely in javascript so that you won't need to include any css file! Just plug it and use it!
+**simpler-sidebar** is the most downloaded package. It's a **jQuery plugin** that allows to create a **side nav** as in modern mobile apps. It aims to simplicity so that everybody can use it no matter if expert programmers or not. It is written entirely in javascript so that you won't need to include any css file and the only css you must adds is not even required!
 
 ```shell
 // Install
 
 // with npm
-npm install simple-sidebar
+npm install simpler-sidebar
 
 // with yarn
-yarn add simple-sidebar
+yarn add simpler-sidebar
 ```
 
 The full documentation is available [here](./packages/simpler/README.md).
