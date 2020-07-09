@@ -51,7 +51,9 @@
     "prettier": "^2.0.5"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "main": "./lib/jquery.simpler-sidebar.js",
+    "registry": "https://npm.pkg.github.com"
   },
   "config": {
     "commitizen": {
