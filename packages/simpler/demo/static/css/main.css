@@ -51,13 +51,7 @@ body {
 }
 
 .sidebar {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
   background-color: blueviolet;
-  width: 250px;
 }
 
 .sidebar-wrapper {
