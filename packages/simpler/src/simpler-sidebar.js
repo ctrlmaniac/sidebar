@@ -27,9 +27,7 @@
     var configs = $.extend(
       true,
       {
-        selectors: {
-          quitter: "a", // must be changed by user because it's buggy
-        },
+        quitter: "a", // must be changed by user because it's buggy
         attr: "sidebar-main",
         open: false,
         align: "left",
@@ -50,6 +48,13 @@
             filter: "Alpha(opacity=50)",
           },
         },
+        events: {
+          onOpen: function () {},
+          afterOpen: function () {},
+          onClose: function () {},
+          afterClose: function () {},
+          always: function () {},
+        },
       },
       options
     );
@@ -57,7 +62,6 @@
     // return this to keep chainability
     return this.each(function () {
       var $sidebar = $(this);
-      var $toggler = $(configs.selectors.trigger);
       var windowWidth = $(window).width();
       var baseAttr = "data-" + configs.attr;
       var sidebarAttrOpen = baseAttr + "-open";
@@ -125,34 +129,54 @@
 
       /** events triggered on sidebar opening */
       var onSidebarOpenEvent = function () {
+        // Show mask
         if (configs.mask.display) {
           $mask.fadeIn(configs.animation.duration);
         }
 
+        // freeze page
+        if (configs.freezePage) {
+          $("body").css("overflowY", "hidden");
+        }
+
         setSidebarAttrOpen(true);
+
+        // trigger user custom events
+        configs.events.always();
+        configs.events.onOpen();
       };
 
       /** events triggerd after sidebar opening action */
       var afterSidebarOpenEvent = function () {
-        if (configs.freezePage) {
-          $("body").css("overflowY", "hidden");
-        }
+        // trigger user custom events
+        configs.events.always();
+        configs.events.afterOpen();
       };
 
       /** events triggered on sidebar closing */
       var onSidebarCloseEvent = function () {
+        // hide mask
         if (configs.mask.display) {
           $mask.fadeOut(configs.animation.duration);
         }
 
+        // unfreeze page
+        if (configs.freezePage) {
+          $("body").css("overflowY", "visible");
+        }
+
         setSidebarAttrOpen(false);
+
+        // trigger user custom events
+        configs.events.always();
+        configs.events.onClose();
       };
 
       /** events triggerd after sidebar closing action */
       var afterSidebarCloseEvent = function () {
-        if (configs.freezePage) {
-          $("body").css("overflowY", "initial");
-        }
+        // trigger user custom events
+        configs.events.always();
+        configs.events.afterClose();
       };
 
       /** triggers sidebar action open */
@@ -183,8 +207,8 @@
         onSidebarCloseEvent();
       };
 
-      // trigger open or close action when $toggler is clicked
-      $toggler.click(function () {
+      // trigger open or close action when the toggler is clicked
+      $(configs.toggler).click(function () {
         if (isSidebarOpen()) {
           closeSidebar();
         } else {
@@ -197,7 +221,7 @@
 
       // trigger close action when quitter elements
       // in sidebar are clicked
-      $sidebar.on("click", configs.selectors.quitter, closeSidebar);
+      $sidebar.on("click", configs.quitter, closeSidebar);
 
       // Updates on window resize
       $(window).resize(function () {
