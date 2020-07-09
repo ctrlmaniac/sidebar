@@ -11,7 +11,6 @@ const pkg = require("./package.json");
 const banner = [
   "/**",
   " * <%= pkg.name %>",
-  " * @version v<%= pkg.version %>",
   " * @link <%= pkg.homepage %>",
   " * @license <%= pkg.license %>",
   " */",

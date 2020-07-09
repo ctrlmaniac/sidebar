@@ -1,6 +1,5 @@
 /**
  * @ctrlmaniac/simpler-sidebar
- * @version v2.2.5
  * @link https://github.com/ctrlmaniac/sidebar#readme
  * @license MIT
  */
