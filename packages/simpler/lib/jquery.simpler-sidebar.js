@@ -1,12 +1,17 @@
 /**
  * @ctrlmaniac/simpler-sidebar
- * @link https://github.com/ctrlmaniac/sidebar#readme
  * @license MIT
  */
+"use strict";
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
 (function (factory) {
   if (typeof define === "function" && define.amd) {
     define(["jquery"], factory);
-  } else if (typeof module === "object" && module.exports) {
+  } else if ((typeof module === "undefined" ? "undefined" : _typeof(module)) === "object" && module.exports) {
     module.exports = function (root, jQuery) {
       if (jQuery === undefined) {
         if (typeof window !== "undefined") {
@@ -15,6 +20,7 @@
           jQuery = require("jquery")(root);
         }
       }
+
       factory(jQuery);
       return jQuery;
     };
@@ -22,238 +28,164 @@
     factory(jQuery);
   }
 })(function ($) {
-  var pluginName = "simplerSidebar";
-
-  $.fn[pluginName] = function (options) {
-    var cfg = $.extend(
-      true,
-      {
-        attr: "simplersidebar",
-        top: 0,
-        gap: 64,
-        zIndex: 3000,
-        sidebar: {
-          width: 300,
-        },
-        animation: {
-          duration: 500,
-          easing: "swing",
-        },
-        events: {
-          on: {
-            animation: {
-              open: function () {},
-              close: function () {},
-              both: function () {},
-            },
-          },
-          callbacks: {
-            animation: {
-              open: function () {},
-              close: function () {},
-              both: function () {},
-              freezePage: true,
-            },
-          },
-        },
-        mask: {
-          display: true,
-          css: {
-            backgroundColor: "black",
-            opacity: 0.5,
-            filter: "Alpha(opacity=50)",
-          },
-        },
+  $.fn.simplerSidebar = function (options) {
+    var configs = $.extend(true, {
+      quitter: "a",
+      attr: "sidebar-main",
+      open: false,
+      align: "left",
+      top: 0,
+      width: 300,
+      gap: 64,
+      zIndex: 3000,
+      freezePage: true,
+      animation: {
+        duration: 500,
+        easing: "swing"
       },
-      options
-    );
+      mask: {
+        display: true,
+        css: {
+          backgroundColor: "black",
+          opacity: 0.5,
+          filter: "Alpha(opacity=50)"
+        }
+      },
+      events: {
+        onOpen: function onOpen() {},
+        afterOpen: function afterOpen() {},
+        onClose: function onClose() {},
+        afterClose: function afterClose() {},
+        always: function always() {}
+      }
+    }, options); 
 
     return this.each(function () {
-      var sbStyle;
-      var pvtMaskStyle;
-      var maskStyle;
-      var attr = "data-" + cfg.attr;
-
-      var init = "opened" === cfg.init ? "opened" : "closed";
-
-      var htmlOverflow = cfg.overflow
-        ? cfg.overflow
-        : $("html").css("overflow");
-      var bodyOverflow = cfg.overflow
-        ? cfg.overflow
-        : $("body").css("overflow");
-
-      var align = "left" === cfg.align ? "left" : "right";
-      var duration = cfg.animation.duration;
-      var easing = cfg.animation.easing;
-      var animation = {};
-
-      var scrollCfg =
-        true === cfg.events.callbacks.animation.freezePage ? true : false;
-      var freezePage = function () {
-        $("body, html").css("overflow", "hidden");
-      };
-      var unfreezePage = function () {
-        $("html").css("overflow", htmlOverflow);
-        $("body").css("overflow", bodyOverflow);
-      };
-
       var $sidebar = $(this);
-      var setSidebarWidth = function (w) {
-        if (w < cfg.sidebar.width + cfg.gap) {
-          return w - cfg.gap;
-        } else {
-          return cfg.sidebar.width;
-        }
-      };
-      var sidebarStatus = function () {
-        return $sidebar.attr(attr);
-      };
-      var changeSidebarStatus = function (status) {
-        $sidebar.attr(attr, status);
+      var windowWidth = $(window).width();
+      var baseAttr = "data-" + configs.attr;
+      var sidebarAttrOpen = baseAttr + "-open";
+
+      var setSidebarWidth = function setSidebarWidth(windowWidth) {
+        return windowWidth < configs.width + configs.gap ? windowWidth - configs.gap : configs.width;
       };
 
-      var $mask = $("<div>").attr(attr, "mask");
-      var createMask = function () {
-        $mask.appendTo("body").css(maskStyle);
-      };
-      var showMask = function () {
-        $mask.fadeIn(duration);
-      };
-      var hideMask = function () {
-        $mask.fadeOut(duration);
+
+      var isSidebarOpen = function isSidebarOpen() {
+        return JSON.parse($sidebar.attr(sidebarAttrOpen));
       };
 
-      var $trigger = $(cfg.selectors.trigger);
-      var quitter = !cfg.selectors.quitter ? "a" : cfg.selectors.quitter;
-      var w = $(window).width();
 
-      var events = {
-        on: {
-          animation: {
-            open: function () {
-              showMask();
-              changeSidebarStatus("opened");
+      var setSidebarAttrOpen = function setSidebarAttrOpen(status) {
+        $sidebar.attr(sidebarAttrOpen, status);
+      }; 
 
-              cfg.events.on.animation.open();
-            },
-            close: function () {
-              hideMask();
-              changeSidebarStatus("closed");
 
-              cfg.events.on.animation.close();
-            },
-            both: function () {
-              cfg.events.on.animation.both();
-            },
-          },
-        },
-
-        callbacks: {
-          animation: {
-            open: function () {
-              if (scrollCfg) {
-                freezePage();
-              }
-
-              cfg.events.callbacks.animation.open();
-            },
-            close: function () {
-              if (scrollCfg) {
-                unfreezePage();
-              }
-
-              cfg.events.callbacks.animation.close();
-            },
-            both: function () {
-              cfg.events.callbacks.animation.both();
-            },
-          },
-        },
-      };
-
-      var animateOpen = function () {
-        var callbacks = function () {
-          events.callbacks.animation.open();
-          events.callbacks.animation.both();
-        };
-
-        animation[align] = 0;
-
-        $sidebar.animate(animation, duration, easing, callbacks);
-
-        events.on.animation.open();
-        events.on.animation.both();
-      };
-      var animateClose = function () {
-        var callbacks = function () {
-          events.callbacks.animation.close();
-          events.callbacks.animation.both();
-        };
-
-        animation[align] = -$sidebar.width();
-
-        $sidebar.animate(animation, duration, easing, callbacks);
-
-        events.on.animation.close();
-        events.on.animation.both();
-      };
-
-      sbStyle = {
+      $sidebar.attr(sidebarAttrOpen, configs.open).css(_defineProperty({
+        display: "block",
         position: "fixed",
-        top: parseInt(cfg.top),
+        top: parseInt(configs.top),
         bottom: 0,
-        width: setSidebarWidth(w),
-        zIndex: cfg.zIndex,
-      };
+        width: setSidebarWidth(windowWidth),
+        zIndex: configs.zIndex
+      }, configs.align, configs.open ? 0 : -setSidebarWidth(windowWidth))); 
 
-      sbStyle[align] = "closed" === init ? -setSidebarWidth(w) : 0;
+      var $mask = $("<div>").attr(baseAttr, "mask"); 
 
-      if (scrollCfg && "opened" === init) {
-        freezePage();
-      }
-
-      $sidebar.css(sbStyle).attr(attr, init); 
-
-      pvtMaskStyle = {
+      var maskStyle = $.extend(true, {
         position: "fixed",
-        top: parseInt(cfg.top),
+        top: parseInt(configs.top),
         right: 0,
         bottom: 0,
         left: 0,
-        zIndex: cfg.zIndex - 1,
-        display: "none",
-      };
+        zIndex: configs.zIndex - 1,
+        display: configs.open ? "block" : "none"
+      }, configs.mask.css); 
 
-      pvtMaskStyle.display = "opened" === init ? "block" : "none";
-
-      maskStyle = $.extend(true, pvtMaskStyle, cfg.mask.css);
-
-      if (cfg.mask.display) {
-        createMask();
+      if (configs.mask.display) {
+        $mask.appendTo("body").css(maskStyle);
       }
 
-      $trigger.click(function () {
-        switch (sidebarStatus()) {
-          case "opened":
-            animateClose();
-            break;
-          case "closed":
-            animateOpen();
-            break;
-        }
-      });
 
-      $mask.click(animateClose);
-      $sidebar.on("click", quitter, animateClose);
+      var onSidebarOpenEvent = function onSidebarOpenEvent() {
+        if (configs.mask.display) {
+          $mask.fadeIn(configs.animation.duration);
+        } 
+
+
+        if (configs.freezePage) {
+          $("body").css("overflowY", "hidden");
+        }
+
+        setSidebarAttrOpen(true); 
+
+        configs.events.always();
+        configs.events.onOpen();
+      };
+
+
+      var afterSidebarOpenEvent = function afterSidebarOpenEvent() {
+        configs.events.always();
+        configs.events.afterOpen();
+      };
+
+
+      var onSidebarCloseEvent = function onSidebarCloseEvent() {
+        if (configs.mask.display) {
+          $mask.fadeOut(configs.animation.duration);
+        } 
+
+
+        if (configs.freezePage) {
+          $("body").css("overflowY", "visible");
+        }
+
+        setSidebarAttrOpen(false); 
+
+        configs.events.always();
+        configs.events.onClose();
+      };
+
+
+      var afterSidebarCloseEvent = function afterSidebarCloseEvent() {
+        configs.events.always();
+        configs.events.afterClose();
+      };
+
+
+      var openSidebar = function openSidebar() {
+        $sidebar.animate(_defineProperty({}, configs.align, 0), configs.animation.duration, configs.animation.easing, afterSidebarOpenEvent); 
+
+        onSidebarOpenEvent();
+      };
+
+
+      var closeSidebar = function closeSidebar() {
+        $sidebar.animate(_defineProperty({}, configs.align, -$sidebar.width()), configs.animation.duration, configs.animation.easing, afterSidebarCloseEvent); 
+
+        onSidebarCloseEvent();
+      }; 
+
+
+      $(configs.toggler).click(function () {
+        if (isSidebarOpen()) {
+          closeSidebar();
+        } else {
+          openSidebar();
+        }
+      }); 
+
+      $mask.click(closeSidebar); 
+
+      $sidebar.on("click", configs.quitter, closeSidebar); 
 
       $(window).resize(function () {
-        var w = $(window).width();
+        var windowWidth = $(window).width(); 
 
-        $sidebar.css("width", setSidebarWidth(w));
+        $sidebar.css("width", setSidebarWidth(windowWidth)); 
 
-        if ("closed" === sidebarStatus()) {
-          $sidebar.css(align, -$sidebar.width());
+        if (!$sidebar.attr(sidebarAttrOpen)) {
+          $sidebar.css(configs.align, -$sidebar.width());
         }
       });
     });
