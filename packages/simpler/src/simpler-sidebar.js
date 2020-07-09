@@ -132,6 +132,13 @@
         setSidebarAttrOpen(true);
       };
 
+      /** events triggerd after sidebar opening action */
+      var afterSidebarOpenEvent = function () {
+        if (configs.freezePage) {
+          $("body").css("overflowY", "hidden");
+        }
+      };
+
       /** events triggered on sidebar closing */
       var onSidebarCloseEvent = function () {
         if (configs.mask.display) {
@@ -141,13 +148,21 @@
         setSidebarAttrOpen(false);
       };
 
+      /** events triggerd after sidebar closing action */
+      var afterSidebarCloseEvent = function () {
+        if (configs.freezePage) {
+          $("body").css("overflowY", "initial");
+        }
+      };
+
       /** triggers sidebar action open */
       var openSidebar = function () {
         // animation
         $sidebar.animate(
           { [configs.align]: 0 },
           configs.animation.duration,
-          configs.animation.easing
+          configs.animation.easing,
+          afterSidebarOpenEvent
         );
 
         // trigger parallel events
@@ -160,7 +175,8 @@
         $sidebar.animate(
           { [configs.align]: -$sidebar.width() },
           configs.animation.duration,
-          configs.animation.easing
+          configs.animation.easing,
+          afterSidebarCloseEvent
         );
 
         // trigger parallel events
