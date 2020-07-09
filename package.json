@@ -7,7 +7,8 @@
   ],
   "scripts": {
     "commit": "git-cz",
-    "version": "yarn lerna version --conventional-commits"
+    "version": "yarn lerna version --conventional-commits",
+    "release": "yarn lerna publish --yes"
   },
   "devDependencies": {
     "@commitlint/cli": "^9.0.1",
