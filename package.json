@@ -9,8 +9,8 @@
     "commit": "git-cz",
     "build": "yarn lerna exec yarn build",
     "version": "yarn lerna version --conventional-commits --yes",
-    "release": "yarn lerna publish from-package --yes",
-    "prerelease": "yarn build && yarn version"
+    "preversion": "yarn build && git add -A && git commit -am 'chore: build packages'",
+    "release": "yarn lerna publish from-package --yes"
   },
   "devDependencies": {
     "@commitlint/cli": "^9.0.1",
