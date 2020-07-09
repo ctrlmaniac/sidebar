@@ -41,9 +41,16 @@
     "jquery-ui-dist": "^1.12.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.10.4",
+    "@babel/plugin-transform-computed-properties": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "babel-eslint": "^10.1.0",
     "commitizen": "^4.1.2",
     "cz-conventional-changelog": "^3.2.0",
+    "eslint": "^7.4.0",
+    "eslint-config-prettier": "^6.11.0",
     "gulp": "^4.0.2",
+    "gulp-babel": "next",
     "gulp-header": "^2.0.9",
     "gulp-rename": "^2.0.0",
     "gulp-strip-comments": "^2.5.2",
