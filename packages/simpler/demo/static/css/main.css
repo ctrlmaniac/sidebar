@@ -51,6 +51,7 @@ body {
 }
 
 .sidebar {
+  display: none;
   background-color: blueviolet;
 }
 
