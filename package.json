@@ -7,7 +7,7 @@
   ],
   "scripts": {
     "commit": "git-cz",
-    "version": "yarn lerna version --conventional-commits --yes",
+    "prerelease": "yarn lerna version --conventional-commits --yes",
     "release": "yarn lerna publish from-package --yes"
   },
   "devDependencies": {
