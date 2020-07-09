@@ -6,7 +6,7 @@
       "conventionalCommits": true
     },
     "version": {
-      "message": "chore(release): release"
+      "message": "chore: release packages"
     }
   }
 }
