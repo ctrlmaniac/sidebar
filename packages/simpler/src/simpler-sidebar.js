@@ -27,17 +27,28 @@
     var configs = $.extend(
       true,
       {
-        // selectors: {} // defined by user
+        selectors: {
+          quitter: "a", // must be changed by user because it's buggy
+        },
         attr: "sidebar-main",
         open: false,
         align: "left",
-        top: 56,
+        top: 0,
         width: 300,
         gap: 64,
         zIndex: 3000,
+        freezePage: true,
         animation: {
           duration: 500,
           easing: "swing",
+        },
+        mask: {
+          display: true,
+          css: {
+            backgroundColor: "black",
+            opacity: 0.5,
+            filter: "Alpha(opacity=50)",
+          },
         },
       },
       options
@@ -78,8 +89,8 @@
         $sidebar.attr(sidebarAttrOpen, status);
       };
 
-      // Define sidebar style
-      var sidebarStyle = {
+      // apply style and init attribute
+      $sidebar.attr(sidebarAttrOpen, configs.open).css({
         display: "block",
         position: "fixed",
         top: parseInt(configs.top), // default: 64px
@@ -87,49 +98,77 @@
         width: setSidebarWidth(windowWidth),
         zIndex: configs.zIndex,
         [configs.align]: configs.open ? 0 : -setSidebarWidth(windowWidth),
+      });
+
+      // Define Mask
+      var $mask = $("<div>").attr(baseAttr, "mask");
+
+      // define mask style
+      var maskStyle = $.extend(
+        true,
+        {
+          position: "fixed",
+          top: parseInt(configs.top),
+          right: 0,
+          bottom: 0,
+          left: 0,
+          zIndex: configs.zIndex - 1,
+          display: configs.open ? "block" : "none",
+        },
+        configs.mask.css
+      );
+
+      // if mask is enabled than it is created
+      if (configs.mask.display) {
+        $mask.appendTo("body").css(maskStyle);
+      }
+
+      /** events triggered on sidebar opening */
+      var onSidebarOpenEvent = function () {
+        if (configs.mask.display) {
+          $mask.fadeIn(configs.animation.duration);
+        }
+
+        setSidebarAttrOpen(true);
       };
 
-      // apply style and init attribute
-      $sidebar.attr(sidebarAttrOpen, configs.open).css(sidebarStyle);
+      /** events triggered on sidebar closing */
+      var onSidebarCloseEvent = function () {
+        if (configs.mask.display) {
+          $mask.fadeOut(configs.animation.duration);
+        }
 
-      // Events definition
-      var events = {
-        on: {
-          open: function () {
-            setSidebarAttrOpen(true);
-          },
-          close: function () {
-            setSidebarAttrOpen(false);
-          },
-        },
+        setSidebarAttrOpen(false);
       };
 
       /** triggers sidebar action open */
       var openSidebar = function () {
+        // animation
         $sidebar.animate(
           { [configs.align]: 0 },
           configs.animation.duration,
           configs.animation.easing
         );
 
-        events.on.open();
+        // trigger parallel events
+        onSidebarOpenEvent();
       };
 
       /** triggers sidebar action close */
       var closeSidebar = function () {
+        // animation
         $sidebar.animate(
           { [configs.align]: -$sidebar.width() },
           configs.animation.duration,
           configs.animation.easing
         );
 
-        events.on.close();
+        // trigger parallel events
+        onSidebarCloseEvent();
       };
 
-      // APPLY ACTIONS//Events
+      // trigger open or close action when $toggler is clicked
       $toggler.click(function () {
-        console.log(isSidebarOpen());
-
         if (isSidebarOpen()) {
           closeSidebar();
         } else {
@@ -137,13 +176,21 @@
         }
       });
 
-      // Fixes on window resize
+      // trigger close action when $mask is clicked
+      $mask.click(closeSidebar);
+
+      // trigger close action when quitter elements
+      // in sidebar are clicked
+      $sidebar.on("click", configs.selectors.quitter, closeSidebar);
+
+      // Updates on window resize
       $(window).resize(function () {
         var windowWidth = $(window).width();
 
-        // Fix width on window resize
+        // update default sidebar width on window resize
         $sidebar.css("width", setSidebarWidth(windowWidth));
 
+        // update sidebar width while open
         if (!$sidebar.attr(sidebarAttrOpen)) {
           $sidebar.css(configs.align, -$sidebar.width());
         }
