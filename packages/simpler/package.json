@@ -52,12 +52,12 @@
   },
   "publishConfig": {
     "access": "public",
-    "main": "./lib/jquery.simpler-sidebar.js",
-    "registry": "https://npm.pkg.github.com"
+    "main": "./lib/jquery.simpler-sidebar.js"
   },
   "config": {
     "commitizen": {
       "path": "cz-conventional-changelog"
     }
-  }
+  },
+  "gitHead": "9ed645d85aed8793286213e902fa80a61d834665"
 }
