@@ -6,7 +6,8 @@
     "packages/*"
   ],
   "scripts": {
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "version": "yarn lerna version --conventional-commits"
   },
   "devDependencies": {
     "@commitlint/cli": "^9.0.1",
