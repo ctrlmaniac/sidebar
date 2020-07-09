@@ -278,18 +278,6 @@
 
       $mask.click(animateClose);
       $sidebar.on("click", quitter, animateClose);
-
-      // Make the sidebar responsive
-      $(window).resize(function () {
-        var w = $(window).width();
-
-        // Fix width on resize
-        $sidebar.css("width", setSidebarWidth(w));
-
-        if ("closed" === sidebarStatus()) {
-          $sidebar.css(align, -$sidebar.width());
-        }
-      });
     });
   };
 });
