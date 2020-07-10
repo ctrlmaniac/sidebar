@@ -11,6 +11,7 @@
 ### Packages
 
 - [**simpler-sidebar**](./packages/simpler/README.md)
+- [**simpler-sidebar-css3**](./packages/simpler-css3/README.md)
 
 ---
 
@@ -31,3 +32,21 @@ yarn add simpler-sidebar
 ```
 
 The full documentation is available [here](./packages/simpler/README.md).
+
+## `simpler-sidebar-css3`
+
+[![npm version](https://badge.fury.io/js/%40ctrlmaniac%2Fsimpler-sidebar-css3.svg)](https://badge.fury.io/js/%40ctrlmaniac%2Fsimpler-sidebar-css3)
+
+**simpler-sidebar-css3** is a fork of **simpler-sidebar** plugin. The difference between the two is that this package doesn't use jquery animation method but it uses CSS3 animations! This should make this package less brutal against memory! Options differ slightly so read the documentation first if you intend to migrate to this package!
+
+```shell
+// Install
+
+// with npm
+npm install @ctrlmaniac/simpler-sidebar-css3
+
+// with yarn
+yarn add @ctrlmaniac/simpler-sidebar-css3
+```
+
+The full documentation is available [here](./packages/simpler-css3/README.md).
