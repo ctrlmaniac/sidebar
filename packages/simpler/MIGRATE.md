@@ -12,9 +12,11 @@ This is really important. If the package won't update, if will break if you upgr
 
 In this version, options are more straightforward! Let's see what's changed!
 
-> In this guide I will use the dot notation. Remember that options are a javascript object, so a dot means that you must open the braces { }. Example: `option.one -> option: { one: "hello" }`
+> In this guide I will use the dot notation. Remember that options are a javascript object, so a dot means that you must open the braces { }. Example: `option.one` means `option: { one: "hello" }`
 
 ## Options diff
+
+> old option → new option
 
 `selectors.trigger → toggler`
 
