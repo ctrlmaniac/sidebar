@@ -206,7 +206,7 @@ Full option list
   quitter: "a", // string (class) - The element that will trigger the closing action
   trigger: "", // string (id) - The element that will trigger the closing and opening action
   attr: "sidebar-main", // string - the data attribute assigned to the elements the library will interact with
-  open: false // bool - initialize sidebar opened or closed
+  open: false, // bool - initialize sidebar opened or closed
   align: "right", // string - right, left -- the position of the sidebar
   top: 0, // int - the amount in px of the position top of the sidebar
   width: 300, // int - the size in px of the sidebar
