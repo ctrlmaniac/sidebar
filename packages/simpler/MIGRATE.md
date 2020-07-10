@@ -1,6 +1,6 @@
 # Migration guide
 
-a guide to migrate from version [2.2.5](https://github.com/ctrlmaniac/sidebar/releases/tag/v2.2.5) or from version [2.3.2](https://github.com/ctrlmaniac/sidebar/releases/tag/%40ctrlmaniac%2Fsimpler-sidebar%402.3.2)
+a guide to migrate from version [2.2.5](https://github.com/ctrlmaniac/sidebar/tree/release-2.2.5) or from version [2.3.2](https://github.com/ctrlmaniac/sidebar/tree/%40ctrlmaniac/simpler-sidebar%402.3.2)
 
 ## Update the library
 

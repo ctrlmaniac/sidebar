@@ -12,7 +12,7 @@ A **jQuery plugin** that allows to create a **side nav** as in modern mobile app
 
 I'm really glad to introduce this new version! It comes with performance improvements, a cleaner code (-51 rows of unnecessary code), and more straightforward options!
 
-This version is no more compatible with version [2.2.5](https://github.com/ctrlmaniac/sidebar/releases/tag/v2.2.5) nor with the newer version [2.3.2](https://github.com/ctrlmaniac/sidebar/releases/tag/%40ctrlmaniac%2Fsimpler-sidebar%402.3.2) so be sure to read the **migration guide**
+This version is no more compatible with version [2.2.5]https://github.com/ctrlmaniac/sidebar/tree/release-2.2.5) nor with the newer version [2.3.2](https://github.com/ctrlmaniac/sidebar/tree/%40ctrlmaniac/simpler-sidebar%402.3.2) so be sure to read the **migration guide**
 
 [Migrate now!](./MIGRATE.md)
 

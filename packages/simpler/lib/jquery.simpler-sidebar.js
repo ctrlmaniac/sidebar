@@ -114,7 +114,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
 
         if (configs.freezePage) {
-          $("body").css("overflowY", "hidden");
+          $("body").css("overflow-y", "hidden");
         }
 
         setSidebarAttrOpen(true); 
@@ -137,7 +137,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
 
         if (configs.freezePage) {
-          $("body").css("overflowY", "visible");
+          $("body").css("overflow-y", "visible");
         }
 
         setSidebarAttrOpen(false); 
