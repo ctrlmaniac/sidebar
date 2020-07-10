@@ -35,11 +35,6 @@ In your html file, include the jquery library! The only required library is the 
       integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
       crossorigin="anonymous"
     ></script>
-    <script
-      src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
-      integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
-      crossorigin="anonymous"
-    ></script>
   </head>
   <body>
     <!-- boby content -->
@@ -65,11 +60,6 @@ The first element you will need is an app bar. An app bar, or a toolbar, is a ba
       integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
       crossorigin="anonymous"
     ></script>
-    <script
-      src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
-      integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
-      crossorigin="anonymous"
-    ></script>
   </head>
   <body>
     <div class=appbar>
@@ -92,11 +82,6 @@ The second element you will need is of course a sidebar!
     <script
       src="https://code.jquery.com/jquery-3.5.1.min.js"
       integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
-      integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
       crossorigin="anonymous"
     ></script>
   </head>
@@ -141,11 +126,6 @@ At the bottom of your html file you now have to include the simpler-sidebar plug
     <script
       src="https://code.jquery.com/jquery-3.5.1.min.js"
       integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
-      integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
       crossorigin="anonymous"
     ></script>
   </head>
@@ -230,6 +210,8 @@ Full option list
 ## Differencies with `simpler-sidebar`
 
 It you plan to use this plugin and you are already using `simpler-sidebar` there are few things you should know!
+
+No more need of the `jquery-ui` library! So you can get rid of it!
 
 This plugin uses css3 animation transition instead of jquery animation methods. In order to use css animations mask opacity option is no longer inside `mask.css` but directly inside its parent object `mask`.
 
