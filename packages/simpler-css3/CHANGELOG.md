@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.1](https://github.com/ctrlmaniac/sidebar/compare/@ctrlmaniac/simpler-sidebar-css3@1.1.0...@ctrlmaniac/simpler-sidebar-css3@1.1.1) (2020-07-10)
+
+### Bug Fixes
+
+- **simpler-sidebar-css3:** fix README ([286dcd4](https://github.com/ctrlmaniac/sidebar/commit/286dcd45bdcb7dd6a240f5f14610630352fc8ad7))
+- **simpler-sidebar-css3:** update README ([e9fe056](https://github.com/ctrlmaniac/sidebar/commit/e9fe056146639e259ae10c738519f262b58210c4))
+
 # 1.1.0 (2020-07-10)
 
 ### Features
