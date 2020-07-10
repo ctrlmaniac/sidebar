@@ -6,6 +6,14 @@ A **jQuery plugin** that allows to create a **side nav** as in modern mobile app
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
+## New version!
+
+I'm really glad to introduce this new version! It comes with performance improvements, a cleaner code (-51 rows of unnecessary code), and more straightforward options!
+
+This version is no more compatible with version [2.2.5](https://github.com/ctrlmaniac/sidebar/releases/tag/v2.2.5) nor with the newer version [2.3.2](https://github.com/ctrlmaniac/sidebar/releases/tag/%40ctrlmaniac%2Fsimpler-sidebar%402.3.2) so be sure to read the **migration guide**
+
+[Migrate now!](./MIGRATE.md)
+
 ## Install
 
 **simpler-sidebar** is available as a npm package
@@ -124,6 +132,7 @@ Example:
 ```css
 .sidebar-wrapper {
   overflow-y: auto;
+  height: 100%;
 }
 ```
 
@@ -169,11 +178,8 @@ At the bottom of your html file you now have to include the simpler-sidebar plug
     <script>
       $("document").ready(function () {
         $("#sidebar-left").simplerSidebar({
-          // required options
-          selectors: {
-            trigger: "#toggle-sidebar",
-            quitter: ".quit-sidebar",
-          }
+          toggler: "#toggle-sidebar",
+          quitter: ".quit-sidebar",
         });
       });
     </script>
@@ -197,40 +203,19 @@ Full option list
 
 ```javascript
 {
-  selectors: {
-    trigger: "", // string (id) - The element that will trigger the closing and opening action
-    quitter: "", // string (class) - The element that will trigger the closing action
-  },
-  attr: "simplersidebar", // string - the data attribute assigned to the elements the library will interact with
+  quitter: "a", // string (class) - The element that will trigger the closing action
+  trigger: "", // string (id) - The element that will trigger the closing and opening action
+  attr: "sidebar-main", // string - the data attribute assigned to the elements the library will interact with
+  open: false // bool - initialize sidebar opened or closed
   align: "right", // string - right, left -- the position of the sidebar
   top: 0, // int - the amount in px of the position top of the sidebar
+  width: 300, // int - the size in px of the sidebar
   gap: 64, // int - the amount in px ot the gap that will be left when the screen is narrower than the sidebar width
   zIndex: 3000, // int - the z-index of the sidebar element
-  sidebar: {
-    width: 300, // int - the size in px of the sidebar
-  },
+  freezePage: true, // bool - this option will disallow the scrolling of the page beneath the sidebar when it is opened
   animation: {
     duration: 500, // int - the time in ms of the animation
     easing: "swing", // string - the tipe of easing animation
-  },
-  events: {
-    on: {
-      // events that will be triggered on open, close or both actions
-      animation: {
-        open: function () {}, // function
-        close: function () {}, // function
-        both: function () {}, // function
-      },
-    },
-    callbacks: {
-      // events that will be triggered after open, close or both actions
-      animation: {
-        open: function () {}, // function
-        close: function () {}, // function
-        both: function () {}, // function
-        freezePage: true, // bool - this option will disallow the scrolling of the page beneath the sidebar when it is opened
-      },
-    },
   },
   mask: {
     // a mask that will cover the content beneath the sidebar when opened
@@ -240,6 +225,13 @@ Full option list
       opacity: 0.5,
       filter: "Alpha(opacity=50)",
     },
+  },
+  events: {
+    onOpen: function () {}, // function - event(s) triggered when sidebar is opening
+    afterOpen: function () {}, // function - event(s) triggered after sidebar opened
+    onClose: function () {}, // function - event(s) triggered when sidebar is closing
+    afterClose: function () {}, // function - event(s) triggered after sidebar is closed
+    always: function () {}, // function - event(s) triggered both on and after closing and opening
   },
 }
 ```
