@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.4.1](https://github.com/ctrlmaniac/sidebar/compare/@ctrlmaniac/simpler-sidebar@2.4.0...@ctrlmaniac/simpler-sidebar@2.4.1) (2020-07-10)
+
+### Bug Fixes
+
+- **simpler-sidebar:** fix css property overflowY -> overflow-y ([2517c34](https://github.com/ctrlmaniac/sidebar/commit/2517c3411f77bf3cb6911f510d8d3379a41ba202))
+- **simpler-sidebar:** fix main property in package.json ([39b9762](https://github.com/ctrlmaniac/sidebar/commit/39b976251210010731842bcbe6fc0713c4d252fb))
+
 # [2.4.0](https://github.com/ctrlmaniac/sidebar/compare/@ctrlmaniac/simpler-sidebar@2.3.2...@ctrlmaniac/simpler-sidebar@2.4.0) (2020-07-10)
 
 ### Features
