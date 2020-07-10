@@ -206,7 +206,7 @@ Full option list
 ```javascript
 {
   quitter: "a", // string (class) - The element that will trigger the closing action
-  trigger: "", // string (id) - The element that will trigger the closing and opening action
+  toggler: "", // string (id) - The element that will trigger the closing and opening action
   attr: "sidebar-main", // string - the data attribute assigned to the elements the library will interact with
   open: false, // bool - initialize sidebar opened or closed
   align: "right", // string - right, left -- the position of the sidebar
