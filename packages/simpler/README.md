@@ -6,6 +6,8 @@ A **jQuery plugin** that allows to create a **side nav** as in modern mobile app
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
+[![npm version](https://badge.fury.io/js/%40ctrlmaniac%2Fsimpler-sidebar.svg)](https://badge.fury.io/js/%40ctrlmaniac%2Fsimpler-sidebar)
+
 ## New version!
 
 I'm really glad to introduce this new version! It comes with performance improvements, a cleaner code (-51 rows of unnecessary code), and more straightforward options!
