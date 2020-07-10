@@ -25,12 +25,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       {
         "name": "@ctrlmaniac/simpler-sidebar",
         "reference": "workspace:packages/simpler"
+      },
+      {
+        "name": "@ctrlmaniac/simpler-sidebar-css3",
+        "reference": "workspace:packages/simpler-css3"
       }
     ],
     "enableTopLevelFallback": true,
     "ignorePatternData": "(^(?:\\.yarn\\/sdks(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)|$))$)",
     "fallbackExclusionList": [
       ["@ctrlmaniac/simpler-sidebar", ["workspace:packages/simpler"]],
+      ["@ctrlmaniac/simpler-sidebar-css3", ["workspace:packages/simpler-css3"]],
       ["root", ["workspace:."]]
     ],
     "fallbackPool": [
@@ -1595,6 +1600,29 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["gulp-strip-comments", "npm:2.5.2"],
             ["gulp-uglify", "npm:3.0.2"],
             ["jquery-ui-dist", "npm:1.12.1"],
+            ["prettier", "npm:2.0.5"]
+          ],
+          "linkType": "SOFT",
+        }]
+      ]],
+      ["@ctrlmaniac/simpler-sidebar-css3", [
+        ["workspace:packages/simpler-css3", {
+          "packageLocation": "./packages/simpler-css3/",
+          "packageDependencies": [
+            ["@ctrlmaniac/simpler-sidebar-css3", "workspace:packages/simpler-css3"],
+            ["@babel/core", "npm:7.10.4"],
+            ["@babel/preset-env", "virtual:5ba35076d45701481c3277b6a190c36a31cfff7d55d5ae4ab9b9e670d8a625da06fe6915157da4cfdcb1f29ee3e3434fef5ff8dcb147314c60d2a71e72471e53#npm:7.10.4"],
+            ["babel-eslint", "virtual:5ba35076d45701481c3277b6a190c36a31cfff7d55d5ae4ab9b9e670d8a625da06fe6915157da4cfdcb1f29ee3e3434fef5ff8dcb147314c60d2a71e72471e53#npm:10.1.0"],
+            ["commitizen", "npm:4.1.2"],
+            ["cz-conventional-changelog", "npm:3.2.0"],
+            ["eslint", "npm:7.4.0"],
+            ["eslint-config-prettier", "virtual:36a01d8083315b8a6e8362097258ea8bc0f9dfb672cb210742e054760850c673a1038f542a6b7156397b5275ace8ee0482231cac5e8898044fa1a1c29f78ee5b#npm:6.11.0"],
+            ["gulp", "npm:4.0.2"],
+            ["gulp-babel", "virtual:5ba35076d45701481c3277b6a190c36a31cfff7d55d5ae4ab9b9e670d8a625da06fe6915157da4cfdcb1f29ee3e3434fef5ff8dcb147314c60d2a71e72471e53#npm:8.0.0-beta.2"],
+            ["gulp-header", "npm:2.0.9"],
+            ["gulp-rename", "npm:2.0.0"],
+            ["gulp-strip-comments", "npm:2.5.2"],
+            ["gulp-uglify", "npm:3.0.2"],
             ["prettier", "npm:2.0.5"]
           ],
           "linkType": "SOFT",
