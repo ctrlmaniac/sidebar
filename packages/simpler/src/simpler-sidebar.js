@@ -136,7 +136,7 @@
 
         // freeze page
         if (configs.freezePage) {
-          $("body").css("overflowY", "hidden");
+          $("body").css("overflow-y", "hidden");
         }
 
         setSidebarAttrOpen(true);
@@ -162,7 +162,7 @@
 
         // unfreeze page
         if (configs.freezePage) {
-          $("body").css("overflowY", "visible");
+          $("body").css("overflow-y", "visible");
         }
 
         setSidebarAttrOpen(false);
