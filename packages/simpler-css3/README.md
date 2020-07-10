@@ -6,6 +6,8 @@ This plugin is a version of `simpler-sidebar` that uses css3 animations instead 
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
+[![npm version](https://badge.fury.io/js/%40ctrlmaniac%2Fsimpler-sidebar-css3.svg)](https://badge.fury.io/js/%40ctrlmaniac%2Fsimpler-sidebar-css3)
+
 ## Install
 
 **simpler-sidebar-css3** is available as a npm package
