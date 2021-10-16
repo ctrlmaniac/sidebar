@@ -83,7 +83,7 @@ The first element you will need is an app bar. An app bar, or a toolbar, is a ba
   </head>
   <body>
     <div class=appbar>
-      <div class="menu-icon" id="toggle-sidebar">
+      <div class="menu-icon" id="toggle-sidebar"></div>
     </div><!-- appbar -->
 
     <!-- body content -->
@@ -112,12 +112,12 @@ The second element you will need is of course a sidebar!
   </head>
   <body>
     <div class=appbar>
-      <div class="menu-icon" id="toggle-sidebar">
+      <div class="menu-icon" id="toggle-sidebar"></div>
     </div><!-- appbar -->
 
     <div class="sidebar" id="sidebar">
       <div class="sidebar-wrapper">
-        <span class=".quit-sidebar">Click me</span>
+        <span class="quit-sidebar">Click me</span>
         <!-- sidebar content -->
       </div>
     </div><!-- sidebar -->
@@ -161,12 +161,12 @@ At the bottom of your html file you now have to include the simpler-sidebar plug
   </head>
   <body>
     <div class=appbar>
-      <div class="menu-icon" id="toggle-sidebar">
+      <div class="menu-icon" id="toggle-sidebar"></div>
     </div><!-- appbar -->
 
     <div class="sidebar" id="sidebar">
       <div class="sidebar-wrapper">
-        <span class=".quit-sidebar">Click me</span>
+        <span class="quit-sidebar">Click me</span>
         <!-- sidebar content -->
       </div>
     </div><!-- sidebar -->
