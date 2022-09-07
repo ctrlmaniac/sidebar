@@ -6,7 +6,6 @@
   "homepage": "https://github.com/ctrlmaniac/sidebar#readme",
   "license": "MIT",
   "main": "lib/modern.js",
-  "private": false,
   "keywords": [
     "sidebar",
     "sidenav",
