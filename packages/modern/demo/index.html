@@ -17,7 +17,7 @@
     </div>
     <div id="sidebar" class="sidebar">sidebar</div>
 
-    <button onClick="triggerClose()">trigger open</button>
+    <button onClick="sidebar.open()">trigger open</button>
 
     <script src="../lib/modern.js"></script>
     <script>
@@ -26,10 +26,6 @@
         triggerer: "#menu",
         top: "56px",
       });
-
-      function triggerClose() {
-        sidebar.triggerOpen();
-      }
     </script>
   </body>
 </html>

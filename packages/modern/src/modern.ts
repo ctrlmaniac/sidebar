@@ -5,20 +5,21 @@ interface options {
   top: string;
   width: string;
   gap: string;
-  open: boolean;
+  opened: boolean;
   easing: string;
   zIndex: number;
 }
 
 class ModernSidebar {
   sidebar: HTMLElement;
-  selector: string;
   triggerer: HTMLElement;
+  mask: HTMLElement;
+  selector: string;
   align: any; // must be fixed
   top: string;
   width: string;
   gap: number;
-  open: boolean;
+  opened: boolean;
   easing: string;
   zIndex: number;
 
@@ -29,7 +30,7 @@ class ModernSidebar {
     this.top = typeof opt.top === "undefined" ? "56px" : opt.top;
     this.width = typeof opt.width === "undefined" ? "300px" : opt.width;
     this.gap = typeof opt.gap === "undefined" ? 56 : parseInt(opt.gap);
-    this.open = typeof opt.open === "undefined" ? false : opt.open;
+    this.opened = typeof opt.opened === "undefined" ? false : opt.opened;
     this.easing =
       typeof opt.easing === "undefined" ? "ease-in-out" : opt.easing;
     this.zIndex = typeof opt.zIndex === "undefined" ? 3000 : opt.zIndex;
@@ -42,15 +43,13 @@ class ModernSidebar {
     this.triggerer = document.querySelector(opt.triggerer)!;
 
     // Add attributes
-    this.sidebar.setAttribute("data-status", this.open ? "open" : "closed");
+    this.sidebar.setAttribute("data-status", this.opened ? "open" : "closed");
 
     // Add z-index
     this.sidebar.style.zIndex = this.zIndex.toString();
 
     // Add transition
-    this.sidebar.style.transition = `${this.align} 500ms ${
-      opt.easing || this.easing
-    }`;
+    this.sidebar.style.transition = `${this.align} 500ms ${this.easing}`;
 
     // Set sidebar position
     this.sidebar.style.position = "fixed";
@@ -85,7 +84,7 @@ class ModernSidebar {
     };
 
     // Set sidebar open or closed
-    if (this.open) {
+    if (this.opened) {
       this.sidebar.style[this.align] = "0px";
     } else {
       this.sidebar.style[this.align] = `-${this.sidebar.offsetWidth}px`;
@@ -96,24 +95,27 @@ class ModernSidebar {
       const status: string = this.sidebar.getAttribute("data-status")!;
 
       if (status === "closed") {
-        this.triggerOpen();
+        this.open();
       } else {
-        this.triggerClose();
+        this.close();
       }
     };
 
     // Create Mask
-    const mask = document.createElement("div");
-    mask.setAttribute("data-mask", this.open ? "open" : "closed");
-    mask.style.display = "none";
-    mask.style.background = "rgba(0, 0, 0, 0.8)";
-    mask.style.zIndex = (this.zIndex - 1).toString();
-    mask.style.position = "absolute";
-    mask.style.top = this.top;
-    mask.style.right = "0";
-    mask.style.bottom = "0";
-    mask.style.left = "0";
-    document.body.appendChild(mask);
+    this.mask = document.createElement("div");
+    this.mask.setAttribute("data-mask", this.opened ? "open" : "closed");
+    this.mask.style.display = "none";
+    this.mask.style.background = "rgba(0, 0, 0, 0.8)";
+    this.mask.style.zIndex = (this.zIndex - 1).toString();
+    this.mask.style.position = "absolute";
+    this.mask.style.top = this.top;
+    this.mask.style.right = "0";
+    this.mask.style.bottom = "0";
+    this.mask.style.left = "0";
+    this.mask.style.transition = `display 500ms ${this.easing}`;
+    document.body.appendChild(this.mask);
+
+    this.mask.onclick = () => this.close();
   }
 
   setAttribute() {
@@ -126,15 +128,25 @@ class ModernSidebar {
     }
   }
 
-  triggerOpen() {
+  open() {
     this.sidebar.style[this.align] = "0px";
     const status: string = this.sidebar.getAttribute("data-status")!;
     this.setAttribute();
+    this.showMask();
   }
 
-  triggerClose() {
+  close() {
     this.sidebar.style[this.align] = `-${this.sidebar.offsetWidth}px`;
     const status: string = this.sidebar.getAttribute("data-status")!;
     this.setAttribute();
+    this.hideMask();
+  }
+
+  showMask() {
+    this.mask.style.display = "block";
+  }
+
+  hideMask() {
+    this.mask.style.display = "none";
   }
 }
