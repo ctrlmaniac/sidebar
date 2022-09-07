@@ -70,8 +70,11 @@ class ModernSidebar {
         mask.style.display = "none";
         mask.style.background = "rgba(0, 0, 0, 0.8)";
         mask.style.zIndex = (this.zIndex - 1).toString();
-        mask.style.width = "100%";
-        mask.style.height = "100%";
+        mask.style.position = "absolute";
+        mask.style.top = this.top;
+        mask.style.right = "0";
+        mask.style.bottom = "0";
+        mask.style.left = "0";
         document.body.appendChild(mask);
     }
     setAttribute() {
