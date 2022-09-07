@@ -1,0 +1,34 @@
+{
+  "name": "@ctrlmaniac/simpler-css3",
+  "version": "1.1.1",
+  "description": "A simple side nav written in jQuery with css3 animations",
+  "keywords": [
+    "jquery",
+    "jquery plugin",
+    "sidebar",
+    "sidenav",
+    "simple-sidebar",
+    "simpler-sidebar"
+  ],
+  "author": "Davide Di Criscito <davide.dicriscito@gmail.com>",
+  "homepage": "https://github.com/ctrlmaniac/sidebar/packages/simpler-css3",
+  "license": "MIT",
+  "main": "lib/simpler-css3.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ctrlmaniac/sidebar.git"
+  },
+  "scripts": {
+    "test": "node ./__tests__/simpler-css3.test.js"
+  },
+  "bugs": {
+    "url": "https://github.com/ctrlmaniac/sidebar/issues"
+  }
+}
