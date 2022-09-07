@@ -1,0 +1,38 @@
+{
+  "name": "@ctrlmaniac/modern",
+  "version": "0.0.1",
+  "description": "A modern version of the simpler sidebar",
+  "author": "Davide Di Criscito <davide.dicriscito@gmail.com>",
+  "homepage": "https://github.com/ctrlmaniac/sidebar#readme",
+  "license": "MIT",
+  "main": "lib/modern.js",
+  "keywords": [
+    "sidebar",
+    "sidenav",
+    "simple",
+    "sidenav",
+    "simple",
+    "sidebar",
+    "simpler-sidebar",
+    "simple-sidenav"
+  ],
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ctrlmaniac/sidebar.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ctrlmaniac/sidebar/issues"
+  },
+  "devDependencies": {
+    "typescript": "^4.8.2"
+  },
+  "scripts": {
+    "build": "npx tsc"
+  }
+}
