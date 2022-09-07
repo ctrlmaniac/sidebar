@@ -9,7 +9,7 @@
     "commit": "git-cz",
     "build": "yarn lerna exec yarn build",
     "version": "yarn lerna version --conventional-commits --yes",
-    "release": "yarn lerna publish from-package --yes"
+    "release": "yarn lerna publish --yes"
   },
   "devDependencies": {
     "@commitlint/cli": "^9.0.1",
