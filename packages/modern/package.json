@@ -6,6 +6,7 @@
   "homepage": "https://github.com/ctrlmaniac/sidebar#readme",
   "license": "MIT",
   "main": "lib/modern.js",
+  "private": false,
   "keywords": [
     "sidebar",
     "sidenav",
@@ -35,5 +36,6 @@
   "scripts": {
     "build": "npx tsc",
     "postbuild": "uglifyjs ./lib/modern.js -o ./lib/modern.min.js"
-  }
+  },
+  "gitHead": "4b3b1973ecaa7dc88e008226fa3a3bd1413b03bf"
 }
