@@ -2,6 +2,10 @@
   "name": "@ctrlmaniac/simpler",
   "version": "2.4.4",
   "description": "A simple side nav written in jQuery",
+  "author": "Davide Di Criscito <davide.dicriscito@gmail.com>",
+  "homepage": "https://github.com/ctrlmaniac/sidebar",
+  "license": "MIT",
+  "main": "lib/simpler.js",
   "keywords": [
     "jquery",
     "jquery plugin",
@@ -12,10 +16,6 @@
     "simple-sidebar",
     "simpler-sidebar"
   ],
-  "author": "Davide Di Criscito <davide.dicriscito@gmail.com>",
-  "homepage": "http://\"https://github.com/ctrlmaniac/sidebar#readme\"",
-  "license": "MIT",
-  "main": "lib/simpler.js",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
