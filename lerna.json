@@ -2,9 +2,6 @@
   "version": "independent",
   "packages": ["packages/*"],
   "command": {
-    "publish": {
-      "conventionalCommits": true
-    },
     "version": {
       "message": "chore: release packages"
     }
