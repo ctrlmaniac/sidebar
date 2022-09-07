@@ -1,5 +1,10 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 class ModernSidebar {
+    constructor(sidebar) {
+        this.sidebar = sidebar;
+    }
+    init() {
+        const sidebar = document.querySelector(this.sidebar);
+        console.log(sidebar);
+    }
 }
-exports.default = ModernSidebar;
