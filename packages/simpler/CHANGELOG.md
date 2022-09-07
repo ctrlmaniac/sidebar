@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.4.2](https://github.com/ctrlmaniac/sidebar/compare/@ctrlmaniac/simpler-sidebar@2.4.1...@ctrlmaniac/simpler-sidebar@2.4.2) (2022-09-07)
+
+**Note:** Version bump only for package @ctrlmaniac/simpler-sidebar
+
+
+
+
+
 ## [2.4.1](https://github.com/ctrlmaniac/sidebar/compare/@ctrlmaniac/simpler-sidebar@2.4.0...@ctrlmaniac/simpler-sidebar@2.4.1) (2020-07-10)
 
 ### Bug Fixes
