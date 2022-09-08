@@ -18,6 +18,10 @@ npm install @ctrlmaniac/simpler-sidebar-css3
 yarn add @ctrlmaniac/simpler-sidebar-css3
 ```
 
+## Demo
+
+You can play with options in this [codepen](https://codepen.io/ctrlmaniac/pen/vYjLJeg).
+
 ## Usage
 
 Not much to do, just follow the steps below:
@@ -170,10 +174,6 @@ In the example above you will find the only required options of **simpler-sideba
 
 > `.quit-sidebar` is the class that you must provide to all elements inside the sidebar component that will trigger the closing action when clicked! Tip: you can add this class to the sidebar wrapper to make the wrapper itself the element that will trigger the closing action of the sidebar when clicked!
 
-### 4. Enjoy!
-
-With the example above, the sidebar is now ready to be used and it will appear at the right of the screen! If you want to see more examples, check out the [demo](./demo) directory!
-
 ## Options
 
 Full option list
@@ -223,7 +223,3 @@ This plugin uses css3 animation transition instead of jquery animation methods. 
 Animation `easing` must be valid css values, but animation `duration` must be in milliseconds! The plugin will take care of transforming that value in seconds!
 
 See [transition reference](https://developer.mozilla.org/en-US/docs/Web/CSS/transition)
-
-## Demo
-
-You can play with options in this [codepen](https://codepen.io/ctrlmaniac/pen/vYjLJeg).

@@ -18,6 +18,10 @@ npm install @ctrlmaniac/vanilla-sidebar
 yarn add @ctrlmaniac/vanilla-sidebar
 ```
 
+## Demo
+
+You can play with `vanilla-sidebar`'s options and features in this [codepen](https://codepen.io/ctrlmaniac/pen/eYrJWwR).
+
 ## Usage
 
 Follow these steps
@@ -79,7 +83,3 @@ opened: boolean;
 easing: string;
 zIndex: number;
 ```
-
-## Demo
-
-You can play with `vanilla-sidebar`'s options and features in this [codepen](https://codepen.io/ctrlmaniac/pen/eYrJWwR).
