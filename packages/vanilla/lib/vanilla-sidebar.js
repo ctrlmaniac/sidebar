@@ -3,6 +3,8 @@ class VanillaSidebar {
     constructor(opt) {
         this.selector =
             typeof opt.selector === "undefined" ? "#sidebar" : opt.selector;
+        this.quitterSelector =
+            typeof opt.quitter == "undefined" ? ".quit-sidebar" : opt.selector;
         this.align = typeof opt.align === "undefined" ? "left" : opt.align;
         this.top = typeof opt.top === "undefined" ? "56px" : opt.top;
         this.width = typeof opt.width === "undefined" ? "300px" : opt.width;
@@ -14,6 +16,7 @@ class VanillaSidebar {
         const position = this.align == "right" ? "left" : "right";
         this.sidebar = document.querySelector(this.selector);
         this.triggerer = document.querySelector(opt.triggerer);
+        this.quitter = document.querySelectorAll(this.quitterSelector);
         this.sidebar.setAttribute("data-status", this.opened ? "open" : "closed");
         this.sidebar.style.zIndex = this.zIndex.toString();
         this.sidebar.style.transition = `${this.align} 500ms ${this.easing}`;
@@ -65,6 +68,11 @@ class VanillaSidebar {
         this.mask.style.transition = `display 500ms ${this.easing}`;
         document.body.appendChild(this.mask);
         this.mask.onclick = () => this.close();
+        this.quitter.forEach((el) => {
+            el.addEventListener("click", () => {
+                this.close();
+            });
+        });
     }
     setAttribute() {
         const status = this.sidebar.getAttribute("data-status");

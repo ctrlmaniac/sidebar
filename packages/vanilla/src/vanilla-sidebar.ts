@@ -1,6 +1,7 @@
 interface options {
   selector: string;
   triggerer: string;
+  quitter: string;
   align: "right" | "left";
   top: string;
   width: string;
@@ -13,8 +14,10 @@ interface options {
 class VanillaSidebar {
   sidebar: HTMLElement;
   triggerer: HTMLElement;
+  quitter: NodeListOf<Element>;
   mask: HTMLElement;
   selector: string;
+  quitterSelector: string;
   align: any; // must be fixed
   top: string;
   width: string;
@@ -26,6 +29,8 @@ class VanillaSidebar {
   constructor(opt: options) {
     this.selector =
       typeof opt.selector === "undefined" ? "#sidebar" : opt.selector;
+    this.quitterSelector =
+      typeof opt.quitter == "undefined" ? ".quit-sidebar" : opt.selector;
     this.align = typeof opt.align === "undefined" ? "left" : opt.align;
     this.top = typeof opt.top === "undefined" ? "56px" : opt.top;
     this.width = typeof opt.width === "undefined" ? "300px" : opt.width;
@@ -41,6 +46,7 @@ class VanillaSidebar {
     // Select the elements
     this.sidebar = document.querySelector(this.selector)!;
     this.triggerer = document.querySelector(opt.triggerer)!;
+    this.quitter = document.querySelectorAll(this.quitterSelector)!;
 
     // Add attributes
     this.sidebar.setAttribute("data-status", this.opened ? "open" : "closed");
@@ -116,6 +122,13 @@ class VanillaSidebar {
     document.body.appendChild(this.mask);
 
     this.mask.onclick = () => this.close();
+
+    // Quit sidebar if quitter is clicked
+    this.quitter.forEach((el) => {
+      el.addEventListener("click", () => {
+        this.close();
+      });
+    });
   }
 
   setAttribute() {
