@@ -62,9 +62,10 @@ The first element you will need is an app bar. An app bar, or a toolbar, is a ba
     ></script>
   </head>
   <body>
-    <div class=appbar>
+    <div class="appbar">
       <div class="menu-icon" id="toggle-sidebar"></div>
-    </div><!-- appbar -->
+    </div>
+    <!-- appbar -->
 
     <!-- body content -->
   </body>
@@ -86,16 +87,18 @@ The second element you will need is of course a sidebar!
     ></script>
   </head>
   <body>
-    <div class=appbar>
+    <div class="appbar">
       <div class="menu-icon" id="toggle-sidebar"></div>
-    </div><!-- appbar -->
+    </div>
+    <!-- appbar -->
 
     <div class="sidebar" id="sidebar">
       <div class="sidebar-wrapper">
         <span class="quit-sidebar">Click me</span>
         <!-- sidebar content -->
       </div>
-    </div><!-- sidebar -->
+    </div>
+    <!-- sidebar -->
 
     <!-- body content -->
   </body>
@@ -130,16 +133,18 @@ At the bottom of your html file you now have to include the simpler-sidebar plug
     ></script>
   </head>
   <body>
-    <div class=appbar>
+    <div class="appbar">
       <div class="menu-icon" id="toggle-sidebar"></div>
-    </div><!-- appbar -->
+    </div>
+    <!-- appbar -->
 
     <div class="sidebar" id="sidebar">
       <div class="sidebar-wrapper">
         <span class="quit-sidebar">Click me</span>
         <!-- sidebar content -->
       </div>
-    </div><!-- sidebar -->
+    </div>
+    <!-- sidebar -->
 
     <!-- body content -->
 
@@ -218,3 +223,7 @@ This plugin uses css3 animation transition instead of jquery animation methods. 
 Animation `easing` must be valid css values, but animation `duration` must be in milliseconds! The plugin will take care of transforming that value in seconds!
 
 See [transition reference](https://developer.mozilla.org/en-US/docs/Web/CSS/transition)
+
+## Demo
+
+You can play with options in this [codepen](https://codepen.io/ctrlmaniac/pen/vYjLJeg).
