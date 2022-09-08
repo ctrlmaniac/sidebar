@@ -78,6 +78,7 @@ The first element you will need is an app bar. An app bar, or a toolbar, is a ba
 ```typescript
 selector: string;
 triggerer: string;
+quitter: string;
 align: "right" | "left";
 top: string;
 width: string;
