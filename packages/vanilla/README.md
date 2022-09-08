@@ -79,6 +79,7 @@ The first element you will need is an app bar. An app bar, or a toolbar, is a ba
 selector: string;
 triggerer: string;
 quitter: string;
+mask: boolean;
 align: "right" | "left";
 top: string;
 width: string;
