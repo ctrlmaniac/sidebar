@@ -65,7 +65,7 @@ The first element you will need is an app bar. An app bar, or a toolbar, is a ba
   </head>
   <body>
     <div class=appbar>
-      <div class="menu-icon" id="toggle-sidebar">
+      <div class="menu-icon" id="toggle-sidebar"></div>
     </div><!-- appbar -->
 
     <!-- body content -->
@@ -89,12 +89,12 @@ The second element you will need is of course a sidebar!
   </head>
   <body>
     <div class=appbar>
-      <div class="menu-icon" id="toggle-sidebar">
+      <div class="menu-icon" id="toggle-sidebar"></div>
     </div><!-- appbar -->
 
     <div class="sidebar" id="sidebar">
       <div class="sidebar-wrapper">
-        <span class=".quit-sidebar">Click me</span>
+        <span class="quit-sidebar">Click me</span>
         <!-- sidebar content -->
       </div>
     </div><!-- sidebar -->
@@ -133,12 +133,12 @@ At the bottom of your html file you now have to include the simpler-sidebar plug
   </head>
   <body>
     <div class=appbar>
-      <div class="menu-icon" id="toggle-sidebar">
+      <div class="menu-icon" id="toggle-sidebar"></div>
     </div><!-- appbar -->
 
     <div class="sidebar" id="sidebar">
       <div class="sidebar-wrapper">
-        <span class=".quit-sidebar">Click me</span>
+        <span class="quit-sidebar">Click me</span>
         <!-- sidebar content -->
       </div>
     </div><!-- sidebar -->
@@ -184,7 +184,7 @@ Full option list
   align: "right", // string - right, left -- the position of the sidebar
   top: 0, // int - the amount in px of the position top of the sidebar
   width: 300, // int - the size in px of the sidebar
-  gap: 64, // int - the amount in px ot the gap that will be left when the screen is narrower than the sidebar width
+  gap: 64, // int - the amount in px of the gap that will be left when the screen is narrower than the sidebar width
   zIndex: 3000, // int - the z-index of the sidebar element
   freezePage: true, // bool - this option will disallow the scrolling of the page beneath the sidebar when it is opened
   animation: {
