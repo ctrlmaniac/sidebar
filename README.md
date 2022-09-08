@@ -16,6 +16,10 @@
 
 ---
 
+## Demo
+
+You can play with all sidebars in this [codepen collection](https://codepen.io/collection/MgvLea).
+
 ## `simpler-sidebar`
 
 **simpler-sidebar** is the most downloaded package. It's a **jQuery plugin** that allows to create a **side nav** as in modern mobile apps. It aims to simplicity so that everybody can use it no matter if expert programmers or not. It is written entirely in javascript so that you won't need to include any css file and the only css you must adds is not even required!
