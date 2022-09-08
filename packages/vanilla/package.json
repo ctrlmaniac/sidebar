@@ -5,7 +5,7 @@
   "author": "Davide Di Criscito <davide.dicriscito@gmail.com>",
   "homepage": "https://github.com/ctrlmaniac/sidebar",
   "license": "MIT",
-  "main": "lib/vanilla.js",
+  "main": "lib/vanilla-sidebar.js",
   "keywords": [
     "jquery",
     "jquery plugin",
