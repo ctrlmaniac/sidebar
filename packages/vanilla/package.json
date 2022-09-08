@@ -1,5 +1,5 @@
 {
-  "name": "@ctrlmaniac/vanilla",
+  "name": "@ctrlmaniac/vanilla-sidebar",
   "version": "1.0.0",
   "description": "A simple side nav",
   "author": "Davide Di Criscito <davide.dicriscito@gmail.com>",
@@ -31,7 +31,7 @@
   },
   "scripts": {
     "build": "npx tsc",
-    "postbuild": "uglifyjs ./lib/vanilla.js -o ./lib/vanilla.min.js"
+    "postbuild": "uglifyjs ./lib/vanilla-sidebar.js -o ./lib/vanilla-sidebar.min.js"
   },
   "devDependencies": {
     "typescript": "^4.8.2",
