@@ -26,14 +26,23 @@
     "type": "git",
     "url": "git+https://github.com/ctrlmaniac/sidebar.git"
   },
-  "scripts": {
-    "test": "node ./__tests__/simpler.test.js"
-  },
   "bugs": {
     "url": "https://github.com/ctrlmaniac/sidebar/issues"
   },
+  "scripts": {
+    "build": "babel src -d lib",
+    "prebuild": "npx eslint src/jquery.simpler-sidebar.js",
+    "postbuild": "uglifyjs lib/jquery.simpler-sidebar.js -o lib/jquery.simpler-sidebar.min.js"
+  },
   "dependencies": {
     "jquery": "^3.6.1",
-    "jquery-ui": "^1.13.2"
+    "jquery-ui": "^1.13.2",
+    "uglify-js": "^3.17.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.18.10",
+    "@babel/core": "^7.19.0",
+    "@babel/plugin-transform-computed-properties": "^7.18.9",
+    "@babel/preset-env": "^7.19.0"
   }
 }
