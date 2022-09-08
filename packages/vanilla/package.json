@@ -17,8 +17,7 @@
     "simpler-sidebar"
   ],
   "directories": {
-    "lib": "lib",
-    "test": "__tests__"
+    "lib": "lib"
   },
   "files": [
     "lib"
@@ -27,10 +26,15 @@
     "type": "git",
     "url": "git+https://github.com/ctrlmaniac/sidebar.git"
   },
-  "scripts": {
-    "test": "node ./__tests__/vanilla.test.js"
-  },
   "bugs": {
     "url": "https://github.com/ctrlmaniac/sidebar/issues"
+  },
+  "scripts": {
+    "build": "npx tsc",
+    "postbuild": "uglifyjs ./lib/vanilla.js -o ./lib/vanilla.min.js"
+  },
+  "devDependencies": {
+    "typescript": "^4.8.2",
+    "uglifyjs": "^2.4.11"
   }
 }
