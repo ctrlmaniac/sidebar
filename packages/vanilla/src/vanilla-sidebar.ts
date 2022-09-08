@@ -2,6 +2,7 @@ interface options {
   selector: string;
   triggerer: string;
   quitter: string;
+  mask: boolean;
   align: "right" | "left";
   top: string;
   width: string;
@@ -16,6 +17,7 @@ class VanillaSidebar {
   triggerer: HTMLElement;
   quitter: NodeListOf<Element>;
   mask: HTMLElement;
+  hasMask: boolean;
   selector: string;
   quitterSelector: string;
   align: any; // must be fixed
@@ -39,6 +41,7 @@ class VanillaSidebar {
     this.easing =
       typeof opt.easing === "undefined" ? "ease-in-out" : opt.easing;
     this.zIndex = typeof opt.zIndex === "undefined" ? 3000 : opt.zIndex;
+    this.hasMask = typeof opt.mask === "undefined" ? true : opt.mask;
 
     // other variables
     const position = this.align == "right" ? "left" : "right";
@@ -119,9 +122,12 @@ class VanillaSidebar {
     this.mask.style.bottom = "0";
     this.mask.style.left = "0";
     this.mask.style.transition = `display 500ms ${this.easing}`;
-    document.body.appendChild(this.mask);
 
-    this.mask.onclick = () => this.close();
+    if (this.hasMask) {
+      document.body.appendChild(this.mask);
+
+      this.mask.onclick = () => this.close();
+    }
 
     // Quit sidebar if quitter is clicked
     this.quitter.forEach((el) => {
