@@ -32,62 +32,38 @@ In order to make **vanilla-sidebar** work you will need to add at least two html
 The first element you will need is an app bar. An app bar, or a toolbar, is a bar positioned fixed at the top of your template. It must include a button or a simple element that will trigger the opening and closing of the sidebar:
 
 ```html
-<html>
-  <head>
-    <!-- other tags -->
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.min.js"
-      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
-      integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
-      crossorigin="anonymous"
-    ></script>
-  </head>
-  <body>
-    <div class="appbar">
-      <div class="menu-icon" id="toggle-sidebar"></div>
-    </div>
-    <!-- appbar -->
+<div class="appbar">
+  <div class="menu-icon" id="toggle-sidebar"></div>
+</div>
+<!-- appbar -->
 
-    <!-- body content -->
+<!-- body content -->
 
-    <!-- sidebar -->
-    <div class="sidebar" id="main-sidebar"></div>
-  </body>
-</html>
+<!-- sidebar -->
+<div class="sidebar" id="main-sidebar"></div>
 ```
 
 ### 2. Include and configure `vanilla-sidebar`
 
 ```html
-<html>
-  <head>
-    <!-- other tags -->
-  </head>
-  <body>
-    <div class="appbar">
-      <div class="menu-icon" id="toggle-sidebar"></div>
-    </div>
-    <!-- appbar -->
+<div class="appbar">
+  <div class="menu-icon" id="toggle-sidebar"></div>
+</div>
+<!-- appbar -->
 
-    <!-- body content -->
+<!-- body content -->
 
-    <!-- sidebar -->
-    <div class="sidebar" id="main-sidebar"></div>
-    <script src="/path-to/vanilla-sidebar.js"></script>
+<!-- sidebar -->
+<div class="sidebar" id="main-sidebar"></div>
+<script src="/path-to/vanilla-sidebar.js"></script>
 
-    <!-- customize vanilla-sidebar -->
-    <script>
-      var sidebar = new VanillaSidebar({
-          selector: "#main-sidebar"
-          triggerer: "#toggle-sidebar"
-      })
-    </script>
-  </body>
-</html>
+<!-- customize vanilla-sidebar -->
+<script>
+  var sidebar = new VanillaSidebar({
+    selector: "#main-sidebar",
+    triggerer: "#toggle-sidebar",
+  });
+</script>
 ```
 
 ## Options
