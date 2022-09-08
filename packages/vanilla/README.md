@@ -76,15 +76,15 @@ The first element you will need is an app bar. An app bar, or a toolbar, is a ba
 ## Options
 
 ```typescript
-selector: string;
-triggerer: string;
-quitter: string;
-mask: boolean;
-align: "right" | "left";
-top: string;
-width: string;
-gap: string;
-opened: boolean;
-easing: string;
+selector: string; // The sidebar selector
+triggerer: string; // The element that will trigger the opening and closing event (ex: a menu button)
+quitter: string; // Elements (preferably a class) inside the sidebar that once clicked will trigger the closing event
+mask: boolean; // Whether to show the mask or not
+align: "right" | "left"; // The align of the sidebar
+top: string; // The top offset of the sidebar
+width: string; // The width of the sidebar
+gap: string; // The safe gap between the sidebar and the window when the sidebar is opened
+opened: boolean; // Whether the sidebar is initialized opened or closed
+easing: string; // The animation of the opening and closing event
 zIndex: number;
 ```
