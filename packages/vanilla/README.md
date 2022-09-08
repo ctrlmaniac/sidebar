@@ -58,7 +58,9 @@ The first element you will need is an app bar. An app bar, or a toolbar, is a ba
 <!-- body content -->
 
 <!-- sidebar -->
-<div class="sidebar" id="main-sidebar"></div>
+<div class="sidebar" id="main-sidebar">
+  <a href="#" class="quit-sidebar">Click me</a>
+</div>
 <script src="/path-to/vanilla-sidebar.js"></script>
 
 <!-- customize vanilla-sidebar -->
@@ -66,6 +68,7 @@ The first element you will need is an app bar. An app bar, or a toolbar, is a ba
   var sidebar = new VanillaSidebar({
     selector: "#main-sidebar",
     triggerer: "#toggle-sidebar",
+    quitter: ".quit-sidebar",
   });
 </script>
 ```
