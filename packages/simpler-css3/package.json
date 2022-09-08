@@ -17,8 +17,7 @@
     "simpler-sidebar"
   ],
   "directories": {
-    "lib": "lib",
-    "test": "__tests__"
+    "lib": "lib"
   },
   "files": [
     "lib"
@@ -28,9 +27,21 @@
     "url": "git+https://github.com/ctrlmaniac/sidebar.git"
   },
   "scripts": {
-    "test": "node ./__tests__/simpler-css3.test.js"
+    "build": "babel src -d lib",
+    "prebuild": "npx eslint src/jquery.simpler-sidebar-css3.js",
+    "postbuild": "uglifyjs lib/jquery.simpler-sidebar-css3.js -o lib/jquery.simpler-sidebar-css3.min.js"
   },
   "bugs": {
     "url": "https://github.com/ctrlmaniac/sidebar/issues"
+  },
+  "dependencies": {
+    "jquery": "^3.6.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.18.10",
+    "@babel/core": "^7.19.0",
+    "@babel/plugin-transform-computed-properties": "^7.18.9",
+    "@babel/preset-env": "^7.19.0",
+    "uglify-js": "^3.17.0"
   }
 }

@@ -36,13 +36,13 @@
   },
   "dependencies": {
     "jquery": "^3.6.1",
-    "jquery-ui": "^1.13.2",
-    "uglify-js": "^3.17.0"
+    "jquery-ui": "^1.13.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.18.10",
     "@babel/core": "^7.19.0",
     "@babel/plugin-transform-computed-properties": "^7.18.9",
-    "@babel/preset-env": "^7.19.0"
+    "@babel/preset-env": "^7.19.0",
+    "uglify-js": "^3.17.0"
   }
 }
