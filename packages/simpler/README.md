@@ -232,3 +232,7 @@ Full option list
   },
 }
 ```
+
+## Demo
+
+You can play with options in this [codepen](https://codepen.io/ctrlmaniac/pen/mdLVwoV).
