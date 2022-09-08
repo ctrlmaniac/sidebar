@@ -6,16 +6,6 @@ A **jQuery plugin** that allows to create a **side nav** as in modern mobile app
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
-[![npm version](https://badge.fury.io/js/%40ctrlmaniac%2Fsimpler-sidebar.svg)](https://badge.fury.io/js/%40ctrlmaniac%2Fsimpler-sidebar)
-
-## New version!
-
-I'm really glad to introduce this new version! It comes with performance improvements, a cleaner code (-51 rows of unnecessary code), and more straightforward options!
-
-This version is no more compatible with version [2.2.5]https://github.com/ctrlmaniac/sidebar/tree/release-2.2.5) nor with the newer version [2.3.2](https://github.com/ctrlmaniac/sidebar/tree/%40ctrlmaniac/simpler-sidebar%402.3.2) so be sure to read the **migration guide**
-
-[Migrate now!](./MIGRATE.md)
-
 ## Install
 
 **simpler-sidebar** is available as a npm package
@@ -82,9 +72,10 @@ The first element you will need is an app bar. An app bar, or a toolbar, is a ba
     ></script>
   </head>
   <body>
-    <div class=appbar>
+    <div class="appbar">
       <div class="menu-icon" id="toggle-sidebar"></div>
-    </div><!-- appbar -->
+    </div>
+    <!-- appbar -->
 
     <!-- body content -->
   </body>
@@ -111,16 +102,18 @@ The second element you will need is of course a sidebar!
     ></script>
   </head>
   <body>
-    <div class=appbar>
+    <div class="appbar">
       <div class="menu-icon" id="toggle-sidebar"></div>
-    </div><!-- appbar -->
+    </div>
+    <!-- appbar -->
 
     <div class="sidebar" id="sidebar">
       <div class="sidebar-wrapper">
         <span class="quit-sidebar">Click me</span>
         <!-- sidebar content -->
       </div>
-    </div><!-- sidebar -->
+    </div>
+    <!-- sidebar -->
 
     <!-- body content -->
   </body>
@@ -160,16 +153,18 @@ At the bottom of your html file you now have to include the simpler-sidebar plug
     ></script>
   </head>
   <body>
-    <div class=appbar>
+    <div class="appbar">
       <div class="menu-icon" id="toggle-sidebar"></div>
-    </div><!-- appbar -->
+    </div>
+    <!-- appbar -->
 
     <div class="sidebar" id="sidebar">
       <div class="sidebar-wrapper">
         <span class="quit-sidebar">Click me</span>
         <!-- sidebar content -->
       </div>
-    </div><!-- sidebar -->
+    </div>
+    <!-- sidebar -->
 
     <!-- body content -->
 

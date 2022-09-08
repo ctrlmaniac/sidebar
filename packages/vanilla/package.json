@@ -1,11 +1,11 @@
 {
-  "name": "@ctrlmaniac/simpler",
-  "version": "2.4.6",
-  "description": "A simple side nav written in jQuery",
+  "name": "@ctrlmaniac/vanilla-sidebar",
+  "version": "1.0.2",
+  "description": "A simple side nav",
   "author": "Davide Di Criscito <davide.dicriscito@gmail.com>",
   "homepage": "https://github.com/ctrlmaniac/sidebar",
   "license": "MIT",
-  "main": "lib/simpler.js",
+  "main": "lib/vanilla.js",
   "keywords": [
     "jquery",
     "jquery plugin",
@@ -30,19 +30,11 @@
     "url": "https://github.com/ctrlmaniac/sidebar/issues"
   },
   "scripts": {
-    "build": "babel src -d lib",
-    "prebuild": "npx eslint src/jquery.simpler-sidebar.js",
-    "postbuild": "uglifyjs lib/jquery.simpler-sidebar.js -o lib/jquery.simpler-sidebar.min.js"
-  },
-  "dependencies": {
-    "jquery": "^3.6.1",
-    "jquery-ui": "^1.13.2"
+    "build": "npx tsc",
+    "postbuild": "uglifyjs ./lib/vanilla-sidebar.js -o ./lib/vanilla-sidebar.min.js"
   },
   "devDependencies": {
-    "@babel/cli": "^7.18.10",
-    "@babel/core": "^7.19.0",
-    "@babel/plugin-transform-computed-properties": "^7.18.9",
-    "@babel/preset-env": "^7.19.0",
-    "uglify-js": "^3.17.0"
+    "typescript": "^4.8.2",
+    "uglifyjs": "^2.4.11"
   }
 }

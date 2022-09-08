@@ -1,12 +1,8 @@
-/**
- * @ctrlmaniac/simpler-sidebar
- * @license MIT
- */
 "use strict";
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 
 (function (factory) {
   if (typeof define === "function" && define.amd) {
@@ -58,8 +54,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         afterClose: function afterClose() {},
         always: function always() {}
       }
-    }, options); 
-
+    }, options);
     return this.each(function () {
       var $sidebar = $(this);
       var windowWidth = $(window).width();
@@ -70,16 +65,13 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         return windowWidth < configs.width + configs.gap ? windowWidth - configs.gap : configs.width;
       };
 
-
       var isSidebarOpen = function isSidebarOpen() {
         return JSON.parse($sidebar.attr(sidebarAttrOpen));
       };
 
-
       var setSidebarAttrOpen = function setSidebarAttrOpen(status) {
         $sidebar.attr(sidebarAttrOpen, status);
-      }; 
-
+      };
 
       $sidebar.attr(sidebarAttrOpen, configs.open).css(_defineProperty({
         display: "block",
@@ -88,10 +80,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         bottom: 0,
         width: setSidebarWidth(windowWidth),
         zIndex: configs.zIndex
-      }, configs.align, configs.open ? 0 : -setSidebarWidth(windowWidth))); 
-
-      var $mask = $("<div>").attr(baseAttr, "mask"); 
-
+      }, configs.align, configs.open ? 0 : -setSidebarWidth(windowWidth)));
+      var $mask = $("<div>").attr(baseAttr, "mask");
       var maskStyle = $.extend(true, {
         position: "fixed",
         top: parseInt(configs.top),
@@ -100,72 +90,59 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         left: 0,
         zIndex: configs.zIndex - 1,
         display: configs.open ? "block" : "none"
-      }, configs.mask.css); 
+      }, configs.mask.css);
 
       if (configs.mask.display) {
         $mask.appendTo("body").css(maskStyle);
       }
 
-
       var onSidebarOpenEvent = function onSidebarOpenEvent() {
         if (configs.mask.display) {
           $mask.fadeIn(configs.animation.duration);
-        } 
-
+        }
 
         if (configs.freezePage) {
           $("body").css("overflow-y", "hidden");
         }
 
-        setSidebarAttrOpen(true); 
-
+        setSidebarAttrOpen(true);
         configs.events.always();
         configs.events.onOpen();
       };
-
 
       var afterSidebarOpenEvent = function afterSidebarOpenEvent() {
         configs.events.always();
         configs.events.afterOpen();
       };
 
-
       var onSidebarCloseEvent = function onSidebarCloseEvent() {
         if (configs.mask.display) {
           $mask.fadeOut(configs.animation.duration);
-        } 
-
+        }
 
         if (configs.freezePage) {
           $("body").css("overflow-y", "visible");
         }
 
-        setSidebarAttrOpen(false); 
-
+        setSidebarAttrOpen(false);
         configs.events.always();
         configs.events.onClose();
       };
-
 
       var afterSidebarCloseEvent = function afterSidebarCloseEvent() {
         configs.events.always();
         configs.events.afterClose();
       };
 
-
       var openSidebar = function openSidebar() {
-        $sidebar.animate(_defineProperty({}, configs.align, 0), configs.animation.duration, configs.animation.easing, afterSidebarOpenEvent); 
-
+        $sidebar.animate(_defineProperty({}, configs.align, 0), configs.animation.duration, configs.animation.easing, afterSidebarOpenEvent);
         onSidebarOpenEvent();
       };
 
-
       var closeSidebar = function closeSidebar() {
-        $sidebar.animate(_defineProperty({}, configs.align, -$sidebar.width()), configs.animation.duration, configs.animation.easing, afterSidebarCloseEvent); 
-
+        $sidebar.animate(_defineProperty({}, configs.align, -$sidebar.width()), configs.animation.duration, configs.animation.easing, afterSidebarCloseEvent);
         onSidebarCloseEvent();
-      }; 
-
+      };
 
       $(configs.toggler).click(function () {
         if (isSidebarOpen()) {
@@ -173,16 +150,12 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         } else {
           openSidebar();
         }
-      }); 
-
-      $mask.click(closeSidebar); 
-
-      $sidebar.on("click", configs.quitter, closeSidebar); 
-
+      });
+      $mask.click(closeSidebar);
+      $sidebar.on("click", configs.quitter, closeSidebar);
       $(window).resize(function () {
-        var windowWidth = $(window).width(); 
-
-        $sidebar.css("width", setSidebarWidth(windowWidth)); 
+        var windowWidth = $(window).width();
+        $sidebar.css("width", setSidebarWidth(windowWidth));
 
         if (!$sidebar.attr(sidebarAttrOpen)) {
           $sidebar.css(configs.align, -$sidebar.width());

@@ -10,7 +10,7 @@ interface options {
   zIndex: number;
 }
 
-class ModernSidebar {
+class VanillaSidebar {
   sidebar: HTMLElement;
   triggerer: HTMLElement;
   mask: HTMLElement;

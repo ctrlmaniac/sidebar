@@ -1,5 +1,5 @@
 "use strict";
-class ModernSidebar {
+class VanillaSidebar {
     constructor(opt) {
         this.selector =
             typeof opt.selector === "undefined" ? "#sidebar" : opt.selector;
