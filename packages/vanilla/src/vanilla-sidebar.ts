@@ -27,6 +27,7 @@ class VanillaSidebar {
   opened: boolean;
   easing: string;
   zIndex: number;
+  animationDuration: string;
 
   constructor(opt: options) {
     this.selector =
@@ -42,6 +43,7 @@ class VanillaSidebar {
       typeof opt.easing === "undefined" ? "ease-in-out" : opt.easing;
     this.zIndex = typeof opt.zIndex === "undefined" ? 3000 : opt.zIndex;
     this.hasMask = typeof opt.mask === "undefined" ? true : opt.mask;
+    this.animationDuration = "500ms";
 
     // other variables
     const position = this.align == "right" ? "left" : "right";
@@ -58,7 +60,7 @@ class VanillaSidebar {
     this.sidebar.style.zIndex = this.zIndex.toString();
 
     // Add transition
-    this.sidebar.style.transition = `${this.align} 500ms ${this.easing}`;
+    this.sidebar.style.transition = `${this.align} ${this.animationDuration} ${this.easing}`;
 
     // Set sidebar position
     this.sidebar.style.position = "fixed";
@@ -113,7 +115,7 @@ class VanillaSidebar {
     // Create Mask
     this.mask = document.createElement("div");
     this.mask.setAttribute("data-mask", this.opened ? "open" : "closed");
-    this.mask.style.display = "none";
+    this.mask.style.visibility = "hidden";
     this.mask.style.background = "rgba(0, 0, 0, 0.8)";
     this.mask.style.zIndex = (this.zIndex - 1).toString();
     this.mask.style.position = "absolute";
@@ -121,7 +123,8 @@ class VanillaSidebar {
     this.mask.style.right = "0";
     this.mask.style.bottom = "0";
     this.mask.style.left = "0";
-    this.mask.style.transition = `display 500ms ${this.easing}`;
+    this.mask.style.transition = `visibility 0s, opacity ${this.animationDuration} ${this.easing}`;
+    this.mask.style.opacity = "0";
 
     if (this.hasMask) {
       document.body.appendChild(this.mask);
@@ -162,10 +165,12 @@ class VanillaSidebar {
   }
 
   showMask() {
-    this.mask.style.display = "block";
+    this.mask.style.opacity = "1";
+    this.mask.style.visibility = "visible";
   }
 
   hideMask() {
-    this.mask.style.display = "none";
+    this.mask.style.opacity = "0";
+    this.mask.style.visibility = "hidden";
   }
 }
