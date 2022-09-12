@@ -2,14 +2,14 @@ interface options {
   selector: string;
   triggerer: string;
   quitter: string;
-  mask: boolean;
-  align: "right" | "left";
-  top: string;
-  width: string;
-  gap: string;
-  opened: boolean;
-  easing: string;
-  zIndex: number;
+  mask?: boolean;
+  align?: "right" | "left";
+  top?: string;
+  width?: string;
+  gap?: string;
+  opened?: boolean;
+  easing?: string;
+  zIndex?: number;
 }
 
 class VanillaSidebar {
