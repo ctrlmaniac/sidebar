@@ -1,8 +1,10 @@
 {
   "compilerOptions": {
+    "allowJs": true,
     "target": "ES2016",
     "module": "commonjs",
     "declaration": true,
+    "declarationMap": true,
     "outDir": "./lib",
     "removeComments": true,
     "esModuleInterop": true,

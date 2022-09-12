@@ -34,3 +34,4 @@ declare class VanillaSidebar {
     showMask(): void;
     hideMask(): void;
 }
+//# sourceMappingURL=vanilla-sidebar.d.ts.map
