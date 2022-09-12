@@ -12,7 +12,7 @@ interface options {
   zIndex: number;
 }
 
-export default class VanillaSidebar {
+class VanillaSidebar {
   sidebar: HTMLElement;
   triggerer: HTMLElement;
   quitter: NodeListOf<Element>;

@@ -11,7 +11,7 @@ interface options {
     easing: string;
     zIndex: number;
 }
-export default class VanillaSidebar {
+declare class VanillaSidebar {
     sidebar: HTMLElement;
     triggerer: HTMLElement;
     quitter: NodeListOf<Element>;
@@ -34,5 +34,4 @@ export default class VanillaSidebar {
     showMask(): void;
     hideMask(): void;
 }
-export {};
 //# sourceMappingURL=vanilla-sidebar.d.ts.map

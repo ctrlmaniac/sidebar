@@ -1,8 +1,8 @@
 {
+  "files": ["src/vanilla-sidebar.ts"],
   "compilerOptions": {
-    "allowJs": true,
-    "target": "ES2016",
-    "module": "UMD",
+    "target": "ES6",
+    "module": "CommonJS",
     "declaration": true,
     "declarationMap": true,
     "outDir": "./lib",
