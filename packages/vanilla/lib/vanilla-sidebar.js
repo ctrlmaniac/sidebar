@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 class VanillaSidebar {
     constructor(opt) {
         this.selector =
@@ -109,3 +110,4 @@ class VanillaSidebar {
         this.mask.style.visibility = "hidden";
     }
 }
+exports.default = VanillaSidebar;

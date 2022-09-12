@@ -2,7 +2,7 @@
   "compilerOptions": {
     "allowJs": true,
     "target": "ES2016",
-    "module": "commonjs",
+    "module": "UMD",
     "declaration": true,
     "declarationMap": true,
     "outDir": "./lib",
