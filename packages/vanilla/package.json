@@ -6,6 +6,7 @@
   "homepage": "https://github.com/ctrlmaniac/sidebar",
   "license": "MIT",
   "main": "lib/vanilla-sidebar.js",
+  "types": "lib/vanilla-sidebar.d.ts",
   "keywords": [
     "jquery",
     "jquery plugin",
