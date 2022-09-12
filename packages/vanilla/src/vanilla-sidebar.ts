@@ -3,7 +3,7 @@ interface options {
   triggerer: string;
   quitter: string;
   mask?: boolean;
-  align?: "right" | "left";
+  align: "right" | "left";
   top?: string;
   width?: string;
   gap?: string;
