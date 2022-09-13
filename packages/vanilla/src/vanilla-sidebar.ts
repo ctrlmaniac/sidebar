@@ -45,9 +45,6 @@ class VanillaSidebar {
     this.hasMask = typeof opt.mask === "undefined" ? true : opt.mask;
     this.animationDuration = "500ms";
 
-    // other variables
-    const position = this.align == "right" ? "left" : "right";
-
     // Select the elements
     this.sidebar = document.querySelector(this.selector)!;
     this.triggerer = document.querySelector(opt.triggerer)!;
@@ -82,15 +79,20 @@ class VanillaSidebar {
     window.onresize = () => {
       const safeWidth = `${(window.innerWidth - this.gap).toString()}px`;
 
+      // Set sidebar width
       if (window.innerWidth <= parseInt(this.width) + this.gap) {
         this.sidebar.style.width = safeWidth;
       } else {
         this.sidebar.style.width = "100%";
       }
 
-      // Fix sidebar position
+      // Reset sidebar position
       if (this.sidebar.getAttribute("data-status") == "closed") {
-        this.sidebar.style[position] = `-${safeWidth}`;
+        if (window.innerWidth <= parseInt(this.width) + this.gap) {
+          this.sidebar.style[this.align] = `-${safeWidth}`;
+        } else {
+          this.sidebar.style[this.align] = `-${parseInt(this.width)}px`;
+        }
       }
     };
 
