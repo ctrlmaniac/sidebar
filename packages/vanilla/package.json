@@ -7,8 +7,6 @@
   "license": "MIT",
   "main": "lib/vanilla-sidebar.js",
   "keywords": [
-    "jquery",
-    "jquery plugin",
     "sidebar",
     "sidenav",
     "simple sidebar",
@@ -26,15 +24,11 @@
     "type": "git",
     "url": "git+https://github.com/ctrlmaniac/sidebar.git"
   },
-  "bugs": {
-    "url": "https://github.com/ctrlmaniac/sidebar/issues"
-  },
   "scripts": {
     "build": "npx tsc",
     "postbuild": "uglifyjs ./lib/vanilla-sidebar.js -o ./lib/vanilla-sidebar.min.js"
   },
-  "devDependencies": {
-    "typescript": "^4.8.2",
-    "uglifyjs": "^2.4.11"
+  "bugs": {
+    "url": "https://github.com/ctrlmaniac/sidebar/issues"
   }
 }
