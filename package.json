@@ -6,11 +6,13 @@
   ],
   "scripts": {
     "prepare": "husky install",
+    "commit": "cz",
     "build": "npx lerna exec -- npm run build"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.4.1",
     "@commitlint/config-conventional": "^17.4.0",
+    "commitizen": "^4.2.6",
     "husky": "^8.0.3",
     "lerna": "^5.6.2"
   }
