@@ -4,13 +4,13 @@
   "workspaces": [
     "packages/*"
   ],
+  "scripts": {
+    "prepare": "husky install"
+  },
   "devDependencies": {
     "@commitlint/cli": "^17.4.1",
     "@commitlint/config-conventional": "^17.4.0",
     "husky": "^8.0.3",
     "lerna": "^5.6.2"
-  },
-  "scripts": {
-    "prepare": "husky install"
   }
 }
