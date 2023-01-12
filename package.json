@@ -8,7 +8,8 @@
     "prepare": "husky install",
     "postinstall": "husky install",
     "commit": "cz",
-    "build": "npx lerna exec -- npm run build"
+    "build": "npx lerna exec -- npm run build",
+    "publish": "npx lerna publish"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.4.1",
