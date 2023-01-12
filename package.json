@@ -5,7 +5,8 @@
     "packages/*"
   ],
   "scripts": {
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "build": "npx lerna exec -- npm run build"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.4.1",
