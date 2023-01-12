@@ -6,6 +6,7 @@
   ],
   "scripts": {
     "prepare": "husky install",
+    "postinstall": "husky install",
     "commit": "cz",
     "build": "npx lerna exec -- npm run build"
   },
